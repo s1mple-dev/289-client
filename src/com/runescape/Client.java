@@ -22,7 +22,6 @@ import java.io.DataInputStream;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.math.BigInteger;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.URL;
@@ -47,8 +46,6 @@ public class Client extends GameShell {
     public static int anInt1029;
     public static int anIntArray1043[] = {9104, 10275, 7595, 3610, 7975, 8526, 918, 38802, 24466, 10145, 58654, 5027,
             1457, 16565, 34991, 25486};
-    public static BigInteger aBigInteger1045 = new BigInteger(
-            "65537");
     public static int anInt1046;
     public static Player aClass44_Sub3_Sub4_Sub6_Sub1_1047;
     public static boolean aBoolean1061;
@@ -61,8 +58,6 @@ public class Client extends GameShell {
     public static int anIntArray1088[];
     public static int anInt1100;
     public static int anInt1114;
-    public static BigInteger aBigInteger1135 = new BigInteger(
-            "136850371695624768307277017369641980565020963212594680241132171432023516344981894339858486146905642988950211542179853466127068167053815546492977306658729702818172843631274240128640611060828026837544709334769018515111248011944886642387472437829622101299712078810724506268550222918412402279798538875197464027837");
     public static int anInt1167;
     public static int anInt1175;
     public static int anInt1180;
@@ -8094,7 +8089,7 @@ public class Client extends GameShell {
                 aClass44_Sub3_Sub2_850.putInt(SignLink.uid);
                 aClass44_Sub3_Sub2_850.putString(s);
                 aClass44_Sub3_Sub2_850.putString(s1);
-                aClass44_Sub3_Sub2_850.method497(Client.aBigInteger1135, Client.aBigInteger1045, 0);
+                aClass44_Sub3_Sub2_850.method497(Settings.KEY, Settings.MODULUS, 0);
                 aClass44_Sub3_Sub2_822.offset = 0;
                 if (flag) {
                     aClass44_Sub3_Sub2_822.writeByte(18);

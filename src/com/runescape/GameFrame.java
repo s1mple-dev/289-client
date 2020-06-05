@@ -9,7 +9,7 @@ public class GameFrame extends Frame {
 
     public GameFrame(int width, int height, GameShell gameShell) {
         this.gameShell = gameShell;
-        setTitle("Jagex");
+        setTitle(Settings.NAME);
         setResizable(false);
         setVisible(true);
         toFront();
