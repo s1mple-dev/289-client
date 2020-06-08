@@ -87,6 +87,9 @@ public class Region {
                     break;
                 }
                 l += i1;
+                if (l >= 5116) {
+                    continue;
+                }
                 int j1 = 0;
                 boolean flag1 = false;
                 while (true) {
@@ -587,6 +590,9 @@ public class Region {
                     break;
                 }
                 k += i1;
+                if (k >= 5116) {
+                    continue;
+                }
                 int j1 = 0;
                 do {
                     int k1 = class44_sub3_sub2.method496();
