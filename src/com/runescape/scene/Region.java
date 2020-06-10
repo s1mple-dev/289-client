@@ -10,6 +10,10 @@ import com.runescape.renderable.GameObject;
 import com.runescape.renderable.Renderable;
 import com.runescape.util.SignLink;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Region {
 
     public static int anInt61 = 30967;
@@ -87,9 +91,6 @@ public class Region {
                     break;
                 }
                 l += i1;
-                if (l >= 5116) {
-                    continue;
-                }
                 int j1 = 0;
                 boolean flag1 = false;
                 while (true) {
@@ -140,9 +141,6 @@ public class Region {
                     break;
                 }
                 j += k;
-                if (j >= 5116) {//TODO Fix map data
-                    break;
-                }
                 GameObjectDefinition class8 = GameObjectDefinition.method199(j);
                 class8.method204(class43_sub1, (byte) 2);
                 do {
@@ -590,9 +588,6 @@ public class Region {
                     break;
                 }
                 k += i1;
-                if (k >= 5116) {
-                    continue;
-                }
                 int j1 = 0;
                 do {
                     int k1 = class44_sub3_sub2.method496();
