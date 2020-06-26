@@ -12,36 +12,36 @@ public class SignLink implements Runnable {
     public static int uid;
     public static int storeId = 32;
     public static RandomAccessFile cache_dat = null;
-    public static RandomAccessFile cache_idx[] = new RandomAccessFile[5];
+    public static final RandomAccessFile[] cache_idx = new RandomAccessFile[5];
     public static boolean sunjava;
-    public static Applet mainapp = null;
-    public static boolean active;
-    public static int threadliveid;
-    public static InetAddress socketip;
-    public static int socketreq;
-    public static Socket socket = null;
-    public static int threadreqpri = 1;
-    public static Runnable threadreq = null;
-    public static String dnsreq = null;
+    public static final Applet mainapp = null;
+    private static boolean active;
+    private static int threadliveid;
+    private static InetAddress socketip;
+    private static int socketreq;
+    private static Socket socket = null;
+    private static int threadreqpri = 1;
+    private static Runnable threadreq = null;
+    private static String dnsreq = null;
     public static String dns = null;
-    public static String urlreq = null;
-    public static DataInputStream urlstream = null;
-    public static int savelen;
-    public static String savereq = null;
-    public static byte savebuf[] = null;
-    public static boolean midiplay;
-    public static int midipos;
+    private static String urlreq = null;
+    private static DataInputStream urlstream = null;
+    private static int savelen;
+    private static String savereq = null;
+    private static byte[] savebuf = null;
+    private static boolean midiplay;
+    private static int midipos;
     public static String midi = null;
     public static int midivol;
     public static int midifade;
-    public static boolean waveplay;
-    public static int wavepos;
-    public static String wave = null;
+    private static boolean waveplay;
+    private static int wavepos;
+    private static String wave = null;
     public static int wavevol;
     public static boolean reporterror = true;
     public static String errorname = "";
 
-    public SignLink() {
+    private SignLink() {
     }
 
     public static void initiate(InetAddress inetaddress) {
@@ -70,7 +70,7 @@ public class SignLink implements Runnable {
         }
     }
 
-    public static final String findcachedir() {
+    private static String findcachedir() {
         String[] var0 = new String[]{"c:/windows/", "c:/winnt/", "d:/windows/", "d:/winnt/", "e:/windows/", "e:/winnt/", "f:/windows/", "f:/winnt/", "c:/", "~/", "/tmp/", ""};
         String var1 = ".file_store_32";
 
@@ -90,14 +90,13 @@ public class SignLink implements Runnable {
                     return var3 + var1 + "/";
                 }
             } catch (Exception var5) {
-                ;
             }
         }
 
         return null;
     }
 
-    public static int getuid(String s) {
+    private static int getuid(String s) {
         try {
             File file = new File(s + "uid.dat");
             if (!file.exists() || file.length() < 4L) {
@@ -155,7 +154,7 @@ public class SignLink implements Runnable {
         SignLink.threadreq = runnable;
     }
 
-    public static synchronized boolean wavesave(byte abyte0[], int i) {
+    public static synchronized boolean wavesave(byte[] abyte0, int i) {
         if (i > 0x1e8480) {
             return false;
         }
@@ -182,19 +181,17 @@ public class SignLink implements Runnable {
         }
     }
 
-    public static synchronized void midisave(byte abyte0[], int i) {
+    public static synchronized void midisave(byte[] abyte0, int i) {
         if (i > 0x1e8480) {
             return;
         }
         if (SignLink.savereq != null) {
-            return;
         } else {
             SignLink.midipos = (SignLink.midipos + 1) % 5;
             SignLink.savelen = i;
             SignLink.savebuf = abyte0;
             SignLink.midiplay = true;
             SignLink.savereq = "jingle" + SignLink.midipos + ".mid";
-            return;
         }
     }
 
@@ -215,9 +212,7 @@ public class SignLink implements Runnable {
                     + " " + s);
             datainputstream.readUTF();
             datainputstream.close();
-            return;
         } catch (IOException _ex) {
-            return;
         }
     }
 

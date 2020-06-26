@@ -5,63 +5,61 @@ import com.runescape.cache.request.OnDemandRequester;
 import com.runescape.collection.Cache;
 import com.runescape.graphic.Model;
 import com.runescape.net.Buffer;
-import com.runescape.renderable.Renderable;
 import com.runescape.util.SignLink;
 
 public class GameObjectDefinition {
 
-    public static int anInt209;
-    public static int anIntArray210[];
-    public static Buffer buffer;
-    public static GameObjectDefinition cache[];
-    public static int anInt213;
-    public static Model aClass44_Sub3_Sub4_Sub4Array214[] = new Model[4];
+    private static int anInt209;
+    private static int[] anIntArray210;
+    private static Buffer buffer;
+    private static GameObjectDefinition[] cache;
+    private static int anInt213;
+    private static final Model[] aClass44_Sub3_Sub4_Sub4Array214 = new Model[4];
     public static Cache aClass39_251 = new Cache((byte) 7, 500);
     public static Cache aClass39_252 = new Cache((byte) 7, 30);
-    public boolean aBoolean203;
-    public int anInt204;
-    public byte aByte205;
-    public int anInt206;
-    public int anInt207;
-    public int anInt208;
+    private boolean aBoolean203;
+    private final int anInt204;
+    private final byte aByte205;
+    private int anInt206;
+    private final int anInt207;
     public int anInt215;
-    public int anIntArray216[];
-    public int anIntArray217[];
+    private int[] anIntArray216;
+    private int[] anIntArray217;
     public String aString218;
-    public byte aByteArray219[];
-    public int anIntArray220[];
-    public int anIntArray221[];
+    public byte[] aByteArray219;
+    private int[] anIntArray220;
+    private int[] anIntArray221;
     public int anInt222;
     public int anInt223;
     public boolean aBoolean224;
     public boolean aBoolean225;
     public boolean aBoolean226;
     public boolean aBoolean227;
-    public boolean aBoolean228;
+    private boolean aBoolean228;
     public boolean aBoolean229;
     public int anInt230;
     public int anInt231;
-    public byte aByte232;
-    public byte aByte233;
-    public String aStringArray234[];
+    private byte aByte232;
+    private byte aByte233;
+    public String[] aStringArray234;
     public int anInt235;
     public int anInt236;
-    public boolean aBoolean237;
+    private boolean aBoolean237;
     public boolean aBoolean238;
-    public int anInt239;
-    public int anInt240;
-    public int anInt241;
-    public int anInt242;
-    public int anInt243;
-    public int anInt244;
+    private int anInt239;
+    private int anInt240;
+    private int anInt241;
+    private int anInt242;
+    private int anInt243;
+    private int anInt244;
     public int anInt245;
     public boolean aBoolean246;
-    public boolean aBoolean247;
-    public int anInt248;
+    private boolean aBoolean247;
+    private int anInt248;
     public int anInt249;
-    public int anIntArray250[];
+    public int[] anIntArray250;
 
-    public GameObjectDefinition() {
+    private GameObjectDefinition() {
         aBoolean203 = false;
         anInt204 = 44692;
         aByte205 = 4;
@@ -93,7 +91,6 @@ public class GameObjectDefinition {
             GameObjectDefinition.cache = null;
             GameObjectDefinition.buffer = null;
             if (byte0 != 42) {
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("19919, " + byte0 + ", " + runtimeexception.toString());
@@ -116,7 +113,7 @@ public class GameObjectDefinition {
         return class8;
     }
 
-    public void method200() {
+    private void method200() {
         anIntArray216 = null;
         anIntArray217 = null;
         aString218 = null;
@@ -154,11 +151,11 @@ public class GameObjectDefinition {
         anIntArray250 = null;
     }
 
-    public void method201(boolean flag, Buffer class44_sub3_sub2) {
+    private void method201(boolean flag, Buffer class44_sub3_sub2) {
         try {
             int i = -1;
             if (flag) {
-                anInt208 = -264;
+                int anInt208 = -264;
             }
             label0:
             do {
@@ -297,7 +294,6 @@ public class GameObjectDefinition {
             }
             if (anInt248 == -1) {
                 anInt248 = aBoolean224 ? 1 : 0;
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("43978, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
@@ -396,7 +392,7 @@ public class GameObjectDefinition {
         return class44_sub3_sub4_sub4;
     }
 
-    public Model method206(byte byte0, int i, int j, int k) {
+    private Model method206(byte byte0, int i, int j, int k) {
         try {
             Model class44_sub3_sub4_sub4 = null;
             long l;
@@ -510,7 +506,7 @@ public class GameObjectDefinition {
             }
             class44_sub3_sub4_sub4_3.method523(64 + aByte232, 768 + aByte233 * 5, -50, -10, -50, !aBoolean228);
             if (anInt248 == 1) {
-                class44_sub3_sub4_sub4_3.anInt1563 = ((Renderable) (class44_sub3_sub4_sub4_3)).anInt1412;
+                class44_sub3_sub4_sub4_3.anInt1563 = class44_sub3_sub4_sub4_3.anInt1412;
             }
             GameObjectDefinition.aClass39_252.method340(l, (byte) 76, class44_sub3_sub4_sub4_3);
             return class44_sub3_sub4_sub4_3;

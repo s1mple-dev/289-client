@@ -5,19 +5,18 @@ import com.runescape.util.SignLink;
 
 public class SoundTrack {
 
-    public static SoundTrack aClass4Array91[] = new SoundTrack[1000];
-    public static int anIntArray92[] = new int[1000];
-    public static byte aByteArray93[];
-    public static Buffer buffer;
-    public boolean aBoolean88;
-    public boolean aBoolean89;
-    public boolean aBoolean90;
-    public SoundTrackInstrument aClass6Array95[];
-    public int anInt96;
-    public int anInt97;
+    private static final SoundTrack[] aClass4Array91 = new SoundTrack[1000];
+    public static final int[] anIntArray92 = new int[1000];
+    private static byte[] aByteArray93;
+    private static Buffer buffer;
+    private boolean aBoolean89;
+    private boolean aBoolean90;
+    private final SoundTrackInstrument[] aClass6Array95;
+    private int anInt96;
+    private int anInt97;
 
-    public SoundTrack(byte byte0) {
-        aBoolean88 = false;
+    private SoundTrack(byte byte0) {
+        boolean aBoolean88 = false;
         aBoolean89 = false;
         aBoolean90 = true;
         aClass6Array95 = new SoundTrackInstrument[10];
@@ -25,7 +24,6 @@ public class SoundTrack {
             if (byte0 != 58) {
                 for (int i = 1; i > 0; i++) {
                 }
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("32850, " + byte0 + ", " + runtimeexception.toString());
@@ -58,7 +56,7 @@ public class SoundTrack {
 
     public static Buffer method176(int i, int j, int k) {
         try {
-            if (j < 7 || j > 7) {
+            if (j != 7) {
                 throw new NullPointerException();
             }
             if (SoundTrack.aClass4Array91[k] != null) {
@@ -73,7 +71,7 @@ public class SoundTrack {
         throw new RuntimeException();
     }
 
-    public void method177(boolean flag, Buffer class44_sub3_sub2) {
+    private void method177(boolean flag, Buffer class44_sub3_sub2) {
         try {
             for (int i = 0; i < 10; i++) {
                 int j = class44_sub3_sub2.readUnsignedByte();
@@ -95,7 +93,7 @@ public class SoundTrack {
         throw new RuntimeException();
     }
 
-    public int method178(int i) {
+    private int method178(int i) {
         try {
             int j = 0x98967f;
             if (i <= 0) {
@@ -128,7 +126,7 @@ public class SoundTrack {
         throw new RuntimeException();
     }
 
-    public Buffer method179(int i, int j) {
+    private Buffer method179(int i, int j) {
         try {
             int k = method180(i);
             SoundTrack.buffer.offset = 0;
@@ -154,7 +152,7 @@ public class SoundTrack {
         throw new RuntimeException();
     }
 
-    public int method180(int i) {
+    private int method180(int i) {
         int j = 0;
         for (int k = 0; k < 10; k++) {
             if (aClass6Array95[k] != null && aClass6Array95[k].anInt182 + aClass6Array95[k].anInt183 > j) {
@@ -178,7 +176,7 @@ public class SoundTrack {
             if (aClass6Array95[i2] != null) {
                 int j2 = (aClass6Array95[i2].anInt182 * 22050) / 1000;
                 int i3 = (aClass6Array95[i2].anInt183 * 22050) / 1000;
-                int ai[] = aClass6Array95[i2].method188(j2, aClass6Array95[i2].anInt182);
+                int[] ai = aClass6Array95[i2].method188(j2, aClass6Array95[i2].anInt182);
                 for (int l3 = 0; l3 < j2; l3++) {
                     SoundTrack.aByteArray93[l3 + i3 + 44] += (byte) (ai[l3] >> 8);
                 }

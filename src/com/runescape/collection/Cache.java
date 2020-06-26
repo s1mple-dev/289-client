@@ -4,19 +4,17 @@ import com.runescape.util.SignLink;
 
 public class Cache {
 
-    public boolean aBoolean688;
-    public boolean aBoolean689;
-    public int anInt690;
-    public int anInt691;
-    public CacheableNode aClass44_Sub3_692;
-    public int anInt693;
-    public int anInt694;
-    public HashTable aClass42_695;
-    public Queue aClass31_696;
+    private int anInt690;
+    private int anInt691;
+    private final CacheableNode aClass44_Sub3_692;
+    private int anInt693;
+    private int anInt694;
+    private HashTable aClass42_695;
+    private final Queue aClass31_696;
 
     public Cache(byte byte0, int i) {
-        aBoolean688 = true;
-        aBoolean689 = false;
+        boolean aBoolean688 = true;
+        boolean aBoolean689 = false;
         aClass44_Sub3_692 = new CacheableNode();
         aClass31_696 = new Queue(9);
         try {

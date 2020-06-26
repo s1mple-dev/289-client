@@ -10,18 +10,18 @@ import com.runescape.util.SignLink;
 public class GameObject extends Renderable {
 
     public static Client aClient1481;
-    public int anInt1482;
-    public int anInt1483;
-    public int anInt1484;
-    public int anInt1485;
-    public int anInt1486;
-    public int anInt1487;
-    public int anInt1488;
-    public AnimationSequence aClass26_1489;
-    public int anInt1490;
-    public int anInt1491;
-    public int anInt1492;
-    public int anIntArray1493[];
+    private int anInt1482;
+    private int anInt1483;
+    private int anInt1484;
+    private int anInt1485;
+    private int anInt1486;
+    private int anInt1487;
+    private int anInt1488;
+    private AnimationSequence aClass26_1489;
+    private int anInt1490;
+    private int anInt1491;
+    private int anInt1492;
+    private int[] anIntArray1493;
 
     public GameObject(int i, int j, int k, int l, int i1, boolean flag, int j1, int k1, boolean flag1, int l1) {
         try {

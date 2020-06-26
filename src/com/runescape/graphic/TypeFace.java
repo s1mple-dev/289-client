@@ -8,28 +8,27 @@ import java.util.Random;
 
 public class TypeFace extends Rasterizer {
 
-    public int anInt1466;
-    public boolean aBoolean1467;
-    public int anInt1468;
-    public byte aByte1469;
-    public int anInt1470;
-    public boolean aBoolean1471;
-    public byte aByteArrayArray1472[][];
-    public int anIntArray1473[];
-    public int anIntArray1474[];
-    public int anIntArray1475[];
-    public int anIntArray1476[];
-    public int anIntArray1477[];
+    private int anInt1466;
+    private boolean aBoolean1467;
+    private int anInt1468;
+    private final byte aByte1469;
+    private final int anInt1470;
+    private final byte[][] aByteArrayArray1472;
+    private final int[] anIntArray1473;
+    private final int[] anIntArray1474;
+    private final int[] anIntArray1475;
+    private final int[] anIntArray1476;
+    private final int[] anIntArray1477;
     public int anInt1478;
-    public Random aRandom1479;
-    public boolean aBoolean1480;
+    private final Random aRandom1479;
+    private boolean aBoolean1480;
 
     public TypeFace(int i, String s, boolean flag, Archive class47) {
         anInt1466 = 784;
         aBoolean1467 = false;
         aByte1469 = 5;
         anInt1470 = 2;
-        aBoolean1471 = false;
+        boolean aBoolean1471 = false;
         aByteArrayArray1472 = new byte[256][];
         anIntArray1473 = new int[256];
         anIntArray1474 = new int[256];
@@ -107,7 +106,6 @@ public class TypeFace extends Rasterizer {
         try {
             method459((byte) -104, k, s, i - method458(s, -725) / 2, l);
             if (j != -31546) {
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("89843, " + i + ", " + s + ", " + j + ", " + k + ", " + l + ", "
@@ -120,7 +118,6 @@ public class TypeFace extends Rasterizer {
         try {
             method463(i, 2, k, flag, j - method457(s, true) / 2, s);
             if (byte0 != -85) {
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("52266, " + flag + ", " + i + ", " + byte0 + ", " + j + ", " + s + ", " + k + ", "
@@ -317,7 +314,6 @@ public class TypeFace extends Rasterizer {
             }
             if (aBoolean1480) {
                 Rasterizer.method414(l - i1, i1, 0x800000, true, k + (int) (anInt1478 * 0.69999999999999996D));
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("34312, " + i + ", " + j + ", " + k + ", " + flag + ", " + l + ", " + s + ", "
@@ -369,7 +365,7 @@ public class TypeFace extends Rasterizer {
         throw new RuntimeException();
     }
 
-    public int method465(String s, int i) {
+    private int method465(String s, int i) {
         try {
             if (i != 1) {
                 return anInt1468;
@@ -438,7 +434,7 @@ public class TypeFace extends Rasterizer {
         throw new RuntimeException();
     }
 
-    public void method466(byte abyte0[], int i, int j, int k, int l, int i1) {
+    private void method466(byte[] abyte0, int i, int j, int k, int l, int i1) {
         int j1 = i + j * Rasterizer.anInt1370;
         int k1 = Rasterizer.anInt1370 - k;
         int l1 = 0;
@@ -469,14 +465,12 @@ public class TypeFace extends Rasterizer {
             k1 += l2;
         }
         if (k <= 0 || l <= 0) {
-            return;
         } else {
             method467(Rasterizer.anIntArray1369, abyte0, i1, i2, j1, k, l, k1, l1);
-            return;
         }
     }
 
-    public void method467(int ai[], byte abyte0[], int i, int j, int k, int l, int i1, int j1, int k1) {
+    private void method467(int[] ai, byte[] abyte0, int i, int j, int k, int l, int i1, int j1, int k1) {
         int l1 = -(l >> 2);
         l = -(l & 3);
         for (int i2 = -i1; i2 < 0; i2++) {
@@ -514,7 +508,7 @@ public class TypeFace extends Rasterizer {
         }
     }
 
-    public void method468(byte abyte0[], int i, int j, int k, int l, int i1, int j1, boolean flag) {
+    private void method468(byte[] abyte0, int i, int j, int k, int l, int i1, int j1, boolean flag) {
         try {
             if (flag) {
                 anInt1468 = 122;
@@ -561,8 +555,8 @@ public class TypeFace extends Rasterizer {
         throw new RuntimeException();
     }
 
-    public void method469(int i, int j, int k, byte abyte0[], boolean flag, int ai[], int l, int i1, int j1, int k1,
-                          int l1) {
+    private void method469(int i, int j, int k, byte[] abyte0, boolean flag, int[] ai, int l, int i1, int j1, int k1,
+                           int l1) {
         try {
             if (flag) {
                 for (int i2 = 1; i2 > 0; i2++) {

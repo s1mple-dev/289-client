@@ -13,58 +13,56 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
         FocusListener, WindowListener {
 
     public static boolean aBoolean35;
-    public boolean aBoolean1;
-    public int anInt2;
-    public int anInt3;
-    public int anInt4;
-    public int anInt5;
-    public int anInt6;
-    public int anInt7;
-    public long aLongArray8[];
-    public int anInt9;
-    public boolean aBoolean10;
-    public int anInt11;
-    public int anInt12;
-    public Graphics aGraphics13;
-    public ProducingGraphicsBuffer aClass34_14;
-    public ImageRGB aClass44_Sub3_Sub1_Sub2Array15[];
-    public GameFrame aFrame_Sub1_16;
-    public boolean aBoolean17;
-    public boolean aBoolean18;
-    public int anInt19;
-    public int anInt20;
+    private boolean aBoolean1;
+    private int anInt3;
+    private int anInt4;
+    private int anInt5;
+    private int anInt6;
+    int anInt7;
+    private final long[] aLongArray8;
+    private int anInt9;
+    boolean aBoolean10;
+    int anInt11;
+    int anInt12;
+    Graphics aGraphics13;
+    ProducingGraphicsBuffer aClass34_14;
+    GameFrame aFrame_Sub1_16;
+    private boolean aBoolean17;
+    boolean aBoolean18;
+    int anInt19;
+    int anInt20;
     public int anInt21;
     public int anInt22;
-    public int anInt23;
-    public int anInt24;
-    public int anInt25;
-    public long aLong26;
-    public int anInt27;
-    public int anInt28;
-    public int anInt29;
-    public long aLong30;
-    public int anIntArray31[];
-    public int anIntArray32[];
-    public int anInt33;
-    public int anInt34;
+    private int anInt23;
+    private int anInt24;
+    private int anInt25;
+    private long aLong26;
+    int anInt27;
+    int anInt28;
+    int anInt29;
+    long aLong30;
+    final int[] anIntArray31;
+    private final int[] anIntArray32;
+    private int anInt33;
+    private int anInt34;
 
     public GameShell() {
         aBoolean1 = false;
-        anInt2 = -128;
+        int anInt2 = -128;
         anInt3 = 37395;
         anInt4 = -6002;
         anInt6 = 20;
         anInt7 = 1;
         aLongArray8 = new long[10];
         aBoolean10 = false;
-        aClass44_Sub3_Sub1_Sub2Array15 = new ImageRGB[6];
+        ImageRGB[] aClass44_Sub3_Sub1_Sub2Array15 = new ImageRGB[6];
         aBoolean17 = true;
         aBoolean18 = true;
         anIntArray31 = new int[128];
         anIntArray32 = new int[128];
     }
 
-    public void method1(int i, int j, int k) {
+    void method1(int i, int j, int k) {
         try {
             anInt11 = j;
             anInt12 = i;
@@ -82,7 +80,7 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
         throw new RuntimeException();
     }
 
-    public void method2(boolean flag, int i, int j) {
+    void method2(boolean flag, int i, int j) {
         try {
             anInt11 = i;
             if (!flag) {
@@ -197,7 +195,7 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
         }
     }
 
-    public void method3(int i) {
+    private void method3(int i) {
         try {
             anInt5 = -2;
             method8(874);
@@ -211,9 +209,7 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
                 }
                 try {
                     System.exit(0);
-                    return;
                 } catch (Throwable _ex) {
-                    return;
                 }
             }
         } catch (RuntimeException runtimeexception) {
@@ -222,7 +218,7 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
         }
     }
 
-    public void method4(int i, int j) {
+    void method4(int i, int j) {
         try {
             if (j <= 0) {
                 return;
@@ -295,11 +291,9 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
         if (mouseevent.isMetaDown()) {
             anInt23 = 2;
             anInt20 = 2;
-            return;
         } else {
             anInt23 = 1;
             anInt20 = 1;
-            return;
         }
     }
 
@@ -453,7 +447,7 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
     public void keyTyped(KeyEvent keyevent) {
     }
 
-    public int method5(int i) {
+    int method5(int i) {
         try {
             int j = -1;
             if (i >= 0) {
@@ -514,13 +508,12 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
     public void windowOpened(WindowEvent windowevent) {
     }
 
-    public void method6() {
+    void method6() {
     }
 
-    public void method7(int i) {
+    void method7(int i) {
         try {
             if (i != 9) {
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("72813, " + i + ", " + runtimeexception.toString());
@@ -528,7 +521,7 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
         }
     }
 
-    public void method8(int i) {
+    void method8(int i) {
         try {
             i = 38 / i;
             return;
@@ -538,11 +531,10 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
         throw new RuntimeException();
     }
 
-    public void method9(byte byte0) {
+    void method9(byte byte0) {
         try {
             if (byte0 != 1) {
                 aBoolean1 = !aBoolean1;
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("64489, " + byte0 + ", " + runtimeexception.toString());
@@ -550,11 +542,10 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
         }
     }
 
-    public void method10(boolean flag) {
+    void method10(boolean flag) {
         try {
             if (flag) {
                 anInt3 = 244;
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("4586, " + flag + ", " + runtimeexception.toString());
@@ -562,7 +553,7 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
         }
     }
 
-    public Component method11(int i) {
+    Component method11(int i) {
         try {
             if (i != 7) {
                 throw new NullPointerException();
@@ -584,7 +575,7 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
         thread.setPriority(i);
     }
 
-    public void method13(boolean flag, int i, String s) {
+    void method13(boolean flag, int i, String s) {
         try {
             while (aGraphics13 == null) {
                 aGraphics13 = method11(7).getGraphics();
@@ -617,7 +608,6 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
             aGraphics13.setColor(Color.white);
             aGraphics13.drawString(s, (anInt11 - fontmetrics.stringWidth(s)) / 2, j + 22);
             if (flag) {
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("88163, " + flag + ", " + i + ", " + s + ", " + runtimeexception.toString());

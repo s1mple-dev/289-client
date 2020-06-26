@@ -5,13 +5,12 @@ import com.runescape.util.SignLink;
 
 public class Skins {
 
-    public int anInt253;
-    public int anIntArray254[];
-    public int anIntArrayArray255[][];
+    public int[] anIntArray254;
+    public int[][] anIntArrayArray255;
 
     public Skins(Buffer buffer, int i) {
         try {
-            anInt253 = buffer.readUnsignedByte();
+            int anInt253 = buffer.readUnsignedByte();
             anIntArray254 = new int[anInt253];
             if (i != 0) {
                 throw new NullPointerException();

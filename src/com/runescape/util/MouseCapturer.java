@@ -1,16 +1,15 @@
 package com.runescape.util;
 
 import com.runescape.Client;
-import com.runescape.GameShell;
 
 public class MouseCapturer implements Runnable {
 
-    public Client aClient256;
+    private Client aClient256;
     public boolean aBoolean257;
-    public Object anObject258;
+    public final Object anObject258;
     public int anInt259;
-    public int anIntArray260[];
-    public int anIntArray261[];
+    public final int[] anIntArray260;
+    public final int[] anIntArray261;
 
     public MouseCapturer(int i, Client client1) {
         aBoolean257 = true;
@@ -32,8 +31,8 @@ public class MouseCapturer implements Runnable {
         while (aBoolean257) {
             synchronized (anObject258) {
                 if (anInt259 < 500) {
-                    anIntArray260[anInt259] = ((GameShell) (aClient256)).anInt21;
-                    anIntArray261[anInt259] = ((GameShell) (aClient256)).anInt22;
+                    anIntArray260[anInt259] = aClient256.anInt21;
+                    anIntArray261[anInt259] = aClient256.anInt22;
                     anInt259++;
                 }
             }

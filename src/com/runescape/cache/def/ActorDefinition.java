@@ -8,44 +8,43 @@ import com.runescape.util.SignLink;
 
 public class ActorDefinition {
 
-    public static int anInt276;
-    public static int anIntArray277[];
-    public static Buffer buffer;
-    public static ActorDefinition cache[];
-    public static int anInt280;
+    private static int anInt276;
+    private static int[] anIntArray277;
+    private static Buffer buffer;
+    private static ActorDefinition[] cache;
+    private static int anInt280;
     public static Cache aClass39_307 = new Cache((byte) 7, 30);
-    public boolean aBoolean273;
-    public int anInt274;
-    public byte aByte275;
+    private final int anInt274;
+    private final byte aByte275;
     public long aLong281;
     public String aString282;
-    public byte aByteArray283[];
+    public byte[] aByteArray283;
     public byte aByte284;
-    public int anIntArray285[];
-    public int anIntArray286[];
+    private int[] anIntArray285;
+    private int[] anIntArray286;
     public int anInt287;
     public int anInt288;
     public int anInt289;
     public int anInt290;
     public int anInt291;
-    public int anIntArray292[];
-    public int anIntArray293[];
-    public String aStringArray294[];
-    public int anInt295;
-    public int anInt296;
-    public int anInt297;
+    private int[] anIntArray292;
+    private int[] anIntArray293;
+    public String[] aStringArray294;
+    private int anInt295;
+    private int anInt296;
+    private int anInt297;
     public boolean aBoolean298;
     public int anInt299;
-    public int anInt300;
-    public int anInt301;
+    private int anInt300;
+    private int anInt301;
     public boolean aBoolean302;
-    public int anInt303;
-    public int anInt304;
+    private int anInt303;
+    private int anInt304;
     public int anInt305;
     public int anInt306;
 
-    public ActorDefinition() {
-        aBoolean273 = false;
+    private ActorDefinition() {
+        boolean aBoolean273 = false;
         anInt274 = 44692;
         aByte275 = 4;
         aLong281 = -1L;
@@ -114,7 +113,7 @@ public class ActorDefinition {
         return class12;
     }
 
-    public void method215(boolean flag, Buffer class44_sub3_sub2) {
+    private void method215(boolean flag, Buffer class44_sub3_sub2) {
         try {
             if (flag) {
                 for (int i = 1; i > 0; i++) {
@@ -200,7 +199,7 @@ public class ActorDefinition {
         throw new RuntimeException();
     }
 
-    public Model method216(int i, int j, int k, int ai[]) {
+    public Model method216(int i, int j, int k, int[] ai) {
         try {
             Model class44_sub3_sub4_sub4 = (Model) ActorDefinition.aClass39_307.method339(aLong281);
             if (i != 0) {
@@ -217,7 +216,7 @@ public class ActorDefinition {
                 if (flag) {
                     return null;
                 }
-                Model aclass44_sub3_sub4_sub4[] = new Model[anIntArray285.length];
+                Model[] aclass44_sub3_sub4_sub4 = new Model[anIntArray285.length];
                 for (int j1 = 0; j1 < anIntArray285.length; j1++) {
                     aclass44_sub3_sub4_sub4[j1] = Model.method506(anIntArray285[j1], aByte275);
                 }
@@ -276,7 +275,7 @@ public class ActorDefinition {
             if (flag) {
                 return null;
             }
-            Model aclass44_sub3_sub4_sub4[] = new Model[anIntArray286.length];
+            Model[] aclass44_sub3_sub4_sub4 = new Model[anIntArray286.length];
             for (int j = 0; j < anIntArray286.length; j++) {
                 aclass44_sub3_sub4_sub4[j] = Model.method506(anIntArray286[j], aByte275);
             }

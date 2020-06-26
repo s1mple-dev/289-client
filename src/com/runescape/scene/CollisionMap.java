@@ -4,30 +4,25 @@ import com.runescape.util.SignLink;
 
 public class CollisionMap {
 
-    public int anInt405;
-    public boolean aBoolean406;
-    public int anInt407;
-    public int anInt408;
-    public int anInt409;
-    public byte aByte410;
-    public boolean aBoolean411;
-    public int anInt412;
-    public boolean aBoolean413;
-    public int anInt414;
-    public int anInt415;
-    public int anInt416;
-    public int anInt417;
-    public int anIntArrayArray418[][];
+    private boolean aBoolean406;
+    private int anInt408;
+    private int anInt409;
+    private final int anInt412;
+    private int anInt414;
+    private int anInt415;
+    private int anInt416;
+    private int anInt417;
+    public int[][] anIntArrayArray418;
 
     public CollisionMap(int i, int j, int k) {
-        anInt405 = -550;
+        int anInt405 = -550;
         aBoolean406 = false;
         anInt408 = 8;
         anInt409 = 70;
-        aByte410 = 99;
-        aBoolean411 = true;
+        byte aByte410 = 99;
+        boolean aBoolean411 = true;
         anInt412 = 1;
-        aBoolean413 = true;
+        boolean aBoolean413 = true;
         try {
             anInt414 = 0;
             anInt415 = 0;
@@ -53,8 +48,7 @@ public class CollisionMap {
                     }
                 }
             }
-            if (i < 3 || i > 3) {
-                return;
+            if (i != 3) {
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("70688, " + i + ", " + runtimeexception.toString());
@@ -184,7 +178,6 @@ public class CollisionMap {
                         method235(k, l, 0x14000);
                         method235(k, l - 1, 1024);
                         method235(k - 1, l, 4096);
-                        return;
                     }
                 }
             }
@@ -220,7 +213,6 @@ public class CollisionMap {
             if (k != -24520) {
                 for (int k2 = 1; k2 > 0; k2++) {
                 }
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("81800, " + i + ", " + j + ", " + flag + ", " + k + ", " + l + ", " + i1 + ", " + j1
@@ -245,7 +237,7 @@ public class CollisionMap {
         throw new RuntimeException();
     }
 
-    public void method235(int i, int j, int k) {
+    private void method235(int i, int j, int k) {
         anIntArrayArray418[i][j] |= k;
     }
 
@@ -372,7 +364,6 @@ public class CollisionMap {
                         method238(l, k, 0, 0x14000);
                         method238(l, k - 1, 0, 1024);
                         method238(l - 1, k, 0, 4096);
-                        return;
                     }
                 }
             }
@@ -416,12 +407,11 @@ public class CollisionMap {
         throw new RuntimeException();
     }
 
-    public void method238(int i, int j, int k, int l) {
+    private void method238(int i, int j, int k, int l) {
         try {
             anIntArrayArray418[i][j] &= 0xffffff - l;
             if (k != 0) {
                 aBoolean406 = !aBoolean406;
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("32560, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
@@ -650,7 +640,7 @@ public class CollisionMap {
             int i2 = (l1 + i) - 1;
             int j2 = (j + i1) - 1;
             if (l < anInt412 || l > anInt412) {
-                anInt407 = 337;
+                int anInt407 = 337;
             }
             if (j1 >= l1 && j1 <= i2 && k >= j && k <= j2) {
                 return true;

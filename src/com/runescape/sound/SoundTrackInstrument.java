@@ -3,39 +3,38 @@ package com.runescape.sound;
 import com.runescape.net.Buffer;
 import com.runescape.util.SignLink;
 
-public class SoundTrackInstrument {
+class SoundTrackInstrument {
 
-    public static int anIntArray184[];
-    public static int anIntArray185[];
-    public static int anIntArray186[];
-    public static int anIntArray187[] = new int[5];
-    public static int anIntArray188[] = new int[5];
-    public static int anIntArray189[] = new int[5];
-    public static int anIntArray190[] = new int[5];
-    public static int anIntArray191[] = new int[5];
-    public boolean aBoolean164;
-    public int anInt165;
-    public int anInt166;
-    public SoundTrackEnvelope aClass1_167;
-    public SoundTrackEnvelope aClass1_168;
-    public SoundTrackEnvelope aClass1_169;
-    public SoundTrackEnvelope aClass1_170;
-    public SoundTrackEnvelope aClass1_171;
-    public SoundTrackEnvelope aClass1_172;
-    public SoundTrackEnvelope aClass1_173;
-    public SoundTrackEnvelope aClass1_174;
-    public int anIntArray175[];
-    public int anIntArray176[];
-    public int anIntArray177[];
-    public int anInt178;
-    public int anInt179;
-    public SoundFilter aClass2_180;
-    public SoundTrackEnvelope aClass1_181;
+    private static int[] anIntArray184;
+    private static int[] anIntArray185;
+    private static int[] anIntArray186;
+    private static final int[] anIntArray187 = new int[5];
+    private static final int[] anIntArray188 = new int[5];
+    private static final int[] anIntArray189 = new int[5];
+    private static final int[] anIntArray190 = new int[5];
+    private static final int[] anIntArray191 = new int[5];
+    private int anInt165;
+    private final int anInt166;
+    private SoundTrackEnvelope aClass1_167;
+    private SoundTrackEnvelope aClass1_168;
+    private SoundTrackEnvelope aClass1_169;
+    private SoundTrackEnvelope aClass1_170;
+    private SoundTrackEnvelope aClass1_171;
+    private SoundTrackEnvelope aClass1_172;
+    private SoundTrackEnvelope aClass1_173;
+    private SoundTrackEnvelope aClass1_174;
+    private final int[] anIntArray175;
+    private final int[] anIntArray176;
+    private final int[] anIntArray177;
+    private int anInt178;
+    private int anInt179;
+    private SoundFilter aClass2_180;
+    private SoundTrackEnvelope aClass1_181;
     public int anInt182;
     public int anInt183;
 
     public SoundTrackInstrument() {
-        aBoolean164 = false;
+        boolean aBoolean164 = false;
         anInt165 = 188;
         anInt166 = 810;
         anIntArray175 = new int[5];
@@ -232,7 +231,7 @@ public class SoundTrackInstrument {
         return SoundTrackInstrument.anIntArray184;
     }
 
-    public int method189(int i, int j, int k, int l) {
+    private int method189(int i, int j, int k, int l) {
         try {
             if (j != 0) {
                 anInt165 = 302;

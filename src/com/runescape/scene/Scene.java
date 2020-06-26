@@ -10,58 +10,58 @@ import com.runescape.util.SignLink;
 
 public class Scene {
 
-    public static boolean aBoolean599;
+    private static boolean aBoolean599;
     public static boolean aBoolean606 = true;
-    public static int anInt616;
-    public static int anInt617;
-    public static int anInt618;
-    public static int anInt619;
-    public static int anInt620;
-    public static int anInt621;
-    public static int anInt622;
-    public static int anInt623;
-    public static int anInt624;
-    public static int anInt625;
-    public static int anInt626;
-    public static int anInt627;
-    public static int anInt628;
-    public static int anInt629;
-    public static int anInt630;
-    public static int anInt631;
-    public static SceneSpawnRequest aClass30Array632[] = new SceneSpawnRequest[100];
-    public static int anIntArray633[] = {53, -53, -53, 53};
-    public static int anIntArray634[] = {-53, -53, 53, 53};
-    public static int anIntArray635[] = {-45, 45, 45, -45};
-    public static int anIntArray636[] = {45, 45, -45, -45};
-    public static boolean aBoolean637;
-    public static int anInt638;
-    public static int anInt639;
+    private static int anInt616;
+    private static int anInt617;
+    private static int anInt618;
+    private static int anInt619;
+    private static int anInt620;
+    private static int anInt621;
+    private static int anInt622;
+    private static int anInt623;
+    private static int anInt624;
+    private static int anInt625;
+    private static int anInt626;
+    private static int anInt627;
+    private static int anInt628;
+    private static int anInt629;
+    private static int anInt630;
+    private static int anInt631;
+    private static SceneSpawnRequest[] aClass30Array632 = new SceneSpawnRequest[100];
+    private static final int[] anIntArray633 = {53, -53, -53, 53};
+    private static final int[] anIntArray634 = {-53, -53, 53, 53};
+    private static final int[] anIntArray635 = {-45, 45, 45, -45};
+    private static final int[] anIntArray636 = {45, 45, -45, -45};
+    private static boolean aBoolean637;
+    private static int anInt638;
+    private static int anInt639;
     public static int anInt640 = -1;
     public static int anInt641 = -1;
-    public static int anInt642;
-    public static int anIntArray643[];
-    public static SceneCluster aClass23ArrayArray644[][];
-    public static int anInt645;
-    public static SceneCluster aClass23Array646[] = new SceneCluster[500];
-    public static LinkedList aClass28_647 = new LinkedList(-199);
-    public static int anIntArray648[] = {19, 55, 38, 155, 255, 110, 137, 205, 76};
-    public static int anIntArray649[] = {160, 192, 80, 96, 0, 144, 80, 48, 160};
-    public static int anIntArray650[] = {76, 8, 137, 4, 0, 1, 38, 2, 19};
-    public static int anIntArray651[] = {0, 0, 2, 0, 0, 2, 1, 1, 0};
-    public static int anIntArray652[] = {2, 0, 0, 2, 0, 0, 0, 4, 4};
-    public static int anIntArray653[] = {0, 4, 4, 8, 0, 0, 8, 0, 0};
-    public static int anIntArray654[] = {1, 1, 0, 0, 0, 8, 0, 0, 8};
-    public static int anIntArray655[] = {41, 39248, 41, 4643, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 43086, 41,
+    private static int anInt642;
+    private static int[] anIntArray643;
+    private static SceneCluster[][] aClass23ArrayArray644;
+    private static int anInt645;
+    private static final SceneCluster[] aClass23Array646 = new SceneCluster[500];
+    private static LinkedList aClass28_647 = new LinkedList(-199);
+    private static final int[] anIntArray648 = {19, 55, 38, 155, 255, 110, 137, 205, 76};
+    private static final int[] anIntArray649 = {160, 192, 80, 96, 0, 144, 80, 48, 160};
+    private static final int[] anIntArray650 = {76, 8, 137, 4, 0, 1, 38, 2, 19};
+    private static final int[] anIntArray651 = {0, 0, 2, 0, 0, 2, 1, 1, 0};
+    private static final int[] anIntArray652 = {2, 0, 0, 2, 0, 0, 0, 4, 4};
+    private static final int[] anIntArray653 = {0, 4, 4, 8, 0, 0, 8, 0, 0};
+    private static final int[] anIntArray654 = {1, 1, 0, 0, 0, 8, 0, 0, 8};
+    private static final int[] anIntArray655 = {41, 39248, 41, 4643, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 43086, 41,
             41, 41, 41, 41, 41, 41, 8602, 41, 28992, 41, 41, 41, 41, 41, 5056, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41,
             41, 41, 41, 41, 3131, 41, 41, 41};
-    public static boolean aBooleanArrayArrayArrayArray661[][][][] = new boolean[8][32][51][51];
-    public static boolean aBooleanArrayArray662[][];
-    public static int anInt663;
-    public static int anInt664;
-    public static int anInt665;
-    public static int anInt666;
-    public static int anInt667;
-    public static int anInt668;
+    private static boolean[][][][] aBooleanArrayArrayArrayArray661 = new boolean[8][32][51][51];
+    private static boolean[][] aBooleanArrayArray662;
+    private static int anInt663;
+    private static int anInt664;
+    private static int anInt665;
+    private static int anInt666;
+    private static int anInt667;
+    private static int anInt668;
 
     static {
         Scene.anInt642 = 4;
@@ -69,38 +69,38 @@ public class Scene {
         Scene.aClass23ArrayArray644 = new SceneCluster[Scene.anInt642][500];
     }
 
-    public int anInt598;
-    public int anInt600;
-    public int anInt601;
-    public byte aByte602;
-    public int anInt603;
-    public int anInt604;
-    public int anInt605;
-    public int anInt607;
-    public int anInt608;
-    public int anInt609;
-    public int anIntArrayArrayArray610[][][];
-    public SceneTile tiles[][][];
-    public int anInt612;
-    public int anInt613;
-    public SceneSpawnRequest aClass30Array614[];
-    public int anIntArrayArrayArray615[][][];
-    public int anIntArray656[];
-    public int anIntArray657[];
-    public int anInt658;
-    public int anIntArrayArray659[][] = {new int[16], {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+    private int anInt598;
+    private int anInt600;
+    private int anInt601;
+    private byte aByte602;
+    private int anInt603;
+    private int anInt604;
+    private int anInt605;
+    private int anInt607;
+    private int anInt608;
+    private int anInt609;
+    private int[][][] anIntArrayArrayArray610;
+    private SceneTile[][][] tiles;
+    private int anInt612;
+    private int anInt613;
+    private SceneSpawnRequest[] aClass30Array614;
+    private int[][][] anIntArrayArrayArray615;
+    private int[] anIntArray656;
+    private int[] anIntArray657;
+    private int anInt658;
+    private final int[][] anIntArrayArray659 = {new int[16], {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
             {1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1}, {1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
             {0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1}, {0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
             {1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1}, {1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0}, {1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1},
             {1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1}};
-    public int anIntArrayArray660[][] = {{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15},
+    private final int[][] anIntArrayArray660 = {{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15},
             {12, 8, 4, 0, 13, 9, 5, 1, 14, 10, 6, 2, 15, 11, 7, 3},
             {15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0},
             {3, 7, 11, 15, 2, 6, 10, 14, 1, 5, 9, 13, 0, 4, 8, 12}};
 
-    public Scene(int i, int j, int ai[][][], int k, int l) {
+    public Scene(int i, int j, int[][][] ai, int k, int l) {
         anInt598 = 195;
         anInt601 = 6;
         aByte602 = -90;
@@ -173,7 +173,7 @@ public class Scene {
         throw new RuntimeException();
     }
 
-    public static void method314(int ai[], int i, int j, int k, int l, int i1) {
+    public static void method314(int[] ai, int i, int j, int k, int l, int i1) {
         try {
             if (k != 3) {
                 return;
@@ -184,7 +184,7 @@ public class Scene {
             Scene.anInt668 = j;
             Scene.anInt663 = i1 / 2;
             Scene.anInt664 = j / 2;
-            boolean aflag[][][][] = new boolean[9][32][53][53];
+            boolean[][][][] aflag = new boolean[9][32][53][53];
             for (int j1 = 128; j1 <= 384; j1 += 32) {
                 for (int k1 = 0; k1 < 2048; k1 += 64) {
                     Scene.anInt628 = Model.anIntArray1598[j1];
@@ -246,7 +246,7 @@ public class Scene {
         throw new RuntimeException();
     }
 
-    public static boolean method315(int i, int j, int k, int l) {
+    private static boolean method315(int i, int j, int k, int l) {
         try {
             if (j <= 0) {
                 for (int i1 = 1; i1 > 0; i1++) {
@@ -310,7 +310,6 @@ public class Scene {
             }
             if (byte0 != 7) {
                 Scene.aBoolean599 = !Scene.aBoolean599;
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("62223, " + byte0 + ", " + i + ", " + runtimeexception.toString());
@@ -352,10 +351,8 @@ public class Scene {
     public void method282(int i, int j, int k, int l) {
         SceneTile class44_sub2 = tiles[i][j][k];
         if (class44_sub2 == null) {
-            return;
         } else {
             tiles[i][j][k].anInt1350 = l;
-            return;
         }
     }
 
@@ -545,11 +542,11 @@ public class Scene {
         throw new RuntimeException();
     }
 
-    public boolean method289(int i, int j, int k, int l, int i1, Renderable class44_sub3_sub4, int j1, boolean flag,
-                             int k1, int l1) {
+    public void method289(int i, int j, int k, int l, int i1, Renderable class44_sub3_sub4, int j1, boolean flag,
+                          int k1, int l1) {
         try {
             if (class44_sub3_sub4 == null) {
-                return true;
+                return;
             }
             int i2 = l - i;
             int j2 = k1 - i;
@@ -574,8 +571,9 @@ public class Scene {
             k2 /= 128;
             i1 = 50 / i1;
             l2 /= 128;
-            return method291(l1, i2, j2, (k2 - i2) + 1, (l2 - j2) + 1, l, k1, k, class44_sub3_sub4, j1, true, j,
+            method291(l1, i2, j2, (k2 - i2) + 1, (l2 - j2) + 1, l, k1, k, class44_sub3_sub4, j1, true, j,
                     (byte) 0);
+            return;
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("35176, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + class44_sub3_sub4
                     + ", " + j1 + ", " + flag + ", " + k1 + ", " + l1 + ", " + runtimeexception.toString());
@@ -583,17 +581,18 @@ public class Scene {
         throw new RuntimeException();
     }
 
-    public boolean method290(int i, int j, boolean flag, int k, int l, int i1, int j1, Renderable class44_sub3_sub4,
-                             int k1, int l1, int i2, int j2, int k2) {
+    public void method290(int i, int j, boolean flag, int k, int l, int i1, int j1, Renderable class44_sub3_sub4,
+                          int k1, int l1, int i2, int j2, int k2) {
         try {
             if (!flag) {
                 anInt598 = 52;
             }
             if (class44_sub3_sub4 == null) {
-                return true;
+                return;
             } else {
-                return method291(l1, j2, k, (l - j2) + 1, (j1 - k) + 1, i1, k1, i2, class44_sub3_sub4, k2, true, j,
+                method291(l1, j2, k, (l - j2) + 1, (j1 - k) + 1, i1, k1, i2, class44_sub3_sub4, k2, true, j,
                         (byte) 0);
+                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("59171, " + i + ", " + j + ", " + flag + ", " + k + ", " + l + ", " + i1 + ", " + j1
@@ -603,8 +602,8 @@ public class Scene {
         throw new RuntimeException();
     }
 
-    public boolean method291(int i, int j, int k, int l, int i1, int j1, int k1, int l1, Renderable class44_sub3_sub4,
-                             int i2, boolean flag, int j2, byte byte0) {
+    private boolean method291(int i, int j, int k, int l, int i1, int j1, int k1, int l1, Renderable class44_sub3_sub4,
+                              int i2, boolean flag, int j2, byte byte0) {
         for (int k2 = j; k2 < j + l; k2++) {
             for (int l2 = k; l2 < k + i1; l2++) {
                 if (k2 < 0 || l2 < 0 || k2 >= anInt608 || l2 >= anInt609) {
@@ -672,7 +671,6 @@ public class Scene {
             anInt613 = 0;
             if (!flag) {
                 anInt605 = -18;
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("98891, " + flag + ", " + runtimeexception.toString());
@@ -680,7 +678,7 @@ public class Scene {
         }
     }
 
-    public void method293(int i, SceneSpawnRequest class30) {
+    private void method293(int i, SceneSpawnRequest class30) {
         try {
             for (int j = class30.anInt545; j <= class30.anInt546; j++) {
                 for (int k = class30.anInt547; k <= class30.anInt548; k++) {
@@ -706,7 +704,6 @@ public class Scene {
                 }
             }
             if (i != anInt601) {
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("97599, " + i + ", " + class30 + ", " + runtimeexception.toString());
@@ -729,7 +726,6 @@ public class Scene {
             class13.anInt309 = i1 + ((class13.anInt309 - i1) * j) / 16;
             class13.anInt310 = j1 + ((class13.anInt310 - j1) * j) / 16;
             if (byte0 != aByte602) {
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("98774, " + i + ", " + j + ", " + byte0 + ", " + k + ", " + l + ", "
@@ -781,7 +777,7 @@ public class Scene {
     public void method297(int i, int j, int k, int l) {
         try {
             SceneTile class44_sub2 = tiles[j][l][k];
-            if (i < 2 || i > 2) {
+            if (i != 2) {
                 anInt605 = -437;
             }
             if (class44_sub2 == null) {
@@ -804,7 +800,7 @@ public class Scene {
     public void method298(int i, int j, int k, int l) {
         try {
             SceneTile class44_sub2 = tiles[l][i][j];
-            if (k < 3 || k > 3) {
+            if (k != 3) {
                 return;
             }
             if (class44_sub2 == null) {
@@ -822,10 +818,8 @@ public class Scene {
     public void method299(int i, int j, int k) {
         SceneTile class44_sub2 = tiles[i][j][k];
         if (class44_sub2 == null) {
-            return;
         } else {
             class44_sub2.aClass19_1345 = null;
-            return;
         }
     }
 
@@ -1017,8 +1011,7 @@ public class Scene {
                     }
                 }
             }
-            if (j < 7 || j > 7) {
-                return;
+            if (j != 7) {
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("99141, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", "
@@ -1027,7 +1020,7 @@ public class Scene {
         }
     }
 
-    public void method310(int i, boolean flag, int j, int k, Model class44_sub3_sub4_sub4) {
+    private void method310(int i, boolean flag, int j, int k, Model class44_sub3_sub4_sub4) {
         try {
             if (!flag) {
                 anInt600 = 80;
@@ -1062,7 +1055,6 @@ public class Scene {
                         && class44_sub2_3.aClass17_1344.aClass44_Sub3_Sub4_402.aClass25Array1411 != null) {
                     method312(class44_sub3_sub4_sub4, (Model) class44_sub2_3.aClass17_1344.aClass44_Sub3_Sub4_402, 128,
                             0, -128, true);
-                    return;
                 }
             }
         } catch (RuntimeException runtimeexception) {
@@ -1072,14 +1064,14 @@ public class Scene {
         }
     }
 
-    public void method311(int i, int j, int k, int l, int i1, int j1, Model class44_sub3_sub4_sub4) {
+    private void method311(int i, int j, int k, int l, int i1, int j1, Model class44_sub3_sub4_sub4) {
         try {
             boolean flag = true;
             int k1 = i;
             int l1 = i + j;
             int i2 = l - 1;
             int j2 = l + k;
-            if (j1 < 5 || j1 > 5) {
+            if (j1 != 5) {
                 return;
             }
             for (int k2 = i1; k2 <= i1 + 1; k2++) {
@@ -1140,14 +1132,14 @@ public class Scene {
         throw new RuntimeException();
     }
 
-    public void method312(Model class44_sub3_sub4_sub4, Model class44_sub3_sub4_sub4_1, int i, int j, int k,
-                          boolean flag) {
+    private void method312(Model class44_sub3_sub4_sub4, Model class44_sub3_sub4_sub4_1, int i, int j, int k,
+                           boolean flag) {
         anInt658++;
         int l = 0;
-        int ai[] = class44_sub3_sub4_sub4_1.anIntArray1536;
+        int[] ai = class44_sub3_sub4_sub4_1.anIntArray1536;
         int i1 = class44_sub3_sub4_sub4_1.anInt1535;
         for (int j1 = 0; j1 < class44_sub3_sub4_sub4.anInt1535; j1++) {
-            VertexNormal class25 = ((Renderable) (class44_sub3_sub4_sub4)).aClass25Array1411[j1];
+            VertexNormal class25 = class44_sub3_sub4_sub4.aClass25Array1411[j1];
             VertexNormal class25_1 = class44_sub3_sub4_sub4.aClass25Array1569[j1];
             if (class25_1.anInt503 != 0) {
                 int i2 = class44_sub3_sub4_sub4.anIntArray1537[j1] - j;
@@ -1157,7 +1149,7 @@ public class Scene {
                         int k2 = class44_sub3_sub4_sub4.anIntArray1538[j1] - k;
                         if (k2 >= class44_sub3_sub4_sub4_1.anInt1558 && k2 <= class44_sub3_sub4_sub4_1.anInt1557) {
                             for (int l2 = 0; l2 < i1; l2++) {
-                                VertexNormal class25_2 = ((Renderable) (class44_sub3_sub4_sub4_1)).aClass25Array1411[l2];
+                                VertexNormal class25_2 = class44_sub3_sub4_sub4_1.aClass25Array1411[l2];
                                 VertexNormal class25_3 = class44_sub3_sub4_sub4_1.aClass25Array1569[l2];
                                 if (j2 == ai[l2] && k2 == class44_sub3_sub4_sub4_1.anIntArray1538[l2]
                                         && i2 == class44_sub3_sub4_sub4_1.anIntArray1537[l2] && class25_3.anInt503 != 0) {
@@ -1198,7 +1190,7 @@ public class Scene {
         }
     }
 
-    public void method313(int ai[], int i, int j, int k, int l, int i1) {
+    public void method313(int[] ai, int i, int j, int k, int l, int i1) {
         SceneTile class44_sub2 = tiles[k][l][i1];
         if (class44_sub2 == null) {
             return;
@@ -1226,8 +1218,8 @@ public class Scene {
         int i2 = class15.anInt384;
         int j2 = class15.anInt385;
         int k2 = class15.anInt386;
-        int ai1[] = anIntArrayArray659[l1];
-        int ai2[] = anIntArrayArray660[i2];
+        int[] ai1 = anIntArrayArray659[l1];
+        int[] ai2 = anIntArrayArray660[i2];
         int l2 = 0;
         if (j2 != 0) {
             for (int i3 = 0; i3 < 4; i3++) {
@@ -1319,7 +1311,7 @@ public class Scene {
             method323(309);
             Scene.anInt616 = 0;
             for (int l1 = anInt612; l1 < anInt607; l1++) {
-                SceneTile aclass44_sub2[][] = tiles[l1];
+                SceneTile[][] aclass44_sub2 = tiles[l1];
                 for (int j2 = Scene.anInt619; j2 < Scene.anInt620; j2++) {
                     for (int l2 = Scene.anInt621; l2 < Scene.anInt622; l2++) {
                         SceneTile class44_sub2 = aclass44_sub2[j2][l2];
@@ -1345,7 +1337,7 @@ public class Scene {
                 }
             }
             for (int i2 = anInt612; i2 < anInt607; i2++) {
-                SceneTile aclass44_sub2_1[][] = tiles[i2];
+                SceneTile[][] aclass44_sub2_1 = tiles[i2];
                 for (int i3 = -25; i3 <= 0; i3++) {
                     int j3 = Scene.anInt623 + i3;
                     int l3 = Scene.anInt623 - i3;
@@ -1390,7 +1382,7 @@ public class Scene {
                 }
             }
             for (int k2 = anInt612; k2 < anInt607; k2++) {
-                SceneTile aclass44_sub2_2[][] = tiles[k2];
+                SceneTile[][] aclass44_sub2_2 = tiles[k2];
                 for (int k3 = -25; k3 <= 0; k3++) {
                     int i4 = Scene.anInt623 + k3;
                     int k4 = Scene.anInt623 - k3;
@@ -1443,7 +1435,7 @@ public class Scene {
         throw new RuntimeException();
     }
 
-    public void method318(SceneTile class44_sub2, boolean flag) {
+    private void method318(SceneTile class44_sub2, boolean flag) {
         Scene.aClass28_647.method256(class44_sub2);
         do {
             SceneTile class44_sub2_1;
@@ -1457,7 +1449,7 @@ public class Scene {
             int j = class44_sub2_1.anInt1338;
             int k = class44_sub2_1.anInt1336;
             int l = class44_sub2_1.anInt1339;
-            SceneTile aclass44_sub2[][] = tiles[k];
+            SceneTile[][] aclass44_sub2 = tiles[k];
             if (class44_sub2_1.aBoolean1351) {
                 if (flag) {
                     if (k > 0) {
@@ -1937,7 +1929,7 @@ public class Scene {
         } while (true);
     }
 
-    public void method319(GenericTile class27, int i, int j, int k, int l, int i1, int j1, int k1) {
+    private void method319(GenericTile class27, int i, int j, int k, int l, int i1, int j1, int k1) {
         int l1;
         int i2 = l1 = (j1 << 7) - Scene.anInt625;
         int j2;
@@ -2038,7 +2030,6 @@ public class Scene {
                 if (class27.anInt525 != 0xbc614e) {
                     Rasterizer3D
                             .method429(j5, l5, l6, i5, k5, k6, class27.anInt525, class27.anInt526, class27.anInt528);
-                    return;
                 }
             } else {
                 if (!Scene.aBoolean606) {
@@ -2053,7 +2044,7 @@ public class Scene {
         }
     }
 
-    public void method320(int i, int j, byte byte0, int k, int l, ComplexTile class15, int i1, int j1) {
+    private void method320(int i, int j, byte byte0, int k, int l, ComplexTile class15, int i1, int j1) {
         try {
             int k1 = class15.anIntArray372.length;
             if (byte0 != -89) {
@@ -2142,7 +2133,7 @@ public class Scene {
         throw new RuntimeException();
     }
 
-    public int method321(int i, int j, int k) {
+    private int method321(int i, int j, int k) {
         try {
             i = 127 - i;
             i = (i * (j & 0x7f)) / 160;
@@ -2162,7 +2153,7 @@ public class Scene {
         throw new RuntimeException();
     }
 
-    public boolean method322(int i, int j, int k, int l, int i1, int j1, int k1, int l1) {
+    private boolean method322(int i, int j, int k, int l, int i1, int j1, int k1, int l1) {
         if (j < k && j < l && j < i1) {
             return false;
         }
@@ -2181,11 +2172,11 @@ public class Scene {
         return i2 * k2 > 0 && k2 * j2 > 0;
     }
 
-    public void method323(int i) {
+    private void method323(int i) {
         try {
             i = 89 / i;
             int j = Scene.anIntArray643[Scene.anInt617];
-            SceneCluster aclass23[] = Scene.aClass23ArrayArray644[Scene.anInt617];
+            SceneCluster[] aclass23 = Scene.aClass23ArrayArray644[Scene.anInt617];
             Scene.anInt645 = 0;
             for (int k = 0; k < j; k++) {
                 SceneCluster class23 = aclass23[k];
@@ -2317,7 +2308,7 @@ public class Scene {
         throw new RuntimeException();
     }
 
-    public boolean method324(int i, int j, int k) {
+    private boolean method324(int i, int j, int k) {
         int l = anIntArrayArrayArray615[i][j][k];
         if (l == -Scene.anInt618) {
             return false;
@@ -2339,7 +2330,7 @@ public class Scene {
         }
     }
 
-    public boolean method325(int i, int j, int k, int l) {
+    private boolean method325(int i, int j, int k, int l) {
         if (!method324(i, j, k)) {
             return false;
         }
@@ -2459,7 +2450,7 @@ public class Scene {
         }
     }
 
-    public boolean method326(int i, int j, int k, int l) {
+    private boolean method326(int i, int j, int k, int l) {
         if (!method324(i, j, k)) {
             return false;
         }
@@ -2471,7 +2462,7 @@ public class Scene {
                 && method328(i1 + 1, anIntArrayArrayArray610[i][j][k + 1] - l, (j1 + 128) - 1);
     }
 
-    public boolean method327(int i, int j, int k, int l, int i1, int j1) {
+    private boolean method327(int i, int j, int k, int l, int i1, int j1) {
         if (j == k && l == i1) {
             if (!method324(i, j, l)) {
                 return false;
@@ -2507,7 +2498,7 @@ public class Scene {
         return method328(j3, i3, k3);
     }
 
-    public boolean method328(int i, int j, int k) {
+    private boolean method328(int i, int j, int k) {
         for (int l = 0; l < Scene.anInt645; l++) {
             SceneCluster class23 = Scene.aClass23Array646[l];
             if (class23.anInt482 == 1) {

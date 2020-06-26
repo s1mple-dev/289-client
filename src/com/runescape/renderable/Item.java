@@ -6,7 +6,7 @@ import com.runescape.util.SignLink;
 
 public class Item extends Renderable {
 
-    public boolean aBoolean1494;
+    private boolean aBoolean1494;
     public int anInt1495;
     public int anInt1496;
 

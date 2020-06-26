@@ -7,32 +7,32 @@ import com.runescape.util.SignLink;
 
 public class Projectile extends Renderable {
 
-    public int anInt1497;
-    public int anInt1498;
-    public SpotAnimation aClass32_1499;
+    private int anInt1497;
+    private int anInt1498;
+    private SpotAnimation aClass32_1499;
     public int anInt1500;
-    public int anInt1501;
-    public int anInt1502;
-    public int anInt1503;
+    private int anInt1501;
+    private int anInt1502;
+    private int anInt1503;
     public int anInt1504;
     public int anInt1505;
     public int anInt1506;
-    public int anInt1507;
-    public int anInt1508;
+    private int anInt1507;
+    private int anInt1508;
     public int anInt1509;
-    public boolean aBoolean1510;
+    private boolean aBoolean1510;
     public double aDouble1511;
     public double aDouble1512;
     public double aDouble1513;
-    public double aDouble1514;
-    public double aDouble1515;
-    public double aDouble1516;
-    public double aDouble1517;
-    public double aDouble1518;
+    private double aDouble1514;
+    private double aDouble1515;
+    private double aDouble1516;
+    private double aDouble1517;
+    private double aDouble1518;
     public int anInt1519;
-    public int anInt1520;
-    public int anInt1521;
-    public int anInt1522;
+    private int anInt1520;
+    private int anInt1521;
+    private int anInt1522;
 
     public Projectile(int i, int j, int k, int l, int i1, int j1, int k1, int l1, int i2, int j2, boolean flag, int k2) {
         anInt1498 = 6;
@@ -112,7 +112,6 @@ public class Projectile extends Renderable {
                         anInt1521 = 0;
                     }
                 }
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("69669, " + i + ", " + j + ", " + runtimeexception.toString());

@@ -7,69 +7,67 @@ import com.runescape.graphic.Model;
 import com.runescape.graphic.Rasterizer;
 import com.runescape.graphic.Rasterizer3D;
 import com.runescape.net.Buffer;
-import com.runescape.renderable.Renderable;
 import com.runescape.util.SignLink;
 
 public class ItemDefinition {
 
-    public static int anInt319 = 6;
-    public static byte aByte320 = 1;
-    public static byte aByte321 = 8;
+    private static int anInt319 = 6;
+    private static final byte aByte320 = 1;
+    private static final byte aByte321 = 8;
     public static int anInt323;
-    public static int anIntArray324[];
-    public static Buffer buffer;
-    public static ItemDefinition cache[];
-    public static int anInt327;
+    private static int[] anIntArray324;
+    private static Buffer buffer;
+    private static ItemDefinition[] cache;
+    private static int anInt327;
     public static boolean aBoolean328 = true;
     public static Cache aClass39_369 = new Cache((byte) 7, 50);
     public static Cache aClass39_370 = new Cache((byte) 7, 100);
-    public boolean aBoolean316;
-    public int anInt317;
-    public byte aByte318;
-    public int anInt322;
+    private int anInt317;
+    private final byte aByte318;
+    private int anInt322;
     public int anInt329;
-    public int anInt330;
+    private int anInt330;
     public String aString331;
-    public byte aByteArray332[];
-    public int anIntArray333[];
-    public int anIntArray334[];
+    public byte[] aByteArray332;
+    private int[] anIntArray333;
+    private int[] anIntArray334;
     public int anInt335;
     public int anInt336;
     public int anInt337;
-    public int anInt338;
-    public int anInt339;
-    public int anInt340;
-    public int anInt341;
+    private int anInt338;
+    private int anInt339;
+    private int anInt340;
+    private int anInt341;
     public boolean aBoolean342;
     public int anInt343;
     public boolean aBoolean344;
-    public String aStringArray345[];
-    public String aStringArray346[];
-    public int anInt347;
-    public int anInt348;
-    public byte aByte349;
-    public int anInt350;
-    public int anInt351;
-    public byte aByte352;
-    public int anInt353;
-    public int anInt354;
-    public int anInt355;
-    public int anInt356;
-    public int anInt357;
-    public int anInt358;
-    public int anIntArray359[];
-    public int anIntArray360[];
-    public int anInt361;
-    public int anInt362;
-    public int anInt363;
-    public int anInt364;
-    public int anInt365;
-    public int anInt366;
-    public int anInt367;
+    public String[] aStringArray345;
+    public String[] aStringArray346;
+    private int anInt347;
+    private int anInt348;
+    private byte aByte349;
+    private int anInt350;
+    private int anInt351;
+    private byte aByte352;
+    private int anInt353;
+    private int anInt354;
+    private int anInt355;
+    private int anInt356;
+    private int anInt357;
+    private int anInt358;
+    private int[] anIntArray359;
+    private int[] anIntArray360;
+    private int anInt361;
+    private int anInt362;
+    private int anInt363;
+    private int anInt364;
+    private int anInt365;
+    private int anInt366;
+    private int anInt367;
     public int anInt368;
 
-    public ItemDefinition() {
-        aBoolean316 = false;
+    private ItemDefinition() {
+        boolean aBoolean316 = false;
         anInt317 = 44692;
         aByte318 = 4;
         anInt322 = 2;
@@ -101,7 +99,6 @@ public class ItemDefinition {
             ItemDefinition.buffer = null;
             if (byte0 != 42) {
                 ItemDefinition.anInt319 = 87;
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("13898, " + byte0 + ", " + runtimeexception.toString());
@@ -175,8 +172,8 @@ public class ItemDefinition {
             ImageRGB class44_sub3_sub1_sub2_1 = new ImageRGB(32, 32);
             int k1 = Rasterizer3D.anInt1423;
             int l1 = Rasterizer3D.anInt1424;
-            int ai[] = Rasterizer3D.anIntArray1429;
-            int ai1[] = Rasterizer.anIntArray1369;
+            int[] ai = Rasterizer3D.anIntArray1429;
+            int[] ai1 = Rasterizer.anIntArray1369;
             int i2 = Rasterizer.anInt1370;
             int j2 = Rasterizer.anInt1371;
             int k2 = Rasterizer.anInt1374;
@@ -197,7 +194,7 @@ public class ItemDefinition {
             int l3 = Rasterizer3D.anIntArray1427[class14.anInt336] * k3 >> 16;
             int i4 = Rasterizer3D.anIntArray1428[class14.anInt336] * k3 >> 16;
             class44_sub3_sub4_sub4.method526(0, class14.anInt337, class14.anInt338, class14.anInt336, class14.anInt339,
-                    l3 + ((Renderable) (class44_sub3_sub4_sub4)).anInt1412 / 2 + class14.anInt340, i4
+                    l3 + class44_sub3_sub4_sub4.anInt1412 / 2 + class14.anInt340, i4
                             + class14.anInt340);
             for (int i5 = 31; i5 >= 0; i5--) {
                 for (int j4 = 31; j4 >= 0; j4--) {
@@ -275,7 +272,7 @@ public class ItemDefinition {
         throw new RuntimeException();
     }
 
-    public void method221() {
+    private void method221() {
         anInt330 = 0;
         aString331 = null;
         aByteArray332 = null;
@@ -317,7 +314,7 @@ public class ItemDefinition {
         anInt368 = 0;
     }
 
-    public void method222(boolean flag, Buffer class44_sub3_sub2) {
+    private void method222(boolean flag, Buffer class44_sub3_sub2) {
         try {
             if (flag) {
                 throw new NullPointerException();
@@ -433,7 +430,7 @@ public class ItemDefinition {
         throw new RuntimeException();
     }
 
-    public void method223(int i) {
+    private void method223(int i) {
         try {
             ItemDefinition class14 = ItemDefinition.method220(anInt362);
             anInt330 = class14.anInt330;
@@ -586,12 +583,12 @@ public class ItemDefinition {
                 if (i1 != -1) {
                     Model class44_sub3_sub4_sub4_1 = Model.method506(l, aByte318);
                     Model class44_sub3_sub4_sub4_3 = Model.method506(i1, aByte318);
-                    Model aclass44_sub3_sub4_sub4_1[] = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_1,
+                    Model[] aclass44_sub3_sub4_sub4_1 = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_1,
                             class44_sub3_sub4_sub4_3};
                     class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4_1, 3, -33019);
                 } else {
                     Model class44_sub3_sub4_sub4_2 = Model.method506(l, aByte318);
-                    Model aclass44_sub3_sub4_sub4[] = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_2};
+                    Model[] aclass44_sub3_sub4_sub4 = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_2};
                     class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4, 2, -33019);
                 }
             }
@@ -656,7 +653,7 @@ public class ItemDefinition {
             Model class44_sub3_sub4_sub4 = Model.method506(k, aByte318);
             if (l != -1) {
                 Model class44_sub3_sub4_sub4_1 = Model.method506(l, aByte318);
-                Model aclass44_sub3_sub4_sub4[] = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_1};
+                Model[] aclass44_sub3_sub4_sub4 = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_1};
                 class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4, 2, -33019);
             }
             if (anIntArray333 != null) {

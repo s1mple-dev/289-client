@@ -7,16 +7,15 @@ import java.awt.image.*;
 
 public class ProducingGraphicsBuffer implements ImageProducer, ImageObserver {
 
-    public int anInt581;
-    public int anIntArray582[];
-    public int anInt583;
-    public int anInt584;
-    public ColorModel aColorModel585;
-    public ImageConsumer anImageConsumer586;
-    public Image anImage587;
+    public int[] anIntArray582;
+    private int anInt583;
+    private int anInt584;
+    private ColorModel aColorModel585;
+    private ImageConsumer anImageConsumer586;
+    private Image anImage587;
 
     public ProducingGraphicsBuffer(Component component, int i, int j, int k) {
-        anInt581 = 831;
+        int anInt581 = 831;
         try {
             anInt583 = i;
             anInt584 = j;
@@ -24,7 +23,7 @@ public class ProducingGraphicsBuffer implements ImageProducer, ImageObserver {
             aColorModel585 = new DirectColorModel(32, 0xff0000, 65280, 255);
             anImage587 = component.createImage(this);
             method274();
-            if (k < 2 || k > 2) {
+            if (k != 2) {
                 anInt581 = 205;
             }
             component.prepareImage(anImage587, this);
@@ -45,7 +44,6 @@ public class ProducingGraphicsBuffer implements ImageProducer, ImageObserver {
         try {
             Rasterizer.method406(-78, anIntArray582, anInt583, anInt584);
             if (byte0 != 5) {
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("43640, " + byte0 + ", " + runtimeexception.toString());
@@ -99,13 +97,11 @@ public class ProducingGraphicsBuffer implements ImageProducer, ImageObserver {
         System.out.println("TDLR");
     }
 
-    public synchronized void method274() {
+    private synchronized void method274() {
         if (anImageConsumer586 == null) {
-            return;
         } else {
             anImageConsumer586.setPixels(0, 0, anInt583, anInt584, aColorModel585, anIntArray582, 0, anInt583);
             anImageConsumer586.imageComplete(2);
-            return;
         }
     }
 

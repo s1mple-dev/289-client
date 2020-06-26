@@ -1,6 +1,6 @@
 package com.runescape.scene;
 
-public class SceneCluster {
+class SceneCluster {
 
     public int anInt471;
     public int anInt472;

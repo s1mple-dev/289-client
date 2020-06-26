@@ -7,21 +7,19 @@ import com.runescape.util.SignLink;
 
 public class IdentityKit {
 
-    public static boolean aBoolean462;
+    private static boolean aBoolean462;
     public static int anInt463;
-    public static IdentityKit cache[];
-    public boolean aBoolean459;
-    public byte aByte460;
-    public int anInt461;
+    public static IdentityKit[] cache;
+    private final byte aByte460;
     public int anInt465;
-    public int anIntArray466[];
-    public int anIntArray467[];
-    public int anIntArray468[];
-    public int anIntArray469[] = {-1, -1, -1, -1, -1};
+    private int[] anIntArray466;
+    private final int[] anIntArray467;
+    private final int[] anIntArray468;
+    private final int[] anIntArray469 = {-1, -1, -1, -1, -1};
     public boolean aBoolean470;
 
-    public IdentityKit() {
-        aBoolean459 = false;
+    private IdentityKit() {
+        boolean aBoolean459 = false;
         aByte460 = 4;
         anInt465 = -1;
         anIntArray467 = new int[6];
@@ -52,7 +50,7 @@ public class IdentityKit {
         throw new RuntimeException();
     }
 
-    public void method248(boolean flag, Buffer class44_sub3_sub2) {
+    private void method248(boolean flag, Buffer class44_sub3_sub2) {
         try {
             if (flag) {
                 throw new NullPointerException();
@@ -94,7 +92,7 @@ public class IdentityKit {
                 return true;
             }
             boolean flag = true;
-            if (i < 9 || i > 9) {
+            if (i != 9) {
                 throw new NullPointerException();
             }
             for (int j = 0; j < anIntArray466.length; j++) {
@@ -114,9 +112,9 @@ public class IdentityKit {
             if (anIntArray466 == null) {
                 return null;
             }
-            Model aclass44_sub3_sub4_sub4[] = new Model[anIntArray466.length];
+            Model[] aclass44_sub3_sub4_sub4 = new Model[anIntArray466.length];
             if (i != 0) {
-                anInt461 = 428;
+                int anInt461 = 428;
             }
             for (int j = 0; j < anIntArray466.length; j++) {
                 aclass44_sub3_sub4_sub4[j] = Model.method506(anIntArray466[j], aByte460);
@@ -160,7 +158,7 @@ public class IdentityKit {
 
     public Model method252(byte byte0) {
         try {
-            Model aclass44_sub3_sub4_sub4[] = new Model[5];
+            Model[] aclass44_sub3_sub4_sub4 = new Model[5];
             int i = 0;
             for (int j = 0; j < 5; j++) {
                 if (anIntArray469[j] != -1) {

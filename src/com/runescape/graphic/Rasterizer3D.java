@@ -5,33 +5,33 @@ import com.runescape.util.SignLink;
 
 public class Rasterizer3D extends Rasterizer {
 
-    public static int anInt1414 = 8;
-    public static int anInt1415;
-    public static boolean aBoolean1416 = true;
-    public static boolean aBoolean1417 = true;
+    private static final int anInt1414 = 8;
+    private static int anInt1415;
+    private static boolean aBoolean1416 = true;
+    private static boolean aBoolean1417 = true;
     public static boolean aBoolean1418 = true;
     public static boolean aBoolean1419;
-    public static boolean aBoolean1420;
+    private static boolean aBoolean1420;
     public static boolean aBoolean1421 = true;
     public static int anInt1422;
     public static int anInt1423;
     public static int anInt1424;
-    public static int anIntArray1425[];
-    public static int anIntArray1426[];
-    public static int anIntArray1427[];
-    public static int anIntArray1428[];
-    public static int anIntArray1429[];
-    public static int anInt1430;
-    public static IndexedImage aClass44_Sub3_Sub1_Sub3Array1431[] = new IndexedImage[50];
-    public static boolean aBooleanArray1432[] = new boolean[50];
-    public static int anIntArray1433[] = new int[50];
-    public static int anInt1434;
-    public static int anIntArrayArray1435[][];
-    public static int anIntArrayArray1436[][] = new int[50][];
-    public static int anIntArray1437[] = new int[50];
+    private static int[] anIntArray1425;
+    public static int[] anIntArray1426;
+    public static int[] anIntArray1427;
+    public static int[] anIntArray1428;
+    public static int[] anIntArray1429;
+    private static int anInt1430;
+    public static IndexedImage[] aClass44_Sub3_Sub1_Sub3Array1431 = new IndexedImage[50];
+    private static boolean[] aBooleanArray1432 = new boolean[50];
+    private static int[] anIntArray1433 = new int[50];
+    private static int anInt1434;
+    private static int[][] anIntArrayArray1435;
+    private static int[][] anIntArrayArray1436 = new int[50][];
+    public static int[] anIntArray1437 = new int[50];
     public static int anInt1438;
-    public static int anIntArray1439[] = new int[0x10000];
-    public static int anIntArrayArray1440[][] = new int[50][];
+    public static int[] anIntArray1439 = new int[0x10000];
+    private static int[][] anIntArrayArray1440 = new int[50][];
 
     static {
         Rasterizer3D.anIntArray1425 = new int[512];
@@ -132,7 +132,7 @@ public class Rasterizer3D extends Rasterizer {
 
     public static void method422(int i, int j) {
         try {
-            if (i < 1 || i > 1) {
+            if (i != 1) {
                 Rasterizer3D.anInt1415 = 245;
             }
             if (Rasterizer3D.anIntArrayArray1435 == null) {
@@ -145,7 +145,6 @@ public class Rasterizer3D extends Rasterizer {
                 for (int k = 0; k < 50; k++) {
                     Rasterizer3D.anIntArrayArray1436[k] = null;
                 }
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("73856, " + i + ", " + j + ", " + runtimeexception.toString());
@@ -170,7 +169,6 @@ public class Rasterizer3D extends Rasterizer {
             }
             if (flag) {
                 Rasterizer3D.aBoolean1416 = !Rasterizer3D.aBoolean1416;
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("81199, " + class47 + ", " + flag + ", " + runtimeexception.toString());
@@ -214,7 +212,7 @@ public class Rasterizer3D extends Rasterizer {
                 return;
             }
             Rasterizer3D.anIntArrayArray1435[Rasterizer3D.anInt1434++] = Rasterizer3D.anIntArrayArray1436[j];
-            if (i < 9 || i > 9) {
+            if (i != 9) {
                 return;
             } else {
                 Rasterizer3D.anIntArrayArray1436[j] = null;
@@ -226,12 +224,12 @@ public class Rasterizer3D extends Rasterizer {
         throw new RuntimeException();
     }
 
-    public static int[] method426(int i) {
+    private static int[] method426(int i) {
         Rasterizer3D.anIntArray1437[i] = Rasterizer3D.anInt1438++;
         if (Rasterizer3D.anIntArrayArray1436[i] != null) {
             return Rasterizer3D.anIntArrayArray1436[i];
         }
-        int ai[];
+        int[] ai;
         if (Rasterizer3D.anInt1434 > 0) {
             ai = Rasterizer3D.anIntArrayArray1435[--Rasterizer3D.anInt1434];
             Rasterizer3D.anIntArrayArray1435[Rasterizer3D.anInt1434] = null;
@@ -249,7 +247,7 @@ public class Rasterizer3D extends Rasterizer {
         }
         Rasterizer3D.anIntArrayArray1436[i] = ai;
         IndexedImage class44_sub3_sub1_sub3 = Rasterizer3D.aClass44_Sub3_Sub1_Sub3Array1431[i];
-        int ai1[] = Rasterizer3D.anIntArrayArray1440[i];
+        int[] ai1 = Rasterizer3D.anIntArrayArray1440[i];
         if (Rasterizer3D.aBoolean1418) {
             Rasterizer3D.aBooleanArray1432[i] = false;
             for (int i1 = 0; i1 < 4096; i1++) {
@@ -359,7 +357,7 @@ public class Rasterizer3D extends Rasterizer {
             }
             for (int i1 = 0; i1 < 50; i1++) {
                 if (Rasterizer3D.aClass44_Sub3_Sub1_Sub3Array1431[i1] != null) {
-                    int ai[] = Rasterizer3D.aClass44_Sub3_Sub1_Sub3Array1431[i1].anIntArray1459;
+                    int[] ai = Rasterizer3D.aClass44_Sub3_Sub1_Sub3Array1431[i1].anIntArray1459;
                     Rasterizer3D.anIntArrayArray1440[i1] = new int[ai.length];
                     for (int k1 = 0; k1 < ai.length; k1++) {
                         Rasterizer3D.anIntArrayArray1440[i1][k1] = Rasterizer3D.method428(ai[k1], d);
@@ -379,7 +377,7 @@ public class Rasterizer3D extends Rasterizer {
         throw new RuntimeException();
     }
 
-    public static int method428(int i, double d) {
+    private static int method428(int i, double d) {
         double d1 = (i >> 16) / 256D;
         double d2 = (i >> 8 & 0xff) / 256D;
         double d3 = (i & 0xff) / 256D;
@@ -442,7 +440,7 @@ public class Rasterizer3D extends Rasterizer {
                     k -= j;
                     j -= i;
                     for (i = Rasterizer3D.anIntArray1429[i]; --j >= 0; i += Rasterizer.anInt1370) {
-                        Rasterizer3D.method430(Rasterizer.anIntArray1369, i, 0, 0, j1 >> 16, l >> 16, i2 >> 7, k1 >> 7);
+                        Rasterizer3D.method430(Rasterizer.anIntArray1369, i, j1 >> 16, l >> 16, i2 >> 7, k1 >> 7);
                         j1 += j3;
                         l += j2;
                         i2 += k3;
@@ -450,7 +448,7 @@ public class Rasterizer3D extends Rasterizer {
                     }
                     while (--k >= 0) {
                         Rasterizer3D
-                                .method430(Rasterizer.anIntArray1369, i, 0, 0, j1 >> 16, i1 >> 16, i2 >> 7, l1 >> 7);
+                                .method430(Rasterizer.anIntArray1369, i, j1 >> 16, i1 >> 16, i2 >> 7, l1 >> 7);
                         j1 += j3;
                         i1 += l2;
                         i2 += k3;
@@ -462,14 +460,14 @@ public class Rasterizer3D extends Rasterizer {
                 k -= j;
                 j -= i;
                 for (i = Rasterizer3D.anIntArray1429[i]; --j >= 0; i += Rasterizer.anInt1370) {
-                    Rasterizer3D.method430(Rasterizer.anIntArray1369, i, 0, 0, l >> 16, j1 >> 16, k1 >> 7, i2 >> 7);
+                    Rasterizer3D.method430(Rasterizer.anIntArray1369, i, l >> 16, j1 >> 16, k1 >> 7, i2 >> 7);
                     j1 += j3;
                     l += j2;
                     i2 += k3;
                     k1 += k2;
                 }
                 while (--k >= 0) {
-                    Rasterizer3D.method430(Rasterizer.anIntArray1369, i, 0, 0, i1 >> 16, j1 >> 16, l1 >> 7, i2 >> 7);
+                    Rasterizer3D.method430(Rasterizer.anIntArray1369, i, i1 >> 16, j1 >> 16, l1 >> 7, i2 >> 7);
                     j1 += j3;
                     i1 += l2;
                     i2 += k3;
@@ -498,14 +496,14 @@ public class Rasterizer3D extends Rasterizer {
                 j -= k;
                 k -= i;
                 for (i = Rasterizer3D.anIntArray1429[i]; --k >= 0; i += Rasterizer.anInt1370) {
-                    Rasterizer3D.method430(Rasterizer.anIntArray1369, i, 0, 0, i1 >> 16, l >> 16, l1 >> 7, k1 >> 7);
+                    Rasterizer3D.method430(Rasterizer.anIntArray1369, i, i1 >> 16, l >> 16, l1 >> 7, k1 >> 7);
                     i1 += j3;
                     l += j2;
                     l1 += k3;
                     k1 += k2;
                 }
                 while (--j >= 0) {
-                    Rasterizer3D.method430(Rasterizer.anIntArray1369, i, 0, 0, j1 >> 16, l >> 16, i2 >> 7, k1 >> 7);
+                    Rasterizer3D.method430(Rasterizer.anIntArray1369, i, j1 >> 16, l >> 16, i2 >> 7, k1 >> 7);
                     j1 += l2;
                     l += j2;
                     i2 += i3;
@@ -517,14 +515,14 @@ public class Rasterizer3D extends Rasterizer {
             j -= k;
             k -= i;
             for (i = Rasterizer3D.anIntArray1429[i]; --k >= 0; i += Rasterizer.anInt1370) {
-                Rasterizer3D.method430(Rasterizer.anIntArray1369, i, 0, 0, l >> 16, i1 >> 16, k1 >> 7, l1 >> 7);
+                Rasterizer3D.method430(Rasterizer.anIntArray1369, i, l >> 16, i1 >> 16, k1 >> 7, l1 >> 7);
                 i1 += j3;
                 l += j2;
                 l1 += k3;
                 k1 += k2;
             }
             while (--j >= 0) {
-                Rasterizer3D.method430(Rasterizer.anIntArray1369, i, 0, 0, l >> 16, j1 >> 16, k1 >> 7, i2 >> 7);
+                Rasterizer3D.method430(Rasterizer.anIntArray1369, i, l >> 16, j1 >> 16, k1 >> 7, i2 >> 7);
                 j1 += l2;
                 l += j2;
                 i2 += i3;
@@ -564,14 +562,14 @@ public class Rasterizer3D extends Rasterizer {
                     i -= k;
                     k -= j;
                     for (j = Rasterizer3D.anIntArray1429[j]; --k >= 0; j += Rasterizer.anInt1370) {
-                        Rasterizer3D.method430(Rasterizer.anIntArray1369, j, 0, 0, l >> 16, i1 >> 16, k1 >> 7, l1 >> 7);
+                        Rasterizer3D.method430(Rasterizer.anIntArray1369, j, l >> 16, i1 >> 16, k1 >> 7, l1 >> 7);
                         l += j2;
                         i1 += l2;
                         k1 += k2;
                         l1 += i3;
                     }
                     while (--i >= 0) {
-                        Rasterizer3D.method430(Rasterizer.anIntArray1369, j, 0, 0, l >> 16, j1 >> 16, k1 >> 7, i2 >> 7);
+                        Rasterizer3D.method430(Rasterizer.anIntArray1369, j, l >> 16, j1 >> 16, k1 >> 7, i2 >> 7);
                         l += j2;
                         j1 += j3;
                         k1 += k2;
@@ -583,14 +581,14 @@ public class Rasterizer3D extends Rasterizer {
                 i -= k;
                 k -= j;
                 for (j = Rasterizer3D.anIntArray1429[j]; --k >= 0; j += Rasterizer.anInt1370) {
-                    Rasterizer3D.method430(Rasterizer.anIntArray1369, j, 0, 0, i1 >> 16, l >> 16, l1 >> 7, k1 >> 7);
+                    Rasterizer3D.method430(Rasterizer.anIntArray1369, j, i1 >> 16, l >> 16, l1 >> 7, k1 >> 7);
                     l += j2;
                     i1 += l2;
                     k1 += k2;
                     l1 += i3;
                 }
                 while (--i >= 0) {
-                    Rasterizer3D.method430(Rasterizer.anIntArray1369, j, 0, 0, j1 >> 16, l >> 16, i2 >> 7, k1 >> 7);
+                    Rasterizer3D.method430(Rasterizer.anIntArray1369, j, j1 >> 16, l >> 16, i2 >> 7, k1 >> 7);
                     l += j2;
                     j1 += j3;
                     k1 += k2;
@@ -619,14 +617,14 @@ public class Rasterizer3D extends Rasterizer {
                 k -= i;
                 i -= j;
                 for (j = Rasterizer3D.anIntArray1429[j]; --i >= 0; j += Rasterizer.anInt1370) {
-                    Rasterizer3D.method430(Rasterizer.anIntArray1369, j, 0, 0, j1 >> 16, i1 >> 16, i2 >> 7, l1 >> 7);
+                    Rasterizer3D.method430(Rasterizer.anIntArray1369, j, j1 >> 16, i1 >> 16, i2 >> 7, l1 >> 7);
                     j1 += j2;
                     i1 += l2;
                     i2 += k2;
                     l1 += i3;
                 }
                 while (--k >= 0) {
-                    Rasterizer3D.method430(Rasterizer.anIntArray1369, j, 0, 0, l >> 16, i1 >> 16, k1 >> 7, l1 >> 7);
+                    Rasterizer3D.method430(Rasterizer.anIntArray1369, j, l >> 16, i1 >> 16, k1 >> 7, l1 >> 7);
                     l += j3;
                     i1 += l2;
                     k1 += k3;
@@ -638,14 +636,14 @@ public class Rasterizer3D extends Rasterizer {
             k -= i;
             i -= j;
             for (j = Rasterizer3D.anIntArray1429[j]; --i >= 0; j += Rasterizer.anInt1370) {
-                Rasterizer3D.method430(Rasterizer.anIntArray1369, j, 0, 0, i1 >> 16, j1 >> 16, l1 >> 7, i2 >> 7);
+                Rasterizer3D.method430(Rasterizer.anIntArray1369, j, i1 >> 16, j1 >> 16, l1 >> 7, i2 >> 7);
                 j1 += j2;
                 i1 += l2;
                 i2 += k2;
                 l1 += i3;
             }
             while (--k >= 0) {
-                Rasterizer3D.method430(Rasterizer.anIntArray1369, j, 0, 0, i1 >> 16, l >> 16, l1 >> 7, k1 >> 7);
+                Rasterizer3D.method430(Rasterizer.anIntArray1369, j, i1 >> 16, l >> 16, l1 >> 7, k1 >> 7);
                 l += j3;
                 i1 += l2;
                 k1 += k3;
@@ -684,14 +682,14 @@ public class Rasterizer3D extends Rasterizer {
                 j -= i;
                 i -= k;
                 for (k = Rasterizer3D.anIntArray1429[k]; --i >= 0; k += Rasterizer.anInt1370) {
-                    Rasterizer3D.method430(Rasterizer.anIntArray1369, k, 0, 0, i1 >> 16, j1 >> 16, l1 >> 7, i2 >> 7);
+                    Rasterizer3D.method430(Rasterizer.anIntArray1369, k, i1 >> 16, j1 >> 16, l1 >> 7, i2 >> 7);
                     i1 += l2;
                     j1 += j3;
                     l1 += i3;
                     i2 += k3;
                 }
                 while (--j >= 0) {
-                    Rasterizer3D.method430(Rasterizer.anIntArray1369, k, 0, 0, i1 >> 16, l >> 16, l1 >> 7, k1 >> 7);
+                    Rasterizer3D.method430(Rasterizer.anIntArray1369, k, i1 >> 16, l >> 16, l1 >> 7, k1 >> 7);
                     i1 += l2;
                     l += j2;
                     l1 += i3;
@@ -703,14 +701,14 @@ public class Rasterizer3D extends Rasterizer {
             j -= i;
             i -= k;
             for (k = Rasterizer3D.anIntArray1429[k]; --i >= 0; k += Rasterizer.anInt1370) {
-                Rasterizer3D.method430(Rasterizer.anIntArray1369, k, 0, 0, j1 >> 16, i1 >> 16, i2 >> 7, l1 >> 7);
+                Rasterizer3D.method430(Rasterizer.anIntArray1369, k, j1 >> 16, i1 >> 16, i2 >> 7, l1 >> 7);
                 i1 += l2;
                 j1 += j3;
                 l1 += i3;
                 i2 += k3;
             }
             while (--j >= 0) {
-                Rasterizer3D.method430(Rasterizer.anIntArray1369, k, 0, 0, l >> 16, i1 >> 16, k1 >> 7, l1 >> 7);
+                Rasterizer3D.method430(Rasterizer.anIntArray1369, k, l >> 16, i1 >> 16, k1 >> 7, l1 >> 7);
                 i1 += l2;
                 l += j2;
                 l1 += i3;
@@ -739,14 +737,14 @@ public class Rasterizer3D extends Rasterizer {
             i -= j;
             j -= k;
             for (k = Rasterizer3D.anIntArray1429[k]; --j >= 0; k += Rasterizer.anInt1370) {
-                Rasterizer3D.method430(Rasterizer.anIntArray1369, k, 0, 0, l >> 16, j1 >> 16, k1 >> 7, i2 >> 7);
+                Rasterizer3D.method430(Rasterizer.anIntArray1369, k, l >> 16, j1 >> 16, k1 >> 7, i2 >> 7);
                 l += l2;
                 j1 += j3;
                 k1 += i3;
                 i2 += k3;
             }
             while (--i >= 0) {
-                Rasterizer3D.method430(Rasterizer.anIntArray1369, k, 0, 0, i1 >> 16, j1 >> 16, l1 >> 7, i2 >> 7);
+                Rasterizer3D.method430(Rasterizer.anIntArray1369, k, i1 >> 16, j1 >> 16, l1 >> 7, i2 >> 7);
                 i1 += j2;
                 j1 += j3;
                 l1 += k2;
@@ -758,14 +756,14 @@ public class Rasterizer3D extends Rasterizer {
         i -= j;
         j -= k;
         for (k = Rasterizer3D.anIntArray1429[k]; --j >= 0; k += Rasterizer.anInt1370) {
-            Rasterizer3D.method430(Rasterizer.anIntArray1369, k, 0, 0, j1 >> 16, l >> 16, i2 >> 7, k1 >> 7);
+            Rasterizer3D.method430(Rasterizer.anIntArray1369, k, j1 >> 16, l >> 16, i2 >> 7, k1 >> 7);
             l += l2;
             j1 += j3;
             k1 += i3;
             i2 += k3;
         }
         while (--i >= 0) {
-            Rasterizer3D.method430(Rasterizer.anIntArray1369, k, 0, 0, j1 >> 16, i1 >> 16, i2 >> 7, l1 >> 7);
+            Rasterizer3D.method430(Rasterizer.anIntArray1369, k, j1 >> 16, i1 >> 16, i2 >> 7, l1 >> 7);
             i1 += j2;
             j1 += j3;
             l1 += k2;
@@ -774,7 +772,9 @@ public class Rasterizer3D extends Rasterizer {
         }
     }
 
-    public static void method430(int ai[], int i, int j, int k, int l, int i1, int j1, int k1) {
+    private static void method430(int[] ai, int i, int l, int i1, int j1, int k1) {
+        int k;
+        int j;
         if (Rasterizer3D.aBoolean1421) {
             int l1;
             if (Rasterizer3D.aBoolean1419) {
@@ -922,12 +922,12 @@ public class Rasterizer3D extends Rasterizer {
                     k -= j;
                     j -= i;
                     for (i = Rasterizer3D.anIntArray1429[i]; --j >= 0; i += Rasterizer.anInt1370) {
-                        Rasterizer3D.method432(Rasterizer.anIntArray1369, i, k1, 0, j1 >> 16, l >> 16);
+                        Rasterizer3D.method432(Rasterizer.anIntArray1369, i, k1, j1 >> 16, l >> 16);
                         j1 += j2;
                         l += l1;
                     }
                     while (--k >= 0) {
-                        Rasterizer3D.method432(Rasterizer.anIntArray1369, i, k1, 0, j1 >> 16, i1 >> 16);
+                        Rasterizer3D.method432(Rasterizer.anIntArray1369, i, k1, j1 >> 16, i1 >> 16);
                         j1 += j2;
                         i1 += i2;
                         i += Rasterizer.anInt1370;
@@ -937,12 +937,12 @@ public class Rasterizer3D extends Rasterizer {
                 k -= j;
                 j -= i;
                 for (i = Rasterizer3D.anIntArray1429[i]; --j >= 0; i += Rasterizer.anInt1370) {
-                    Rasterizer3D.method432(Rasterizer.anIntArray1369, i, k1, 0, l >> 16, j1 >> 16);
+                    Rasterizer3D.method432(Rasterizer.anIntArray1369, i, k1, l >> 16, j1 >> 16);
                     j1 += j2;
                     l += l1;
                 }
                 while (--k >= 0) {
-                    Rasterizer3D.method432(Rasterizer.anIntArray1369, i, k1, 0, i1 >> 16, j1 >> 16);
+                    Rasterizer3D.method432(Rasterizer.anIntArray1369, i, k1, i1 >> 16, j1 >> 16);
                     j1 += j2;
                     i1 += i2;
                     i += Rasterizer.anInt1370;
@@ -964,12 +964,12 @@ public class Rasterizer3D extends Rasterizer {
                 j -= k;
                 k -= i;
                 for (i = Rasterizer3D.anIntArray1429[i]; --k >= 0; i += Rasterizer.anInt1370) {
-                    Rasterizer3D.method432(Rasterizer.anIntArray1369, i, k1, 0, i1 >> 16, l >> 16);
+                    Rasterizer3D.method432(Rasterizer.anIntArray1369, i, k1, i1 >> 16, l >> 16);
                     i1 += j2;
                     l += l1;
                 }
                 while (--j >= 0) {
-                    Rasterizer3D.method432(Rasterizer.anIntArray1369, i, k1, 0, j1 >> 16, l >> 16);
+                    Rasterizer3D.method432(Rasterizer.anIntArray1369, i, k1, j1 >> 16, l >> 16);
                     j1 += i2;
                     l += l1;
                     i += Rasterizer.anInt1370;
@@ -979,12 +979,12 @@ public class Rasterizer3D extends Rasterizer {
             j -= k;
             k -= i;
             for (i = Rasterizer3D.anIntArray1429[i]; --k >= 0; i += Rasterizer.anInt1370) {
-                Rasterizer3D.method432(Rasterizer.anIntArray1369, i, k1, 0, l >> 16, i1 >> 16);
+                Rasterizer3D.method432(Rasterizer.anIntArray1369, i, k1, l >> 16, i1 >> 16);
                 i1 += j2;
                 l += l1;
             }
             while (--j >= 0) {
-                Rasterizer3D.method432(Rasterizer.anIntArray1369, i, k1, 0, l >> 16, j1 >> 16);
+                Rasterizer3D.method432(Rasterizer.anIntArray1369, i, k1, l >> 16, j1 >> 16);
                 j1 += i2;
                 l += l1;
                 i += Rasterizer.anInt1370;
@@ -1017,12 +1017,12 @@ public class Rasterizer3D extends Rasterizer {
                     i -= k;
                     k -= j;
                     for (j = Rasterizer3D.anIntArray1429[j]; --k >= 0; j += Rasterizer.anInt1370) {
-                        Rasterizer3D.method432(Rasterizer.anIntArray1369, j, k1, 0, l >> 16, i1 >> 16);
+                        Rasterizer3D.method432(Rasterizer.anIntArray1369, j, k1, l >> 16, i1 >> 16);
                         l += l1;
                         i1 += i2;
                     }
                     while (--i >= 0) {
-                        Rasterizer3D.method432(Rasterizer.anIntArray1369, j, k1, 0, l >> 16, j1 >> 16);
+                        Rasterizer3D.method432(Rasterizer.anIntArray1369, j, k1, l >> 16, j1 >> 16);
                         l += l1;
                         j1 += j2;
                         j += Rasterizer.anInt1370;
@@ -1032,12 +1032,12 @@ public class Rasterizer3D extends Rasterizer {
                 i -= k;
                 k -= j;
                 for (j = Rasterizer3D.anIntArray1429[j]; --k >= 0; j += Rasterizer.anInt1370) {
-                    Rasterizer3D.method432(Rasterizer.anIntArray1369, j, k1, 0, i1 >> 16, l >> 16);
+                    Rasterizer3D.method432(Rasterizer.anIntArray1369, j, k1, i1 >> 16, l >> 16);
                     l += l1;
                     i1 += i2;
                 }
                 while (--i >= 0) {
-                    Rasterizer3D.method432(Rasterizer.anIntArray1369, j, k1, 0, j1 >> 16, l >> 16);
+                    Rasterizer3D.method432(Rasterizer.anIntArray1369, j, k1, j1 >> 16, l >> 16);
                     l += l1;
                     j1 += j2;
                     j += Rasterizer.anInt1370;
@@ -1059,12 +1059,12 @@ public class Rasterizer3D extends Rasterizer {
                 k -= i;
                 i -= j;
                 for (j = Rasterizer3D.anIntArray1429[j]; --i >= 0; j += Rasterizer.anInt1370) {
-                    Rasterizer3D.method432(Rasterizer.anIntArray1369, j, k1, 0, j1 >> 16, i1 >> 16);
+                    Rasterizer3D.method432(Rasterizer.anIntArray1369, j, k1, j1 >> 16, i1 >> 16);
                     j1 += l1;
                     i1 += i2;
                 }
                 while (--k >= 0) {
-                    Rasterizer3D.method432(Rasterizer.anIntArray1369, j, k1, 0, l >> 16, i1 >> 16);
+                    Rasterizer3D.method432(Rasterizer.anIntArray1369, j, k1, l >> 16, i1 >> 16);
                     l += j2;
                     i1 += i2;
                     j += Rasterizer.anInt1370;
@@ -1074,12 +1074,12 @@ public class Rasterizer3D extends Rasterizer {
             k -= i;
             i -= j;
             for (j = Rasterizer3D.anIntArray1429[j]; --i >= 0; j += Rasterizer.anInt1370) {
-                Rasterizer3D.method432(Rasterizer.anIntArray1369, j, k1, 0, i1 >> 16, j1 >> 16);
+                Rasterizer3D.method432(Rasterizer.anIntArray1369, j, k1, i1 >> 16, j1 >> 16);
                 j1 += l1;
                 i1 += i2;
             }
             while (--k >= 0) {
-                Rasterizer3D.method432(Rasterizer.anIntArray1369, j, k1, 0, i1 >> 16, l >> 16);
+                Rasterizer3D.method432(Rasterizer.anIntArray1369, j, k1, i1 >> 16, l >> 16);
                 l += j2;
                 i1 += i2;
                 j += Rasterizer.anInt1370;
@@ -1111,12 +1111,12 @@ public class Rasterizer3D extends Rasterizer {
                 j -= i;
                 i -= k;
                 for (k = Rasterizer3D.anIntArray1429[k]; --i >= 0; k += Rasterizer.anInt1370) {
-                    Rasterizer3D.method432(Rasterizer.anIntArray1369, k, k1, 0, i1 >> 16, j1 >> 16);
+                    Rasterizer3D.method432(Rasterizer.anIntArray1369, k, k1, i1 >> 16, j1 >> 16);
                     i1 += i2;
                     j1 += j2;
                 }
                 while (--j >= 0) {
-                    Rasterizer3D.method432(Rasterizer.anIntArray1369, k, k1, 0, i1 >> 16, l >> 16);
+                    Rasterizer3D.method432(Rasterizer.anIntArray1369, k, k1, i1 >> 16, l >> 16);
                     i1 += i2;
                     l += l1;
                     k += Rasterizer.anInt1370;
@@ -1126,12 +1126,12 @@ public class Rasterizer3D extends Rasterizer {
             j -= i;
             i -= k;
             for (k = Rasterizer3D.anIntArray1429[k]; --i >= 0; k += Rasterizer.anInt1370) {
-                Rasterizer3D.method432(Rasterizer.anIntArray1369, k, k1, 0, j1 >> 16, i1 >> 16);
+                Rasterizer3D.method432(Rasterizer.anIntArray1369, k, k1, j1 >> 16, i1 >> 16);
                 i1 += i2;
                 j1 += j2;
             }
             while (--j >= 0) {
-                Rasterizer3D.method432(Rasterizer.anIntArray1369, k, k1, 0, l >> 16, i1 >> 16);
+                Rasterizer3D.method432(Rasterizer.anIntArray1369, k, k1, l >> 16, i1 >> 16);
                 i1 += i2;
                 l += l1;
                 k += Rasterizer.anInt1370;
@@ -1153,12 +1153,12 @@ public class Rasterizer3D extends Rasterizer {
             i -= j;
             j -= k;
             for (k = Rasterizer3D.anIntArray1429[k]; --j >= 0; k += Rasterizer.anInt1370) {
-                Rasterizer3D.method432(Rasterizer.anIntArray1369, k, k1, 0, l >> 16, j1 >> 16);
+                Rasterizer3D.method432(Rasterizer.anIntArray1369, k, k1, l >> 16, j1 >> 16);
                 l += i2;
                 j1 += j2;
             }
             while (--i >= 0) {
-                Rasterizer3D.method432(Rasterizer.anIntArray1369, k, k1, 0, i1 >> 16, j1 >> 16);
+                Rasterizer3D.method432(Rasterizer.anIntArray1369, k, k1, i1 >> 16, j1 >> 16);
                 i1 += l1;
                 j1 += j2;
                 k += Rasterizer.anInt1370;
@@ -1168,19 +1168,19 @@ public class Rasterizer3D extends Rasterizer {
         i -= j;
         j -= k;
         for (k = Rasterizer3D.anIntArray1429[k]; --j >= 0; k += Rasterizer.anInt1370) {
-            Rasterizer3D.method432(Rasterizer.anIntArray1369, k, k1, 0, j1 >> 16, l >> 16);
+            Rasterizer3D.method432(Rasterizer.anIntArray1369, k, k1, j1 >> 16, l >> 16);
             l += i2;
             j1 += j2;
         }
         while (--i >= 0) {
-            Rasterizer3D.method432(Rasterizer.anIntArray1369, k, k1, 0, j1 >> 16, i1 >> 16);
+            Rasterizer3D.method432(Rasterizer.anIntArray1369, k, k1, j1 >> 16, i1 >> 16);
             i1 += l1;
             j1 += j2;
             k += Rasterizer.anInt1370;
         }
     }
 
-    public static void method432(int ai[], int i, int j, int k, int l, int i1) {
+    private static void method432(int[] ai, int i, int j, int l, int i1) {
         if (Rasterizer3D.aBoolean1419) {
             if (i1 > Rasterizer.anInt1376) {
                 i1 = Rasterizer.anInt1376;
@@ -1193,7 +1193,7 @@ public class Rasterizer3D extends Rasterizer {
             return;
         }
         i += l;
-        k = i1 - l >> 2;
+        int k = i1 - l >> 2;
         if (Rasterizer3D.anInt1422 == 0) {
             while (--k >= 0) {
                 ai[i++] = j;
@@ -1222,7 +1222,7 @@ public class Rasterizer3D extends Rasterizer {
 
     public static void method433(int i, int j, int k, int l, int i1, int j1, int k1, int l1, int i2, int j2, int k2,
                                  int l2, int i3, int j3, int k3, int l3, int i4, int j4, int k4) {
-        int ai[] = Rasterizer3D.method426(k4);
+        int[] ai = Rasterizer3D.method426(k4);
         Rasterizer3D.aBoolean1420 = !Rasterizer3D.aBooleanArray1432[k4];
         k2 = j2 - k2;
         j3 = i3 - j3;
@@ -1763,8 +1763,8 @@ public class Rasterizer3D extends Rasterizer {
         }
     }
 
-    public static void method434(int ai[], int ai1[], int i, int j, int k, int l, int i1, int j1, int k1, int l1,
-                                 int i2, int j2, int k2, int l2, int i3) {
+    private static void method434(int[] ai, int[] ai1, int i, int j, int k, int l, int i1, int j1, int k1, int l1,
+                                  int i2, int j2, int k2, int l2, int i3) {
         if (l >= i1) {
             return;
         }

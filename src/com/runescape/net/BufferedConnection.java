@@ -10,20 +10,19 @@ import java.net.Socket;
 
 public class BufferedConnection implements Runnable {
 
-    public boolean aBoolean192;
-    public InputStream anInputStream193;
-    public OutputStream anOutputStream194;
-    public Socket aSocket195;
-    public boolean aBoolean196;
-    public GameShell anApplet_Sub1_197;
-    public byte aByteArray198[];
-    public int anInt199;
-    public int anInt200;
-    public boolean aBoolean201;
-    public boolean aBoolean202;
+    private InputStream anInputStream193;
+    private OutputStream anOutputStream194;
+    private Socket aSocket195;
+    private boolean aBoolean196;
+    private GameShell anApplet_Sub1_197;
+    private byte[] aByteArray198;
+    private int anInt199;
+    private int anInt200;
+    private boolean aBoolean201;
+    private boolean aBoolean202;
 
     public BufferedConnection(Socket socket, int i, GameShell applet_sub1) throws IOException {
-        aBoolean192 = false;
+        boolean aBoolean192 = false;
         aBoolean196 = false;
         aBoolean201 = false;
         aBoolean202 = false;
@@ -36,7 +35,6 @@ public class BufferedConnection implements Runnable {
             anOutputStream194 = aSocket195.getOutputStream();
             if (i != 32596) {
                 aBoolean192 = !aBoolean192;
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("498, " + socket + ", " + i + ", " + applet_sub1 + ", " + runtimeexception.toString());
@@ -82,7 +80,7 @@ public class BufferedConnection implements Runnable {
         }
     }
 
-    public void method194(byte abyte0[], int i, int j) throws IOException {
+    public void method194(byte[] abyte0, int i, int j) throws IOException {
         if (aBoolean196) {
             return;
         }
@@ -96,9 +94,9 @@ public class BufferedConnection implements Runnable {
         }
     }
 
-    public void method195(int i, byte abyte0[], int j, int k) throws IOException {
+    public void method195(int i, byte[] abyte0, int j, int k) throws IOException {
         try {
-            if (j < 2 || j > 2) {
+            if (j != 2) {
                 return;
             }
             if (aBoolean196) {

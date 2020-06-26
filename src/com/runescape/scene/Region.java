@@ -10,42 +10,38 @@ import com.runescape.renderable.GameObject;
 import com.runescape.renderable.Renderable;
 import com.runescape.util.SignLink;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class Region {
 
-    public static int anInt61 = 30967;
+    private static final int anInt61 = 30967;
     public static boolean aBoolean64 = true;
     public static int anInt65;
-    public static int anIntArray82[] = {1, 2, 4, 8};
-    public static int anIntArray83[] = {16, 32, 64, 128};
-    public static int anIntArray84[] = {1, 0, -1, 0};
-    public static int anIntArray85[] = {0, -1, 0, 1};
-    public static int anInt86 = (int) (Math.random() * 17D) - 8;
-    public static int anInt87 = (int) (Math.random() * 33D) - 16;
-    public int anInt60;
-    public boolean aBoolean62;
-    public boolean aBoolean63;
-    public int anInt66;
-    public int anInt67;
-    public int anIntArrayArrayArray68[][][];
-    public byte aByteArrayArrayArray69[][][];
-    public byte aByteArrayArrayArray70[][][];
-    public byte aByteArrayArrayArray71[][][];
-    public byte aByteArrayArrayArray72[][][];
-    public byte aByteArrayArrayArray73[][][];
-    public byte aByteArrayArrayArray74[][][];
-    public int anIntArrayArray75[][];
-    public int anIntArray76[];
-    public int anIntArray77[];
-    public int anIntArray78[];
-    public int anIntArray79[];
-    public int anIntArray80[];
-    public int anIntArrayArrayArray81[][][];
+    private static final int[] anIntArray82 = {1, 2, 4, 8};
+    private static final int[] anIntArray83 = {16, 32, 64, 128};
+    private static final int[] anIntArray84 = {1, 0, -1, 0};
+    private static final int[] anIntArray85 = {0, -1, 0, 1};
+    private static int anInt86 = (int) (Math.random() * 17D) - 8;
+    private static int anInt87 = (int) (Math.random() * 33D) - 16;
+    private int anInt60;
+    private boolean aBoolean62;
+    private boolean aBoolean63;
+    private int anInt66;
+    private int anInt67;
+    private int[][][] anIntArrayArrayArray68;
+    private byte[][][] aByteArrayArrayArray69;
+    private byte[][][] aByteArrayArrayArray70;
+    private byte[][][] aByteArrayArrayArray71;
+    private byte[][][] aByteArrayArrayArray72;
+    private byte[][][] aByteArrayArrayArray73;
+    private byte[][][] aByteArrayArrayArray74;
+    private int[][] anIntArrayArray75;
+    private int[] anIntArray76;
+    private int[] anIntArray77;
+    private int[] anIntArray78;
+    private int[] anIntArray79;
+    private int[] anIntArray80;
+    private int[][][] anIntArrayArrayArray81;
 
-    public Region(int ai[][][], int i, byte byte0, byte abyte0[][][], int j) {
+    public Region(int[][][] ai, int i, byte byte0, byte[][][] abyte0, int j) {
         anInt60 = 101;
         aBoolean62 = false;
         aBoolean63 = true;
@@ -68,7 +64,6 @@ public class Region {
             anIntArray80 = new int[anInt67];
             if (byte0 != 9) {
                 aBoolean62 = !aBoolean62;
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("68666, " + ai + ", " + i + ", " + byte0 + ", " + abyte0 + ", " + j + ", "
@@ -151,7 +146,6 @@ public class Region {
                     class44_sub3_sub2.readUnsignedByte();
                 } while (true);
             } while (true);
-            return;
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("6914, " + class43_sub1 + ", " + class44_sub3_sub2 + ", " + i + ", "
                     + runtimeexception.toString());
@@ -159,7 +153,7 @@ public class Region {
         }
     }
 
-    public static int method165(int i, int j) {
+    private static int method165(int i, int j) {
         int k = (Region.method166(i + 45365, j + 0x16713, 4) - 128)
                 + (Region.method166(i + 10294, j + 37821, 2) - 128 >> 1) + (Region.method166(i, j, 1) - 128 >> 2);
         k = (int) (k * 0.29999999999999999D) + 35;
@@ -171,7 +165,7 @@ public class Region {
         return k;
     }
 
-    public static int method166(int i, int j, int k) {
+    private static int method166(int i, int j, int k) {
         int l = i / k;
         int i1 = i & k - 1;
         int j1 = j / k;
@@ -185,12 +179,12 @@ public class Region {
         return Region.method167(l2, i3, k1, k);
     }
 
-    public static int method167(int i, int j, int k, int l) {
+    private static int method167(int i, int j, int k, int l) {
         int i1 = 0x10000 - Rasterizer3D.anIntArray1428[(k * 1024) / l] >> 1;
         return (i * (0x10000 - i1) >> 16) + (j * i1 >> 16);
     }
 
-    public static int method168(int i, int j) {
+    private static int method168(int i, int j) {
         int k = Region.method169(i - 1, j - 1) + Region.method169(i + 1, j - 1) + Region.method169(i - 1, j + 1)
                 + Region.method169(i + 1, j + 1);
         int l = Region.method169(i - 1, j) + Region.method169(i + 1, j) + Region.method169(i, j - 1)
@@ -199,14 +193,14 @@ public class Region {
         return k / 16 + l / 8 + i1 / 4;
     }
 
-    public static int method169(int i, int j) {
+    private static int method169(int i, int j) {
         int k = i + j * 57;
         k = k << 13 ^ k;
         int l = k * (k * k * 15731 + 0xc0ae5) + 0x5208dd0d & 0x7fffffff;
         return l >> 19 & 0xff;
     }
 
-    public static int method170(int i, int j) {
+    private static int method170(int i, int j) {
         if (i == -1) {
             return 0xbc614e;
         }
@@ -239,7 +233,7 @@ public class Region {
         throw new RuntimeException();
     }
 
-    public static void method174(int i, int j, int k, int l, int ai[][][], int i1, int j1, CollisionMap class18,
+    public static void method174(int i, int j, int k, int l, int[][][] ai, int i1, int j1, CollisionMap class18,
                                  Scene class36, int k1, int l1) {
         try {
             if (l1 != 0) {
@@ -458,7 +452,6 @@ public class Region {
                     obj10 = new GameObject(0, k1, 4, i3, l2, false, j2, class8.anInt230, true, k2);
                 }
                 class36.method287(k, j, j3, ((Renderable) (obj10)), byte0, 768, i, k3, 0, Region.anInt61, j1, 0);
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("39236, " + i + ", " + j + ", " + k + ", " + l + ", " + ai + ", " + i1 + ", " + j1
@@ -489,7 +482,6 @@ public class Region {
                 }
             }
             if (!flag) {
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("84774, " + i + ", " + j + ", " + k + ", " + flag + ", " + l + ", "
@@ -498,7 +490,7 @@ public class Region {
         }
     }
 
-    public void method158(int i, int j, byte byte0, byte abyte0[], int k, int l) {
+    public void method158(int i, int j, byte byte0, byte[] abyte0, int k, int l) {
         try {
             Buffer class44_sub3_sub2 = new Buffer(abyte0, 15787);
             for (int i1 = 0; i1 < 4; i1++) {
@@ -565,7 +557,6 @@ public class Region {
             if (byte0 != -54) {
                 for (int k1 = 1; k1 > 0; k1++) {
                 }
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("95853, " + i + ", " + j + ", " + byte0 + ", " + abyte0 + ", " + k + ", " + l + ", "
@@ -574,7 +565,7 @@ public class Region {
         }
     }
 
-    public void method161(int i, int j, byte abyte0[], Scene class36, byte byte0, CollisionMap aclass18[]) {
+    public void method161(int i, int j, byte[] abyte0, Scene class36, byte byte0, CollisionMap[] aclass18) {
         try {
             Buffer class44_sub3_sub2 = new Buffer(abyte0, 15787);
             int k = -1;
@@ -616,7 +607,6 @@ public class Region {
                     }
                 } while (true);
             } while (true);
-            return;
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("3868, " + i + ", " + j + ", " + abyte0 + ", " + class36 + ", " + byte0 + ", "
                     + aclass18 + ", " + runtimeexception.toString());
@@ -624,7 +614,7 @@ public class Region {
         }
     }
 
-    public void method162(int i, int j, Scene class36, int k, int l, int i1, int j1, CollisionMap class18, int k1) {
+    private void method162(int i, int j, Scene class36, int k, int l, int i1, int j1, CollisionMap class18, int k1) {
         try {
             if (Region.aBoolean64) {
                 if ((aByteArrayArrayArray69[i1][j][j1] & 0x10) != 0) {
@@ -955,7 +945,6 @@ public class Region {
                     obj10 = new GameObject(0, k1, 4, k2, j2, false, l1, class8.anInt230, true, i2);
                 }
                 class36.method287(j1, i1, l2, ((Renderable) (obj10)), byte0, 768, l, i3, 0, Region.anInt61, j, 0);
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("66723, " + i + ", " + j + ", " + class36 + ", " + k + ", " + l + ", " + i1 + ", "
@@ -964,7 +953,7 @@ public class Region {
         }
     }
 
-    public void method163(byte byte0, CollisionMap aclass18[], Scene class36) {
+    public void method163(byte byte0, CollisionMap[] aclass18, Scene class36) {
         try {
             if (byte0 != 76) {
                 aBoolean62 = !aBoolean62;
@@ -999,7 +988,7 @@ public class Region {
                 Region.anInt87 = 16;
             }
             for (int k = 0; k < 4; k++) {
-                byte abyte0[][] = aByteArrayArrayArray74[k];
+                byte[][] abyte0 = aByteArrayArrayArray74[k];
                 byte byte1 = 96;
                 char c = '\u0300';
                 byte byte2 = -50;
@@ -1309,7 +1298,7 @@ public class Region {
         throw new RuntimeException();
     }
 
-    public int method164(int i, int j, int k, int l) {
+    private int method164(int i, int j, int k, int l) {
         try {
             if (k != 0) {
                 aBoolean63 = !aBoolean63;
@@ -1328,7 +1317,7 @@ public class Region {
         throw new RuntimeException();
     }
 
-    public int method171(int i, int j) {
+    private int method171(int i, int j) {
         if (i == -2) {
             return 0xbc614e;
         }
@@ -1350,7 +1339,7 @@ public class Region {
         return (i & 0xff80) + j;
     }
 
-    public int method172(int i, int j, int k) {
+    private int method172(int i, int j, int k) {
         if (k > 179) {
             j /= 2;
         }

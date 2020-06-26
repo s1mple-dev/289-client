@@ -5,13 +5,13 @@ import com.runescape.util.SignLink;
 
 public class Rasterizer extends CacheableNode {
 
-    public static int anInt1363 = 1623;
-    public static boolean aBoolean1364;
-    public static boolean aBoolean1365 = true;
-    public static byte aByte1366 = 8;
-    public static int anInt1367 = 1;
+    private static int anInt1363 = 1623;
+    private static boolean aBoolean1364;
+    private static boolean aBoolean1365 = true;
+    private static final byte aByte1366 = 8;
+    private static final int anInt1367 = 1;
     public static byte aByte1368 = 35;
-    public static int anIntArray1369[];
+    public static int[] anIntArray1369;
     public static int anInt1370;
     public static int anInt1371;
     public static int anInt1372;
@@ -23,10 +23,10 @@ public class Rasterizer extends CacheableNode {
     public static int anInt1378;
     public static int anInt1379;
 
-    public Rasterizer() {
+    Rasterizer() {
     }
 
-    public static void method406(int i, int ai[], int j, int k) {
+    public static void method406(int i, int[] ai, int j, int k) {
         try {
             Rasterizer.anIntArray1369 = ai;
             Rasterizer.anInt1370 = j;
@@ -212,7 +212,6 @@ public class Rasterizer extends CacheableNode {
             if (i >= 3) {
                 Rasterizer.method417(i - 2, j, j1 + 1, i1, 454, k);
                 Rasterizer.method417(i - 2, j, j1 + 1, i1, 454, (k + l) - 1);
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("90957, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + k1
@@ -248,7 +247,7 @@ public class Rasterizer extends CacheableNode {
         throw new RuntimeException();
     }
 
-    public static void method415(int i, int j, int k, int l, int i1, int j1) {
+    private static void method415(int i, int j, int k, int l, int i1, int j1) {
         try {
             if (i1 < Rasterizer.anInt1372 || i1 >= Rasterizer.anInt1373) {
                 return;
@@ -311,7 +310,7 @@ public class Rasterizer extends CacheableNode {
         throw new RuntimeException();
     }
 
-    public static void method417(int i, int j, int k, int l, int i1, int j1) {
+    private static void method417(int i, int j, int k, int l, int i1, int j1) {
         try {
             if (j1 < Rasterizer.anInt1374 || j1 >= Rasterizer.anInt1375) {
                 return;

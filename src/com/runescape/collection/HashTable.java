@@ -2,18 +2,16 @@ package com.runescape.collection;
 
 import com.runescape.util.SignLink;
 
-public class HashTable {
+class HashTable {
 
-    public boolean aBoolean764;
-    public boolean aBoolean765;
-    public int anInt766;
-    public int anInt767;
-    public Node aClass44Array768[];
+    private boolean aBoolean764;
+    private int anInt767;
+    private Node[] aClass44Array768;
 
     public HashTable(int i, byte byte0) {
         aBoolean764 = false;
-        aBoolean765 = false;
-        anInt766 = 8;
+        boolean aBoolean765 = false;
+        int anInt766 = 8;
         try {
             anInt767 = i;
             aClass44Array768 = new Node[i];
@@ -25,7 +23,6 @@ public class HashTable {
             if (byte0 != 124) {
                 for (int k = 1; k > 0; k++) {
                 }
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("10752, " + i + ", " + byte0 + ", " + runtimeexception.toString());

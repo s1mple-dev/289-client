@@ -6,17 +6,17 @@ import com.runescape.util.SignLink;
 
 public class IndexedImage extends Rasterizer {
 
-    public boolean aBoolean1455;
-    public boolean aBoolean1456;
-    public int anInt1457;
-    public byte aByteArray1458[];
-    public int anIntArray1459[];
+    private boolean aBoolean1455;
+    private boolean aBoolean1456;
+    private int anInt1457;
+    public byte[] aByteArray1458;
+    public final int[] anIntArray1459;
     public int anInt1460;
     public int anInt1461;
     public int anInt1462;
     public int anInt1463;
     public int anInt1464;
-    public int anInt1465;
+    private int anInt1465;
 
     public IndexedImage(Archive class47, String s, int i) {
         aBoolean1455 = false;
@@ -63,7 +63,7 @@ public class IndexedImage extends Rasterizer {
         try {
             anInt1464 /= 2;
             anInt1465 /= 2;
-            byte abyte0[] = new byte[anInt1464 * anInt1465];
+            byte[] abyte0 = new byte[anInt1464 * anInt1465];
             int j = 0;
             for (int k = 0; k < anInt1461; k++) {
                 for (int l = 0; l < anInt1460; l++) {
@@ -90,7 +90,7 @@ public class IndexedImage extends Rasterizer {
             if (anInt1460 == anInt1464 && anInt1461 == anInt1465) {
                 return;
             }
-            byte abyte0[] = new byte[anInt1464 * anInt1465];
+            byte[] abyte0 = new byte[anInt1464 * anInt1465];
             int j = 0;
             for (int k = 0; k < anInt1461; k++) {
                 for (int l = 0; l < anInt1460; l++) {
@@ -102,7 +102,7 @@ public class IndexedImage extends Rasterizer {
             anInt1461 = anInt1465;
             anInt1462 = 0;
             anInt1463 = 0;
-            if (i < 9 || i > 9) {
+            if (i != 9) {
                 aBoolean1456 = !aBoolean1456;
             }
             return;
@@ -114,7 +114,7 @@ public class IndexedImage extends Rasterizer {
 
     public void method450(int i) {
         try {
-            byte abyte0[] = new byte[anInt1460 * anInt1461];
+            byte[] abyte0 = new byte[anInt1460 * anInt1461];
             int j = 0;
             for (int k = 0; k < anInt1461; k++) {
                 for (int l = anInt1460 - 1; l >= 0; l--) {
@@ -135,7 +135,7 @@ public class IndexedImage extends Rasterizer {
 
     public void method451(int i) {
         try {
-            byte abyte0[] = new byte[anInt1460 * anInt1461];
+            byte[] abyte0 = new byte[anInt1460 * anInt1461];
             int j = 0;
             for (int k = anInt1461 - 1; k >= 0; k--) {
                 for (int l = 0; l < anInt1460; l++) {
@@ -243,7 +243,7 @@ public class IndexedImage extends Rasterizer {
         throw new RuntimeException();
     }
 
-    public void method454(int i, int ai[], int j, int ai1[], int k, int l, byte byte0, byte abyte0[], int i1, int j1) {
+    private void method454(int i, int[] ai, int j, int[] ai1, int k, int l, byte byte0, byte[] abyte0, int i1, int j1) {
         try {
             int k1 = -(i1 >> 2);
             i1 = -(i1 & 3);
@@ -286,7 +286,6 @@ public class IndexedImage extends Rasterizer {
                 j1 += k;
             }
             if (byte0 != 34) {
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("42705, " + i + ", " + ai + ", " + j + ", " + ai1 + ", " + k + ", " + l + ", " + byte0

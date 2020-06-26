@@ -8,18 +8,18 @@ import java.math.BigInteger;
 
 public class Buffer extends CacheableNode {
 
-    public static int anInt1390 = 8;
-    public static int anIntArray1394[];
-    public static int anIntArray1395[] = {0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095, 8191, 16383, 32767,
+    private static int anInt1390 = 8;
+    private static int[] anIntArray1394;
+    private static final int[] anIntArray1395 = {0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095, 8191, 16383, 32767,
             65535, 0x1ffff, 0x3ffff, 0x7ffff, 0xfffff, 0x1fffff, 0x3fffff, 0x7fffff, 0xffffff, 0x1ffffff, 0x3ffffff,
             0x7ffffff, 0xfffffff, 0x1fffffff, 0x3fffffff, 0x7fffffff, -1};
-    public static int anInt1397;
-    public static int anInt1398;
-    public static int anInt1399;
-    public static LinkedList aClass28_1400 = new LinkedList(-199);
-    public static LinkedList aClass28_1401 = new LinkedList(-199);
-    public static LinkedList aClass28_1402 = new LinkedList(-199);
-    public static char aCharArray1403[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O',
+    private static int anInt1397;
+    private static int anInt1398;
+    private static int anInt1399;
+    private static final LinkedList aClass28_1400 = new LinkedList(-199);
+    private static final LinkedList aClass28_1401 = new LinkedList(-199);
+    private static final LinkedList aClass28_1402 = new LinkedList(-199);
+    public static char[] aCharArray1403 = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O',
             'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
             'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4',
             '5', '6', '7', '8', '9', '+', '/'};
@@ -40,22 +40,21 @@ public class Buffer extends CacheableNode {
         }
     }
 
-    public int anInt1380;
-    public byte aByte1381;
-    public int anInt1382;
-    public int anInt1383;
-    public int anInt1384;
-    public boolean aBoolean1385;
-    public int anInt1386;
-    public int anInt1387;
-    public boolean aBoolean1388;
-    public boolean aBoolean1389;
-    public byte payload[];
+    private byte aByte1381;
+    private int anInt1382;
+    private int anInt1383;
+    private int anInt1384;
+    private boolean aBoolean1385;
+    private int anInt1386;
+    private int anInt1387;
+    private boolean aBoolean1388;
+    private boolean aBoolean1389;
+    public byte[] payload;
     public int offset;
     public int anInt1393;
     public ISAACCipher aClass46_1396;
 
-    public Buffer(byte byte0) {
+    private Buffer(byte byte0) {
         aByte1381 = 95;
         anInt1382 = -731;
         anInt1383 = 1623;
@@ -79,7 +78,7 @@ public class Buffer extends CacheableNode {
         throw new RuntimeException();
     }
 
-    public Buffer(byte abyte0[], int i) {
+    public Buffer(byte[] abyte0, int i) {
         aByte1381 = 95;
         anInt1382 = -731;
         anInt1383 = 1623;
@@ -146,7 +145,6 @@ public class Buffer extends CacheableNode {
         try {
             payload[offset++] = (byte) (j + aClass46_1396.method545());
             if (i != -34003) {
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("86638, " + i + ", " + j + ", " + runtimeexception.toString());
@@ -168,7 +166,6 @@ public class Buffer extends CacheableNode {
             payload[offset++] = (byte) i;
             payload[offset++] = (byte) (i >> 8);
             if (flag) {
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("86335, " + i + ", " + flag + ", " + runtimeexception.toString());
@@ -231,7 +228,7 @@ public class Buffer extends CacheableNode {
         payload[offset++] = 10;
     }
 
-    public void method480(byte abyte0[], int i, int j, boolean flag) {
+    public void method480(byte[] abyte0, int i, int j, boolean flag) {
         try {
             if (!flag) {
                 anInt1386 = 371;
@@ -298,7 +295,7 @@ public class Buffer extends CacheableNode {
     public long method488(boolean flag) {
         try {
             if (!flag) {
-                anInt1380 = 183;
+                int anInt1380 = 183;
             }
             long l = method487() & 0xffffffffL;
             long l1 = method487() & 0xffffffffL;
@@ -312,7 +309,6 @@ public class Buffer extends CacheableNode {
     public String method489() {
         int i = offset;
         while (payload[offset++] != 10) {
-            ;
         }
         return new String(payload, i, offset - i - 1);
     }
@@ -324,9 +320,8 @@ public class Buffer extends CacheableNode {
             }
             int j = offset;
             while (payload[offset++] != 10) {
-                ;
             }
-            byte abyte0[] = new byte[offset - j - 1];
+            byte[] abyte0 = new byte[offset - j - 1];
             for (int k = j; k < offset - 1; k++) {
                 abyte0[k - j] = payload[k];
             }
@@ -337,7 +332,7 @@ public class Buffer extends CacheableNode {
         throw new RuntimeException();
     }
 
-    public void method491(byte byte0, byte abyte0[], int i, int j) {
+    public void method491(byte byte0, byte[] abyte0, int i, int j) {
         try {
             if (byte0 != aByte1381) {
                 anInt1387 = -447;
@@ -395,7 +390,6 @@ public class Buffer extends CacheableNode {
         try {
             offset = (anInt1393 + 7) / 8;
             if (byte0 != 4) {
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("49000, " + byte0 + ", " + runtimeexception.toString());
@@ -425,16 +419,15 @@ public class Buffer extends CacheableNode {
         try {
             int j = offset;
             offset = 0;
-            byte abyte0[] = new byte[j];
+            byte[] abyte0 = new byte[j];
             method491((byte) 95, abyte0, 0, j);
             BigInteger biginteger2 = new BigInteger(abyte0);
             BigInteger biginteger3 = biginteger2.modPow(biginteger1, biginteger);
-            byte abyte1[] = biginteger3.toByteArray();
+            byte[] abyte1 = biginteger3.toByteArray();
             offset = 0;
             writeByte(abyte1.length);
             method480(abyte1, abyte1.length, 0, true);
-            if (i < 0 || i > 0) {
-                return;
+            if (i != 0) {
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("81066, " + biginteger + ", " + biginteger1 + ", " + i + ", "

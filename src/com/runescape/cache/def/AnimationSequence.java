@@ -6,18 +6,17 @@ import com.runescape.util.SignLink;
 
 public class AnimationSequence {
 
-    public static boolean aBoolean506 = true;
-    public static int anInt507;
-    public static AnimationSequence cache[];
+    private static boolean aBoolean506 = true;
+    private static int anInt507;
+    public static AnimationSequence[] cache;
     public static int anInt524;
-    public boolean aBoolean504;
-    public byte aByte505;
+    private final byte aByte505;
     public int anInt509;
-    public int anIntArray510[];
-    public int anIntArray511[];
-    public int anIntArray512[];
+    public int[] anIntArray510;
+    public int[] anIntArray511;
+    private int[] anIntArray512;
     public int anInt513;
-    public int anIntArray514[];
+    public int[] anIntArray514;
     public boolean aBoolean515;
     public int anInt516;
     public int anInt517;
@@ -26,10 +25,9 @@ public class AnimationSequence {
     public int anInt520;
     public int anInt521;
     public int anInt522;
-    public int anInt523;
 
-    public AnimationSequence() {
-        aBoolean504 = false;
+    private AnimationSequence() {
+        boolean aBoolean504 = false;
         aByte505 = 4;
         anInt513 = -1;
         aBoolean515 = false;
@@ -56,7 +54,6 @@ public class AnimationSequence {
             }
             if (!flag) {
                 AnimationSequence.aBoolean506 = !AnimationSequence.aBoolean506;
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("90750, " + flag + ", " + class47 + ", " + runtimeexception.toString());
@@ -87,7 +84,7 @@ public class AnimationSequence {
         throw new RuntimeException();
     }
 
-    public void method255(boolean flag, Buffer class44_sub3_sub2) {
+    private void method255(boolean flag, Buffer class44_sub3_sub2) {
         try {
             if (flag) {
                 throw new NullPointerException();
@@ -136,7 +133,7 @@ public class AnimationSequence {
                 } else if (i == 11) {
                     anInt522 = class44_sub3_sub2.readUnsignedByte();
                 } else if (i == 12) {
-                    anInt523 = class44_sub3_sub2.method487();
+                    int anInt523 = class44_sub3_sub2.method487();
                 } else {
                     System.out.println("Error unrecognised seq config code: " + i);
                 }
@@ -160,10 +157,8 @@ public class AnimationSequence {
             if (anInt521 == -1) {
                 if (anIntArray514 != null) {
                     anInt521 = 2;
-                    return;
                 } else {
                     anInt521 = 0;
-                    return;
                 }
             }
         } catch (RuntimeException runtimeexception) {

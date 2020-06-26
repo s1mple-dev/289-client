@@ -8,25 +8,24 @@ import com.runescape.util.SignLink;
 
 public class SpotAnimation {
 
-    public static int anInt558;
-    public static SpotAnimation cache[];
+    private static int anInt558;
+    public static SpotAnimation[] cache;
     public static Cache aClass39_571 = new Cache((byte) 7, 30);
-    public boolean aBoolean556;
-    public byte aByte557;
-    public int anInt560;
-    public int anInt561;
-    public int anInt562;
+    private final byte aByte557;
+    private int anInt560;
+    private int anInt561;
+    private int anInt562;
     public AnimationSequence aClass26_563;
-    public int anIntArray564[];
-    public int anIntArray565[];
+    private final int[] anIntArray564;
+    private final int[] anIntArray565;
     public int anInt566;
     public int anInt567;
     public int anInt568;
     public int anInt569;
     public int anInt570;
 
-    public SpotAnimation() {
-        aBoolean556 = false;
+    private SpotAnimation() {
+        boolean aBoolean556 = false;
         aByte557 = 4;
         anInt562 = -1;
         anIntArray564 = new int[6];
@@ -59,7 +58,7 @@ public class SpotAnimation {
         throw new RuntimeException();
     }
 
-    public void method270(boolean flag, Buffer class44_sub3_sub2) {
+    private void method270(boolean flag, Buffer class44_sub3_sub2) {
         try {
             if (flag) {
                 throw new NullPointerException();

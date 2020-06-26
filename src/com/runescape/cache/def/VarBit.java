@@ -6,18 +6,16 @@ import com.runescape.util.SignLink;
 
 public class VarBit {
 
-    public static int anInt588 = 810;
-    public static int anInt589;
-    public static VarBit aClass35Array590[];
-    public String aString591;
+    private static final int anInt588 = 810;
+    private static int anInt589;
+    public static VarBit[] aClass35Array590;
     public int anInt592;
     public int anInt593;
     public int anInt594;
-    public boolean aBoolean595;
-    public int anInt596;
-    public int anInt597;
+    private boolean aBoolean595;
+    private int anInt596;
 
-    public VarBit() {
+    private VarBit() {
         aBoolean595 = false;
         anInt596 = -1;
     }
@@ -43,7 +41,6 @@ public class VarBit {
             }
             if (class44_sub3_sub2.offset != class44_sub3_sub2.payload.length) {
                 System.out.println("varbit load mismatch");
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("10921, " + flag + ", " + class47 + ", " + runtimeexception.toString());
@@ -51,7 +48,7 @@ public class VarBit {
         }
     }
 
-    public void method276(int i, int j, Buffer class44_sub3_sub2) {
+    private void method276(int i, int j, Buffer class44_sub3_sub2) {
         try {
             i = 55 / i;
             do {
@@ -64,13 +61,13 @@ public class VarBit {
                     anInt593 = class44_sub3_sub2.readUnsignedByte();
                     anInt594 = class44_sub3_sub2.readUnsignedByte();
                 } else if (k == 10) {
-                    aString591 = class44_sub3_sub2.method489();
+                    String aString591 = class44_sub3_sub2.method489();
                 } else if (k == 2) {
                     aBoolean595 = true;
                 } else if (k == 3) {
                     anInt596 = class44_sub3_sub2.method487();
                 } else if (k == 4) {
-                    anInt597 = class44_sub3_sub2.method487();
+                    int anInt597 = class44_sub3_sub2.method487();
                 } else {
                     System.out.println("Error unrecognised config code: " + k);
                 }

@@ -9,9 +9,9 @@ import com.runescape.util.SignLink;
 
 public class Npc extends Actor {
 
-    public int anInt1697;
-    public int anInt1698;
-    public boolean aBoolean1699;
+    private int anInt1697;
+    private int anInt1698;
+    private boolean aBoolean1699;
     public ActorDefinition aClass12_1700;
 
     public Npc() {
@@ -32,7 +32,7 @@ public class Npc extends Actor {
             if (class44_sub3_sub4_sub4 == null) {
                 return null;
             }
-            super.anInt1661 = ((Renderable) (class44_sub3_sub4_sub4)).anInt1412;
+            super.anInt1661 = class44_sub3_sub4_sub4.anInt1412;
             if (super.anInt1648 != -1 && super.anInt1649 != -1) {
                 SpotAnimation class32 = SpotAnimation.cache[super.anInt1648];
                 Model class44_sub3_sub4_sub4_1 = class32.method271();
@@ -51,7 +51,7 @@ public class Npc extends Actor {
                     }
                     class44_sub3_sub4_sub4_2.method523(64 + class32.anInt569, 850 + class32.anInt570, -30, -50, -30,
                             true);
-                    Model aclass44_sub3_sub4_sub4[] = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_2};
+                    Model[] aclass44_sub3_sub4_sub4 = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_2};
                     class44_sub3_sub4_sub4 = new Model(true, 0, aclass44_sub3_sub4_sub4, 2);
                 }
             }
@@ -65,7 +65,7 @@ public class Npc extends Actor {
         throw new RuntimeException();
     }
 
-    public Model method540(boolean flag) {
+    private Model method540(boolean flag) {
         try {
             if (flag) {
                 aBoolean1699 = !aBoolean1699;

@@ -4,19 +4,17 @@ import com.runescape.util.SignLink;
 
 public class Queue {
 
-    public int anInt553;
-    public CacheableNode aClass44_Sub3_554;
-    public CacheableNode aClass44_Sub3_555;
+    private final CacheableNode aClass44_Sub3_554;
+    private CacheableNode aClass44_Sub3_555;
 
     public Queue(int i) {
-        anInt553 = 195;
+        int anInt553 = 195;
         aClass44_Sub3_554 = new CacheableNode();
         try {
             aClass44_Sub3_554.aClass44_Sub3_1360 = aClass44_Sub3_554;
             aClass44_Sub3_554.aClass44_Sub3_1361 = aClass44_Sub3_554;
             if (i != 9) {
                 anInt553 = 185;
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("32770, " + i + ", " + runtimeexception.toString());

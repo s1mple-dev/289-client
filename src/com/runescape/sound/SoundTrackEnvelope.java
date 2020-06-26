@@ -3,21 +3,21 @@ package com.runescape.sound;
 import com.runescape.net.Buffer;
 import com.runescape.util.SignLink;
 
-public class SoundTrackEnvelope {
+class SoundTrackEnvelope {
 
     public static int anInt49;
-    public boolean aBoolean37;
-    public int anInt38;
-    public int anIntArray39[];
-    public int anIntArray40[];
+    private boolean aBoolean37;
+    private int anInt38;
+    private int[] anIntArray39;
+    private int[] anIntArray40;
     public int anInt41;
     public int anInt42;
     public int anInt43;
-    public int anInt44;
-    public int anInt45;
-    public int anInt46;
-    public int anInt47;
-    public int anInt48;
+    private int anInt44;
+    private int anInt45;
+    private int anInt46;
+    private int anInt47;
+    private int anInt48;
 
     public SoundTrackEnvelope() {
         aBoolean37 = false;

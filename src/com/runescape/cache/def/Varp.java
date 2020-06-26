@@ -6,26 +6,21 @@ import com.runescape.util.SignLink;
 
 public class Varp {
 
-    public static boolean aBoolean671 = true;
-    public static int anInt672 = 810;
-    public static int anInt673;
-    public static Varp cache[];
-    public static int anInt675;
-    public static int anIntArray676[];
-    public int anInt670;
-    public String aString677;
-    public int anInt678;
-    public int anInt679;
-    public boolean aBoolean680;
-    public boolean aBoolean681;
+    private static boolean aBoolean671 = true;
+    private static final int anInt672 = 810;
+    private static int anInt673;
+    public static Varp[] cache;
+    private static int anInt675;
+    private static int[] anIntArray676;
+    private int anInt670;
+    private boolean aBoolean680;
+    private boolean aBoolean681;
     public int anInt682;
-    public boolean aBoolean683;
-    public int anInt684;
-    public int anInt685;
+    private boolean aBoolean683;
     public boolean aBoolean686;
-    public int anInt687;
+    private int anInt687;
 
-    public Varp() {
+    private Varp() {
         anInt670 = -550;
         aBoolean680 = false;
         aBoolean681 = true;
@@ -56,7 +51,6 @@ public class Varp {
             }
             if (class44_sub3_sub2.offset != class44_sub3_sub2.payload.length) {
                 System.out.println("varptype load mismatch");
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("51793, " + flag + ", " + class47 + ", " + runtimeexception.toString());
@@ -64,7 +58,7 @@ public class Varp {
         }
     }
 
-    public void method338(int i, int j, Buffer class44_sub3_sub2) {
+    private void method338(int i, int j, Buffer class44_sub3_sub2) {
         try {
             if (i <= 0) {
                 anInt670 = 68;
@@ -74,10 +68,11 @@ public class Varp {
                 if (k == 0) {
                     return;
                 }
+                int anInt685;
                 if (k == 1) {
-                    anInt678 = class44_sub3_sub2.readUnsignedByte();
+                    int anInt678 = class44_sub3_sub2.readUnsignedByte();
                 } else if (k == 2) {
-                    anInt679 = class44_sub3_sub2.readUnsignedByte();
+                    int anInt679 = class44_sub3_sub2.readUnsignedByte();
                 } else if (k == 3) {
                     aBoolean680 = true;
                     Varp.anIntArray676[Varp.anInt675++] = j;
@@ -88,12 +83,12 @@ public class Varp {
                 } else if (k == 6) {
                     aBoolean683 = true;
                 } else if (k == 7) {
-                    anInt684 = class44_sub3_sub2.method487();
+                    int anInt684 = class44_sub3_sub2.method487();
                 } else if (k == 8) {
                     anInt685 = 1;
                     aBoolean686 = true;
                 } else if (k == 10) {
-                    aString677 = class44_sub3_sub2.method489();
+                    String aString677 = class44_sub3_sub2.method489();
                 } else if (k == 11) {
                     aBoolean686 = true;
                 } else if (k == 12) {

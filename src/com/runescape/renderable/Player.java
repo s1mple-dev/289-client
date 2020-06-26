@@ -11,17 +11,17 @@ import com.runescape.util.TextUtils;
 public class Player extends Actor {
 
     public static Cache aClass39_1696 = new Cache((byte) 7, 260);
-    public int anInt1670;
-    public boolean aBoolean1671;
+    private int anInt1670;
+    private boolean aBoolean1671;
     public String aString1672;
     public boolean aBoolean1673;
-    public int anInt1674;
+    private int anInt1674;
     public int anInt1675;
-    public int anIntArray1676[];
-    public int anIntArray1677[];
+    public final int[] anIntArray1676;
+    public final int[] anIntArray1677;
     public int anInt1678;
     public int anInt1679;
-    public long aLong1680;
+    private long aLong1680;
     public int anInt1681;
     public int anInt1682;
     public int anInt1683;
@@ -34,7 +34,7 @@ public class Player extends Actor {
     public int anInt1690;
     public int anInt1691;
     public boolean aBoolean1692;
-    public long aLong1693;
+    private long aLong1693;
     public ActorDefinition aClass12_1694;
     public int anInt1695;
 
@@ -154,7 +154,7 @@ public class Player extends Actor {
             if (class44_sub3_sub4_sub4 == null) {
                 return null;
             }
-            super.anInt1661 = ((Renderable) (class44_sub3_sub4_sub4)).anInt1412;
+            super.anInt1661 = class44_sub3_sub4_sub4.anInt1412;
             class44_sub3_sub4_sub4.aBoolean1568 = true;
             if (aBoolean1692) {
                 return class44_sub3_sub4_sub4;
@@ -176,7 +176,7 @@ public class Player extends Actor {
                     }
                     class44_sub3_sub4_sub4_3.method523(64 + class32.anInt569, 850 + class32.anInt570, -30, -50, -30,
                             true);
-                    Model aclass44_sub3_sub4_sub4_1[] = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_3};
+                    Model[] aclass44_sub3_sub4_sub4_1 = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_3};
                     class44_sub3_sub4_sub4 = new Model(true, 0, aclass44_sub3_sub4_sub4_1, 2);
                 }
             }
@@ -198,7 +198,7 @@ public class Player extends Actor {
                     } else if (super.anInt1662 == 1536) {
                         class44_sub3_sub4_sub4_1.method517(0);
                     }
-                    Model aclass44_sub3_sub4_sub4[] = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_1};
+                    Model[] aclass44_sub3_sub4_sub4 = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_1};
                     class44_sub3_sub4_sub4 = new Model(true, 0, aclass44_sub3_sub4_sub4, 2);
                     if (super.anInt1662 == 512) {
                         class44_sub3_sub4_sub4_1.method517(0);
@@ -222,7 +222,7 @@ public class Player extends Actor {
         throw new RuntimeException();
     }
 
-    public Model method538(boolean flag) {
+    private Model method538(boolean flag) {
         try {
             if (aClass12_1694 != null) {
                 int i = -1;
@@ -287,7 +287,7 @@ public class Player extends Actor {
                 }
             }
             if (class44_sub3_sub4_sub4_1 == null) {
-                Model aclass44_sub3_sub4_sub4[] = new Model[12];
+                Model[] aclass44_sub3_sub4_sub4 = new Model[12];
                 int l1 = 0;
                 for (int j2 = 0; j2 < 12; j2++) {
                     int k2 = anIntArray1676[j2];
@@ -372,7 +372,7 @@ public class Player extends Actor {
             if (flag1) {
                 return null;
             }
-            Model aclass44_sub3_sub4_sub4[] = new Model[12];
+            Model[] aclass44_sub3_sub4_sub4 = new Model[12];
             int l = 0;
             for (int i1 = 0; i1 < 12; i1++) {
                 int j1 = anIntArray1676[i1];

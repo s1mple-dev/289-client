@@ -4,18 +4,16 @@ import com.runescape.util.SignLink;
 
 public class ISAACCipher {
 
-    public boolean aBoolean781;
-    public byte aByte782;
-    public int anInt783;
-    public int anIntArray784[];
-    public int anIntArray785[];
-    public int anInt786;
-    public int anInt787;
-    public int anInt788;
+    private int anInt783;
+    private int[] anIntArray784;
+    private int[] anIntArray785;
+    private int anInt786;
+    private int anInt787;
+    private int anInt788;
 
-    public ISAACCipher(int ai[], byte byte0) {
-        aBoolean781 = false;
-        aByte782 = -23;
+    public ISAACCipher(int[] ai, byte byte0) {
+        boolean aBoolean781 = false;
+        byte aByte782 = -23;
         try {
             anIntArray785 = new int[256];
             anIntArray784 = new int[256];
@@ -41,7 +39,7 @@ public class ISAACCipher {
         return anIntArray784[anInt783];
     }
 
-    public void method546() {
+    private void method546() {
         anInt787 += ++anInt788;
         for (int i = 0; i < 256; i++) {
             int j = anIntArray785[i];
@@ -69,7 +67,7 @@ public class ISAACCipher {
         }
     }
 
-    public void method547() {
+    private void method547() {
         int i1;
         int j1;
         int k1;

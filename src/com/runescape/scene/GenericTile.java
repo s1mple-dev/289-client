@@ -2,13 +2,13 @@ package com.runescape.scene;
 
 public class GenericTile {
 
-    public int anInt525;
-    public int anInt526;
-    public int anInt527;
-    public int anInt528;
-    public int anInt529;
+    public final int anInt525;
+    public final int anInt526;
+    public final int anInt527;
+    public final int anInt528;
+    public final int anInt529;
     public boolean aBoolean530;
-    public int anInt531;
+    public final int anInt531;
 
     public GenericTile(int i, int j, int k, int l, int i1, int j1, boolean flag) {
         aBoolean530 = true;

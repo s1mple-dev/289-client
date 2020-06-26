@@ -7,14 +7,14 @@ import java.io.RandomAccessFile;
 
 public class Index {
 
-    public static byte aByteArray776[] = new byte[520];
-    public boolean aBoolean773;
-    public int anInt774;
-    public int anInt775;
-    public RandomAccessFile aRandomAccessFile777;
-    public RandomAccessFile aRandomAccessFile778;
-    public int anInt779;
-    public int anInt780;
+    private static final byte[] aByteArray776 = new byte[520];
+    private boolean aBoolean773;
+    private int anInt774;
+    private int anInt775;
+    private RandomAccessFile aRandomAccessFile777;
+    private RandomAccessFile aRandomAccessFile778;
+    private int anInt779;
+    private int anInt780;
 
     public Index(RandomAccessFile randomaccessfile, int i, RandomAccessFile randomaccessfile1, int j, byte byte0) {
         aBoolean773 = false;
@@ -62,7 +62,7 @@ public class Index {
                 if (j1 <= 0 || j1 > aRandomAccessFile777.length() / 520L) {
                     return null;
                 }
-                byte abyte0[] = new byte[i1];
+                byte[] abyte0 = new byte[i1];
                 int k1 = 0;
                 for (int l1 = 0; k1 < i1; l1++) {
                     if (j1 == 0) {
@@ -107,7 +107,7 @@ public class Index {
         throw new RuntimeException();
     }
 
-    public synchronized boolean method542(byte abyte0[], byte byte0, int i, int j) {
+    public synchronized void method542(byte[] abyte0, byte byte0, int i, int j) {
         try {
             if (byte0 != 4) {
                 anInt775 = 436;
@@ -116,7 +116,7 @@ public class Index {
             if (!flag) {
                 flag = method543(false, i, anInt774, j, abyte0);
             }
-            return flag;
+            return;
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("64351, " + abyte0 + ", " + byte0 + ", " + i + ", " + j + ", "
                     + runtimeexception.toString());
@@ -124,7 +124,7 @@ public class Index {
         throw new RuntimeException();
     }
 
-    public synchronized boolean method543(boolean flag, int i, int j, int k, byte abyte0[]) {
+    private synchronized boolean method543(boolean flag, int i, int j, int k, byte[] abyte0) {
         try {
             if (j != 0) {
                 aBoolean773 = !aBoolean773;
@@ -228,7 +228,7 @@ public class Index {
         throw new RuntimeException();
     }
 
-    public synchronized void method544(RandomAccessFile randomaccessfile, int i, int j) throws IOException {
+    private synchronized void method544(RandomAccessFile randomaccessfile, int i, int j) throws IOException {
         try {
             if (j != 0) {
                 aBoolean773 = !aBoolean773;

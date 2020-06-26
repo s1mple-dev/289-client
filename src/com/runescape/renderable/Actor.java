@@ -5,8 +5,8 @@ import com.runescape.util.SignLink;
 
 public class Actor extends Renderable {
 
-    public boolean aBoolean1613;
-    public boolean aBoolean1614;
+    private boolean aBoolean1613;
+    private boolean aBoolean1614;
     public int anInt1615;
     public int anInt1616;
     public int anInt1617;
@@ -23,9 +23,9 @@ public class Actor extends Renderable {
     public int anInt1628;
     public int anInt1629;
     public int anInt1630;
-    public int anIntArray1631[];
-    public int anIntArray1632[];
-    public int anIntArray1633[];
+    public final int[] anIntArray1631;
+    public final int[] anIntArray1632;
+    public final int[] anIntArray1633;
     public int anInt1634;
     public int anInt1635;
     public int anInt1636;
@@ -57,13 +57,13 @@ public class Actor extends Renderable {
     public int anInt1662;
     public int anInt1663;
     public int anInt1664;
-    public int anIntArray1665[];
-    public int anIntArray1666[];
-    public boolean aBooleanArray1667[];
+    public final int[] anIntArray1665;
+    public final int[] anIntArray1666;
+    public final boolean[] aBooleanArray1667;
     public int anInt1668;
     public int anInt1669;
 
-    public Actor() {
+    Actor() {
         aBoolean1613 = false;
         aBoolean1614 = false;
         aBoolean1618 = false;
@@ -181,7 +181,6 @@ public class Actor extends Renderable {
             anIntArray1666[0] = l;
             aBooleanArray1667[0] = flag;
             if (j != -6002) {
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("37957, " + flag + ", " + i + ", " + j + ", " + runtimeexception.toString());

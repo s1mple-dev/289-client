@@ -2,9 +2,9 @@ package com.runescape.cache.bzip;
 
 public class BZip2Decompressor {
 
-    public static BZip2Context aClass40_669 = new BZip2Context();
+    private static final BZip2Context aClass40_669 = new BZip2Context();
 
-    public static int method329(byte abyte0[], int i, byte abyte1[], int j, int k) {
+    public static void method329(byte[] abyte0, int i, byte[] abyte1, int j, int k) {
         synchronized (BZip2Decompressor.aClass40_669) {
             BZip2Decompressor.aClass40_669.aByteArray706 = abyte1;
             BZip2Decompressor.aClass40_669.anInt707 = k;
@@ -22,18 +22,17 @@ public class BZip2Decompressor {
             BZip2Decompressor.method331(BZip2Decompressor.aClass40_669);
             i -= BZip2Decompressor.aClass40_669.anInt713;
             int l = i;
-            return l;
         }
     }
 
-    public static void method330(BZip2Context class40) {
+    private static void method330(BZip2Context class40) {
         byte byte4 = class40.aByte716;
         int i = class40.anInt717;
         int j = class40.anInt727;
         int k = class40.anInt725;
-        int ai[] = BZip2Context.anIntArray730;
+        int[] ai = BZip2Context.anIntArray730;
         int l = class40.anInt724;
-        byte abyte0[] = class40.aByteArray711;
+        byte[] abyte0 = class40.aByteArray711;
         int i1 = class40.anInt712;
         int j1 = class40.anInt713;
         int k1 = j1;
@@ -144,11 +143,11 @@ public class BZip2Decompressor {
         class40.anInt713 = j1;
     }
 
-    public static void method331(BZip2Context class40) {
+    private static void method331(BZip2Context class40) {
         int k8 = 0;
-        int ai[] = null;
-        int ai1[] = null;
-        int ai2[] = null;
+        int[] ai = null;
+        int[] ai1 = null;
+        int[] ai2 = null;
         class40.anInt721 = 1;
         if (BZip2Context.anIntArray730 == null) {
             BZip2Context.anIntArray730 = new int[class40.anInt721 * 0x186a0];
@@ -222,7 +221,7 @@ public class BZip2Decompressor {
                 class40.aByteArray738[i1] = (byte) j3;
             }
 
-            byte abyte0[] = new byte[6];
+            byte[] abyte0 = new byte[6];
             for (byte byte16 = 0; byte16 < j4; byte16++) {
                 abyte0[byte16] = byte16;
             }
@@ -435,15 +434,15 @@ public class BZip2Decompressor {
         }
     }
 
-    public static byte method332(BZip2Context class40) {
+    private static byte method332(BZip2Context class40) {
         return (byte) BZip2Decompressor.method334(8, class40);
     }
 
-    public static byte method333(BZip2Context class40) {
+    private static byte method333(BZip2Context class40) {
         return (byte) BZip2Decompressor.method334(1, class40);
     }
 
-    public static int method334(int i, BZip2Context class40) {
+    private static int method334(int i, BZip2Context class40) {
         int j;
         do {
             if (class40.anInt720 >= i) {
@@ -464,7 +463,7 @@ public class BZip2Decompressor {
         return j;
     }
 
-    public static void method335(BZip2Context class40) {
+    private static void method335(BZip2Context class40) {
         class40.anInt731 = 0;
         for (int i = 0; i < 256; i++) {
             if (class40.aBooleanArray732[i]) {
@@ -474,7 +473,7 @@ public class BZip2Decompressor {
         }
     }
 
-    public static void method336(int ai[], int ai1[], int ai2[], byte abyte0[], int i, int j, int k) {
+    private static void method336(int[] ai, int[] ai1, int[] ai2, byte[] abyte0, int i, int j, int k) {
         int l = 0;
         for (int i1 = i; i1 <= j; i1++) {
             for (int l2 = 0; l2 < k; l2++) {

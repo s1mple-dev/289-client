@@ -7,20 +7,19 @@ import com.runescape.util.SignLink;
 
 public class AnimableGameObject extends Renderable {
 
-    public int anInt1602;
-    public int anInt1603;
-    public SpotAnimation aClass32_1604;
+    private int anInt1602;
+    private SpotAnimation aClass32_1604;
     public int anInt1605;
     public int anInt1606;
     public int anInt1607;
     public int anInt1608;
     public int anInt1609;
-    public int anInt1610;
-    public int anInt1611;
+    private int anInt1610;
+    private int anInt1611;
     public boolean aBoolean1612;
 
     public AnimableGameObject(int i, int j, int k, int l, boolean flag, int i1, int j1, int k1) {
-        anInt1603 = 393;
+        int anInt1603 = 393;
         aBoolean1612 = false;
         try {
             aClass32_1604 = SpotAnimation.cache[j1];

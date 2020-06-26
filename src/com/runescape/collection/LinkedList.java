@@ -4,13 +4,12 @@ import com.runescape.util.SignLink;
 
 public class LinkedList {
 
-    public int anInt532;
-    public boolean aBoolean533;
-    public Node head;
-    public Node current;
+    private boolean aBoolean533;
+    private final Node head;
+    private Node current;
 
     public LinkedList(int i) {
-        anInt532 = 9;
+        int anInt532 = 9;
         aBoolean533 = true;
         head = new Node();
         try {
@@ -48,7 +47,6 @@ public class LinkedList {
             class44.previousNode.nextNode = class44;
             if (i != -12925) {
                 aBoolean533 = !aBoolean533;
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("22708, " + class44 + ", " + i + ", " + runtimeexception.toString());

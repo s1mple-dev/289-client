@@ -17,48 +17,48 @@ import java.util.zip.GZIPInputStream;
 
 public class OnDemandRequester extends Requester implements Runnable {
 
-    public boolean aBoolean1280;
-    public int anInt1281;
-    public int anInt1282;
-    public byte aByte1283;
-    public int anIntArrayArray1284[][];
-    public int anIntArrayArray1285[][];
-    public byte aByteArrayArray1286[][];
-    public int anInt1287;
-    public byte aByteArray1288[];
-    public int anIntArray1289[];
-    public int anIntArray1290[];
-    public int anIntArray1291[];
-    public int anIntArray1292[];
-    public int anIntArray1293[];
-    public int anIntArray1294[];
-    public boolean aBoolean1295;
-    public Client aClient1296;
-    public CRC32 aCRC32_1297;
-    public boolean aBoolean1298;
-    public int anInt1299;
-    public int anInt1300;
-    public Queue aClass31_1301;
-    public LinkedList aClass28_1302;
-    public LinkedList aClass28_1303;
-    public LinkedList aClass28_1304;
-    public LinkedList aClass28_1305;
-    public LinkedList aClass28_1306;
+    private boolean aBoolean1280;
+    private int anInt1281;
+    private int anInt1282;
+    private final byte aByte1283;
+    private final int[][] anIntArrayArray1284;
+    private final int[][] anIntArrayArray1285;
+    private final byte[][] aByteArrayArray1286;
+    private int anInt1287;
+    private byte[] aByteArray1288;
+    private int[] anIntArray1289;
+    private int[] anIntArray1290;
+    private int[] anIntArray1291;
+    private int[] anIntArray1292;
+    private int[] anIntArray1293;
+    private int[] anIntArray1294;
+    private boolean aBoolean1295;
+    private Client aClient1296;
+    private final CRC32 aCRC32_1297;
+    private boolean aBoolean1298;
+    private int anInt1299;
+    private int anInt1300;
+    private final Queue aClass31_1301;
+    private final LinkedList aClass28_1302;
+    private final LinkedList aClass28_1303;
+    private final LinkedList aClass28_1304;
+    private final LinkedList aClass28_1305;
+    private final LinkedList aClass28_1306;
     public String aString1307;
-    public int anInt1308;
-    public int anInt1309;
-    public Socket aSocket1310;
-    public InputStream anInputStream1311;
-    public OutputStream anOutputStream1312;
+    private int anInt1308;
+    private int anInt1309;
+    private Socket aSocket1310;
+    private InputStream anInputStream1311;
+    private OutputStream anOutputStream1312;
     public int anInt1313;
-    public OnDemandNode aClass44_Sub3_Sub3_1314;
-    public int anInt1315;
-    public int anInt1316;
-    public byte aByteArray1317[];
-    public byte aByteArray1318[];
-    public int anInt1319;
-    public int anInt1320;
-    public long aLong1321;
+    private OnDemandNode aClass44_Sub3_Sub3_1314;
+    private int anInt1315;
+    private int anInt1316;
+    private final byte[] aByteArray1317;
+    private final byte[] aByteArray1318;
+    private int anInt1319;
+    private int anInt1320;
+    private long aLong1321;
     public int anInt1322;
 
     public OnDemandRequester() {
@@ -83,9 +83,9 @@ public class OnDemandRequester extends Requester implements Runnable {
     }
 
     public void method383(Archive class47, Client client1) {
-        String as[] = {"model_version", "anim_version", "midi_version", "map_version"};
+        String[] as = {"model_version", "anim_version", "midi_version", "map_version"};
         for (int i = 0; i < 4; i++) {
-            byte abyte0[] = class47.method549(as[i], null);
+            byte[] abyte0 = class47.method549(as[i], null);
             int j = abyte0.length / 2;
             Buffer class44_sub3_sub2 = new Buffer(abyte0, 15787);
             anIntArrayArray1284[i] = new int[j];
@@ -94,9 +94,9 @@ public class OnDemandRequester extends Requester implements Runnable {
                 anIntArrayArray1284[i][l] = class44_sub3_sub2.readUnsignedShort();
             }
         }
-        String as1[] = {"model_crc", "anim_crc", "midi_crc", "map_crc"};
+        String[] as1 = {"model_crc", "anim_crc", "midi_crc", "map_crc"};
         for (int k = 0; k < 4; k++) {
-            byte abyte1[] = class47.method549(as1[k], null);
+            byte[] abyte1 = class47.method549(as1[k], null);
             int i1 = abyte1.length / 4;
             Buffer class44_sub3_sub2_1 = new Buffer(abyte1, 15787);
             anIntArrayArray1285[k] = new int[i1];
@@ -104,7 +104,7 @@ public class OnDemandRequester extends Requester implements Runnable {
                 anIntArrayArray1285[k][l1] = class44_sub3_sub2_1.method487();
             }
         }
-        byte abyte2[] = class47.method549("model_index", null);
+        byte[] abyte2 = class47.method549("model_index", null);
         int j1 = anIntArrayArray1284[0].length;
         aByteArray1288 = new byte[j1];
         for (int k1 = 0; k1 < j1; k1++) {
@@ -341,12 +341,12 @@ public class OnDemandRequester extends Requester implements Runnable {
             if (anIntArrayArray1284[j][k] == 0) {
                 return;
             }
-            byte abyte0[] = aClient1296.aClass45Array1208[j + 1].method541(false, k);
+            byte[] abyte0 = aClient1296.aClass45Array1208[j + 1].method541(false, k);
             if (method402(abyte0, anIntArrayArray1284[j][k], (byte) 64, anIntArrayArray1285[j][k])) {
                 return;
             }
             aByteArrayArray1286[j][k] = byte0;
-            if (i < 7 || i > 7) {
+            if (i != 7) {
                 return;
             }
             if (byte0 > anInt1287) {
@@ -492,13 +492,12 @@ public class OnDemandRequester extends Requester implements Runnable {
                     }
                 }
             }
-            return;
         } catch (Exception exception) {
             SignLink.reporterror("od_ex " + exception.getMessage());
         }
     }
 
-    public void method398(byte byte0) {
+    private void method398(byte byte0) {
         try {
             OnDemandNode class44_sub3_sub3;
             synchronized (aClass28_1302) {
@@ -509,7 +508,7 @@ public class OnDemandRequester extends Requester implements Runnable {
             }
             while (class44_sub3_sub3 != null) {
                 aBoolean1298 = true;
-                byte abyte0[] = null;
+                byte[] abyte0 = null;
                 if (aClient1296.aClass45Array1208[0] != null) {
                     abyte0 = aClient1296.aClass45Array1208[class44_sub3_sub3.anInt1405 + 1].method541(false,
                             class44_sub3_sub3.anInt1406);
@@ -537,7 +536,7 @@ public class OnDemandRequester extends Requester implements Runnable {
         throw new RuntimeException();
     }
 
-    public void method399(byte byte0) {
+    private void method399(byte byte0) {
         try {
             anInt1299 = 0;
             anInt1300 = 0;
@@ -573,7 +572,7 @@ public class OnDemandRequester extends Requester implements Runnable {
         throw new RuntimeException();
     }
 
-    public void method400(int i) {
+    private void method400(int i) {
         label0:
         while (true) {
             try {
@@ -647,7 +646,7 @@ public class OnDemandRequester extends Requester implements Runnable {
         }
     }
 
-    public void method401(int i) {
+    private void method401(int i) {
         try {
             i = 48 / i;
             try {
@@ -701,7 +700,7 @@ public class OnDemandRequester extends Requester implements Runnable {
                 }
                 if (anInt1316 > 0 && j >= anInt1316) {
                     aBoolean1298 = true;
-                    byte abyte0[] = aByteArray1317;
+                    byte[] abyte0 = aByteArray1317;
                     int i1 = 0;
                     if (aClass44_Sub3_Sub3_1314 != null) {
                         abyte0 = aClass44_Sub3_Sub3_1314.aByteArray1407;
@@ -727,7 +726,6 @@ public class OnDemandRequester extends Requester implements Runnable {
                         }
                     }
                     anInt1316 = 0;
-                    return;
                 }
             } catch (IOException ioexception) {
                 try {
@@ -738,7 +736,6 @@ public class OnDemandRequester extends Requester implements Runnable {
                 anInputStream1311 = null;
                 anOutputStream1312 = null;
                 anInt1316 = 0;
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("67743, " + i + ", " + runtimeexception.toString());
@@ -746,7 +743,7 @@ public class OnDemandRequester extends Requester implements Runnable {
         }
     }
 
-    public boolean method402(byte abyte0[], int i, byte byte0, int j) {
+    private boolean method402(byte[] abyte0, int i, byte byte0, int j) {
         try {
             if (abyte0 == null || abyte0.length < 2) {
                 return false;
@@ -770,7 +767,7 @@ public class OnDemandRequester extends Requester implements Runnable {
         throw new RuntimeException();
     }
 
-    public void method403(OnDemandNode class44_sub3_sub3, int i) {
+    private void method403(OnDemandNode class44_sub3_sub3, int i) {
         try {
             i = 99 / i;
             try {

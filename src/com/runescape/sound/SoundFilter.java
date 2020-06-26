@@ -3,18 +3,18 @@ package com.runescape.sound;
 import com.runescape.net.Buffer;
 import com.runescape.util.SignLink;
 
-public class SoundFilter {
+class SoundFilter {
 
-    public static float aFloatArrayArray56[][] = new float[2][8];
-    public static int anIntArrayArray57[][] = new int[2][8];
-    public static float aFloat58;
+    private static final float[][] aFloatArrayArray56 = new float[2][8];
+    public static final int[][] anIntArrayArray57 = new int[2][8];
+    private static float aFloat58;
     public static int anInt59;
-    public boolean aBoolean50;
-    public int anInt51;
-    public int anIntArray52[];
-    public int anIntArrayArrayArray53[][][];
-    public int anIntArrayArrayArray54[][][];
-    public int anIntArray55[];
+    private boolean aBoolean50;
+    private final int anInt51;
+    public final int[] anIntArray52;
+    private final int[][][] anIntArrayArrayArray53;
+    private final int[][][] anIntArrayArrayArray54;
+    private final int[] anIntArray55;
 
     public SoundFilter() {
         aBoolean50 = false;
@@ -25,7 +25,7 @@ public class SoundFilter {
         anIntArray55 = new int[2];
     }
 
-    public float method152(int i, boolean flag, float f, int j) {
+    private float method152(int i, boolean flag, float f, int j) {
         try {
             float f1 = anIntArrayArrayArray54[j][0][i] + f
                     * (anIntArrayArrayArray54[j][1][i] - anIntArrayArrayArray54[j][0][i]);
@@ -41,7 +41,7 @@ public class SoundFilter {
         throw new RuntimeException();
     }
 
-    public float method153(int i, float f) {
+    private float method153(int i, float f) {
         try {
             if (i != 2972) {
                 throw new NullPointerException();
@@ -55,7 +55,7 @@ public class SoundFilter {
         throw new RuntimeException();
     }
 
-    public float method154(int i, int j, int k, float f) {
+    private float method154(int i, int j, int k, float f) {
         try {
             float f1 = anIntArrayArrayArray53[i][0][j] + f
                     * (anIntArrayArrayArray53[i][1][j] - anIntArrayArrayArray53[i][0][j]);

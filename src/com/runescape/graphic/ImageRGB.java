@@ -9,18 +9,16 @@ import java.awt.image.PixelGrabber;
 
 public class ImageRGB extends Rasterizer {
 
-    public int anInt1441;
-    public boolean aBoolean1442;
-    public int anInt1443;
-    public int anInt1444;
-    public int anInt1445;
-    public byte aByte1446;
-    public boolean aBoolean1447;
-    public int anIntArray1448[];
+    private boolean aBoolean1442;
+    private final int anInt1443;
+    private int anInt1445;
+    private final byte aByte1446;
+    private boolean aBoolean1447;
+    public int[] anIntArray1448;
     public int anInt1449;
     public int anInt1450;
-    public int anInt1451;
-    public int anInt1452;
+    private int anInt1451;
+    private int anInt1452;
     public int anInt1453;
     public int anInt1454;
 
@@ -36,7 +34,7 @@ public class ImageRGB extends Rasterizer {
         anInt1451 = anInt1452 = 0;
     }
 
-    public ImageRGB(byte abyte0[], Component component) {
+    public ImageRGB(byte[] abyte0, Component component) {
         aBoolean1442 = false;
         anInt1443 = 387;
         anInt1445 = 9;
@@ -57,7 +55,6 @@ public class ImageRGB extends Rasterizer {
             PixelGrabber pixelgrabber = new PixelGrabber(image, 0, 0, anInt1449, anInt1450, anIntArray1448, 0,
                     anInt1449);
             pixelgrabber.grabPixels();
-            return;
         } catch (Exception _ex) {
             System.out.println("Error converting jpg");
         }
@@ -75,7 +72,7 @@ public class ImageRGB extends Rasterizer {
         anInt1453 = class44_sub3_sub2_1.readUnsignedShort();
         anInt1454 = class44_sub3_sub2_1.readUnsignedShort();
         int j = class44_sub3_sub2_1.readUnsignedByte();
-        int ai[] = new int[j];
+        int[] ai = new int[j];
         for (int k = 0; k < j - 1; k++) {
             ai[k + 1] = class44_sub3_sub2_1.method486();
             if (ai[k + 1] == 0) {
@@ -116,7 +113,7 @@ public class ImageRGB extends Rasterizer {
                 byte0 = 0;
                 return;
             } else {
-                anInt1441 = 4;
+                int anInt1441 = 4;
                 return;
             }
         } catch (RuntimeException runtimeexception) {
@@ -169,7 +166,7 @@ public class ImageRGB extends Rasterizer {
 
     public void method437(int i) {
         try {
-            int ai[] = new int[anInt1453 * anInt1454];
+            int[] ai = new int[anInt1453 * anInt1454];
             for (int j = 0; j < anInt1450; j++) {
                 for (int k = 0; k < anInt1449; k++) {
                     ai[(j + anInt1452) * anInt1453 + (k + anInt1451)] = anIntArray1448[j * anInt1449 + k];
@@ -182,7 +179,6 @@ public class ImageRGB extends Rasterizer {
             anInt1452 = 0;
             if (i != -15744) {
                 aBoolean1442 = !aBoolean1442;
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("30731, " + i + ", " + runtimeexception.toString());
@@ -241,7 +237,7 @@ public class ImageRGB extends Rasterizer {
         throw new RuntimeException();
     }
 
-    public void method439(int i, int ai[], int ai1[], int j, int k, int l, boolean flag, int i1, int j1) {
+    private void method439(int i, int[] ai, int[] ai1, int j, int k, int l, boolean flag, int i1, int j1) {
         try {
             int k1 = -(k >> 2);
             k = -(k & 3);
@@ -311,7 +307,7 @@ public class ImageRGB extends Rasterizer {
             if (j1 <= 0 || i1 <= 0) {
                 return;
             } else {
-                method441(Rasterizer.anIntArray1369, anIntArray1448, 0, l, k, j1, i1, k1, l1);
+                method441(Rasterizer.anIntArray1369, anIntArray1448, l, k, j1, i1, k1, l1);
                 return;
             }
         } catch (RuntimeException runtimeexception) {
@@ -320,10 +316,11 @@ public class ImageRGB extends Rasterizer {
         throw new RuntimeException();
     }
 
-    public void method441(int ai[], int ai1[], int i, int j, int k, int l, int i1, int j1, int k1) {
+    private void method441(int[] ai, int[] ai1, int j, int k, int l, int i1, int j1, int k1) {
         int l1 = -(l >> 2);
         l = -(l & 3);
         for (int i2 = -i1; i2 < 0; i2++) {
+            int i;
             for (int j2 = l1; j2 < 0; j2++) {
                 i = ai1[j++];
                 if (i != 0) {
@@ -411,7 +408,7 @@ public class ImageRGB extends Rasterizer {
         throw new RuntimeException();
     }
 
-    public void method443(int i, int j, int k, int l, int ai[], int ai1[], int i1, int j1, int k1, int l1, boolean flag) {
+    private void method443(int i, int j, int k, int l, int[] ai, int[] ai1, int i1, int j1, int k1, int l1, boolean flag) {
         try {
             if (flag) {
                 return;
@@ -439,7 +436,7 @@ public class ImageRGB extends Rasterizer {
         throw new RuntimeException();
     }
 
-    public void method444(int ai[], int i, int j, int k, int l, int i1, int ai1[], int j1, int k1, int l1, int i2) {
+    public void method444(int[] ai, int i, int j, int k, int l, int i1, int[] ai1, int j1, int k1, int l1, int i2) {
         try {
             while (k1 >= 0) {
                 return;
@@ -484,7 +481,7 @@ public class ImageRGB extends Rasterizer {
             if (byte0 == aByte1446) {
                 byte0 = 0;
             } else {
-                anInt1444 = -392;
+                int anInt1444 = -392;
             }
             try {
                 int l1 = -j / 2;
@@ -577,8 +574,8 @@ public class ImageRGB extends Rasterizer {
         throw new RuntimeException();
     }
 
-    public void method447(int i, int j, int k, byte abyte0[], int l, int i1, int j1, int k1, int ai[], boolean flag,
-                          int ai1[]) {
+    private void method447(int i, int j, int k, byte[] abyte0, int l, int i1, int j1, int k1, int[] ai, boolean flag,
+                           int[] ai1) {
         try {
             if (!flag) {
                 anInt1445 = 207;

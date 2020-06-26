@@ -5,11 +5,11 @@ import com.runescape.net.Buffer;
 public class ChatEncoder {
 
     public static int anInt806 = 991;
-    public static int anInt807;
-    public static int anInt808;
-    public static char aCharArray809[] = new char[100];
-    public static Buffer aClass44_Sub3_Sub2_810 = new Buffer(new byte[100], 15787);
-    public static char aCharArray811[] = {' ', 'e', 't', 'a', 'o', 'i', 'h', 'n', 's', 'r', 'd', 'l', 'u', 'm', 'w',
+    private static int anInt807;
+    private static int anInt808;
+    private static final char[] aCharArray809 = new char[100];
+    private static final Buffer aClass44_Sub3_Sub2_810 = new Buffer(new byte[100], 15787);
+    private static final char[] aCharArray811 = {' ', 'e', 't', 'a', 'o', 'i', 'h', 'n', 's', 'r', 'd', 'l', 'u', 'm', 'w',
             'c', 'y', 'f', 'g', 'p', 'b', 'v', 'k', 'x', 'j', 'q', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8',
             '9', ' ', '!', '?', '.', ',', ':', ';', '(', ')', '-', '&', '*', '\\', '\'', '@', '#', '+', '=', '\243',
             '$', '%', '"', '[', ']'};
@@ -104,7 +104,6 @@ public class ChatEncoder {
             }
             if (j != -1) {
                 class44_sub3_sub2.writeByte(j << 4);
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("17960, " + s + ", " + class44_sub3_sub2 + ", " + i + ", "

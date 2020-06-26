@@ -5,24 +5,24 @@ import com.runescape.net.Buffer;
 
 public class ChatCensor {
 
-    public static int anInt745;
-    public static int anInt746;
-    public static boolean aBoolean747;
-    public static boolean aBoolean748 = true;
-    public static int anInt749 = 2;
-    public static int anInt750 = 2;
-    public static int anInt751;
-    public static byte aByte752 = 7;
+    private static int anInt745;
+    private static int anInt746;
+    private static boolean aBoolean747;
+    private static boolean aBoolean748 = true;
+    private static final int anInt749 = 2;
+    private static final int anInt750 = 2;
+    private static int anInt751;
+    private static final byte aByte752 = 7;
     public static byte aByte753 = 121;
     public static byte aByte754 = 16;
     public static boolean aBoolean755 = true;
-    public static int anIntArray756[];
-    public static char aCharArrayArray757[][];
-    public static byte aByteArrayArrayArray758[][][];
-    public static char aCharArrayArray759[][];
-    public static char aCharArrayArray760[][];
-    public static int anIntArray761[];
-    public static String aStringArray762[] = {"cook", "cook's", "cooks", "seeks", "sheet", "woop", "woops", "faq",
+    private static int[] anIntArray756;
+    private static char[][] aCharArrayArray757;
+    private static byte[][][] aByteArrayArrayArray758;
+    private static char[][] aCharArrayArray759;
+    private static char[][] aCharArrayArray760;
+    private static int[] anIntArray761;
+    private static final String[] aStringArray762 = {"cook", "cook's", "cooks", "seeks", "sheet", "woop", "woops", "faq",
             "noob", "noobs"};
     public static int anInt763;
 
@@ -34,15 +34,15 @@ public class ChatCensor {
         ChatCensor.method343(class44_sub3_sub2, class44_sub3_sub2_1, class44_sub3_sub2_2, class44_sub3_sub2_3);
     }
 
-    public static void method343(Buffer class44_sub3_sub2, Buffer class44_sub3_sub2_1, Buffer class44_sub3_sub2_2,
-                                 Buffer class44_sub3_sub2_3) {
+    private static void method343(Buffer class44_sub3_sub2, Buffer class44_sub3_sub2_1, Buffer class44_sub3_sub2_2,
+                                  Buffer class44_sub3_sub2_3) {
         ChatCensor.method345(class44_sub3_sub2_1, 5);
         ChatCensor.method346(true, class44_sub3_sub2_2);
         ChatCensor.method347(class44_sub3_sub2, (byte) -47);
         ChatCensor.method344(ChatCensor.anInt749, class44_sub3_sub2_3);
     }
 
-    public static void method344(int i, Buffer class44_sub3_sub2) {
+    private static void method344(int i, Buffer class44_sub3_sub2) {
         try {
             if (i < ChatCensor.anInt750 || i > ChatCensor.anInt750) {
                 ChatCensor.aBoolean748 = !ChatCensor.aBoolean748;
@@ -52,7 +52,7 @@ public class ChatCensor {
             ChatCensor.anIntArray761 = new int[j];
             for (int k = 0; k < j; k++) {
                 ChatCensor.anIntArray761[k] = class44_sub3_sub2.readUnsignedByte();
-                char ac[] = new char[class44_sub3_sub2.readUnsignedByte()];
+                char[] ac = new char[class44_sub3_sub2.readUnsignedByte()];
                 for (int l = 0; l < ac.length; l++) {
                     ac[l] = (char) class44_sub3_sub2.readUnsignedByte();
                 }
@@ -65,15 +65,14 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static void method345(Buffer class44_sub3_sub2, int i) {
+    private static void method345(Buffer class44_sub3_sub2, int i) {
         try {
             int j = class44_sub3_sub2.method487();
             ChatCensor.aCharArrayArray757 = new char[j][];
             ChatCensor.aByteArrayArrayArray758 = new byte[j][][];
             ChatCensor.method348(ChatCensor.aCharArrayArray757, ChatCensor.aByteArrayArrayArray758, class44_sub3_sub2,
                     4);
-            if (i < 5 || i > 5) {
-                return;
+            if (i != 5) {
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("10589, " + class44_sub3_sub2 + ", " + i + ", " + runtimeexception.toString());
@@ -81,13 +80,12 @@ public class ChatCensor {
         }
     }
 
-    public static void method346(boolean flag, Buffer class44_sub3_sub2) {
+    private static void method346(boolean flag, Buffer class44_sub3_sub2) {
         try {
             int i = class44_sub3_sub2.method487();
             ChatCensor.aCharArrayArray759 = new char[i][];
             ChatCensor.method349(class44_sub3_sub2, 961, ChatCensor.aCharArrayArray759);
             if (!flag) {
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("39796, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
@@ -95,7 +93,7 @@ public class ChatCensor {
         }
     }
 
-    public static void method347(Buffer class44_sub3_sub2, byte byte0) {
+    private static void method347(Buffer class44_sub3_sub2, byte byte0) {
         try {
             ChatCensor.anIntArray756 = new int[class44_sub3_sub2.method487()];
             for (int i = 0; i < ChatCensor.anIntArray756.length; i++) {
@@ -104,7 +102,6 @@ public class ChatCensor {
             if (byte0 != -47) {
                 for (int j = 1; j > 0; j++) {
                 }
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("97017, " + class44_sub3_sub2 + ", " + byte0 + ", " + runtimeexception.toString());
@@ -112,18 +109,18 @@ public class ChatCensor {
         }
     }
 
-    public static void method348(char ac[][], byte abyte0[][][], Buffer class44_sub3_sub2, int i) {
+    private static void method348(char[][] ac, byte[][][] abyte0, Buffer class44_sub3_sub2, int i) {
         try {
-            if (i < 4 || i > 4) {
+            if (i != 4) {
                 ChatCensor.aBoolean748 = !ChatCensor.aBoolean748;
             }
             for (int j = 0; j < ac.length; j++) {
-                char ac1[] = new char[class44_sub3_sub2.readUnsignedByte()];
+                char[] ac1 = new char[class44_sub3_sub2.readUnsignedByte()];
                 for (int k = 0; k < ac1.length; k++) {
                     ac1[k] = (char) class44_sub3_sub2.readUnsignedByte();
                 }
                 ac[j] = ac1;
-                byte abyte1[][] = new byte[class44_sub3_sub2.readUnsignedByte()][2];
+                byte[][] abyte1 = new byte[class44_sub3_sub2.readUnsignedByte()][2];
                 for (int l = 0; l < abyte1.length; l++) {
                     abyte1[l][0] = (byte) class44_sub3_sub2.readUnsignedByte();
                     abyte1[l][1] = (byte) class44_sub3_sub2.readUnsignedByte();
@@ -140,11 +137,11 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static void method349(Buffer class44_sub3_sub2, int i, char ac[][]) {
+    private static void method349(Buffer class44_sub3_sub2, int i, char[][] ac) {
         try {
             i = 75 / i;
             for (int j = 0; j < ac.length; j++) {
-                char ac1[] = new char[class44_sub3_sub2.readUnsignedByte()];
+                char[] ac1 = new char[class44_sub3_sub2.readUnsignedByte()];
                 for (int k = 0; k < ac1.length; k++) {
                     ac1[k] = (char) class44_sub3_sub2.readUnsignedByte();
                 }
@@ -158,7 +155,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static void method350(char ac[], int i) {
+    private static void method350(char[] ac, int i) {
         try {
             int j = 0;
             for (int k = 0; k < ac.length; k++) {
@@ -182,7 +179,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static boolean method351(char c, int i) {
+    private static boolean method351(char c, int i) {
         try {
             i = 56 / i;
             return c >= ' ' && c <= '\177' || c == ' ' || c == '\n' || c == '\t' || c == '\243' || c == '\u20AC';
@@ -195,7 +192,7 @@ public class ChatCensor {
     public static String method352(String s, int i) {
         try {
             System.currentTimeMillis();
-            char ac[] = s.toCharArray();
+            char[] ac = s.toCharArray();
             ChatCensor.method350(ac, 448);
             String s1 = (new String(ac)).trim();
             ac = s1.toLowerCase().toCharArray();
@@ -209,7 +206,7 @@ public class ChatCensor {
             ChatCensor.method369(ac, -17411);
             for (int j = 0; j < ChatCensor.aStringArray762.length; j++) {
                 for (int k = -1; (k = s2.indexOf(ChatCensor.aStringArray762[j], k + 1)) != -1; ) {
-                    char ac1[] = ChatCensor.aStringArray762[j].toCharArray();
+                    char[] ac1 = ChatCensor.aStringArray762[j].toCharArray();
                     for (int i1 = 0; i1 < ac1.length; i1++) {
                         ac[i1 + k] = ac1[i1];
                     }
@@ -225,7 +222,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static void method353(char ac[], char ac1[], boolean flag) {
+    private static void method353(char[] ac, char[] ac1, boolean flag) {
         try {
             for (int i = 0; i < ac.length; i++) {
                 if (ac1[i] != '*' && ChatCensor.method377(false, ac[i])) {
@@ -233,7 +230,6 @@ public class ChatCensor {
                 }
             }
             if (!flag) {
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("96470, " + ac.toString() + ", " + ac1.toString() + ", " + flag + ", "
@@ -242,7 +238,7 @@ public class ChatCensor {
         }
     }
 
-    public static void method354(char ac[], byte byte0) {
+    private static void method354(char[] ac, byte byte0) {
         try {
             if (byte0 != -47) {
                 ChatCensor.anInt745 = 240;
@@ -269,7 +265,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static void method355(byte byte0, char ac[]) {
+    private static void method355(byte byte0, char[] ac) {
         try {
             for (int i = 0; i < 2; i++) {
                 for (int j = ChatCensor.aCharArrayArray757.length - 1; j >= 0; j--) {
@@ -278,7 +274,6 @@ public class ChatCensor {
                 }
             }
             if (byte0 != 1) {
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("661, " + byte0 + ", " + ac.toString() + ", " + runtimeexception.toString());
@@ -286,16 +281,16 @@ public class ChatCensor {
         }
     }
 
-    public static void method356(int i, char ac[]) {
+    private static void method356(int i, char[] ac) {
         try {
-            char ac1[] = ac.clone();
+            char[] ac1 = ac.clone();
             if (i != 0) {
                 return;
             }
-            char ac2[] = {'(', 'a', ')'};
+            char[] ac2 = {'(', 'a', ')'};
             ChatCensor.method364(ac1, ac2, null, 4);
-            char ac3[] = ac.clone();
-            char ac4[] = {'d', 'o', 't'};
+            char[] ac3 = ac.clone();
+            char[] ac4 = {'d', 'o', 't'};
             ChatCensor.method364(ac3, ac4, null, 4);
             for (int j = ChatCensor.aCharArrayArray759.length - 1; j >= 0; j--) {
                 ChatCensor.method357(ac1, ac, ac3, (byte) 3, ChatCensor.aCharArrayArray759[j]);
@@ -307,7 +302,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static void method357(char ac[], char ac1[], char ac2[], byte byte0, char ac3[]) {
+    private static void method357(char[] ac, char[] ac1, char[] ac2, byte byte0, char[] ac3) {
         try {
             if (ac3.length > ac1.length) {
                 return;
@@ -371,7 +366,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static int method358(int i, char ac[], int j, char ac1[]) {
+    private static int method358(int i, char[] ac, int j, char[] ac1) {
         try {
             if (j == 0) {
                 return 2;
@@ -385,7 +380,7 @@ public class ChatCensor {
                 }
             }
             int l = 0;
-            if (i < 4 || i > 4) {
+            if (i != 4) {
                 return 4;
             }
             for (int i1 = j - 1; i1 >= 0; i1--) {
@@ -407,7 +402,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static int method359(char ac[], char ac1[], int i, int j) {
+    private static int method359(char[] ac, char[] ac1, int i, int j) {
         try {
             if (i != 0) {
                 return ChatCensor.anInt746;
@@ -443,17 +438,17 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static void method360(char ac[], int i) {
+    private static void method360(char[] ac, int i) {
         try {
-            char ac1[] = ac.clone();
-            if (i < 5 || i > 5) {
+            char[] ac1 = ac.clone();
+            if (i != 5) {
                 for (int j = 1; j > 0; j++) {
                 }
             }
-            char ac2[] = {'d', 'o', 't'};
+            char[] ac2 = {'d', 'o', 't'};
             ChatCensor.method364(ac1, ac2, null, 4);
-            char ac3[] = ac.clone();
-            char ac4[] = {'s', 'l', 'a', 's', 'h'};
+            char[] ac3 = ac.clone();
+            char[] ac4 = {'s', 'l', 'a', 's', 'h'};
             ChatCensor.method364(ac3, ac4, null, 4);
             for (int k = 0; k < ChatCensor.aCharArrayArray760.length; k++) {
                 ChatCensor.method361(ChatCensor.anIntArray761[k], 947, ac, ChatCensor.aCharArrayArray760[k], ac3, ac1);
@@ -465,7 +460,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static void method361(int i, int j, char ac[], char ac1[], char ac2[], char ac3[]) {
+    private static void method361(int i, int j, char[] ac, char[] ac1, char[] ac2, char[] ac3) {
         try {
             if (ac1.length > ac.length) {
                 return;
@@ -589,7 +584,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static int method362(int i, char ac[], boolean flag, char ac1[]) {
+    private static int method362(int i, char[] ac, boolean flag, char[] ac1) {
         try {
             if (i == 0) {
                 return 2;
@@ -625,7 +620,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static int method363(char ac[], char ac1[], byte byte0, int i) {
+    private static int method363(char[] ac, char[] ac1, byte byte0, int i) {
         try {
             if (i + 1 == ac1.length) {
                 return 2;
@@ -661,7 +656,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static void method364(char ac[], char ac1[], byte abyte0[][], int i) {
+    private static void method364(char[] ac, char[] ac1, byte[][] abyte0, int i) {
         try {
             if (ac1.length > ac.length) {
                 return;
@@ -750,7 +745,7 @@ public class ChatCensor {
                             }
                             for (; !flag7 && k2 < l; k2++) {
                                 if (k2 >= 0 && (!ChatCensor.method372(ac[k2], 0) || ac[k2] == '\'')) {
-                                    char ac2[] = new char[3];
+                                    char[] ac2 = new char[3];
                                     int j3;
                                     for (j3 = 0; j3 < 3; j3++) {
                                         if (k2 + j3 >= ac.length || ChatCensor.method372(ac[k2 + j3], 0)
@@ -802,7 +797,7 @@ public class ChatCensor {
                     }
                 }
             }
-            if (i < 4 || i > 4) {
+            if (i != 4) {
                 ChatCensor.aBoolean747 = !ChatCensor.aBoolean747;
             }
             return;
@@ -813,7 +808,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static boolean method365(byte byte0, byte byte1, byte byte2, byte abyte0[][]) {
+    private static boolean method365(byte byte0, byte byte1, byte byte2, byte[][] abyte0) {
         try {
             if (byte1 != 7) {
                 throw new NullPointerException();
@@ -845,7 +840,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static int method366(char c, char c1, byte byte0, char c2) {
+    private static int method366(char c, char c1, byte byte0, char c2) {
         try {
             if (byte0 != -31) {
                 for (int i = 1; i > 0; i++) {
@@ -877,7 +872,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static int method367(byte byte0, char c, char c1, char c2) {
+    private static int method367(byte byte0, char c, char c1, char c2) {
         try {
             if (byte0 == 9) {
                 byte0 = 0;
@@ -1018,7 +1013,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static byte method368(int i, char c) {
+    private static byte method368(int i, char c) {
         try {
             if (i >= 0) {
                 throw new NullPointerException();
@@ -1040,7 +1035,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static void method369(char ac[], int i) {
+    private static void method369(char[] ac, int i) {
         try {
             int j = 0;
             if (i != -17411) {
@@ -1086,7 +1081,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static int method370(int i, int j, char ac[]) {
+    private static int method370(int i, int j, char[] ac) {
         try {
             if (i >= 0) {
                 ChatCensor.aBoolean748 = !ChatCensor.aBoolean748;
@@ -1103,7 +1098,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static int method371(char ac[], int i, boolean flag) {
+    private static int method371(char[] ac, int i, boolean flag) {
         try {
             for (int j = i; j < ac.length && j >= 0; j++) {
                 if (ac[j] < '0' || ac[j] > '9') {
@@ -1122,7 +1117,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static boolean method372(char c, int i) {
+    private static boolean method372(char c, int i) {
         try {
             if (i != 0) {
                 ChatCensor.anInt745 = 186;
@@ -1134,7 +1129,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static boolean method373(char c, int i) {
+    private static boolean method373(char c, int i) {
         try {
             if (i != 40411) {
                 throw new NullPointerException();
@@ -1149,7 +1144,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static boolean method374(char c, int i) {
+    private static boolean method374(char c, int i) {
         try {
             if (i != 8) {
                 for (int j = 1; j > 0; j++) {
@@ -1162,7 +1157,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static boolean method375(int i, char c) {
+    private static boolean method375(int i, char c) {
         try {
             if (i != 0) {
                 for (int j = 1; j > 0; j++) {
@@ -1175,7 +1170,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static boolean method376(char c, boolean flag) {
+    private static boolean method376(char c, boolean flag) {
         try {
             if (flag) {
                 for (int i = 1; i > 0; i++) {
@@ -1188,7 +1183,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static boolean method377(boolean flag, char c) {
+    private static boolean method377(boolean flag, char c) {
         try {
             if (flag) {
                 throw new NullPointerException();
@@ -1200,7 +1195,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static boolean method378(char ac[], int i) {
+    private static boolean method378(char[] ac, int i) {
         try {
             boolean flag = true;
             for (int j = 0; j < ac.length; j++) {
@@ -1239,7 +1234,7 @@ public class ChatCensor {
         throw new RuntimeException();
     }
 
-    public static int method379(char ac[], byte byte0) {
+    private static int method379(char[] ac, byte byte0) {
         try {
             if (byte0 != 122) {
                 ChatCensor.aBoolean748 = !ChatCensor.aBoolean748;

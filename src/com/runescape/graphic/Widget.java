@@ -12,13 +12,13 @@ import com.runescape.util.TextUtils;
 
 public class Widget {
 
-    public static Widget aClass5Array100[];
-    public static Cache aClass39_162 = new Cache((byte) 7, 30);
-    public static Cache spriteCache;
-    public byte aByte98;
-    public int anInt99;
-    public int anIntArray101[];
-    public int anIntArray102[];
+    public static Widget[] aClass5Array100;
+    private static final Cache aClass39_162 = new Cache((byte) 7, 30);
+    private static Cache spriteCache;
+    private final byte aByte98;
+    private int anInt99;
+    public int[] anIntArray101;
+    public int[] anIntArray102;
     public int anInt103;
     public int anInt104;
     public int anInt105;
@@ -31,28 +31,28 @@ public class Widget {
     public byte aByte112;
     public int anInt113;
     public int anInt114;
-    public int anIntArrayArray115[][];
-    public int anIntArray116[];
-    public int anIntArray117[];
+    public int[][] anIntArrayArray115;
+    public int[] anIntArray116;
+    public int[] anIntArray117;
     public int anInt118;
     public int anInt119;
     public int anInt120;
     public boolean aBoolean121;
-    public int anIntArray122[];
-    public int anIntArray123[];
-    public int anIntArray124[];
-    public int anInt125;
-    public boolean aBoolean126;
+    public int[] anIntArray122;
+    public int[] anIntArray123;
+    public int[] anIntArray124;
+    private int anInt125;
+    private boolean aBoolean126;
     public boolean aBoolean127;
     public boolean aBoolean128;
     public boolean aBoolean129;
     public boolean aBoolean130;
     public int anInt131;
     public int anInt132;
-    public ImageRGB aClass44_Sub3_Sub1_Sub2Array133[];
-    public int anIntArray134[];
-    public int anIntArray135[];
-    public String aStringArray136[];
+    public ImageRGB[] aClass44_Sub3_Sub1_Sub2Array133;
+    public int[] anIntArray134;
+    public int[] anIntArray135;
+    public String[] aStringArray136;
     public boolean aBoolean137;
     public boolean aBoolean138;
     public boolean aBoolean139;
@@ -67,8 +67,8 @@ public class Widget {
     public ImageRGB aClass44_Sub3_Sub1_Sub2_148;
     public int anInt149;
     public int anInt150;
-    public int anInt151;
-    public int anInt152;
+    private int anInt151;
+    private int anInt152;
     public int anInt153;
     public int anInt154;
     public int anInt155;
@@ -83,7 +83,7 @@ public class Widget {
         aByte98 = 4;
     }
 
-    public static void method181(TypeFace aclass44_sub3_sub1_sub4[], Archive mediaArchive, int i, Archive widgetArchive) {
+    public static void method181(TypeFace[] aclass44_sub3_sub1_sub4, Archive mediaArchive, int i, Archive widgetArchive) {
         try {
             Widget.spriteCache = new Cache((byte) 7, 50000);
             Buffer class44_sub3_sub2 = new Buffer(widgetArchive.method549("data", null), 15787);
@@ -310,7 +310,6 @@ public class Widget {
             }
             if (class44_sub3_sub4_sub4 != null && i != 4) {
                 Widget.aClass39_162.method340((i << 16) + k, (byte) 76, class44_sub3_sub4_sub4);
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("27428, " + i + ", " + class44_sub3_sub4_sub4 + ", " + j + ", " + k + ", "
@@ -319,7 +318,7 @@ public class Widget {
         }
     }
 
-    public static ImageRGB method186(boolean flag, int i, Archive class47, String s) {
+    private static ImageRGB method186(boolean flag, int i, Archive class47, String s) {
         try {
             if (flag) {
                 throw new NullPointerException();
@@ -347,7 +346,7 @@ public class Widget {
         try {
             int l = anIntArray101[k];
             anIntArray101[k] = anIntArray101[j];
-            if (i < 0 || i > 0) {
+            if (i != 0) {
                 return;
             } else {
                 anIntArray101[j] = l;
@@ -399,7 +398,7 @@ public class Widget {
         throw new RuntimeException();
     }
 
-    public Model method184(int i, int j) {
+    private Model method184(int i, int j) {
         Model class44_sub3_sub4_sub4 = (Model) Widget.aClass39_162.method339((i << 16) + j);
         if (class44_sub3_sub4_sub4 != null) {
             return class44_sub3_sub4_sub4;

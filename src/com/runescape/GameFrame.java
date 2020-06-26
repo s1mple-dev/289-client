@@ -3,9 +3,9 @@ package com.runescape;
 import java.awt.*;
 
 @SuppressWarnings("serial")
-public class GameFrame extends Frame {
+class GameFrame extends Frame {
 
-    public GameShell gameShell;
+    private final GameShell gameShell;
 
     public GameFrame(int width, int height, GameShell gameShell) {
         this.gameShell = gameShell;

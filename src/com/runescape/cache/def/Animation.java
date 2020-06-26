@@ -6,19 +6,19 @@ import com.runescape.util.SignLink;
 
 public class Animation {
 
-    public static int anInt262;
-    public static int anInt263 = 2;
-    public static Animation aClass11Array264[];
-    public static boolean aBooleanArray272[];
+    private static int anInt262;
+    private static int anInt263 = 2;
+    private static Animation[] aClass11Array264;
+    private static boolean[] aBooleanArray272;
     public int anInt265;
     public Skins aClass9_266;
     public int anInt267;
-    public int anIntArray268[];
-    public int anIntArray269[];
-    public int anIntArray270[];
-    public int anIntArray271[];
+    public int[] anIntArray268;
+    public int[] anIntArray269;
+    public int[] anIntArray270;
+    public int[] anIntArray271;
 
-    public Animation() {
+    private Animation() {
     }
 
     public static void method207(int i) {
@@ -29,7 +29,7 @@ public class Animation {
         }
     }
 
-    public static void method208(int i, byte abyte0[]) {
+    public static void method208(int i, byte[] abyte0) {
         try {
             Buffer class44_sub3_sub2 = new Buffer(abyte0, 15787);
             class44_sub3_sub2.offset = abyte0.length - 8;
@@ -57,10 +57,10 @@ public class Animation {
             if (i != 2) {
                 return;
             }
-            int ai[] = new int[500];
-            int ai1[] = new int[500];
-            int ai2[] = new int[500];
-            int ai3[] = new int[500];
+            int[] ai = new int[500];
+            int[] ai1 = new int[500];
+            int[] ai2 = new int[500];
+            int[] ai3 = new int[500];
             for (int l1 = 0; l1 < k1; l1++) {
                 int i2 = class44_sub3_sub2_1.readUnsignedShort();
                 Animation class11 = Animation.aClass11Array264[i2] = new Animation();

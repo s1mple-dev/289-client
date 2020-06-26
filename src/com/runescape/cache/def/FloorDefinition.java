@@ -6,14 +6,12 @@ import com.runescape.util.SignLink;
 
 public class FloorDefinition {
 
-    public static boolean aBoolean428 = true;
-    public static int anInt429;
-    public static FloorDefinition aClass20Array430[];
-    public boolean aBoolean427;
-    public String aString431;
+    private static boolean aBoolean428 = true;
+    private static int anInt429;
+    public static FloorDefinition[] aClass20Array430;
     public int anInt432;
     public int anInt433;
-    public boolean aBoolean434;
+    private boolean aBoolean434;
     public boolean aBoolean435;
     public int anInt436;
     public int anInt437;
@@ -22,8 +20,8 @@ public class FloorDefinition {
     public int anInt440;
     public int anInt441;
 
-    public FloorDefinition() {
-        aBoolean427 = false;
+    private FloorDefinition() {
+        boolean aBoolean427 = false;
         anInt433 = -1;
         aBoolean434 = false;
         aBoolean435 = true;
@@ -44,7 +42,6 @@ public class FloorDefinition {
             }
             if (!flag) {
                 FloorDefinition.aBoolean428 = !FloorDefinition.aBoolean428;
-                return;
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("30324, " + flag + ", " + class47 + ", " + runtimeexception.toString());
@@ -52,7 +49,7 @@ public class FloorDefinition {
         }
     }
 
-    public void method244(boolean flag, Buffer class44_sub3_sub2) {
+    private void method244(boolean flag, Buffer class44_sub3_sub2) {
         try {
             if (flag) {
                 for (int i = 1; i > 0; i++) {
@@ -73,7 +70,7 @@ public class FloorDefinition {
                 } else if (j == 5) {
                     aBoolean435 = false;
                 } else if (j == 6) {
-                    aString431 = class44_sub3_sub2.method489();
+                    String aString431 = class44_sub3_sub2.method489();
                 } else {
                     System.out.println("Error unrecognised config code: " + j);
                 }
@@ -84,7 +81,7 @@ public class FloorDefinition {
         throw new RuntimeException();
     }
 
-    public void method245(int i, boolean flag) {
+    private void method245(int i, boolean flag) {
         try {
             double d = (i >> 16 & 0xff) / 256D;
             double d1 = (i >> 8 & 0xff) / 256D;
@@ -173,7 +170,7 @@ public class FloorDefinition {
         throw new RuntimeException();
     }
 
-    public int method246(int i, int j, int k) {
+    private int method246(int i, int j, int k) {
         if (k > 179) {
             j /= 2;
         }
