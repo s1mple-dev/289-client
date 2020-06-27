@@ -1,146 +1,101 @@
 package com.runescape.collection;
 
-import com.runescape.util.SignLink;
-
 public class LinkedList {
 
-    private boolean aBoolean533;
-    private final Node head;
+    private final Node tail;
     private Node current;
 
-    public LinkedList(int i) {
-        int anInt532 = 9;
-        aBoolean533 = true;
-        head = new Node();
-        try {
-            head.previousNode = head;
-            if (i >= 0) {
-                for (int j = 1; j > 0; j++) {
-                }
-            }
-            head.nextNode = head;
-            return;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("20960, " + i + ", " + runtimeexception.toString());
-        }
-        throw new RuntimeException();
+    public LinkedList() {
+        this.tail = new Node();
+        this.tail.nextNode = tail;
+        this.tail.previousNode = tail;
     }
 
-    public void method256(Node class44) {
-        if (class44.nextNode != null) {
-            class44.remove();
+    public void pushBack(Node node) {
+        if (node.previousNode != null) {
+            node.remove();
         }
-        class44.nextNode = head.nextNode;
-        class44.previousNode = head;
-        class44.nextNode.previousNode = class44;
-        class44.previousNode.nextNode = class44;
+        node.previousNode = tail.previousNode;
+        node.nextNode = tail;
+        node.previousNode.nextNode = node;
+        node.nextNode.previousNode = node;
     }
 
-    public void method257(Node class44, int i) {
-        try {
-            if (class44.nextNode != null) {
-                class44.remove();
-            }
-            class44.nextNode = head;
-            class44.previousNode = head.previousNode;
-            class44.nextNode.previousNode = class44;
-            class44.previousNode.nextNode = class44;
-            if (i != -12925) {
-                aBoolean533 = !aBoolean533;
-            }
-        } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("22708, " + class44 + ", " + i + ", " + runtimeexception.toString());
-            throw new RuntimeException();
+    public void pushFront(Node node) {
+        if (node.previousNode != null) {
+            node.remove();
         }
+        node.previousNode = tail;
+        node.nextNode = tail.nextNode;
+        node.previousNode.nextNode = node;
+        node.nextNode.previousNode = node;
     }
 
     public Node pop() {
-        Node class44 = head.previousNode;
-        if (class44 == head) {
+        Node next = tail.nextNode;
+        if (next == tail) {
             return null;
-        } else {
-            class44.remove();
-            return class44;
         }
+
+        next.remove();
+        return next;
     }
 
-    public Node method259() {
-        Node class44 = head.previousNode;
-        if (class44 == head) {
+    public Node peekFront() {
+        Node next = tail.nextNode;
+        if (next == tail) {
             current = null;
             return null;
-        } else {
-            current = class44.previousNode;
-            return class44;
         }
+
+        current = next.nextNode;
+        return next;
     }
 
-    public Node method260(int i) {
-        try {
-            Node class44 = head.nextNode;
-            if (class44 == head) {
-                current = null;
-                return null;
-            }
-            current = class44.nextNode;
-            if (i != 0) {
-                aBoolean533 = !aBoolean533;
-            }
-            return class44;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("18269, " + i + ", " + runtimeexception.toString());
+    public Node peekBack() {
+        Node previous = tail.previousNode;
+        if (previous == tail) {
+            current = null;
+            return null;
         }
-        throw new RuntimeException();
+
+        current = previous.previousNode;
+        return previous;
     }
 
-    public Node method261(boolean flag) {
-        try {
-            Node class44 = current;
-            if (flag) {
-                throw new NullPointerException();
-            }
-            if (class44 == head) {
-                current = null;
-                return null;
-            } else {
-                current = class44.previousNode;
-                return class44;
-            }
-        } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("49472, " + flag + ", " + runtimeexception.toString());
+    public Node getNext() {
+        Node current = this.current;
+        if (current == tail) {
+            this.current = null;
+            return null;
         }
-        throw new RuntimeException();
+
+        this.current = current.nextNode;
+        return current;
     }
 
-    public Node method262(int i) {
-        try {
-            Node class44 = current;
-            if (i != -20683) {
-                throw new NullPointerException();
-            }
-            if (class44 == head) {
-                current = null;
-                return null;
-            } else {
-                current = class44.nextNode;
-                return class44;
-            }
-        } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("30725, " + i + ", " + runtimeexception.toString());
+    public Node getPrevious() {
+        Node current = this.current;
+        if (current == tail) {
+            this.current = null;
+            return null;
         }
-        throw new RuntimeException();
+
+        this.current = current.previousNode;
+        return current;
     }
 
-    public void method263() {
-        if (head.previousNode == head) {
+    public void clear() {
+        if (tail.nextNode == tail) {
             return;
         }
+
         do {
-            Node class44 = head.previousNode;
-            if (class44 == head) {
+            Node next = tail.nextNode;
+            if (next == tail) {
                 return;
             }
-            class44.remove();
+            next.remove();
         } while (true);
     }
 }

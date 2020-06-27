@@ -1,82 +1,63 @@
 package com.runescape.collection;
 
-import com.runescape.util.SignLink;
-
 public class Queue {
 
-    private final CacheableNode aClass44_Sub3_554;
-    private CacheableNode aClass44_Sub3_555;
+    private final CacheableNode head;
+    private CacheableNode current;
 
-    public Queue(int i) {
-        int anInt553 = 195;
-        aClass44_Sub3_554 = new CacheableNode();
-        try {
-            aClass44_Sub3_554.aClass44_Sub3_1360 = aClass44_Sub3_554;
-            aClass44_Sub3_554.aClass44_Sub3_1361 = aClass44_Sub3_554;
-            if (i != 9) {
-                anInt553 = 185;
-            }
-        } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("32770, " + i + ", " + runtimeexception.toString());
-            throw new RuntimeException();
-        }
+    public Queue() {
+        head = new CacheableNode();
+        head.next = head;
+        head.previous = head;
     }
 
-    public void method264(CacheableNode class44_sub3) {
-        if (class44_sub3.aClass44_Sub3_1361 != null) {
-            class44_sub3.method405();
+    public void push(CacheableNode node) {
+        if (node.previous != null) {
+            node.removeCacheable();
         }
-        class44_sub3.aClass44_Sub3_1361 = aClass44_Sub3_554.aClass44_Sub3_1361;
-        class44_sub3.aClass44_Sub3_1360 = aClass44_Sub3_554;
-        class44_sub3.aClass44_Sub3_1361.aClass44_Sub3_1360 = class44_sub3;
-        class44_sub3.aClass44_Sub3_1360.aClass44_Sub3_1361 = class44_sub3;
+        node.previous = head.previous;
+        node.next = head;
+        node.previous.next = node;
+        node.next.previous = node;
     }
 
-    public CacheableNode method265() {
-        CacheableNode class44_sub3 = aClass44_Sub3_554.aClass44_Sub3_1360;
-        if (class44_sub3 == aClass44_Sub3_554) {
+    public CacheableNode pop() {
+        CacheableNode next = head.next;
+        if (next == head) {
             return null;
-        } else {
-            class44_sub3.method405();
-            return class44_sub3;
         }
+
+        next.removeCacheable();
+        return next;
     }
 
-    public CacheableNode method266() {
-        CacheableNode class44_sub3 = aClass44_Sub3_554.aClass44_Sub3_1360;
-        if (class44_sub3 == aClass44_Sub3_554) {
-            aClass44_Sub3_555 = null;
+    public CacheableNode peek() {
+        CacheableNode next = head.next;
+        if (next == head) {
+            current = null;
             return null;
-        } else {
-            aClass44_Sub3_555 = class44_sub3.aClass44_Sub3_1360;
-            return class44_sub3;
         }
+
+        current = next.next;
+        return next;
     }
 
-    public CacheableNode method267(boolean flag) {
-        try {
-            CacheableNode class44_sub3 = aClass44_Sub3_555;
-            if (flag) {
-                throw new NullPointerException();
-            }
-            if (class44_sub3 == aClass44_Sub3_554) {
-                aClass44_Sub3_555 = null;
-                return null;
-            } else {
-                aClass44_Sub3_555 = class44_sub3.aClass44_Sub3_1360;
-                return class44_sub3;
-            }
-        } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("43753, " + flag + ", " + runtimeexception.toString());
+    public CacheableNode getNext() {
+        CacheableNode current = this.current;
+        if (current == head) {
+            this.current = null;
+            return null;
         }
-        throw new RuntimeException();
+
+        this.current = current.next;
+        return current;
     }
 
-    public int method268() {
-        int i = 0;
-        for (CacheableNode class44_sub3 = aClass44_Sub3_554.aClass44_Sub3_1360; class44_sub3 != aClass44_Sub3_554; class44_sub3 = class44_sub3.aClass44_Sub3_1360) {
-            i++;
+    public int getSize() {
+        int count = 0;
+        for (CacheableNode node = head.next; node != head; node = node.next) {
+            count++;
         }
-        return i;
+        return count;
     }
 }

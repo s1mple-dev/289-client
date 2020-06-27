@@ -1,62 +1,39 @@
 package com.runescape.collection;
 
-import com.runescape.util.SignLink;
-
 class HashTable {
 
-    private boolean aBoolean764;
-    private int anInt767;
-    private Node[] aClass44Array768;
+    private int size;
+    private Node[] entries;
 
-    public HashTable(int i, byte byte0) {
-        aBoolean764 = false;
-        boolean aBoolean765 = false;
-        int anInt766 = 8;
-        try {
-            anInt767 = i;
-            aClass44Array768 = new Node[i];
-            for (int j = 0; j < i; j++) {
-                Node class44 = aClass44Array768[j] = new Node();
-                class44.previousNode = class44;
-                class44.nextNode = class44;
-            }
-            if (byte0 != 124) {
-                for (int k = 1; k > 0; k++) {
-                }
-            }
-        } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("10752, " + i + ", " + byte0 + ", " + runtimeexception.toString());
-            throw new RuntimeException();
+    public HashTable(int size) {
+        this.size = size;
+        this.entries = new Node[size];
+        for (int index = 0; index < size; index++) {
+            Node entry = entries[index] = new Node();
+            entry.nextNode = entry;
+            entry.previousNode = entry;
         }
     }
 
-    public Node method380(long l) {
-        Node class44 = aClass44Array768[(int) (l & anInt767 - 1)];
-        for (Node class44_1 = class44.previousNode; class44_1 != class44; class44_1 = class44_1.previousNode) {
-            if (class44_1.nodeId == l) {
-                return class44_1;
+    public Node get(long key) {
+        Node current = entries[(int) (key & size - 1)];
+        for (Node next = current.nextNode; next != current; next = next.nextNode) {
+            if (next.nodeId == key) {
+                return next;
             }
         }
         return null;
     }
 
-    public void method381(boolean flag, Node class44, long l) {
-        try {
-            if (class44.nextNode != null) {
-                class44.remove();
-            }
-            Node class44_1 = aClass44Array768[(int) (l & anInt767 - 1)];
-            class44.nextNode = class44_1.nextNode;
-            if (flag) {
-                aBoolean764 = !aBoolean764;
-            }
-            class44.previousNode = class44_1;
-            class44.nextNode.previousNode = class44;
-            class44.previousNode.nextNode = class44;
-            class44.nodeId = l;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("44360, " + flag + ", " + class44 + ", " + l + ", " + runtimeexception.toString());
-            throw new RuntimeException();
+    public void put(Node node, long l) {
+        if (node.previousNode != null) {
+            node.remove();
         }
+        Node current = entries[(int) (l & size - 1)];
+        node.previousNode = current.previousNode;
+        node.nextNode = current;
+        node.previousNode.nextNode = node;
+        node.nextNode.previousNode = node;
+        node.nodeId = l;
     }
 }

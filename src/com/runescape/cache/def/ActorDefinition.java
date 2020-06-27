@@ -13,7 +13,7 @@ public class ActorDefinition {
     private static Buffer buffer;
     private static ActorDefinition[] cache;
     private static int anInt280;
-    public static Cache aClass39_307 = new Cache((byte) 7, 30);
+    public static Cache aClass39_307 = new Cache(30);
     private final int anInt274;
     private final byte aByte275;
     public long aLong281;
@@ -201,7 +201,7 @@ public class ActorDefinition {
 
     public Model method216(int i, int j, int k, int[] ai) {
         try {
-            Model class44_sub3_sub4_sub4 = (Model) ActorDefinition.aClass39_307.method339(aLong281);
+            Model class44_sub3_sub4_sub4 = (Model) ActorDefinition.aClass39_307.get(aLong281);
             if (i != 0) {
                 for (int l = 1; l > 0; l++) {
                 }
@@ -232,7 +232,7 @@ public class ActorDefinition {
                 }
                 class44_sub3_sub4_sub4.method513((byte) 3);
                 class44_sub3_sub4_sub4.method523(64 + anInt303, 850 + anInt304, -30, -50, -30, true);
-                ActorDefinition.aClass39_307.method340(aLong281, (byte) 76, class44_sub3_sub4_sub4);
+                ActorDefinition.aClass39_307.put(aLong281, class44_sub3_sub4_sub4);
             }
             Model class44_sub3_sub4_sub4_1 = Model.aClass44_Sub3_Sub4_Sub4_1530;
             class44_sub3_sub4_sub4_1.method508(Animation.method211(k, 0) & Animation.method211(j, 0),

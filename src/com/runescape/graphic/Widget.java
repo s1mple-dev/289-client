@@ -13,7 +13,7 @@ import com.runescape.util.TextUtils;
 public class Widget {
 
     public static Widget[] aClass5Array100;
-    private static final Cache aClass39_162 = new Cache((byte) 7, 30);
+    private static final Cache aClass39_162 = new Cache(30);
     private static Cache spriteCache;
     private final byte aByte98;
     private int anInt99;
@@ -85,7 +85,7 @@ public class Widget {
 
     public static void method181(TypeFace[] aclass44_sub3_sub1_sub4, Archive mediaArchive, int i, Archive widgetArchive) {
         try {
-            Widget.spriteCache = new Cache((byte) 7, 50000);
+            Widget.spriteCache = new Cache(50000);
             Buffer class44_sub3_sub2 = new Buffer(widgetArchive.method549("data", null));
             int j = -1;
             int k = class44_sub3_sub2.readUnsignedShort();
@@ -303,13 +303,13 @@ public class Widget {
 
     public static void method185(int i, Model class44_sub3_sub4_sub4, int j, int k) {
         try {
-            Widget.aClass39_162.method341();
+            Widget.aClass39_162.clear();
             if (j != 9) {
                 for (int l = 1; l > 0; l++) {
                 }
             }
             if (class44_sub3_sub4_sub4 != null && i != 4) {
-                Widget.aClass39_162.method340((i << 16) + k, (byte) 76, class44_sub3_sub4_sub4);
+                Widget.aClass39_162.put((i << 16) + k, class44_sub3_sub4_sub4);
             }
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("27428, " + i + ", " + class44_sub3_sub4_sub4 + ", " + j + ", " + k + ", "
@@ -324,13 +324,13 @@ public class Widget {
                 throw new NullPointerException();
             }
             long l = (TextUtils.method552(-5562, s) << 8) + i;
-            ImageRGB class44_sub3_sub1_sub2 = (ImageRGB) Widget.spriteCache.method339(l);
+            ImageRGB class44_sub3_sub1_sub2 = (ImageRGB) Widget.spriteCache.get(l);
             if (class44_sub3_sub1_sub2 != null) {
                 return class44_sub3_sub1_sub2;
             }
             try {
                 class44_sub3_sub1_sub2 = new ImageRGB(class47, s, i);
-                Widget.spriteCache.method340(l, (byte) 76, class44_sub3_sub1_sub2);
+                Widget.spriteCache.put(l, class44_sub3_sub1_sub2);
             } catch (Exception _ex) {
                 return null;
             }
@@ -399,7 +399,7 @@ public class Widget {
     }
 
     private Model method184(int i, int j) {
-        Model class44_sub3_sub4_sub4 = (Model) Widget.aClass39_162.method339((i << 16) + j);
+        Model class44_sub3_sub4_sub4 = (Model) Widget.aClass39_162.get((i << 16) + j);
         if (class44_sub3_sub4_sub4 != null) {
             return class44_sub3_sub4_sub4;
         }
@@ -419,7 +419,7 @@ public class Widget {
             class44_sub3_sub4_sub4 = null;
         }
         if (class44_sub3_sub4_sub4 != null) {
-            Widget.aClass39_162.method340((i << 16) + j, (byte) 76, class44_sub3_sub4_sub4);
+            Widget.aClass39_162.put((i << 16) + j, class44_sub3_sub4_sub4);
         }
         return class44_sub3_sub4_sub4;
     }

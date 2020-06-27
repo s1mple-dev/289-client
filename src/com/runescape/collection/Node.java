@@ -3,18 +3,15 @@ package com.runescape.collection;
 public class Node {
 
     public long nodeId;
-    public Node previousNode;
     public Node nextNode;
-
-    public Node() {
-    }
+    public Node previousNode;
 
     public void remove() {
-        if (nextNode != null) {
-            nextNode.previousNode = previousNode;
+        if (previousNode != null) {
             previousNode.nextNode = nextNode;
-            previousNode = null;
+            nextNode.previousNode = previousNode;
             nextNode = null;
+            previousNode = null;
         }
     }
 }

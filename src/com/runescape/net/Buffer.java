@@ -15,9 +15,9 @@ public class Buffer extends CacheableNode {
     private static int cacheCountSmall;
     private static int cacheCountNormal;
     private static int cacheCountLarge;
-    private static final LinkedList BUFFER_CACHE_SMALL = new LinkedList(-199);
-    private static final LinkedList BUFFER_CACHE_NORMAL = new LinkedList(-199);
-    private static final LinkedList BUFFER_CACHE_LARGE = new LinkedList(-199);
+    private static final LinkedList BUFFER_CACHE_SMALL = new LinkedList();
+    private static final LinkedList BUFFER_CACHE_NORMAL = new LinkedList();
+    private static final LinkedList BUFFER_CACHE_LARGE = new LinkedList();
 
     static {
         Buffer.anIntArray1394 = new int[256];

@@ -10,7 +10,7 @@ public class SpotAnimation {
 
     private static int anInt558;
     public static SpotAnimation[] cache;
-    public static Cache aClass39_571 = new Cache((byte) 7, 30);
+    public static Cache aClass39_571 = new Cache(30);
     private final byte aByte557;
     private int anInt560;
     private int anInt561;
@@ -100,7 +100,7 @@ public class SpotAnimation {
     }
 
     public Model method271() {
-        Model class44_sub3_sub4_sub4 = (Model) SpotAnimation.aClass39_571.method339(anInt560);
+        Model class44_sub3_sub4_sub4 = (Model) SpotAnimation.aClass39_571.get(anInt560);
         if (class44_sub3_sub4_sub4 != null) {
             return class44_sub3_sub4_sub4;
         }
@@ -113,7 +113,7 @@ public class SpotAnimation {
                 class44_sub3_sub4_sub4.method520(anIntArray564[i], anIntArray565[i]);
             }
         }
-        SpotAnimation.aClass39_571.method340(anInt560, (byte) 76, class44_sub3_sub4_sub4);
+        SpotAnimation.aClass39_571.put(anInt560, class44_sub3_sub4_sub4);
         return class44_sub3_sub4_sub4;
     }
 

@@ -20,8 +20,8 @@ public class ItemDefinition {
     private static ItemDefinition[] cache;
     private static int anInt327;
     public static boolean aBoolean328 = true;
-    public static Cache aClass39_369 = new Cache((byte) 7, 50);
-    public static Cache aClass39_370 = new Cache((byte) 7, 100);
+    public static Cache aClass39_369 = new Cache(50);
+    public static Cache aClass39_370 = new Cache(100);
     private int anInt317;
     private final byte aByte318;
     private int anInt322;
@@ -133,7 +133,7 @@ public class ItemDefinition {
     public static ImageRGB method226(int i, int j, int k, int l) {
         try {
             if (k == 0) {
-                ImageRGB class44_sub3_sub1_sub2 = (ImageRGB) ItemDefinition.aClass39_370.method339(j);
+                ImageRGB class44_sub3_sub1_sub2 = (ImageRGB) ItemDefinition.aClass39_370.get(j);
                 if (class44_sub3_sub1_sub2 != null && class44_sub3_sub1_sub2.anInt1454 != l
                         && class44_sub3_sub1_sub2.anInt1454 != -1) {
                     class44_sub3_sub1_sub2.remove();
@@ -247,7 +247,7 @@ public class ItemDefinition {
                 class44_sub3_sub1_sub2_2.anInt1454 = j6;
             }
             if (k == 0) {
-                ItemDefinition.aClass39_370.method340(j, (byte) 76, class44_sub3_sub1_sub2_1);
+                ItemDefinition.aClass39_370.put(j, class44_sub3_sub1_sub2_1);
             }
             Rasterizer.method406(-78, ai1, i2, j2);
             Rasterizer.method408(ItemDefinition.aByte321, j3, l2, i3, k2);
@@ -475,7 +475,7 @@ public class ItemDefinition {
                 return ItemDefinition.method220(j).method224(1);
             }
         }
-        Model class44_sub3_sub4_sub4 = (Model) ItemDefinition.aClass39_369.method339(anInt329);
+        Model class44_sub3_sub4_sub4 = (Model) ItemDefinition.aClass39_369.get(anInt329);
         if (class44_sub3_sub4_sub4 != null) {
             return class44_sub3_sub4_sub4;
         }
@@ -493,7 +493,7 @@ public class ItemDefinition {
         }
         class44_sub3_sub4_sub4.method523(64 + anInt366, 768 + anInt367, -50, -10, -50, true);
         class44_sub3_sub4_sub4.aBoolean1568 = true;
-        ItemDefinition.aClass39_369.method340(anInt329, (byte) 76, class44_sub3_sub4_sub4);
+        ItemDefinition.aClass39_369.put(anInt329, class44_sub3_sub4_sub4);
         return class44_sub3_sub4_sub4;
     }
 

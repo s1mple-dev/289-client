@@ -1,86 +1,57 @@
 package com.runescape.collection;
 
-import com.runescape.util.SignLink;
-
 public class Cache {
 
-    private int anInt690;
-    private int anInt691;
-    private final CacheableNode aClass44_Sub3_692;
-    private int anInt693;
-    private int anInt694;
-    private HashTable aClass42_695;
-    private final Queue aClass31_696;
+    private final CacheableNode empty;
+    private final Queue retrieved;
 
-    public Cache(byte byte0, int i) {
-        boolean aBoolean688 = true;
-        boolean aBoolean689 = false;
-        aClass44_Sub3_692 = new CacheableNode();
-        aClass31_696 = new Queue(9);
-        try {
-            if (byte0 == 7) {
-                byte0 = 0;
-            } else {
-                aBoolean688 = !aBoolean688;
-            }
-            anInt693 = i;
-            anInt694 = i;
-            aClass42_695 = new HashTable(1024, (byte) 124);
-            return;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("86782, " + byte0 + ", " + i + ", " + runtimeexception.toString());
-        }
-        throw new RuntimeException();
+    private int size;
+    private int available;
+    private HashTable hashTable;
+
+    public Cache(int length) {
+        this.empty = new CacheableNode();
+        this.retrieved = new Queue();
+        this.size = length;
+        this.available = length;
+        this.hashTable = new HashTable(1024);
     }
 
-    public CacheableNode method339(long l) {
-        CacheableNode class44_sub3 = (CacheableNode) aClass42_695.method380(l);
-        if (class44_sub3 != null) {
-            aClass31_696.method264(class44_sub3);
-            anInt691++;
+    public CacheableNode get(long key) {
+        CacheableNode node = (CacheableNode) hashTable.get(key);
+        if (node != null) {
+            retrieved.push(node);
+        }
+        return node;
+    }
+
+    public void put(long key, CacheableNode node) {
+        if (available == 0) {
+            CacheableNode oldest = retrieved.pop();
+            oldest.remove();
+            oldest.removeCacheable();
+            if (oldest == empty) {
+                CacheableNode secondOldest = retrieved.pop();
+                secondOldest.remove();
+                secondOldest.removeCacheable();
+            }
         } else {
-            anInt690++;
+            available--;
         }
-        return class44_sub3;
+        hashTable.put(node, key);
+        retrieved.push(node);
     }
 
-    public void method340(long l, byte byte0, CacheableNode class44_sub3) {
-        try {
-            if (byte0 != 76) {
-                return;
-            }
-            if (anInt694 == 0) {
-                CacheableNode class44_sub3_1 = aClass31_696.method265();
-                class44_sub3_1.remove();
-                class44_sub3_1.method405();
-                if (class44_sub3_1 == aClass44_Sub3_692) {
-                    CacheableNode class44_sub3_2 = aClass31_696.method265();
-                    class44_sub3_2.remove();
-                    class44_sub3_2.method405();
-                }
-            } else {
-                anInt694--;
-            }
-            aClass42_695.method381(false, class44_sub3, l);
-            aClass31_696.method264(class44_sub3);
-            return;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("63377, " + l + ", " + byte0 + ", " + class44_sub3 + ", "
-                    + runtimeexception.toString());
-        }
-        throw new RuntimeException();
-    }
-
-    public void method341() {
+    public void clear() {
         do {
-            CacheableNode class44_sub3 = aClass31_696.method265();
-            if (class44_sub3 != null) {
-                class44_sub3.remove();
-                class44_sub3.method405();
-            } else {
-                anInt694 = anInt693;
+            CacheableNode node = retrieved.pop();
+            if (node == null) {
+                available = size;
                 return;
             }
+
+            node.remove();
+            node.removeCacheable();
         } while (true);
     }
 }

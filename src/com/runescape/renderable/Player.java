@@ -10,7 +10,7 @@ import com.runescape.util.TextUtils;
 
 public class Player extends Actor {
 
-    public static Cache aClass39_1696 = new Cache((byte) 7, 260);
+    public static Cache aClass39_1696 = new Cache(260);
     private int anInt1670;
     private boolean aBoolean1671;
     public String aString1672;
@@ -256,7 +256,7 @@ public class Player extends Actor {
             } else if (super.anInt1640 >= 0) {
                 j = AnimationSequence.cache[super.anInt1640].anIntArray510[super.anInt1641];
             }
-            Model class44_sub3_sub4_sub4_1 = (Model) Player.aClass39_1696.method339(l);
+            Model class44_sub3_sub4_sub4_1 = (Model) Player.aClass39_1696.get(l);
             if (flag) {
                 aBoolean1671 = !aBoolean1671;
             }
@@ -279,7 +279,7 @@ public class Player extends Actor {
                 }
                 if (flag1) {
                     if (aLong1693 != -1L) {
-                        class44_sub3_sub4_sub4_1 = (Model) Player.aClass39_1696.method339(aLong1693);
+                        class44_sub3_sub4_sub4_1 = (Model) Player.aClass39_1696.get(aLong1693);
                     }
                     if (class44_sub3_sub4_sub4_1 == null) {
                         return null;
@@ -323,7 +323,7 @@ public class Player extends Actor {
                 }
                 class44_sub3_sub4_sub4_1.method513((byte) 3);
                 class44_sub3_sub4_sub4_1.method523(64, 850, -30, -50, -30, true);
-                Player.aClass39_1696.method340(l, (byte) 76, class44_sub3_sub4_sub4_1);
+                Player.aClass39_1696.put(l, class44_sub3_sub4_sub4_1);
                 aLong1693 = l;
             }
             if (aBoolean1692) {

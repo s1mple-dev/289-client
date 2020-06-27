@@ -15,8 +15,8 @@ public class GameObjectDefinition {
     private static GameObjectDefinition[] cache;
     private static int anInt213;
     private static final Model[] aClass44_Sub3_Sub4_Sub4Array214 = new Model[4];
-    public static Cache aClass39_251 = new Cache((byte) 7, 500);
-    public static Cache aClass39_252 = new Cache((byte) 7, 30);
+    public static Cache aClass39_251 = new Cache(500);
+    public static Cache aClass39_252 = new Cache(30);
     private boolean aBoolean203;
     private final int anInt204;
     private final byte aByte205;
@@ -401,7 +401,7 @@ public class GameObjectDefinition {
                     return null;
                 }
                 l = (anInt215 << 6) + j + ((long) (i + 1) << 32);
-                Model class44_sub3_sub4_sub4_1 = (Model) GameObjectDefinition.aClass39_252.method339(l);
+                Model class44_sub3_sub4_sub4_1 = (Model) GameObjectDefinition.aClass39_252.get(l);
                 if (class44_sub3_sub4_sub4_1 != null) {
                     return class44_sub3_sub4_sub4_1;
                 }
@@ -415,7 +415,7 @@ public class GameObjectDefinition {
                     if (flag1) {
                         k2 += 0x10000;
                     }
-                    class44_sub3_sub4_sub4 = (Model) GameObjectDefinition.aClass39_251.method339(k2);
+                    class44_sub3_sub4_sub4 = (Model) GameObjectDefinition.aClass39_251.get(k2);
                     if (class44_sub3_sub4_sub4 == null) {
                         class44_sub3_sub4_sub4 = Model.method506(k2 & 0xffff, aByte205);
                         if (class44_sub3_sub4_sub4 == null) {
@@ -424,7 +424,7 @@ public class GameObjectDefinition {
                         if (flag1) {
                             class44_sub3_sub4_sub4.method521(6);
                         }
-                        GameObjectDefinition.aClass39_251.method340(k2, (byte) 76, class44_sub3_sub4_sub4);
+                        GameObjectDefinition.aClass39_251.put(k2, class44_sub3_sub4_sub4);
                     }
                     if (k1 > 1) {
                         GameObjectDefinition.aClass44_Sub3_Sub4_Sub4Array214[l1] = class44_sub3_sub4_sub4;
@@ -446,7 +446,7 @@ public class GameObjectDefinition {
                     return null;
                 }
                 l = (anInt215 << 6) + (i1 << 3) + j + ((long) (i + 1) << 32);
-                Model class44_sub3_sub4_sub4_2 = (Model) GameObjectDefinition.aClass39_252.method339(l);
+                Model class44_sub3_sub4_sub4_2 = (Model) GameObjectDefinition.aClass39_252.get(l);
                 if (class44_sub3_sub4_sub4_2 != null) {
                     return class44_sub3_sub4_sub4_2;
                 }
@@ -455,7 +455,7 @@ public class GameObjectDefinition {
                 if (flag3) {
                     i2 += 0x10000;
                 }
-                class44_sub3_sub4_sub4 = (Model) GameObjectDefinition.aClass39_251.method339(i2);
+                class44_sub3_sub4_sub4 = (Model) GameObjectDefinition.aClass39_251.get(i2);
                 if (class44_sub3_sub4_sub4 == null) {
                     class44_sub3_sub4_sub4 = Model.method506(i2 & 0xffff, aByte205);
                     if (class44_sub3_sub4_sub4 == null) {
@@ -464,7 +464,7 @@ public class GameObjectDefinition {
                     if (flag3) {
                         class44_sub3_sub4_sub4.method521(6);
                     }
-                    GameObjectDefinition.aClass39_251.method340(i2, (byte) 76, class44_sub3_sub4_sub4);
+                    GameObjectDefinition.aClass39_251.put(i2, class44_sub3_sub4_sub4);
                 }
             }
             if (byte0 != -74) {
@@ -508,7 +508,7 @@ public class GameObjectDefinition {
             if (anInt248 == 1) {
                 class44_sub3_sub4_sub4_3.anInt1563 = class44_sub3_sub4_sub4_3.anInt1412;
             }
-            GameObjectDefinition.aClass39_252.method340(l, (byte) 76, class44_sub3_sub4_sub4_3);
+            GameObjectDefinition.aClass39_252.put(l, class44_sub3_sub4_sub4_3);
             return class44_sub3_sub4_sub4_3;
         } catch (RuntimeException runtimeexception) {
             SignLink.reporterror("13988, " + byte0 + ", " + i + ", " + j + ", " + k + ", "
