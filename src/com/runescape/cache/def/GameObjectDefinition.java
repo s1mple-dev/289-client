@@ -68,8 +68,8 @@ public class GameObjectDefinition {
     }
 
     public static void method197(Archive class47) {
-        GameObjectDefinition.buffer = new Buffer(class47.method549("loc.dat", null), 15787);
-        Buffer class44_sub3_sub2 = new Buffer(class47.method549("loc.idx", null), 15787);
+        GameObjectDefinition.buffer = new Buffer(class47.method549("loc.dat", null));
+        Buffer class44_sub3_sub2 = new Buffer(class47.method549("loc.idx", null));
         GameObjectDefinition.anInt209 = class44_sub3_sub2.readUnsignedShort();
         GameObjectDefinition.anIntArray210 = new int[GameObjectDefinition.anInt209];
         int i = 2;
@@ -176,9 +176,9 @@ public class GameObjectDefinition {
                             }
                         }
                     } else if (j == 2) {
-                        aString218 = class44_sub3_sub2.method489();
+                        aString218 = class44_sub3_sub2.readString();
                     } else if (j == 3) {
-                        aByteArray219 = class44_sub3_sub2.method490(anInt204);
+                        aByteArray219 = class44_sub3_sub2.readBytes();
                     } else if (j == 5) {
                         int l = class44_sub3_sub2.readUnsignedByte();
                         if (l > 0) {
@@ -222,7 +222,7 @@ public class GameObjectDefinition {
                         if (aStringArray234 == null) {
                             aStringArray234 = new String[5];
                         }
-                        aStringArray234[j - 30] = class44_sub3_sub2.method489();
+                        aStringArray234[j - 30] = class44_sub3_sub2.readString();
                         if (aStringArray234[j - 30].equalsIgnoreCase("hidden")) {
                             aStringArray234[j - 30] = null;
                         }
@@ -251,11 +251,11 @@ public class GameObjectDefinition {
                     } else if (j == 69) {
                         anInt245 = class44_sub3_sub2.readUnsignedByte();
                     } else if (j == 70) {
-                        anInt242 = class44_sub3_sub2.method485();
+                        anInt242 = class44_sub3_sub2.readShort();
                     } else if (j == 71) {
-                        anInt243 = class44_sub3_sub2.method485();
+                        anInt243 = class44_sub3_sub2.readShort();
                     } else if (j == 72) {
-                        anInt244 = class44_sub3_sub2.method485();
+                        anInt244 = class44_sub3_sub2.readShort();
                     } else if (j == 73) {
                         aBoolean246 = true;
                     } else if (j == 74) {

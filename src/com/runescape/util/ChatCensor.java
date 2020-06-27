@@ -27,10 +27,10 @@ public class ChatCensor {
     public static int anInt763;
 
     public static void method342(Archive class47) {
-        Buffer class44_sub3_sub2 = new Buffer(class47.method549("fragmentsenc.txt", null), 15787);
-        Buffer class44_sub3_sub2_1 = new Buffer(class47.method549("badenc.txt", null), 15787);
-        Buffer class44_sub3_sub2_2 = new Buffer(class47.method549("domainenc.txt", null), 15787);
-        Buffer class44_sub3_sub2_3 = new Buffer(class47.method549("tldlist.txt", null), 15787);
+        Buffer class44_sub3_sub2 = new Buffer(class47.method549("fragmentsenc.txt", null));
+        Buffer class44_sub3_sub2_1 = new Buffer(class47.method549("badenc.txt", null));
+        Buffer class44_sub3_sub2_2 = new Buffer(class47.method549("domainenc.txt", null));
+        Buffer class44_sub3_sub2_3 = new Buffer(class47.method549("tldlist.txt", null));
         ChatCensor.method343(class44_sub3_sub2, class44_sub3_sub2_1, class44_sub3_sub2_2, class44_sub3_sub2_3);
     }
 
@@ -47,7 +47,7 @@ public class ChatCensor {
             if (i < ChatCensor.anInt750 || i > ChatCensor.anInt750) {
                 ChatCensor.aBoolean748 = !ChatCensor.aBoolean748;
             }
-            int j = class44_sub3_sub2.method487();
+            int j = class44_sub3_sub2.readUnsignedInt();
             ChatCensor.aCharArrayArray760 = new char[j][];
             ChatCensor.anIntArray761 = new int[j];
             for (int k = 0; k < j; k++) {
@@ -67,7 +67,7 @@ public class ChatCensor {
 
     private static void method345(Buffer class44_sub3_sub2, int i) {
         try {
-            int j = class44_sub3_sub2.method487();
+            int j = class44_sub3_sub2.readUnsignedInt();
             ChatCensor.aCharArrayArray757 = new char[j][];
             ChatCensor.aByteArrayArrayArray758 = new byte[j][][];
             ChatCensor.method348(ChatCensor.aCharArrayArray757, ChatCensor.aByteArrayArrayArray758, class44_sub3_sub2,
@@ -82,7 +82,7 @@ public class ChatCensor {
 
     private static void method346(boolean flag, Buffer class44_sub3_sub2) {
         try {
-            int i = class44_sub3_sub2.method487();
+            int i = class44_sub3_sub2.readUnsignedInt();
             ChatCensor.aCharArrayArray759 = new char[i][];
             ChatCensor.method349(class44_sub3_sub2, 961, ChatCensor.aCharArrayArray759);
             if (!flag) {
@@ -95,7 +95,7 @@ public class ChatCensor {
 
     private static void method347(Buffer class44_sub3_sub2, byte byte0) {
         try {
-            ChatCensor.anIntArray756 = new int[class44_sub3_sub2.method487()];
+            ChatCensor.anIntArray756 = new int[class44_sub3_sub2.readUnsignedInt()];
             for (int i = 0; i < ChatCensor.anIntArray756.length; i++) {
                 ChatCensor.anIntArray756[i] = class44_sub3_sub2.readUnsignedShort();
             }

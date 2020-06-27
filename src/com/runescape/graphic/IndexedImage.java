@@ -22,15 +22,15 @@ public class IndexedImage extends Rasterizer {
         aBoolean1455 = false;
         aBoolean1456 = false;
         anInt1457 = 9;
-        Buffer class44_sub3_sub2 = new Buffer(class47.method549(s + ".dat", null), 15787);
-        Buffer class44_sub3_sub2_1 = new Buffer(class47.method549("index.dat", null), 15787);
+        Buffer class44_sub3_sub2 = new Buffer(class47.method549(s + ".dat", null));
+        Buffer class44_sub3_sub2_1 = new Buffer(class47.method549("index.dat", null));
         class44_sub3_sub2_1.offset = class44_sub3_sub2.readUnsignedShort();
         anInt1464 = class44_sub3_sub2_1.readUnsignedShort();
         anInt1465 = class44_sub3_sub2_1.readUnsignedShort();
         int j = class44_sub3_sub2_1.readUnsignedByte();
         anIntArray1459 = new int[j];
         for (int k = 0; k < j - 1; k++) {
-            anIntArray1459[k + 1] = class44_sub3_sub2_1.method486();
+            anIntArray1459[k + 1] = class44_sub3_sub2_1.readUnsignedTriByte();
         }
         for (int l = 0; l < i; l++) {
             class44_sub3_sub2_1.offset += 2;

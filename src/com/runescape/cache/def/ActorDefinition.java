@@ -67,8 +67,8 @@ public class ActorDefinition {
     }
 
     public static void method212(Archive class47) {
-        ActorDefinition.buffer = new Buffer(class47.method549("npc.dat", null), 15787);
-        Buffer class44_sub3_sub2 = new Buffer(class47.method549("npc.idx", null), 15787);
+        ActorDefinition.buffer = new Buffer(class47.method549("npc.dat", null));
+        Buffer class44_sub3_sub2 = new Buffer(class47.method549("npc.idx", null));
         ActorDefinition.anInt276 = class44_sub3_sub2.readUnsignedShort();
         ActorDefinition.anIntArray277 = new int[ActorDefinition.anInt276];
         int i = 2;
@@ -131,9 +131,9 @@ public class ActorDefinition {
                         anIntArray285[j1] = class44_sub3_sub2.readUnsignedShort();
                     }
                 } else if (j == 2) {
-                    aString282 = class44_sub3_sub2.method489();
+                    aString282 = class44_sub3_sub2.readString();
                 } else if (j == 3) {
-                    aByteArray283 = class44_sub3_sub2.method490(anInt274);
+                    aByteArray283 = class44_sub3_sub2.readBytes();
                 } else if (j == 12) {
                     aByte284 = class44_sub3_sub2.readByte();
                 } else if (j == 13) {
@@ -149,7 +149,7 @@ public class ActorDefinition {
                     if (aStringArray294 == null) {
                         aStringArray294 = new String[5];
                     }
-                    aStringArray294[j - 30] = class44_sub3_sub2.method489();
+                    aStringArray294[j - 30] = class44_sub3_sub2.readString();
                     if (aStringArray294[j - 30].equalsIgnoreCase("hidden")) {
                         aStringArray294[j - 30] = null;
                     }

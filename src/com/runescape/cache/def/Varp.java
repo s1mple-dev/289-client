@@ -34,7 +34,7 @@ public class Varp {
             if (!flag) {
                 Varp.aBoolean671 = !Varp.aBoolean671;
             }
-            Buffer class44_sub3_sub2 = new Buffer(class47.method549("varp.dat", null), 15787);
+            Buffer class44_sub3_sub2 = new Buffer(class47.method549("varp.dat", null));
             Varp.anInt675 = 0;
             Varp.anInt673 = class44_sub3_sub2.readUnsignedShort();
             if (Varp.cache == null) {
@@ -83,16 +83,16 @@ public class Varp {
                 } else if (k == 6) {
                     aBoolean683 = true;
                 } else if (k == 7) {
-                    int anInt684 = class44_sub3_sub2.method487();
+                    int anInt684 = class44_sub3_sub2.readUnsignedInt();
                 } else if (k == 8) {
                     anInt685 = 1;
                     aBoolean686 = true;
                 } else if (k == 10) {
-                    String aString677 = class44_sub3_sub2.method489();
+                    String aString677 = class44_sub3_sub2.readString();
                 } else if (k == 11) {
                     aBoolean686 = true;
                 } else if (k == 12) {
-                    anInt687 = class44_sub3_sub2.method487();
+                    anInt687 = class44_sub3_sub2.readUnsignedInt();
                 } else if (k == 13) {
                     anInt685 = 2;
                 } else {

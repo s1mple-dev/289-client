@@ -31,26 +31,26 @@ public class Animation {
 
     public static void method208(int i, byte[] abyte0) {
         try {
-            Buffer class44_sub3_sub2 = new Buffer(abyte0, 15787);
+            Buffer class44_sub3_sub2 = new Buffer(abyte0);
             class44_sub3_sub2.offset = abyte0.length - 8;
             int j = class44_sub3_sub2.readUnsignedShort();
             int k = class44_sub3_sub2.readUnsignedShort();
             int l = class44_sub3_sub2.readUnsignedShort();
             int i1 = class44_sub3_sub2.readUnsignedShort();
             int j1 = 0;
-            Buffer class44_sub3_sub2_1 = new Buffer(abyte0, 15787);
+            Buffer class44_sub3_sub2_1 = new Buffer(abyte0);
             class44_sub3_sub2_1.offset = j1;
             j1 += j + 2;
-            Buffer class44_sub3_sub2_2 = new Buffer(abyte0, 15787);
+            Buffer class44_sub3_sub2_2 = new Buffer(abyte0);
             class44_sub3_sub2_2.offset = j1;
             j1 += k;
-            Buffer class44_sub3_sub2_3 = new Buffer(abyte0, 15787);
+            Buffer class44_sub3_sub2_3 = new Buffer(abyte0);
             class44_sub3_sub2_3.offset = j1;
             j1 += l;
-            Buffer class44_sub3_sub2_4 = new Buffer(abyte0, 15787);
+            Buffer class44_sub3_sub2_4 = new Buffer(abyte0);
             class44_sub3_sub2_4.offset = j1;
             j1 += i1;
-            Buffer class44_sub3_sub2_5 = new Buffer(abyte0, 15787);
+            Buffer class44_sub3_sub2_5 = new Buffer(abyte0);
             class44_sub3_sub2_5.offset = j1;
             Skins class9 = new Skins(class44_sub3_sub2_5, Animation.anInt262);
             int k1 = class44_sub3_sub2_1.readUnsignedShort();
@@ -91,17 +91,17 @@ public class Animation {
                             c = '\200';
                         }
                         if ((j3 & 1) != 0) {
-                            ai1[l2] = class44_sub3_sub2_3.method495();
+                            ai1[l2] = class44_sub3_sub2_3.readUnsignedSmartA();
                         } else {
                             ai1[l2] = c;
                         }
                         if ((j3 & 2) != 0) {
-                            ai2[l2] = class44_sub3_sub2_3.method495();
+                            ai2[l2] = class44_sub3_sub2_3.readUnsignedSmartA();
                         } else {
                             ai2[l2] = c;
                         }
                         if ((j3 & 4) != 0) {
-                            ai3[l2] = class44_sub3_sub2_3.method495();
+                            ai3[l2] = class44_sub3_sub2_3.readUnsignedSmartA();
                         } else {
                             ai3[l2] = c;
                         }

@@ -151,15 +151,15 @@ public class Model extends Renderable {
                 anIntArray1565 = new int[anInt1539];
             }
             anIntArray1549 = new int[anInt1539];
-            Buffer class44_sub3_sub2 = new Buffer(class21.aByteArray442, 15787);
+            Buffer class44_sub3_sub2 = new Buffer(class21.aByteArray442);
             class44_sub3_sub2.offset = class21.anInt446;
-            Buffer class44_sub3_sub2_1 = new Buffer(class21.aByteArray442, 15787);
+            Buffer class44_sub3_sub2_1 = new Buffer(class21.aByteArray442);
             class44_sub3_sub2_1.offset = class21.anInt447;
-            Buffer class44_sub3_sub2_2 = new Buffer(class21.aByteArray442, 15787);
+            Buffer class44_sub3_sub2_2 = new Buffer(class21.aByteArray442);
             class44_sub3_sub2_2.offset = class21.anInt448;
-            Buffer class44_sub3_sub2_3 = new Buffer(class21.aByteArray442, 15787);
+            Buffer class44_sub3_sub2_3 = new Buffer(class21.aByteArray442);
             class44_sub3_sub2_3.offset = class21.anInt449;
-            Buffer class44_sub3_sub2_4 = new Buffer(class21.aByteArray442, 15787);
+            Buffer class44_sub3_sub2_4 = new Buffer(class21.aByteArray442);
             class44_sub3_sub2_4.offset = class21.anInt450;
             int j = 0;
             int k = 0;
@@ -168,15 +168,15 @@ public class Model extends Renderable {
                 int j1 = class44_sub3_sub2.readUnsignedByte();
                 int l1 = 0;
                 if ((j1 & 1) != 0) {
-                    l1 = class44_sub3_sub2_1.method495();
+                    l1 = class44_sub3_sub2_1.readUnsignedSmartA();
                 }
                 int j2 = 0;
                 if ((j1 & 2) != 0) {
-                    j2 = class44_sub3_sub2_2.method495();
+                    j2 = class44_sub3_sub2_2.readUnsignedSmartA();
                 }
                 int l2 = 0;
                 if ((j1 & 4) != 0) {
-                    l2 = class44_sub3_sub2_3.method495();
+                    l2 = class44_sub3_sub2_3.readUnsignedSmartA();
                 }
                 anIntArray1536[i1] = j + l1;
                 anIntArray1537[i1] = k + j2;
@@ -221,11 +221,11 @@ public class Model extends Renderable {
             for (int l3 = 0; l3 < anInt1539; l3++) {
                 int i4 = class44_sub3_sub2_1.readUnsignedByte();
                 if (i4 == 1) {
-                    i2 = class44_sub3_sub2.method495() + j3;
+                    i2 = class44_sub3_sub2.readUnsignedSmartA() + j3;
                     j3 = i2;
-                    k2 = class44_sub3_sub2.method495() + j3;
+                    k2 = class44_sub3_sub2.readUnsignedSmartA() + j3;
                     j3 = k2;
-                    i3 = class44_sub3_sub2.method495() + j3;
+                    i3 = class44_sub3_sub2.readUnsignedSmartA() + j3;
                     j3 = i3;
                     anIntArray1540[l3] = i2;
                     anIntArray1541[l3] = k2;
@@ -233,7 +233,7 @@ public class Model extends Renderable {
                 }
                 if (i4 == 2) {
                     k2 = i3;
-                    i3 = class44_sub3_sub2.method495() + j3;
+                    i3 = class44_sub3_sub2.readUnsignedSmartA() + j3;
                     j3 = i3;
                     anIntArray1540[l3] = i2;
                     anIntArray1541[l3] = k2;
@@ -241,7 +241,7 @@ public class Model extends Renderable {
                 }
                 if (i4 == 3) {
                     i2 = i3;
-                    i3 = class44_sub3_sub2.method495() + j3;
+                    i3 = class44_sub3_sub2.readUnsignedSmartA() + j3;
                     j3 = i3;
                     anIntArray1540[l3] = i2;
                     anIntArray1541[l3] = k2;
@@ -251,7 +251,7 @@ public class Model extends Renderable {
                     int k4 = i2;
                     i2 = k2;
                     k2 = k4;
-                    i3 = class44_sub3_sub2.method495() + j3;
+                    i3 = class44_sub3_sub2.readUnsignedSmartA() + j3;
                     j3 = i3;
                     anIntArray1540[l3] = i2;
                     anIntArray1541[l3] = k2;
@@ -736,7 +736,7 @@ public class Model extends Renderable {
                 class21.anInt445 = 0;
                 return;
             }
-            Buffer class44_sub3_sub2 = new Buffer(abyte0, 15787);
+            Buffer class44_sub3_sub2 = new Buffer(abyte0);
             class44_sub3_sub2.offset = abyte0.length - 18;
             ModelHeader class21_1 = Model.aClass21Array1570[i] = new ModelHeader();
             class21_1.aByteArray442 = abyte0;

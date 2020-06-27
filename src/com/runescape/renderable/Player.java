@@ -111,7 +111,7 @@ public class Player extends Actor {
             if (super.anInt1626 == 65535) {
                 super.anInt1626 = -1;
             }
-            aString1672 = TextUtils.method554(TextUtils.method551(class44_sub3_sub2.method488(true), true), true);
+            aString1672 = TextUtils.method554(TextUtils.method551(class44_sub3_sub2.readLong(), true), true);
             anInt1678 = class44_sub3_sub2.readUnsignedByte();
             anInt1679 = class44_sub3_sub2.readUnsignedShort();
             aBoolean1673 = true;

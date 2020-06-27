@@ -29,7 +29,7 @@ public class FloorDefinition {
 
     public static void method243(boolean flag, Archive class47) {
         try {
-            Buffer class44_sub3_sub2 = new Buffer(class47.method549("flo.dat", null), 15787);
+            Buffer class44_sub3_sub2 = new Buffer(class47.method549("flo.dat", null));
             FloorDefinition.anInt429 = class44_sub3_sub2.readUnsignedShort();
             if (FloorDefinition.aClass20Array430 == null) {
                 FloorDefinition.aClass20Array430 = new FloorDefinition[FloorDefinition.anInt429];
@@ -61,7 +61,7 @@ public class FloorDefinition {
                     return;
                 }
                 if (j == 1) {
-                    anInt432 = class44_sub3_sub2.method486();
+                    anInt432 = class44_sub3_sub2.readUnsignedTriByte();
                     method245(anInt432, true);
                 } else if (j == 2) {
                     anInt433 = class44_sub3_sub2.readUnsignedByte();
@@ -70,7 +70,7 @@ public class FloorDefinition {
                 } else if (j == 5) {
                     aBoolean435 = false;
                 } else if (j == 6) {
-                    String aString431 = class44_sub3_sub2.method489();
+                    String aString431 = class44_sub3_sub2.readString();
                 } else {
                     System.out.println("Error unrecognised config code: " + j);
                 }

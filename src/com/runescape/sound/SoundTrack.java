@@ -37,7 +37,7 @@ public class SoundTrack {
             if (!flag) {
                 return;
             }
-            SoundTrack.buffer = new Buffer(SoundTrack.aByteArray93, 15787);
+            SoundTrack.buffer = new Buffer(SoundTrack.aByteArray93);
             SoundTrackInstrument.method187();
             do {
                 int i = class44_sub3_sub2.readUnsignedShort();
@@ -130,20 +130,20 @@ public class SoundTrack {
         try {
             int k = method180(i);
             SoundTrack.buffer.offset = 0;
-            SoundTrack.buffer.putInt(0x52494646);
-            SoundTrack.buffer.putLEInt(26965, 36 + k);
-            SoundTrack.buffer.putInt(0x57415645);
-            SoundTrack.buffer.putInt(0x666d7420);
-            SoundTrack.buffer.putLEInt(26965, 16);
-            SoundTrack.buffer.putLEShort(1, false);
-            SoundTrack.buffer.putLEShort(1, false);
-            SoundTrack.buffer.putLEInt(26965, 22050);
-            SoundTrack.buffer.putLEInt(26965, 22050);
+            SoundTrack.buffer.writeInt(0x52494646);
+            SoundTrack.buffer.writeLEInt(36 + k);
+            SoundTrack.buffer.writeInt(0x57415645);
+            SoundTrack.buffer.writeInt(0x666d7420);
+            SoundTrack.buffer.writeLEInt(16);
+            SoundTrack.buffer.writeLEShort(1);
+            SoundTrack.buffer.writeLEShort(1);
+            SoundTrack.buffer.writeLEInt(22050);
+            SoundTrack.buffer.writeLEInt(22050);
             j = 98 / j;
-            SoundTrack.buffer.putLEShort(1, false);
-            SoundTrack.buffer.putLEShort(8, false);
-            SoundTrack.buffer.putInt(0x64617461);
-            SoundTrack.buffer.putLEInt(26965, k);
+            SoundTrack.buffer.writeLEShort(1);
+            SoundTrack.buffer.writeLEShort(8);
+            SoundTrack.buffer.writeInt(0x64617461);
+            SoundTrack.buffer.writeLEInt(k);
             SoundTrack.buffer.offset += k;
             return SoundTrack.buffer;
         } catch (RuntimeException runtimeexception) {

@@ -36,7 +36,7 @@ public class SpotAnimation {
 
     public static void method269(boolean flag, Archive class47) {
         try {
-            Buffer class44_sub3_sub2 = new Buffer(class47.method549("spotanim.dat", null), 15787);
+            Buffer class44_sub3_sub2 = new Buffer(class47.method549("spotanim.dat", null));
             SpotAnimation.anInt558 = class44_sub3_sub2.readUnsignedShort();
             if (!flag) {
                 return;

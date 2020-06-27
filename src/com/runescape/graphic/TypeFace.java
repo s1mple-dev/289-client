@@ -38,8 +38,8 @@ public class TypeFace extends Rasterizer {
         aRandom1479 = new Random();
         aBoolean1480 = false;
         try {
-            Buffer class44_sub3_sub2 = new Buffer(class47.method549(s + ".dat", null), 15787);
-            Buffer class44_sub3_sub2_1 = new Buffer(class47.method549("index.dat", null), 15787);
+            Buffer class44_sub3_sub2 = new Buffer(class47.method549(s + ".dat", null));
+            Buffer class44_sub3_sub2_1 = new Buffer(class47.method549("index.dat", null));
             class44_sub3_sub2_1.offset = class44_sub3_sub2.readUnsignedShort() + 4;
             if (i != 9) {
                 aBoolean1467 = !aBoolean1467;

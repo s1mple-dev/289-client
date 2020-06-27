@@ -294,16 +294,16 @@ class SoundTrackInstrument {
                 aClass1_174.method148(false, class44_sub3_sub2);
             }
             for (int j = 0; j < 10; j++) {
-                int k = class44_sub3_sub2.method496();
+                int k = class44_sub3_sub2.readUnsignedSmartB();
                 if (k == 0) {
                     break;
                 }
                 anIntArray175[j] = k;
-                anIntArray176[j] = class44_sub3_sub2.method495();
-                anIntArray177[j] = class44_sub3_sub2.method496();
+                anIntArray176[j] = class44_sub3_sub2.readUnsignedSmartA();
+                anIntArray177[j] = class44_sub3_sub2.readUnsignedSmartB();
             }
-            anInt178 = class44_sub3_sub2.method496();
-            anInt179 = class44_sub3_sub2.method496();
+            anInt178 = class44_sub3_sub2.readUnsignedSmartB();
+            anInt179 = class44_sub3_sub2.readUnsignedSmartB();
             anInt182 = class44_sub3_sub2.readUnsignedShort();
             anInt183 = class44_sub3_sub2.readUnsignedShort();
             aClass2_180 = new SoundFilter();

@@ -1440,7 +1440,7 @@ public class Scene {
         do {
             SceneTile class44_sub2_1;
             do {
-                class44_sub2_1 = (SceneTile) Scene.aClass28_647.method258();
+                class44_sub2_1 = (SceneTile) Scene.aClass28_647.pop();
                 if (class44_sub2_1 == null) {
                     return;
                 }

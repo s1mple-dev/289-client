@@ -75,8 +75,8 @@ public class ItemDefinition {
     }
 
     public static void method218(Archive class47) {
-        ItemDefinition.buffer = new Buffer(class47.method549("obj.dat", null), 15787);
-        Buffer class44_sub3_sub2 = new Buffer(class47.method549("obj.idx", null), 15787);
+        ItemDefinition.buffer = new Buffer(class47.method549("obj.dat", null));
+        Buffer class44_sub3_sub2 = new Buffer(class47.method549("obj.idx", null));
         ItemDefinition.anInt323 = class44_sub3_sub2.readUnsignedShort();
         ItemDefinition.anIntArray324 = new int[ItemDefinition.anInt323];
         int i = 2;
@@ -327,9 +327,9 @@ public class ItemDefinition {
                 if (i == 1) {
                     anInt330 = class44_sub3_sub2.readUnsignedShort();
                 } else if (i == 2) {
-                    aString331 = class44_sub3_sub2.method489();
+                    aString331 = class44_sub3_sub2.readString();
                 } else if (i == 3) {
-                    aByteArray332 = class44_sub3_sub2.method490(anInt317);
+                    aByteArray332 = class44_sub3_sub2.readBytes();
                 } else if (i == 4) {
                     anInt335 = class44_sub3_sub2.readUnsignedShort();
                 } else if (i == 5) {
@@ -351,7 +351,7 @@ public class ItemDefinition {
                 } else if (i == 11) {
                     aBoolean342 = true;
                 } else if (i == 12) {
-                    anInt343 = class44_sub3_sub2.method487();
+                    anInt343 = class44_sub3_sub2.readUnsignedInt();
                 } else if (i == 16) {
                     aBoolean344 = true;
                 } else if (i == 23) {
@@ -368,7 +368,7 @@ public class ItemDefinition {
                     if (aStringArray345 == null) {
                         aStringArray345 = new String[5];
                     }
-                    aStringArray345[i - 30] = class44_sub3_sub2.method489();
+                    aStringArray345[i - 30] = class44_sub3_sub2.readString();
                     if (aStringArray345[i - 30].equalsIgnoreCase("hidden")) {
                         aStringArray345[i - 30] = null;
                     }
@@ -376,7 +376,7 @@ public class ItemDefinition {
                     if (aStringArray346 == null) {
                         aStringArray346 = new String[5];
                     }
-                    aStringArray346[i - 35] = class44_sub3_sub2.method489();
+                    aStringArray346[i - 35] = class44_sub3_sub2.readString();
                 } else if (i == 40) {
                     int j = class44_sub3_sub2.readUnsignedByte();
                     anIntArray333 = new int[j];

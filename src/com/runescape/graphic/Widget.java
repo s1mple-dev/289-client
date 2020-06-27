@@ -86,7 +86,7 @@ public class Widget {
     public static void method181(TypeFace[] aclass44_sub3_sub1_sub4, Archive mediaArchive, int i, Archive widgetArchive) {
         try {
             Widget.spriteCache = new Cache((byte) 7, 50000);
-            Buffer class44_sub3_sub2 = new Buffer(widgetArchive.method549("data", null), 15787);
+            Buffer class44_sub3_sub2 = new Buffer(widgetArchive.method549("data", null));
             int j = -1;
             int k = class44_sub3_sub2.readUnsignedShort();
             if (i != 0) {
@@ -143,8 +143,8 @@ public class Widget {
                     class5.anIntArray124 = new int[j2];
                     for (int k3 = 0; k3 < j2; k3++) {
                         class5.anIntArray122[k3] = class44_sub3_sub2.readUnsignedShort();
-                        class5.anIntArray123[k3] = class44_sub3_sub2.method485();
-                        class5.anIntArray124[k3] = class44_sub3_sub2.method485();
+                        class5.anIntArray123[k3] = class44_sub3_sub2.readShort();
+                        class5.anIntArray124[k3] = class44_sub3_sub2.readShort();
                     }
                 }
                 if (class5.anInt107 == 1) {
@@ -166,9 +166,9 @@ public class Widget {
                     for (int k2 = 0; k2 < 20; k2++) {
                         int l3 = class44_sub3_sub2.readUnsignedByte();
                         if (l3 == 1) {
-                            class5.anIntArray134[k2] = class44_sub3_sub2.method485();
-                            class5.anIntArray135[k2] = class44_sub3_sub2.method485();
-                            String s1 = class44_sub3_sub2.method489();
+                            class5.anIntArray134[k2] = class44_sub3_sub2.readShort();
+                            class5.anIntArray135[k2] = class44_sub3_sub2.readShort();
+                            String s1 = class44_sub3_sub2.readString();
                             if (mediaArchive != null && s1.length() > 0) {
                                 int j5 = s1.lastIndexOf(",");
                                 class5.aClass44_Sub3_Sub1_Sub2Array133[k2] = Widget.method186(false,
@@ -178,7 +178,7 @@ public class Widget {
                     }
                     class5.aStringArray136 = new String[5];
                     for (int i4 = 0; i4 < 5; i4++) {
-                        class5.aStringArray136[i4] = class44_sub3_sub2.method489();
+                        class5.aStringArray136[i4] = class44_sub3_sub2.readString();
                         if (class5.aStringArray136[i4].length() == 0) {
                             class5.aStringArray136[i4] = null;
                         }
@@ -196,25 +196,25 @@ public class Widget {
                     class5.aBoolean139 = class44_sub3_sub2.readUnsignedByte() == 1;
                 }
                 if (class5.anInt107 == 4) {
-                    class5.aString141 = class44_sub3_sub2.method489();
-                    class5.aString142 = class44_sub3_sub2.method489();
+                    class5.aString141 = class44_sub3_sub2.readString();
+                    class5.aString142 = class44_sub3_sub2.readString();
                 }
                 if (class5.anInt107 == 1 || class5.anInt107 == 3 || class5.anInt107 == 4) {
-                    class5.anInt143 = class44_sub3_sub2.method487();
+                    class5.anInt143 = class44_sub3_sub2.readUnsignedInt();
                 }
                 if (class5.anInt107 == 3 || class5.anInt107 == 4) {
-                    class5.anInt144 = class44_sub3_sub2.method487();
-                    class5.anInt145 = class44_sub3_sub2.method487();
-                    class5.anInt146 = class44_sub3_sub2.method487();
+                    class5.anInt144 = class44_sub3_sub2.readUnsignedInt();
+                    class5.anInt145 = class44_sub3_sub2.readUnsignedInt();
+                    class5.anInt146 = class44_sub3_sub2.readUnsignedInt();
                 }
                 if (class5.anInt107 == 5) {
-                    String s = class44_sub3_sub2.method489();
+                    String s = class44_sub3_sub2.readString();
                     if (mediaArchive != null && s.length() > 0) {
                         int j4 = s.lastIndexOf(",");
                         class5.aClass44_Sub3_Sub1_Sub2_147 = Widget.method186(false,
                                 Integer.parseInt(s.substring(j4 + 1)), mediaArchive, s.substring(0, j4));
                     }
-                    s = class44_sub3_sub2.method489();
+                    s = class44_sub3_sub2.readString();
                     if (mediaArchive != null && s.length() > 0) {
                         int k4 = s.lastIndexOf(",");
                         class5.aClass44_Sub3_Sub1_Sub2_148 = Widget.method186(false,
@@ -257,25 +257,25 @@ public class Widget {
                         class5.aClass44_Sub3_Sub1_Sub4_140 = aclass44_sub3_sub1_sub4[i3];
                     }
                     class5.aBoolean139 = class44_sub3_sub2.readUnsignedByte() == 1;
-                    class5.anInt143 = class44_sub3_sub2.method487();
-                    class5.anInt131 = class44_sub3_sub2.method485();
-                    class5.anInt132 = class44_sub3_sub2.method485();
+                    class5.anInt143 = class44_sub3_sub2.readUnsignedInt();
+                    class5.anInt131 = class44_sub3_sub2.readShort();
+                    class5.anInt132 = class44_sub3_sub2.readShort();
                     class5.aBoolean128 = class44_sub3_sub2.readUnsignedByte() == 1;
                     class5.aStringArray136 = new String[5];
                     for (int l4 = 0; l4 < 5; l4++) {
-                        class5.aStringArray136[l4] = class44_sub3_sub2.method489();
+                        class5.aStringArray136[l4] = class44_sub3_sub2.readString();
                         if (class5.aStringArray136[l4].length() == 0) {
                             class5.aStringArray136[l4] = null;
                         }
                     }
                 }
                 if (class5.anInt108 == 2 || class5.anInt107 == 2) {
-                    class5.aString158 = class44_sub3_sub2.method489();
-                    class5.aString159 = class44_sub3_sub2.method489();
+                    class5.aString158 = class44_sub3_sub2.readString();
+                    class5.aString159 = class44_sub3_sub2.readString();
                     class5.anInt160 = class44_sub3_sub2.readUnsignedShort();
                 }
                 if (class5.anInt108 == 1 || class5.anInt108 == 4 || class5.anInt108 == 5 || class5.anInt108 == 6) {
-                    class5.aString161 = class44_sub3_sub2.method489();
+                    class5.aString161 = class44_sub3_sub2.readString();
                     if (class5.aString161.length() == 0) {
                         if (class5.anInt108 == 1) {
                             class5.aString161 = "Ok";

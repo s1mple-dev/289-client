@@ -87,7 +87,7 @@ public class OnDemandRequester extends Requester implements Runnable {
         for (int i = 0; i < 4; i++) {
             byte[] abyte0 = class47.method549(as[i], null);
             int j = abyte0.length / 2;
-            Buffer class44_sub3_sub2 = new Buffer(abyte0, 15787);
+            Buffer class44_sub3_sub2 = new Buffer(abyte0);
             anIntArrayArray1284[i] = new int[j];
             aByteArrayArray1286[i] = new byte[j];
             for (int l = 0; l < j; l++) {
@@ -98,10 +98,10 @@ public class OnDemandRequester extends Requester implements Runnable {
         for (int k = 0; k < 4; k++) {
             byte[] abyte1 = class47.method549(as1[k], null);
             int i1 = abyte1.length / 4;
-            Buffer class44_sub3_sub2_1 = new Buffer(abyte1, 15787);
+            Buffer class44_sub3_sub2_1 = new Buffer(abyte1);
             anIntArrayArray1285[k] = new int[i1];
             for (int l1 = 0; l1 < i1; l1++) {
-                anIntArrayArray1285[k][l1] = class44_sub3_sub2_1.method487();
+                anIntArrayArray1285[k][l1] = class44_sub3_sub2_1.readUnsignedInt();
             }
         }
         byte[] abyte2 = class47.method549("model_index", null);
@@ -115,7 +115,7 @@ public class OnDemandRequester extends Requester implements Runnable {
             }
         }
         abyte2 = class47.method549("map_index", null);
-        Buffer class44_sub3_sub2_2 = new Buffer(abyte2, 15787);
+        Buffer class44_sub3_sub2_2 = new Buffer(abyte2);
         j1 = abyte2.length / 7;
         anIntArray1289 = new int[j1];
         anIntArray1290 = new int[j1];
@@ -128,14 +128,14 @@ public class OnDemandRequester extends Requester implements Runnable {
             anIntArray1292[i2] = class44_sub3_sub2_2.readUnsignedByte();
         }
         abyte2 = class47.method549("anim_index", null);
-        class44_sub3_sub2_2 = new Buffer(abyte2, 15787);
+        class44_sub3_sub2_2 = new Buffer(abyte2);
         j1 = abyte2.length / 2;
         anIntArray1293 = new int[j1];
         for (int j2 = 0; j2 < j1; j2++) {
             anIntArray1293[j2] = class44_sub3_sub2_2.readUnsignedShort();
         }
         abyte2 = class47.method549("midi_index", null);
-        class44_sub3_sub2_2 = new Buffer(abyte2, 15787);
+        class44_sub3_sub2_2 = new Buffer(abyte2);
         j1 = abyte2.length;
         anIntArray1294 = new int[j1];
         for (int k2 = 0; k2 < j1; k2++) {
@@ -298,7 +298,7 @@ public class OnDemandRequester extends Requester implements Runnable {
     public OnDemandNode method394() {
         OnDemandNode class44_sub3_sub3;
         synchronized (aClass28_1305) {
-            class44_sub3_sub3 = (OnDemandNode) aClass28_1305.method258();
+            class44_sub3_sub3 = (OnDemandNode) aClass28_1305.pop();
         }
         if (class44_sub3_sub3 == null) {
             return null;
@@ -501,7 +501,7 @@ public class OnDemandRequester extends Requester implements Runnable {
         try {
             OnDemandNode class44_sub3_sub3;
             synchronized (aClass28_1302) {
-                class44_sub3_sub3 = (OnDemandNode) aClass28_1302.method258();
+                class44_sub3_sub3 = (OnDemandNode) aClass28_1302.pop();
             }
             if (byte0 != -101) {
                 return;
@@ -526,7 +526,7 @@ public class OnDemandRequester extends Requester implements Runnable {
                             aClass28_1305.method256(class44_sub3_sub3);
                         }
                     }
-                    class44_sub3_sub3 = (OnDemandNode) aClass28_1302.method258();
+                    class44_sub3_sub3 = (OnDemandNode) aClass28_1302.pop();
                 }
             }
             return;
@@ -552,7 +552,7 @@ public class OnDemandRequester extends Requester implements Runnable {
                 }
             }
             while (anInt1299 < 10) {
-                OnDemandNode class44_sub3_sub3_1 = (OnDemandNode) aClass28_1303.method258();
+                OnDemandNode class44_sub3_sub3_1 = (OnDemandNode) aClass28_1303.pop();
                 if (class44_sub3_sub3_1 == null) {
                     break;
                 }
@@ -591,7 +591,7 @@ public class OnDemandRequester extends Requester implements Runnable {
                     }
                     OnDemandNode class44_sub3_sub3;
                     synchronized (aClass28_1306) {
-                        class44_sub3_sub3 = (OnDemandNode) aClass28_1306.method258();
+                        class44_sub3_sub3 = (OnDemandNode) aClass28_1306.pop();
                     }
                     while (class44_sub3_sub3 != null) {
                         if (aByteArrayArray1286[class44_sub3_sub3.anInt1405][class44_sub3_sub3.anInt1406] != 0) {
@@ -609,7 +609,7 @@ public class OnDemandRequester extends Requester implements Runnable {
                             }
                         }
                         synchronized (aClass28_1306) {
-                            class44_sub3_sub3 = ((OnDemandNode) aClass28_1306.method258());
+                            class44_sub3_sub3 = ((OnDemandNode) aClass28_1306.pop());
                         }
                     }
                     for (int j = 0; j < 4; j++) {

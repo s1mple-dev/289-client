@@ -54,7 +54,7 @@ public class LinkedList {
         }
     }
 
-    public Node method258() {
+    public Node pop() {
         Node class44 = head.previousNode;
         if (class44 == head) {
             return null;

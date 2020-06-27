@@ -66,15 +66,15 @@ public class ImageRGB extends Rasterizer {
         anInt1445 = 9;
         aByte1446 = 8;
         aBoolean1447 = true;
-        Buffer class44_sub3_sub2 = new Buffer(class47.method549(s + ".dat", null), 15787);
-        Buffer class44_sub3_sub2_1 = new Buffer(class47.method549("index.dat", null), 15787);
+        Buffer class44_sub3_sub2 = new Buffer(class47.method549(s + ".dat", null));
+        Buffer class44_sub3_sub2_1 = new Buffer(class47.method549("index.dat", null));
         class44_sub3_sub2_1.offset = class44_sub3_sub2.readUnsignedShort();
         anInt1453 = class44_sub3_sub2_1.readUnsignedShort();
         anInt1454 = class44_sub3_sub2_1.readUnsignedShort();
         int j = class44_sub3_sub2_1.readUnsignedByte();
         int[] ai = new int[j];
         for (int k = 0; k < j - 1; k++) {
-            ai[k + 1] = class44_sub3_sub2_1.method486();
+            ai[k + 1] = class44_sub3_sub2_1.readUnsignedTriByte();
             if (ai[k + 1] == 0) {
                 ai[k + 1] = 1;
             }

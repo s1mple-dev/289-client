@@ -31,14 +31,14 @@ public class Archive {
 
     private void method548(byte byte0, byte[] abyte0) {
         try {
-            Buffer class44_sub3_sub2 = new Buffer(abyte0, 15787);
-            int i = class44_sub3_sub2.method486();
-            int j = class44_sub3_sub2.method486();
+            Buffer class44_sub3_sub2 = new Buffer(abyte0);
+            int i = class44_sub3_sub2.readUnsignedTriByte();
+            int j = class44_sub3_sub2.readUnsignedTriByte();
             if (j != i) {
                 byte[] abyte1 = new byte[i];
                 BZip2Decompressor.method329(abyte1, i, abyte0, j, 6);
                 aByteArray791 = abyte1;
-                class44_sub3_sub2 = new Buffer(aByteArray791, 15787);
+                class44_sub3_sub2 = new Buffer(aByteArray791);
                 aBoolean797 = true;
             } else {
                 aByteArray791 = abyte0;
@@ -56,9 +56,9 @@ public class Archive {
             anIntArray796 = new int[anInt792];
             int k = class44_sub3_sub2.offset + anInt792 * 10;
             for (int l = 0; l < anInt792; l++) {
-                anIntArray793[l] = class44_sub3_sub2.method487();
-                anIntArray794[l] = class44_sub3_sub2.method486();
-                anIntArray795[l] = class44_sub3_sub2.method486();
+                anIntArray793[l] = class44_sub3_sub2.readUnsignedInt();
+                anIntArray794[l] = class44_sub3_sub2.readUnsignedTriByte();
+                anIntArray795[l] = class44_sub3_sub2.readUnsignedTriByte();
                 anIntArray796[l] = k;
                 k += anIntArray795[l];
             }

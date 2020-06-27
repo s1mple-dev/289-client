@@ -75,13 +75,13 @@ public class Region {
     public static boolean method159(int i, int j, int k, byte[] abyte0) {
         try {
             boolean flag = true;
-            Buffer class44_sub3_sub2 = new Buffer(abyte0, 15787);
+            Buffer class44_sub3_sub2 = new Buffer(abyte0);
             int l = -1;
             if (i <= 0) {
                 throw new NullPointerException();
             }
             while (true) {
-                int i1 = class44_sub3_sub2.method496();
+                int i1 = class44_sub3_sub2.readUnsignedSmartB();
                 if (i1 == 0) {
                     break;
                 }
@@ -90,13 +90,13 @@ public class Region {
                 boolean flag1 = false;
                 while (true) {
                     if (flag1) {
-                        int k1 = class44_sub3_sub2.method496();
+                        int k1 = class44_sub3_sub2.readUnsignedSmartB();
                         if (k1 == 0) {
                             break;
                         }
                         class44_sub3_sub2.readUnsignedByte();
                     } else {
-                        int l1 = class44_sub3_sub2.method496();
+                        int l1 = class44_sub3_sub2.readUnsignedSmartB();
                         if (l1 == 0) {
                             break;
                         }
@@ -131,7 +131,7 @@ public class Region {
                 return;
             }
             do {
-                int k = class44_sub3_sub2.method496();
+                int k = class44_sub3_sub2.readUnsignedSmartB();
                 if (k == 0) {
                     break;
                 }
@@ -139,7 +139,7 @@ public class Region {
                 GameObjectDefinition class8 = GameObjectDefinition.method199(j);
                 class8.method204(class43_sub1, (byte) 2);
                 do {
-                    int l = class44_sub3_sub2.method496();
+                    int l = class44_sub3_sub2.readUnsignedSmartB();
                     if (l == 0) {
                         break;
                     }
@@ -492,7 +492,7 @@ public class Region {
 
     public void method158(int i, int j, byte byte0, byte[] abyte0, int k, int l) {
         try {
-            Buffer class44_sub3_sub2 = new Buffer(abyte0, 15787);
+            Buffer class44_sub3_sub2 = new Buffer(abyte0);
             for (int i1 = 0; i1 < 4; i1++) {
                 for (int j1 = 0; j1 < 64; j1++) {
                     for (int l1 = 0; l1 < 64; l1++) {
@@ -567,21 +567,21 @@ public class Region {
 
     public void method161(int i, int j, byte[] abyte0, Scene class36, byte byte0, CollisionMap[] aclass18) {
         try {
-            Buffer class44_sub3_sub2 = new Buffer(abyte0, 15787);
+            Buffer class44_sub3_sub2 = new Buffer(abyte0);
             int k = -1;
             if (byte0 != 4) {
                 for (int l = 1; l > 0; l++) {
                 }
             }
             do {
-                int i1 = class44_sub3_sub2.method496();
+                int i1 = class44_sub3_sub2.readUnsignedSmartB();
                 if (i1 == 0) {
                     break;
                 }
                 k += i1;
                 int j1 = 0;
                 do {
-                    int k1 = class44_sub3_sub2.method496();
+                    int k1 = class44_sub3_sub2.readUnsignedSmartB();
                     if (k1 == 0) {
                         break;
                     }

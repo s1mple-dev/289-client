@@ -25,7 +25,7 @@ public class VarBit {
             if (!flag) {
                 return;
             }
-            Buffer class44_sub3_sub2 = new Buffer(class47.method549("varbit.dat", null), 15787);
+            Buffer class44_sub3_sub2 = new Buffer(class47.method549("varbit.dat", null));
             VarBit.anInt589 = class44_sub3_sub2.readUnsignedShort();
             if (VarBit.aClass35Array590 == null) {
                 VarBit.aClass35Array590 = new VarBit[VarBit.anInt589];
@@ -61,13 +61,13 @@ public class VarBit {
                     anInt593 = class44_sub3_sub2.readUnsignedByte();
                     anInt594 = class44_sub3_sub2.readUnsignedByte();
                 } else if (k == 10) {
-                    String aString591 = class44_sub3_sub2.method489();
+                    String aString591 = class44_sub3_sub2.readString();
                 } else if (k == 2) {
                     aBoolean595 = true;
                 } else if (k == 3) {
-                    anInt596 = class44_sub3_sub2.method487();
+                    anInt596 = class44_sub3_sub2.readUnsignedInt();
                 } else if (k == 4) {
-                    int anInt597 = class44_sub3_sub2.method487();
+                    int anInt597 = class44_sub3_sub2.readUnsignedInt();
                 } else {
                     System.out.println("Error unrecognised config code: " + k);
                 }

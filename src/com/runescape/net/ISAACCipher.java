@@ -31,7 +31,7 @@ public class ISAACCipher {
         throw new RuntimeException();
     }
 
-    public int method545() {
+    public int value() {
         if (anInt783-- == 0) {
             method546();
             anInt783 = 255;

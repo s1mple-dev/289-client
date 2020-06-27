@@ -41,7 +41,7 @@ public class AnimationSequence {
 
     public static void method253(boolean flag, Archive class47) {
         try {
-            Buffer class44_sub3_sub2 = new Buffer(class47.method549("seq.dat", null), 15787);
+            Buffer class44_sub3_sub2 = new Buffer(class47.method549("seq.dat", null));
             AnimationSequence.anInt507 = class44_sub3_sub2.readUnsignedShort();
             if (AnimationSequence.cache == null) {
                 AnimationSequence.cache = new AnimationSequence[AnimationSequence.anInt507];
@@ -133,7 +133,7 @@ public class AnimationSequence {
                 } else if (i == 11) {
                     anInt522 = class44_sub3_sub2.readUnsignedByte();
                 } else if (i == 12) {
-                    int anInt523 = class44_sub3_sub2.method487();
+                    int anInt523 = class44_sub3_sub2.readUnsignedInt();
                 } else {
                     System.out.println("Error unrecognised seq config code: " + i);
                 }
