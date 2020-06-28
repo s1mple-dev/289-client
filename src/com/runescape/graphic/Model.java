@@ -833,7 +833,7 @@ public class Model extends Renderable {
             }
             ModelHeader class21 = Model.aClass21Array1570[i];
             if (class21 == null) {
-                Model.aClass43_1571.method382(i);
+                Model.aClass43_1571.request(i);
                 return null;
             } else {
                 return new Model((byte) 5, i);
@@ -850,7 +850,7 @@ public class Model extends Renderable {
         }
         ModelHeader class21 = Model.aClass21Array1570[i];
         if (class21 == null) {
-            Model.aClass43_1571.method382(i);
+            Model.aClass43_1571.request(i);
             return false;
         } else {
             return true;

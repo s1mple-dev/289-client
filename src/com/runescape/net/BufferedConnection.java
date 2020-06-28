@@ -119,7 +119,7 @@ public class BufferedConnection implements Runnable {
                 }
                 if (!aBoolean201) {
                     aBoolean201 = true;
-                    anApplet_Sub1_197.method12(this, 3);
+                    anApplet_Sub1_197.startRunnable(this, 3);
                 }
                 notify();
             }

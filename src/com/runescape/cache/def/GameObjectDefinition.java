@@ -354,7 +354,7 @@ public class GameObjectDefinition {
                 return;
             }
             for (int i = 0; i < anIntArray216.length; i++) {
-                class43_sub1.method397(anIntArray216[i] & 0xffff, 0, (byte) 6);
+                class43_sub1.passiveRequest(anIntArray216[i] & 0xffff, 0);
             }
             if (byte0 == 2) {
                 byte0 = 0;

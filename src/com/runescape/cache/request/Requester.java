@@ -5,6 +5,6 @@ public class Requester {
     Requester() {
     }
 
-    public void method382(int i) {
+    public void request(int index) {
     }
 }

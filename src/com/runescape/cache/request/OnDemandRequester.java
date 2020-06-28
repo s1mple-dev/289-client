@@ -17,477 +17,377 @@ import java.util.zip.GZIPInputStream;
 
 public class OnDemandRequester extends Requester implements Runnable {
 
-    private boolean aBoolean1280;
-    private int anInt1281;
-    private int anInt1282;
-    private final byte aByte1283;
-    private final int[][] anIntArrayArray1284;
-    private final int[][] anIntArrayArray1285;
-    private final byte[][] aByteArrayArray1286;
-    private int anInt1287;
-    private byte[] aByteArray1288;
-    private int[] anIntArray1289;
-    private int[] anIntArray1290;
-    private int[] anIntArray1291;
-    private int[] anIntArray1292;
-    private int[] anIntArray1293;
-    private int[] anIntArray1294;
-    private boolean aBoolean1295;
-    private Client aClient1296;
-    private final CRC32 aCRC32_1297;
-    private boolean aBoolean1298;
-    private int anInt1299;
-    private int anInt1300;
-    private final Queue aClass31_1301;
-    private final LinkedList aClass28_1302;
-    private final LinkedList aClass28_1303;
-    private final LinkedList aClass28_1304;
-    private final LinkedList aClass28_1305;
-    private final LinkedList aClass28_1306;
-    public String aString1307;
-    private int anInt1308;
-    private int anInt1309;
-    private Socket aSocket1310;
-    private InputStream anInputStream1311;
-    private OutputStream anOutputStream1312;
-    public int anInt1313;
-    private OnDemandNode aClass44_Sub3_Sub3_1314;
-    private int anInt1315;
-    private int anInt1316;
-    private final byte[] aByteArray1317;
+    private final int[][] versions;
+    private final int[][] crcs;
+    private final byte[][] filePriorities;
+    private int highestPriority;
+    private byte[] modelIndices;
+    private int[] mapIndices1;
+    private int[] mapIndices2;
+    private int[] mapIndices3;
+    private int[] mapIndices4;
+    private int[] frames;
+    private int[] musicPriorities;
+    private boolean running;
+    private Client clientInstance;
+    private final CRC32 crc32;
+    private boolean waiting;
+    private int uncompletedCount;
+    private int completedCount;
+    private final Queue nodeSubList;
+    private final LinkedList mandatoryRequests;
+    private final LinkedList unrequested;
+    private final LinkedList requested;
+    private final LinkedList complete;
+    private final LinkedList passiveRequests;
+    public String status;
+    private int filesLoaded;
+    private int totalFiles;
+    private Socket socket;
+    private InputStream inputStream;
+    private OutputStream outputStream;
+    public int failedRequests;
+    private OnDemandNode current;
+    private int completedSize;
+    private int expectedSize;
+    private final byte[] payload;
     private final byte[] aByteArray1318;
-    private int anInt1319;
-    private int anInt1320;
-    private long aLong1321;
-    public int anInt1322;
+    private int loopCycle;
+    private int writeLoopCycle;
+    private long lastRequestTime;
+    public int onDemandCycle;
 
     public OnDemandRequester() {
-        aBoolean1280 = false;
-        anInt1281 = -555;
-        aByte1283 = 64;
-        anIntArrayArray1284 = new int[4][];
-        anIntArrayArray1285 = new int[4][];
-        aByteArrayArray1286 = new byte[4][];
-        aBoolean1295 = true;
-        aCRC32_1297 = new CRC32();
-        aBoolean1298 = false;
-        aClass31_1301 = new Queue();
-        aClass28_1302 = new LinkedList();
-        aClass28_1303 = new LinkedList();
-        aClass28_1304 = new LinkedList();
-        aClass28_1305 = new LinkedList();
-        aClass28_1306 = new LinkedList();
-        aString1307 = "";
-        aByteArray1317 = new byte[500];
+        versions = new int[4][];
+        crcs = new int[4][];
+        filePriorities = new byte[4][];
+        running = true;
+        crc32 = new CRC32();
+        waiting = false;
+        nodeSubList = new Queue();
+        mandatoryRequests = new LinkedList();
+        unrequested = new LinkedList();
+        requested = new LinkedList();
+        complete = new LinkedList();
+        passiveRequests = new LinkedList();
+        status = "";
+        payload = new byte[500];
         aByteArray1318 = new byte[65000];
     }
 
-    public void method383(Archive class47, Client client1) {
-        String[] as = {"model_version", "anim_version", "midi_version", "map_version"};
-        for (int i = 0; i < 4; i++) {
-            byte[] abyte0 = class47.decompressFile(as[i]);
-            int j = abyte0.length / 2;
-            Buffer class44_sub3_sub2 = new Buffer(abyte0);
-            anIntArrayArray1284[i] = new int[j];
-            aByteArrayArray1286[i] = new byte[j];
-            for (int l = 0; l < j; l++) {
-                anIntArrayArray1284[i][l] = class44_sub3_sub2.readUnsignedShort();
+    public void start(Archive loader, Client client) {
+        String[] versions = {"model_version", "anim_version", "midi_version", "map_version"};
+        for (int index = 0; index < 4; index++) {
+            byte[] decompressed = loader.decompressFile(versions[index]);
+            int length = decompressed.length / 2;
+            Buffer buffer = new Buffer(decompressed);
+            this.versions[index] = new int[length];
+            filePriorities[index] = new byte[length];
+            for (int part = 0; part < length; part++) {
+                this.versions[index][part] = buffer.readUnsignedShort();
             }
         }
-        String[] as1 = {"model_crc", "anim_crc", "midi_crc", "map_crc"};
-        for (int k = 0; k < 4; k++) {
-            byte[] abyte1 = class47.decompressFile(as1[k]);
-            int i1 = abyte1.length / 4;
-            Buffer class44_sub3_sub2_1 = new Buffer(abyte1);
-            anIntArrayArray1285[k] = new int[i1];
-            for (int l1 = 0; l1 < i1; l1++) {
-                anIntArrayArray1285[k][l1] = class44_sub3_sub2_1.readUnsignedInt();
+        String[] crcs = {"model_crc", "anim_crc", "midi_crc", "map_crc"};
+        for (int index = 0; index < 4; index++) {
+            byte[] decompressed = loader.decompressFile(crcs[index]);
+            int length = decompressed.length / 4;
+            Buffer buffer = new Buffer(decompressed);
+            this.crcs[index] = new int[length];
+            for (int part = 0; part < length; part++) {
+                this.crcs[index][part] = buffer.readUnsignedInt();
             }
         }
-        byte[] abyte2 = class47.decompressFile("model_index");
-        int j1 = anIntArrayArray1284[0].length;
-        aByteArray1288 = new byte[j1];
-        for (int k1 = 0; k1 < j1; k1++) {
-            if (k1 < abyte2.length) {
-                aByteArray1288[k1] = abyte2[k1];
+        byte[] indices = loader.decompressFile("model_index");
+        int length = this.versions[0].length;
+        this.modelIndices = new byte[length];
+        for (int part = 0; part < length; part++) {
+            if (part < indices.length) {
+                this.modelIndices[part] = indices[part];
             } else {
-                aByteArray1288[k1] = 0;
+                this.modelIndices[part] = 0;
             }
         }
-        abyte2 = class47.decompressFile("map_index");
-        Buffer class44_sub3_sub2_2 = new Buffer(abyte2);
-        j1 = abyte2.length / 7;
-        anIntArray1289 = new int[j1];
-        anIntArray1290 = new int[j1];
-        anIntArray1291 = new int[j1];
-        anIntArray1292 = new int[j1];
-        for (int i2 = 0; i2 < j1; i2++) {
-            anIntArray1289[i2] = class44_sub3_sub2_2.readUnsignedShort();
-            anIntArray1290[i2] = class44_sub3_sub2_2.readUnsignedShort();
-            anIntArray1291[i2] = class44_sub3_sub2_2.readUnsignedShort();
-            anIntArray1292[i2] = class44_sub3_sub2_2.readUnsignedByte();
+        indices = loader.decompressFile("map_index");
+        Buffer buffer = new Buffer(indices);
+        length = indices.length / 7;
+        mapIndices1 = new int[length];
+        mapIndices2 = new int[length];
+        mapIndices3 = new int[length];
+        mapIndices4 = new int[length];
+        for (int part = 0; part < length; part++) {
+            mapIndices1[part] = buffer.readUnsignedShort();
+            mapIndices2[part] = buffer.readUnsignedShort();
+            mapIndices3[part] = buffer.readUnsignedShort();
+            mapIndices4[part] = buffer.readUnsignedByte();
         }
-        abyte2 = class47.decompressFile("anim_index");
-        class44_sub3_sub2_2 = new Buffer(abyte2);
-        j1 = abyte2.length / 2;
-        anIntArray1293 = new int[j1];
-        for (int j2 = 0; j2 < j1; j2++) {
-            anIntArray1293[j2] = class44_sub3_sub2_2.readUnsignedShort();
+        indices = loader.decompressFile("anim_index");
+        buffer = new Buffer(indices);
+        length = indices.length / 2;
+        frames = new int[length];
+        for (int part = 0; part < length; part++) {
+            frames[part] = buffer.readUnsignedShort();
         }
-        abyte2 = class47.decompressFile("midi_index");
-        class44_sub3_sub2_2 = new Buffer(abyte2);
-        j1 = abyte2.length;
-        anIntArray1294 = new int[j1];
-        for (int k2 = 0; k2 < j1; k2++) {
-            anIntArray1294[k2] = class44_sub3_sub2_2.readUnsignedByte();
+        indices = loader.decompressFile("midi_index");
+        buffer = new Buffer(indices);
+        length = indices.length;
+        musicPriorities = new int[length];
+        for (int k2 = 0; k2 < length; k2++) {
+            musicPriorities[k2] = buffer.readUnsignedByte();
         }
-        aClient1296 = client1;
-        aBoolean1295 = true;
-        aClient1296.method12(this, 2);
+        clientInstance = client;
+        running = true;
+        clientInstance.startRunnable(this, 2);
     }
 
-    public void method384() {
-        aBoolean1295 = false;
+    public void disable() {
+        running = false;
     }
 
-    public int method385(int i, byte byte0) {
-        try {
-            if (byte0 == 7) {
-                byte0 = 0;
-            } else {
-                return 1;
-            }
-            return anIntArrayArray1284[i].length;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("37225, " + i + ", " + byte0 + ", " + runtimeexception.toString());
-        }
-        throw new RuntimeException();
+    public int getFileCount(int index) {
+        return versions[index].length;
     }
 
-    public int method386(int i) {
-        try {
-            if (i != 7) {
-                return 1;
-            } else {
-                return anIntArray1293.length;
-            }
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("62481, " + i + ", " + runtimeexception.toString());
-        }
-        throw new RuntimeException();
+    public int getAnimationCount() {
+        return frames.length;
     }
 
-    public int method387(int i, int j, int k, int l) {
-        try {
-            int i1 = (k << 8) + i;
-            for (int j1 = 0; j1 < anIntArray1289.length; j1++) {
-                if (anIntArray1289[j1] == i1) {
-                    if (l == 0) {
-                        return anIntArray1290[j1];
-                    } else {
-                        return anIntArray1291[j1];
-                    }
+    public int getMapId(int mapY, int mapX, int type) {
+        int coord = (mapX << 8) + mapY;
+        for (int indice = 0; indice < mapIndices1.length; indice++) {
+            if (mapIndices1[indice] == coord) {
+                if (type == 0) {
+                    return mapIndices2[indice];
+                } else {
+                    return mapIndices3[indice];
                 }
             }
-            if (j >= 0) {
-                anInt1282 = -467;
-            }
-            return -1;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("24222, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
         }
-        throw new RuntimeException();
+        return -1;
     }
 
-    public void method388(boolean flag, boolean flag1) {
-        try {
-            int i = anIntArray1289.length;
-            if (flag) {
-                aBoolean1280 = !aBoolean1280;
+    public void preloadRegions(boolean force) {
+        int length = mapIndices1.length;
+        for (int index = 0; index < length; index++) {
+            if (force || mapIndices4[index] != 0) {
+                setPriority(3, (byte) 2, mapIndices3[index]);
+                setPriority(3, (byte) 2, mapIndices2[index]);
             }
-            for (int j = 0; j < i; j++) {
-                if (flag1 || anIntArray1292[j] != 0) {
-                    method395(7, 3, (byte) 2, anIntArray1291[j]);
-                    method395(7, 3, (byte) 2, anIntArray1290[j]);
-                }
-            }
-            return;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("78980, " + flag + ", " + flag1 + ", " + runtimeexception.toString());
         }
-        throw new RuntimeException();
     }
 
-    public boolean method389(int i, int j) {
-        try {
-            for (int k = 0; k < anIntArray1289.length; k++) {
-                if (anIntArray1291[k] == i) {
-                    return true;
-                }
+    public boolean method389(int i) {
+        for (int index = 0; index < mapIndices1.length; index++) {
+            if (mapIndices3[index] == i) {
+                return true;
             }
-            if (j != 0) {
-                for (int l = 1; l > 0; l++) {
-                }
-            }
-            return false;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("68583, " + i + ", " + j + ", " + runtimeexception.toString());
         }
-        throw new RuntimeException();
+        return false;
     }
 
-    public int method390(int i, int j) {
-        try {
-            while (j >= 0) {
-                anInt1281 = 270;
-            }
-            return aByteArray1288[i] & 0xff;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("30503, " + i + ", " + j + ", " + runtimeexception.toString());
-        }
-        throw new RuntimeException();
+    public int getModelId(int i) {
+        return modelIndices[i] & 0xff;
     }
 
-    public boolean method391(int i, int j) {
-        try {
-            j = 93 / j;
-            return anIntArray1294[i] == 1;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("97829, " + i + ", " + j + ", " + runtimeexception.toString());
-        }
-        throw new RuntimeException();
+    public boolean isMusicPriority(int i) {
+        return musicPriorities[i] == 1;
     }
 
     @Override
-    public void method382(int i) {
-        method392(0, i);
+    public void request(int index) {
+        request(0, index);
     }
 
-    public void method392(int i, int j) {
-        if (i < 0 || i > anIntArrayArray1284.length || j < 0 || j > anIntArrayArray1284[i].length) {
+    public void request(int type, int index) {
+        if (type < 0 || type > versions.length || index < 0 || index > versions[type].length) {
             return;
         }
-        if (anIntArrayArray1284[i][j] == 0) {
+        if (versions[type][index] == 0) {
             return;
         }
-        synchronized (aClass31_1301) {
-            for (OnDemandNode class44_sub3_sub3 = (OnDemandNode) aClass31_1301.peek(); class44_sub3_sub3 != null; class44_sub3_sub3 = (OnDemandNode) aClass31_1301
-                    .getNext()) {
-                if (class44_sub3_sub3.anInt1405 == i && class44_sub3_sub3.anInt1406 == j) {
+        synchronized (nodeSubList) {
+            for (OnDemandNode onDemandNode = (OnDemandNode) nodeSubList.peek(); onDemandNode != null; onDemandNode = (OnDemandNode) nodeSubList.getNext()) {
+                if (onDemandNode.dataType == type && onDemandNode.index == index) {
                     return;
                 }
             }
-            OnDemandNode class44_sub3_sub3_1 = new OnDemandNode();
-            class44_sub3_sub3_1.anInt1405 = i;
-            class44_sub3_sub3_1.anInt1406 = j;
-            class44_sub3_sub3_1.aBoolean1409 = true;
-            synchronized (aClass28_1302) {
-                aClass28_1302.pushBack(class44_sub3_sub3_1);
+            OnDemandNode onDemandNode = new OnDemandNode();
+            onDemandNode.dataType = type;
+            onDemandNode.index = index;
+            onDemandNode.incomplete = true;
+            synchronized (mandatoryRequests) {
+                mandatoryRequests.pushBack(onDemandNode);
             }
-            aClass31_1301.push(class44_sub3_sub3_1);
+            nodeSubList.push(onDemandNode);
         }
     }
 
-    public int method393() {
-        synchronized (aClass31_1301) {
-            int i = aClass31_1301.getSize();
-            return i;
+    public int getImmediateRequestCount() {
+        synchronized (nodeSubList) {
+            return nodeSubList.getSize();
         }
     }
 
-    public OnDemandNode method394() {
-        OnDemandNode class44_sub3_sub3;
-        synchronized (aClass28_1305) {
-            class44_sub3_sub3 = (OnDemandNode) aClass28_1305.pop();
+    public OnDemandNode getNext() {
+        OnDemandNode onDemandNode;
+        synchronized (complete) {
+            onDemandNode = (OnDemandNode) complete.pop();
         }
-        if (class44_sub3_sub3 == null) {
+        if (onDemandNode == null) {
             return null;
         }
-        synchronized (aClass31_1301) {
-            class44_sub3_sub3.removeCacheable();
+        synchronized (nodeSubList) {
+            onDemandNode.removeCacheable();
         }
-        if (class44_sub3_sub3.aByteArray1407 == null) {
-            return class44_sub3_sub3;
+        if (onDemandNode.buffer == null) {
+            return onDemandNode;
         }
-        int i = 0;
+        int offset = 0;
         try {
-            GZIPInputStream gzipinputstream = new GZIPInputStream(new ByteArrayInputStream(
-                    class44_sub3_sub3.aByteArray1407));
+            GZIPInputStream gzipinputstream = new GZIPInputStream(new ByteArrayInputStream(onDemandNode.buffer));
             do {
-                if (i == aByteArray1318.length) {
+                if (offset == aByteArray1318.length) {
                     throw new RuntimeException("buffer overflow!");
                 }
-                int k = gzipinputstream.read(aByteArray1318, i, aByteArray1318.length - i);
-                if (k == -1) {
+                int read = gzipinputstream.read(aByteArray1318, offset, aByteArray1318.length - offset);
+                if (read == -1) {
                     break;
                 }
-                i += k;
+                offset += read;
             } while (true);
-        } catch (IOException _ex) {
+        } catch (IOException exception) {
             throw new RuntimeException("error unzipping");
         }
-        class44_sub3_sub3.aByteArray1407 = new byte[i];
-        for (int j = 0; j < i; j++) {
-            class44_sub3_sub3.aByteArray1407[j] = aByteArray1318[j];
+        onDemandNode.buffer = new byte[offset];
+        for (int index = 0; index < offset; index++) {
+            onDemandNode.buffer[index] = aByteArray1318[index];
         }
-        return class44_sub3_sub3;
+        return onDemandNode;
     }
 
-    public void method395(int i, int j, byte byte0, int k) {
-        try {
-            if (aClient1296.aClass45Array1208[0] == null) {
-                return;
-            }
-            if (anIntArrayArray1284[j][k] == 0) {
-                return;
-            }
-            byte[] abyte0 = aClient1296.aClass45Array1208[j + 1].decompress(k);
-            if (method402(abyte0, anIntArrayArray1284[j][k], (byte) 64, anIntArrayArray1285[j][k])) {
-                return;
-            }
-            aByteArrayArray1286[j][k] = byte0;
-            if (i != 7) {
-                return;
-            }
-            if (byte0 > anInt1287) {
-                anInt1287 = byte0;
-            }
-            anInt1309++;
+    public void setPriority(int id, byte data, int index) {
+        if (clientInstance.caches[0] == null) {
             return;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("42758, " + i + ", " + j + ", " + byte0 + ", " + k + ", "
-                    + runtimeexception.toString());
         }
-        throw new RuntimeException();
+        if (versions[id][index] == 0) {
+            return;
+        }
+        byte[] decompress = clientInstance.caches[id + 1].decompress(index);
+        if (crcMatches(decompress, versions[id][index], crcs[id][index])) {
+            return;
+        }
+        filePriorities[id][index] = data;
+        if (data > highestPriority) {
+            highestPriority = data;
+        }
+        totalFiles++;
     }
 
-    public void method396(int i) {
-        try {
-            if (i >= 0) {
-                return;
-            }
-            synchronized (aClass28_1306) {
-                aClass28_1306.clear();
-            }
-            return;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("65651, " + i + ", " + runtimeexception.toString());
+    public void clearPassiveRequests() {
+        synchronized (passiveRequests) {
+            passiveRequests.clear();
         }
-        throw new RuntimeException();
     }
 
-    public void method397(int i, int j, byte byte0) {
-        try {
-            if (aClient1296.aClass45Array1208[0] == null) {
-                return;
-            }
-            if (anIntArrayArray1284[j][i] == 0) {
-                return;
-            }
-            if (aByteArrayArray1286[j][i] == 0) {
-                return;
-            }
-            if (anInt1287 == 0) {
-                return;
-            }
-            OnDemandNode class44_sub3_sub3 = new OnDemandNode();
-            class44_sub3_sub3.anInt1405 = j;
-            class44_sub3_sub3.anInt1406 = i;
-            class44_sub3_sub3.aBoolean1409 = false;
-            if (byte0 != 6) {
-                return;
-            }
-            synchronized (aClass28_1306) {
-                aClass28_1306.pushBack(class44_sub3_sub3);
-            }
+    public void passiveRequest(int index, int type) {
+        if (clientInstance.caches[0] == null) {
             return;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("69676, " + i + ", " + j + ", " + byte0 + ", " + runtimeexception.toString());
         }
-        throw new RuntimeException();
+        if (versions[type][index] == 0) {
+            return;
+        }
+        if (filePriorities[type][index] == 0) {
+            return;
+        }
+        if (highestPriority == 0) {
+            return;
+        }
+        OnDemandNode onDemandNode = new OnDemandNode();
+        onDemandNode.dataType = type;
+        onDemandNode.index = index;
+        onDemandNode.incomplete = false;
+        synchronized (passiveRequests) {
+            passiveRequests.pushBack(onDemandNode);
+        }
     }
 
     @Override
     public void run() {
         try {
-            while (aBoolean1295) {
-                anInt1322++;
-                int i = 20;
-                if (anInt1287 == 0 && aClient1296.aClass45Array1208[0] != null) {
-                    i = 50;
+            while (running) {
+                onDemandCycle++;
+                int delay = 20;
+                if (highestPriority == 0 && clientInstance.caches[0] != null) {
+                    delay = 50;
                 }
                 try {
-                    Thread.sleep(i);
-                } catch (Exception _ex) {
+                    Thread.sleep(delay);
+                } catch (Exception exception) {
                 }
-                aBoolean1298 = true;
+                waiting = true;
                 for (int j = 0; j < 100; j++) {
-                    if (!aBoolean1298) {
+                    if (!waiting) {
                         break;
                     }
-                    aBoolean1298 = false;
-                    method398((byte) -101);
-                    method399((byte) -3);
-                    if (anInt1299 == 0 && j >= 5) {
+                    waiting = false;
+                    checkReceived();
+                    handleFailed((byte) -3);
+                    if (uncompletedCount == 0 && j >= 5) {
                         break;
                     }
-                    method400(0);
-                    if (anInputStream1311 != null) {
-                        method401(200);
+                    loadExtra(0);
+                    if (inputStream != null) {
+                        read();
                     }
                 }
-                boolean flag = false;
-                for (OnDemandNode class44_sub3_sub3 = (OnDemandNode) aClass28_1304.peekFront(); class44_sub3_sub3 != null; class44_sub3_sub3 = (OnDemandNode) aClass28_1304
-                        .getNext()) {
-                    if (class44_sub3_sub3.aBoolean1409) {
-                        flag = true;
-                        class44_sub3_sub3.anInt1408++;
-                        if (class44_sub3_sub3.anInt1408 > 50) {
-                            class44_sub3_sub3.anInt1408 = 0;
-                            method403(class44_sub3_sub3, 409);
+                boolean requested = false;
+                for (OnDemandNode onDemandNode = (OnDemandNode) this.requested.peekFront(); onDemandNode != null; onDemandNode = (OnDemandNode) this.requested.getNext()) {
+                    if (onDemandNode.incomplete) {
+                        requested = true;
+                        onDemandNode.loopCycle++;
+                        if (onDemandNode.loopCycle > 50) {
+                            onDemandNode.loopCycle = 0;
+                            closeRequest(onDemandNode, 409);
                         }
                     }
                 }
-                if (!flag) {
-                    for (OnDemandNode class44_sub3_sub3_1 = (OnDemandNode) aClass28_1304.peekFront(); class44_sub3_sub3_1 != null; class44_sub3_sub3_1 = (OnDemandNode) aClass28_1304
-                            .getNext()) {
-                        flag = true;
-                        class44_sub3_sub3_1.anInt1408++;
-                        if (class44_sub3_sub3_1.anInt1408 > 50) {
-                            class44_sub3_sub3_1.anInt1408 = 0;
-                            method403(class44_sub3_sub3_1, 409);
+                if (!requested) {
+                    for (OnDemandNode onDemandNode = (OnDemandNode) this.requested.peekFront(); onDemandNode != null; onDemandNode = (OnDemandNode) this.requested.getNext()) {
+                        requested = true;
+                        onDemandNode.loopCycle++;
+                        if (onDemandNode.loopCycle > 50) {
+                            onDemandNode.loopCycle = 0;
+                            closeRequest(onDemandNode, 409);
                         }
                     }
                 }
-                if (flag) {
-                    anInt1319++;
-                    if (anInt1319 > 750) {
+                if (requested) {
+                    loopCycle++;
+                    if (loopCycle > 750) {
                         try {
-                            aSocket1310.close();
-                        } catch (Exception _ex) {
+                            socket.close();
+                        } catch (Exception exception) {
                         }
-                        aSocket1310 = null;
-                        anInputStream1311 = null;
-                        anOutputStream1312 = null;
-                        anInt1316 = 0;
+                        socket = null;
+                        inputStream = null;
+                        outputStream = null;
+                        expectedSize = 0;
                     }
                 } else {
-                    anInt1319 = 0;
-                    aString1307 = "";
+                    loopCycle = 0;
+                    status = "";
                 }
-                if (aClient1296.aBoolean863 && aSocket1310 != null && anOutputStream1312 != null
-                        && (anInt1287 > 0 || aClient1296.aClass45Array1208[0] == null)) {
-                    anInt1320++;
-                    if (anInt1320 > 500) {
-                        anInt1320 = 0;
-                        aByteArray1317[0] = 0;
-                        aByteArray1317[1] = 0;
-                        aByteArray1317[2] = 0;
-                        aByteArray1317[3] = 10;
+                if (clientInstance.loggedIn && socket != null && outputStream != null && (highestPriority > 0 || clientInstance.caches[0] == null)) {
+                    writeLoopCycle++;
+                    if (writeLoopCycle > 500) {
+                        writeLoopCycle = 0;
+                        payload[0] = 0;
+                        payload[1] = 0;
+                        payload[2] = 0;
+                        payload[3] = 10;
                         try {
-                            anOutputStream1312.write(aByteArray1317, 0, 4);
+                            outputStream.write(payload, 0, 4);
                         } catch (IOException _ex) {
-                            anInt1319 = 5000;
+                            loopCycle = 5000;
                         }
                     }
                 }
@@ -497,324 +397,271 @@ public class OnDemandRequester extends Requester implements Runnable {
         }
     }
 
-    private void method398(byte byte0) {
-        try {
-            OnDemandNode class44_sub3_sub3;
-            synchronized (aClass28_1302) {
-                class44_sub3_sub3 = (OnDemandNode) aClass28_1302.pop();
-            }
-            if (byte0 != -101) {
-                return;
-            }
-            while (class44_sub3_sub3 != null) {
-                aBoolean1298 = true;
-                byte[] abyte0 = null;
-                if (aClient1296.aClass45Array1208[0] != null) {
-                    abyte0 = aClient1296.aClass45Array1208[class44_sub3_sub3.anInt1405 + 1].decompress(
-                            class44_sub3_sub3.anInt1406);
-                }
-                if (!method402(abyte0, anIntArrayArray1284[class44_sub3_sub3.anInt1405][class44_sub3_sub3.anInt1406],
-                        (byte) 64, anIntArrayArray1285[class44_sub3_sub3.anInt1405][class44_sub3_sub3.anInt1406])) {
-                    abyte0 = null;
-                }
-                synchronized (aClass28_1302) {
-                    if (abyte0 == null) {
-                        aClass28_1303.pushBack(class44_sub3_sub3);
-                    } else {
-                        class44_sub3_sub3.aByteArray1407 = abyte0;
-                        synchronized (aClass28_1305) {
-                            aClass28_1305.pushBack(class44_sub3_sub3);
-                        }
-                    }
-                    class44_sub3_sub3 = (OnDemandNode) aClass28_1302.pop();
-                }
-            }
-            return;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("28575, " + byte0 + ", " + runtimeexception.toString());
+    private void checkReceived() {
+        OnDemandNode request;
+        synchronized (mandatoryRequests) {
+            request = (OnDemandNode) mandatoryRequests.pop();
         }
-        throw new RuntimeException();
+        while (request != null) {
+            waiting = true;
+            byte[] data = null;
+            if (clientInstance.caches[0] != null) {
+                data = clientInstance.caches[request.dataType + 1].decompress(request.index);
+            }
+            if (!crcMatches(data, versions[request.dataType][request.index], crcs[request.dataType][request.index])) {
+                data = null;
+            }
+            synchronized (mandatoryRequests) {
+                if (data == null) {
+                    unrequested.pushBack(request);
+                } else {
+                    request.buffer = data;
+                    synchronized (complete) {
+                        complete.pushBack(request);
+                    }
+                }
+                request = (OnDemandNode) mandatoryRequests.pop();
+            }
+        }
     }
 
-    private void method399(byte byte0) {
-        try {
-            anInt1299 = 0;
-            anInt1300 = 0;
-            if (byte0 != -3) {
-                anInt1282 = -238;
+    private void handleFailed(byte byte0) {
+        uncompletedCount = 0;
+        completedCount = 0;
+        for (OnDemandNode onDemandNode = (OnDemandNode) requested.peekFront(); onDemandNode != null; onDemandNode = (OnDemandNode) requested.getNext()) {
+            if (onDemandNode.incomplete) {
+                uncompletedCount++;
+            } else {
+                completedCount++;
             }
-            for (OnDemandNode class44_sub3_sub3 = (OnDemandNode) aClass28_1304.peekFront(); class44_sub3_sub3 != null; class44_sub3_sub3 = (OnDemandNode) aClass28_1304
-                    .getNext()) {
-                if (class44_sub3_sub3.aBoolean1409) {
-                    anInt1299++;
-                } else {
-                    anInt1300++;
+        }
+        while (uncompletedCount < 10) {
+            OnDemandNode onDemandNode = (OnDemandNode) unrequested.pop();
+            if (onDemandNode == null) {
+                break;
+            }
+            if (filePriorities[onDemandNode.dataType][onDemandNode.index] != 0) {
+                filesLoaded++;
+            }
+            filePriorities[onDemandNode.dataType][onDemandNode.index] = 0;
+            requested.pushBack(onDemandNode);
+            uncompletedCount++;
+            closeRequest(onDemandNode, 409);
+            waiting = true;
+        }
+    }
+
+    private void loadExtra(int i) {
+        uncomplete:
+        while (true) {
+            while (true) {
+                if (uncompletedCount != 0) {
+                    break uncomplete;
                 }
-            }
-            while (anInt1299 < 10) {
-                OnDemandNode class44_sub3_sub3_1 = (OnDemandNode) aClass28_1303.pop();
-                if (class44_sub3_sub3_1 == null) {
+                if (completedCount >= 10) {
                     break;
                 }
-                if (aByteArrayArray1286[class44_sub3_sub3_1.anInt1405][class44_sub3_sub3_1.anInt1406] != 0) {
-                    anInt1308++;
+                if (highestPriority == 0) {
+                    break;
                 }
-                aByteArrayArray1286[class44_sub3_sub3_1.anInt1405][class44_sub3_sub3_1.anInt1406] = 0;
-                aClass28_1304.pushBack(class44_sub3_sub3_1);
-                anInt1299++;
-                method403(class44_sub3_sub3_1, 409);
-                aBoolean1298 = true;
-            }
-            return;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("10900, " + byte0 + ", " + runtimeexception.toString());
-        }
-        throw new RuntimeException();
-    }
-
-    private void method400(int i) {
-        label0:
-        while (true) {
-            try {
-                if (i != 0) {
-                    aBoolean1280 = !aBoolean1280;
+                OnDemandNode onDemandNode;
+                synchronized (passiveRequests) {
+                    onDemandNode = (OnDemandNode) passiveRequests.pop();
                 }
-                while (true) {
-                    if (anInt1299 != 0) {
-                        break label0;
+                while (onDemandNode != null) {
+                    if (filePriorities[onDemandNode.dataType][onDemandNode.index] != 0) {
+                        filePriorities[onDemandNode.dataType][onDemandNode.index] = (byte) 0;
+                        requested.pushBack(onDemandNode);
+                        closeRequest(onDemandNode, 409);
+                        waiting = true;
+                        if (filesLoaded < totalFiles) {
+                            filesLoaded++;
+                        }
+                        status = "Loading extra files - " + (filesLoaded * 100 / totalFiles) + "%";
+                        completedCount++;
+                        if (completedCount == 10) {
+                            return;
+                        }
                     }
-                    if (anInt1300 >= 10) {
-                        break;
+                    synchronized (passiveRequests) {
+                        onDemandNode = ((OnDemandNode) passiveRequests.pop());
                     }
-                    if (anInt1287 == 0) {
-                        break;
-                    }
-                    OnDemandNode class44_sub3_sub3;
-                    synchronized (aClass28_1306) {
-                        class44_sub3_sub3 = (OnDemandNode) aClass28_1306.pop();
-                    }
-                    while (class44_sub3_sub3 != null) {
-                        if (aByteArrayArray1286[class44_sub3_sub3.anInt1405][class44_sub3_sub3.anInt1406] != 0) {
-                            aByteArrayArray1286[class44_sub3_sub3.anInt1405][class44_sub3_sub3.anInt1406] = (byte) 0;
-                            aClass28_1304.pushBack(class44_sub3_sub3);
-                            method403(class44_sub3_sub3, 409);
-                            aBoolean1298 = true;
-                            if (anInt1308 < anInt1309) {
-                                anInt1308++;
+                }
+                for (int type = 0; type < 4; type++) {
+                    byte[] data = filePriorities[type];
+                    int length = data.length;
+                    for (int index = 0; index < length; index++) {
+                        if (data[index] == highestPriority) {
+                            data[index] = (byte) 0;
+                            onDemandNode = new OnDemandNode();
+                            onDemandNode.dataType = type;
+                            onDemandNode.index = index;
+                            onDemandNode.incomplete = false;
+                            requested.pushBack(onDemandNode);
+                            closeRequest(onDemandNode, 409);
+                            waiting = true;
+                            if (filesLoaded < totalFiles) {
+                                filesLoaded++;
                             }
-                            aString1307 = "Loading extra files - " + (anInt1308 * 100 / anInt1309) + "%";
-                            anInt1300++;
-                            if (anInt1300 == 10) {
+                            status = "Loading extra files - " + (filesLoaded * 100 / totalFiles) + "%";
+                            completedCount++;
+                            if (completedCount == 10) {
                                 return;
                             }
                         }
-                        synchronized (aClass28_1306) {
-                            class44_sub3_sub3 = ((OnDemandNode) aClass28_1306.pop());
-                        }
                     }
-                    for (int j = 0; j < 4; j++) {
-                        byte[] abyte0 = aByteArrayArray1286[j];
-                        int k = abyte0.length;
-                        for (int l = 0; l < k; l++) {
-                            if (abyte0[l] == anInt1287) {
-                                abyte0[l] = (byte) 0;
-                                class44_sub3_sub3 = new OnDemandNode();
-                                class44_sub3_sub3.anInt1405 = j;
-                                class44_sub3_sub3.anInt1406 = l;
-                                class44_sub3_sub3.aBoolean1409 = false;
-                                aClass28_1304.pushBack(class44_sub3_sub3);
-                                method403(class44_sub3_sub3, 409);
-                                aBoolean1298 = true;
-                                if (anInt1308 < anInt1309) {
-                                    anInt1308++;
-                                }
-                                aString1307 = "Loading extra files - " + (anInt1308 * 100 / anInt1309) + "%";
-                                anInt1300++;
-                                if (anInt1300 == 10) {
-                                    return;
-                                }
-                            }
-                        }
-                    }
-                    anInt1287--;
                 }
-            } catch (RuntimeException runtimeexception) {
-                SignLink.error("38119, " + i + ", " + runtimeexception.toString());
-                throw new RuntimeException();
+                highestPriority--;
             }
             break;
         }
     }
 
-    private void method401(int i) {
+    private void read() {
         try {
-            i = 48 / i;
-            try {
-                int j = anInputStream1311.available();
-                if (anInt1316 == 0 && j >= 6) {
-                    aBoolean1298 = true;
-                    for (int k = 0; k < 6; k += anInputStream1311.read(aByteArray1317, k, 6 - k)) {
-                    }
-                    int l = aByteArray1317[0] & 0xff;
-                    int j1 = ((aByteArray1317[1] & 0xff) << 8) + (aByteArray1317[2] & 0xff);
-                    int l1 = ((aByteArray1317[3] & 0xff) << 8) + (aByteArray1317[4] & 0xff);
-                    int i2 = aByteArray1317[5] & 0xff;
+            int available = inputStream.available();
+            if (expectedSize == 0 && available >= 6) {
+                waiting = true;
+                for (int offset = 0; offset < 6; offset += inputStream.read(payload, offset, 6 - offset)) {
+                }
+                int dataType = payload[0] & 0xff;
+                int index = ((payload[1] & 0xff) << 8) + (payload[2] & 0xff);
+                int r = ((payload[3] & 0xff) << 8) + (payload[4] & 0xff);
+                int header = payload[5] & 0xff;
 
-                    aClass44_Sub3_Sub3_1314 = null;
-                    for (OnDemandNode class44_sub3_sub3 = (OnDemandNode) aClass28_1304.peekFront(); class44_sub3_sub3 != null; class44_sub3_sub3 = (OnDemandNode) aClass28_1304
-                            .getNext()) {
-                        if (class44_sub3_sub3.anInt1405 == l && class44_sub3_sub3.anInt1406 == j1) {
-                            aClass44_Sub3_Sub3_1314 = class44_sub3_sub3;
-                        }
-                        if (aClass44_Sub3_Sub3_1314 != null) {
-                            class44_sub3_sub3.anInt1408 = 0;
-                        }
+                current = null;
+                for (OnDemandNode onDemandNode = (OnDemandNode) requested.peekFront(); onDemandNode != null; onDemandNode = (OnDemandNode) requested.getNext()) {
+                    if (onDemandNode.dataType == dataType && onDemandNode.index == index) {
+                        current = onDemandNode;
                     }
-                    if (aClass44_Sub3_Sub3_1314 != null) {
-                        anInt1319 = 0;
-                        if (l1 == 0) {
-                            SignLink.error("Rej: " + l + "," + j1);
-                            aClass44_Sub3_Sub3_1314.aByteArray1407 = null;
-                            if (aClass44_Sub3_Sub3_1314.aBoolean1409) {
-                                synchronized (aClass28_1305) {
-                                    aClass28_1305.pushBack(aClass44_Sub3_Sub3_1314);
-                                }
-                            } else {
-                                aClass44_Sub3_Sub3_1314.remove();
-                            }
-                            aClass44_Sub3_Sub3_1314 = null;
-                        } else {
-                            if (aClass44_Sub3_Sub3_1314.aByteArray1407 == null && i2 == 0) {
-                                aClass44_Sub3_Sub3_1314.aByteArray1407 = new byte[l1];
-                            }
-                            if (aClass44_Sub3_Sub3_1314.aByteArray1407 == null && i2 != 0) {
-                                throw new IOException("missing start of file");
-                            }
-                        }
-                    }
-                    anInt1315 = i2 * 500;
-                    anInt1316 = 500;
-                    if (anInt1316 > l1 - i2 * 500) {
-                        anInt1316 = l1 - i2 * 500;
+                    if (current != null) {
+                        onDemandNode.loopCycle = 0;
                     }
                 }
-                if (anInt1316 > 0 && j >= anInt1316) {
-                    aBoolean1298 = true;
-                    byte[] abyte0 = aByteArray1317;
-                    int i1 = 0;
-                    if (aClass44_Sub3_Sub3_1314 != null) {
-                        abyte0 = aClass44_Sub3_Sub3_1314.aByteArray1407;
-                        i1 = anInt1315;
-                    }
-                    for (int k1 = 0; k1 < anInt1316; k1 += anInputStream1311.read(abyte0, k1 + i1, anInt1316 - k1)) {
-                    }
-                    if (anInt1316 + anInt1315 >= abyte0.length && aClass44_Sub3_Sub3_1314 != null) {
-                        if (aClient1296.aClass45Array1208[0] != null) {
-                            aClient1296.aClass45Array1208[aClass44_Sub3_Sub3_1314.anInt1405 + 1].put(abyte0,
-                                    abyte0.length, aClass44_Sub3_Sub3_1314.anInt1406);
-                        }
-                        if (!aClass44_Sub3_Sub3_1314.aBoolean1409 && aClass44_Sub3_Sub3_1314.anInt1405 == 3) {
-                            aClass44_Sub3_Sub3_1314.aBoolean1409 = true;
-                            aClass44_Sub3_Sub3_1314.anInt1405 = 93;
-                        }
-                        if (aClass44_Sub3_Sub3_1314.aBoolean1409) {
-                            synchronized (aClass28_1305) {
-                                aClass28_1305.pushBack(aClass44_Sub3_Sub3_1314);
+                if (current != null) {
+                    loopCycle = 0;
+                    if (r == 0) {
+                        SignLink.error("Rej: " + dataType + "," + index);
+                        current.buffer = null;
+                        if (current.incomplete) {
+                            synchronized (complete) {
+                                complete.pushBack(current);
                             }
                         } else {
-                            aClass44_Sub3_Sub3_1314.remove();
+                            current.remove();
+                        }
+                        current = null;
+                    } else {
+                        if (current.buffer == null && header == 0) {
+                            current.buffer = new byte[r];
+                        }
+                        if (current.buffer == null && header != 0) {
+                            throw new IOException("missing start of file");
                         }
                     }
-                    anInt1316 = 0;
                 }
-            } catch (IOException ioexception) {
-                try {
-                    aSocket1310.close();
-                } catch (Exception _ex) {
+                completedSize = header * 500;
+                expectedSize = 500;
+                if (expectedSize > r - header * 500) {
+                    expectedSize = r - header * 500;
                 }
-                aSocket1310 = null;
-                anInputStream1311 = null;
-                anOutputStream1312 = null;
-                anInt1316 = 0;
             }
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("67743, " + i + ", " + runtimeexception.toString());
-            throw new RuntimeException();
+            if (expectedSize > 0 && available >= expectedSize) {
+                waiting = true;
+                byte[] payload = this.payload;
+                int size = 0;
+                if (current != null) {
+                    payload = current.buffer;
+                    size = completedSize;
+                }
+                for (int offset = 0; offset < expectedSize; offset += inputStream.read(payload, offset + size, expectedSize - offset)) {
+                }
+                if (expectedSize + completedSize >= payload.length && current != null) {
+                    if (clientInstance.caches[0] != null) {
+                        clientInstance.caches[current.dataType + 1].put(payload, payload.length, current.index);
+                    }
+                    if (!current.incomplete && current.dataType == 3) {
+                        current.incomplete = true;
+                        current.dataType = 93;
+                    }
+                    if (current.incomplete) {
+                        synchronized (complete) {
+                            complete.pushBack(current);
+                        }
+                    } else {
+                        current.remove();
+                    }
+                }
+                expectedSize = 0;
+            }
+        } catch (IOException ioexception) {
+            try {
+                socket.close();
+            } catch (Exception exception) {
+            }
+            socket = null;
+            inputStream = null;
+            outputStream = null;
+            expectedSize = 0;
         }
     }
 
-    private boolean method402(byte[] abyte0, int i, byte byte0, int j) {
-        try {
-            if (abyte0 == null || abyte0.length < 2) {
-                return false;
-            }
-            int k = abyte0.length - 2;
-            int l = ((abyte0[k] & 0xff) << 8) + (abyte0[k + 1] & 0xff);
-            aCRC32_1297.reset();
-            if (byte0 != aByte1283) {
-                throw new NullPointerException();
-            }
-            aCRC32_1297.update(abyte0, 0, k);
-            int i1 = (int) aCRC32_1297.getValue();
-            if (l != i) {
-                return false;
-            }
-            return i1 == j;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("56096, " + abyte0 + ", " + i + ", " + byte0 + ", " + j + ", "
-                    + runtimeexception.toString());
+    private boolean crcMatches(byte[] data, int cacheVersion, int cacheChecksum) {
+        if (data == null || data.length < 2) {
+            return false;
         }
-        throw new RuntimeException();
+        int length = data.length - 2;
+        int version = ((data[length] & 0xff) << 8) + (data[length + 1] & 0xff);
+        crc32.reset();
+        crc32.update(data, 0, length);
+        int checksum = (int) crc32.getValue();
+        if (version != cacheVersion) {
+            return false;
+        }
+        return checksum == cacheChecksum;
     }
 
-    private void method403(OnDemandNode class44_sub3_sub3, int i) {
+    private void closeRequest(OnDemandNode request, int i) {
         try {
-            i = 99 / i;
-            try {
-                if (aSocket1310 == null) {
-                    long l = System.currentTimeMillis();
-                    if (l - aLong1321 < 4000L) {
-                        return;
-                    }
-                    aLong1321 = l;
-                    aSocket1310 = aClient1296.method34(43594 + Client.portOffset);
-                    anInputStream1311 = aSocket1310.getInputStream();
-                    anOutputStream1312 = aSocket1310.getOutputStream();
-                    anOutputStream1312.write(15);
-                    for (int j = 0; j < 8; j++) {
-                        anInputStream1311.read();
-                    }
-                    anInt1319 = 0;
+            if (socket == null) {
+                long currentTime = System.currentTimeMillis();
+                if (currentTime - lastRequestTime < 4000L) {
+                    return;
                 }
-                aByteArray1317[0] = (byte) class44_sub3_sub3.anInt1405;
-                aByteArray1317[1] = (byte) (class44_sub3_sub3.anInt1406 >> 8);
-                aByteArray1317[2] = (byte) class44_sub3_sub3.anInt1406;
-                if (class44_sub3_sub3.aBoolean1409) {
-                    aByteArray1317[3] = 2;
-                } else if (!aClient1296.aBoolean863) {
-                    aByteArray1317[3] = 1;
-                } else {
-                    aByteArray1317[3] = 0;
+                lastRequestTime = currentTime;
+                socket = clientInstance.openSocket(43594 + Client.portOffset);
+                inputStream = socket.getInputStream();
+                outputStream = socket.getOutputStream();
+                outputStream.write(15);
+                for (int j = 0; j < 8; j++) {
+                    inputStream.read();
                 }
-                anOutputStream1312.write(aByteArray1317, 0, 4);
-                anInt1320 = 0;
-                anInt1313 = -10000;
-                return;
-            } catch (IOException ioexception) {
+                loopCycle = 0;
             }
-            try {
-                aSocket1310.close();
-            } catch (Exception _ex) {
+            payload[0] = (byte) request.dataType;
+            payload[1] = (byte) (request.index >> 8);
+            payload[2] = (byte) request.index;
+            if (request.incomplete) {
+                payload[3] = 2;
+            } else if (!clientInstance.loggedIn) {
+                payload[3] = 1;
+            } else {
+                payload[3] = 0;
             }
-            aSocket1310 = null;
-            anInputStream1311 = null;
-            anOutputStream1312 = null;
-            anInt1316 = 0;
-            anInt1313++;
+            outputStream.write(payload, 0, 4);
+            writeLoopCycle = 0;
+            failedRequests = -10000;
             return;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("57925, " + class44_sub3_sub3 + ", " + i + ", " + runtimeexception.toString());
+        } catch (IOException ioexception) {
         }
-        throw new RuntimeException();
+        try {
+            socket.close();
+        } catch (Exception exception) {
+        }
+        socket = null;
+        inputStream = null;
+        outputStream = null;
+        expectedSize = 0;
+        failedRequests++;
     }
 }

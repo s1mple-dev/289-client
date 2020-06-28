@@ -72,7 +72,7 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
                 anInt4 = -480;
             }
             aClass34_14 = new ProducingGraphicsBuffer(method11(7), anInt11, anInt12, 2);
-            method12(this, 1);
+            startRunnable(this, 1);
             return;
         } catch (RuntimeException runtimeexception) {
             SignLink.error("84735, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
@@ -89,7 +89,7 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
             anInt12 = j;
             aGraphics13 = method11(7).getGraphics();
             aClass34_14 = new ProducingGraphicsBuffer(method11(7), anInt11, anInt12, 2);
-            method12(this, 1);
+            startRunnable(this, 1);
             return;
         } catch (RuntimeException runtimeexception) {
             SignLink.error("72806, " + flag + ", " + i + ", " + j + ", " + runtimeexception.toString());
@@ -569,7 +569,7 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
         throw new RuntimeException();
     }
 
-    public void method12(Runnable runnable, int i) {
+    public void startRunnable(Runnable runnable, int i) {
         Thread thread = new Thread(runnable);
         thread.start();
         thread.setPriority(i);
