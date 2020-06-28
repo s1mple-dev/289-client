@@ -34,7 +34,7 @@ public class ProducingGraphicsBuffer implements ImageProducer, ImageObserver {
             method272((byte) 5);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("48102, " + component + ", " + i + ", " + j + ", " + k + ", "
+            SignLink.error("48102, " + component + ", " + i + ", " + j + ", " + k + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -46,7 +46,7 @@ public class ProducingGraphicsBuffer implements ImageProducer, ImageObserver {
             if (byte0 != 5) {
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("43640, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("43640, " + byte0 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -61,7 +61,7 @@ public class ProducingGraphicsBuffer implements ImageProducer, ImageObserver {
             g.drawImage(anImage587, j, k, this);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("14457, " + i + ", " + j + ", " + k + ", " + g + ", " + runtimeexception.toString());
+            SignLink.error("14457, " + i + ", " + j + ", " + k + ", " + g + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

@@ -28,7 +28,7 @@ public class Skins {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("27585, " + buffer + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("27585, " + buffer + ", " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

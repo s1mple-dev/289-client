@@ -255,7 +255,7 @@ class SoundTrackInstrument {
                 return 0;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("32871, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
+            SignLink.error("32871, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -311,7 +311,7 @@ class SoundTrackInstrument {
             aClass2_180.method156(anInt166, aClass1_181, class44_sub3_sub2);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("77565, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
+            SignLink.error("77565, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

@@ -26,7 +26,7 @@ public class SoundTrack {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("32850, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("32850, " + byte0 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -49,7 +49,7 @@ public class SoundTrack {
                 SoundTrack.anIntArray92[i] = SoundTrack.aClass4Array91[i].method178(368);
             } while (true);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("47278, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
+            SignLink.error("47278, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -66,7 +66,7 @@ public class SoundTrack {
                 return null;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("54696, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
+            SignLink.error("54696, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -88,7 +88,7 @@ public class SoundTrack {
             anInt97 = class44_sub3_sub2.readUnsignedShort();
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("59639, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
+            SignLink.error("59639, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -121,7 +121,7 @@ public class SoundTrack {
             }
             return j;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("95859, " + i + ", " + runtimeexception.toString());
+            SignLink.error("95859, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -147,7 +147,7 @@ public class SoundTrack {
             SoundTrack.buffer.offset += k;
             return SoundTrack.buffer;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("32783, " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("32783, " + i + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

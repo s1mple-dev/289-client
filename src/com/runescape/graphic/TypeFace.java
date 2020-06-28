@@ -96,7 +96,7 @@ public class TypeFace extends Rasterizer {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("36057, " + i + ", " + s + ", " + flag + ", " + class47 + ", "
+            SignLink.error("36057, " + i + ", " + s + ", " + flag + ", " + class47 + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -108,7 +108,7 @@ public class TypeFace extends Rasterizer {
             if (j != -31546) {
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("89843, " + i + ", " + s + ", " + j + ", " + k + ", " + l + ", "
+            SignLink.error("89843, " + i + ", " + s + ", " + j + ", " + k + ", " + l + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -120,7 +120,7 @@ public class TypeFace extends Rasterizer {
             if (byte0 != -85) {
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("52266, " + flag + ", " + i + ", " + byte0 + ", " + j + ", " + s + ", " + k + ", "
+            SignLink.error("52266, " + flag + ", " + i + ", " + byte0 + ", " + j + ", " + s + ", " + k + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -144,7 +144,7 @@ public class TypeFace extends Rasterizer {
             }
             return i;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("63390, " + s + ", " + flag + ", " + runtimeexception.toString());
+            SignLink.error("63390, " + s + ", " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -163,7 +163,7 @@ public class TypeFace extends Rasterizer {
             }
             return j;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("70316, " + s + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("70316, " + s + ", " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -187,7 +187,7 @@ public class TypeFace extends Rasterizer {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("88673, " + byte0 + ", " + i + ", " + s + ", " + j + ", " + k + ", "
+            SignLink.error("88673, " + byte0 + ", " + i + ", " + s + ", " + j + ", " + k + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -215,7 +215,7 @@ public class TypeFace extends Rasterizer {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("90881, " + i + ", " + j + ", " + byte0 + ", " + k + ", " + l + ", " + s + ", "
+            SignLink.error("90881, " + i + ", " + j + ", " + byte0 + ", " + k + ", " + l + ", " + s + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -244,7 +244,7 @@ public class TypeFace extends Rasterizer {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("17099, " + i + ", " + s + ", " + byte0 + ", " + j + ", " + k + ", " + l + ", "
+            SignLink.error("17099, " + i + ", " + s + ", " + byte0 + ", " + j + ", " + k + ", " + l + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -275,7 +275,7 @@ public class TypeFace extends Rasterizer {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("70626, " + s + ", " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1
+            SignLink.error("70626, " + s + ", " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1
                     + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -316,7 +316,7 @@ public class TypeFace extends Rasterizer {
                 Rasterizer.method414(l - i1, i1, 0x800000, true, k + (int) (anInt1478 * 0.69999999999999996D));
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("34312, " + i + ", " + j + ", " + k + ", " + flag + ", " + l + ", " + s + ", "
+            SignLink.error("34312, " + i + ", " + j + ", " + k + ", " + flag + ", " + l + ", " + s + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -359,7 +359,7 @@ public class TypeFace extends Rasterizer {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("64640, " + s + ", " + flag + ", " + i + ", " + j + ", " + k + ", " + l + ", " + i1
+            SignLink.error("64640, " + s + ", " + flag + ", " + i + ", " + j + ", " + k + ", " + l + ", " + i1
                     + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -429,7 +429,7 @@ public class TypeFace extends Rasterizer {
             }
             return -1;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("97933, " + s + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("97933, " + s + ", " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -549,7 +549,7 @@ public class TypeFace extends Rasterizer {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("96459, " + abyte0 + ", " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1
+            SignLink.error("96459, " + abyte0 + ", " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1
                     + ", " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -578,7 +578,7 @@ public class TypeFace extends Rasterizer {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("17490, " + i + ", " + j + ", " + k + ", " + abyte0 + ", " + flag + ", " + ai + ", "
+            SignLink.error("17490, " + i + ", " + j + ", " + k + ", " + abyte0 + ", " + flag + ", " + ai + ", "
                     + l + ", " + i1 + ", " + j1 + ", " + k1 + ", " + l1 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();

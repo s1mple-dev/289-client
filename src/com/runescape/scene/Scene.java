@@ -122,7 +122,7 @@ public class Scene {
             }
             method278(true);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("88220, " + i + ", " + j + ", " + ai + ", " + k + ", " + l + ", "
+            SignLink.error("88220, " + i + ", " + j + ", " + ai + ", " + k + ", " + l + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -142,7 +142,7 @@ public class Scene {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("68391, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("68391, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -167,7 +167,7 @@ public class Scene {
             Scene.aClass23ArrayArray644[j][Scene.anIntArray643[j]++] = class23;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("53475, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + k1
+            SignLink.error("53475, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + k1
                     + ", " + l1 + ", " + i2 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -240,7 +240,7 @@ public class Scene {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("75601, " + ai + ", " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", "
+            SignLink.error("75601, " + ai + ", " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -263,7 +263,7 @@ public class Scene {
             int k2 = Scene.anInt664 + (i2 << 9) / l1;
             return j2 >= Scene.anInt665 && j2 <= Scene.anInt667 && k2 >= Scene.anInt666 && k2 <= Scene.anInt668;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("70999, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
+            SignLink.error("70999, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -295,7 +295,7 @@ public class Scene {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("97735, " + flag + ", " + runtimeexception.toString());
+            SignLink.error("97735, " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -312,7 +312,7 @@ public class Scene {
                 Scene.aBoolean599 = !Scene.aBoolean599;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("62223, " + byte0 + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("62223, " + byte0 + ", " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -343,7 +343,7 @@ public class Scene {
             tiles[3][j][i] = null;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("90520, " + flag + ", " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("90520, " + flag + ", " + i + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -409,7 +409,7 @@ public class Scene {
             tiles[j][i1][k].aClass17_1344 = class17;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("17484, " + byte0 + ", " + i + ", " + j + ", " + k + ", " + flag + ", " + l + ", "
+            SignLink.error("17484, " + byte0 + ", " + i + ", " + j + ", " + k + ", " + flag + ", " + l + ", "
                     + class44_sub3_sub4 + ", " + i1 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -448,7 +448,7 @@ public class Scene {
             tiles[l][k][i].aClass19_1345 = class19;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("37559, " + i + ", " + j + ", " + class44_sub3_sub4 + ", " + k + ", " + byte0 + ", "
+            SignLink.error("37559, " + i + ", " + j + ", " + class44_sub3_sub4 + ", " + k + ", " + byte0 + ", "
                     + class44_sub3_sub4_1 + ", " + l + ", " + i1 + ", " + class44_sub3_sub4_2 + ", "
                     + runtimeexception.toString());
         }
@@ -482,7 +482,7 @@ public class Scene {
             tiles[k1][l][l1].aClass33_1342 = class33;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("76425, " + byte0 + ", " + i + ", " + j + ", " + k + ", " + l + ", "
+            SignLink.error("76425, " + byte0 + ", " + i + ", " + j + ", " + k + ", " + l + ", "
                     + class44_sub3_sub4 + ", " + i1 + ", " + j1 + ", " + class44_sub3_sub4_1 + ", " + k1 + ", " + l1
                     + ", " + runtimeexception.toString());
         }
@@ -515,7 +515,7 @@ public class Scene {
             tiles[j][i2][i].aClass13_1343 = class13;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("5872, " + i + ", " + j + ", " + k + ", " + class44_sub3_sub4 + ", " + byte0 + ", "
+            SignLink.error("5872, " + i + ", " + j + ", " + k + ", " + class44_sub3_sub4 + ", " + byte0 + ", "
                     + l + ", " + i1 + ", " + j1 + ", " + k1 + ", " + l1 + ", " + i2 + ", " + j2 + ", "
                     + runtimeexception.toString());
         }
@@ -536,7 +536,7 @@ public class Scene {
                 return method291(l1, k, j, k1, i2, j2, k2, l, class44_sub3_sub4, j1, false, i1, byte0);
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("61682, " + i + ", " + j + ", " + k + ", " + l + ", " + byte0 + ", " + i1 + ", " + j1
+            SignLink.error("61682, " + i + ", " + j + ", " + k + ", " + l + ", " + byte0 + ", " + i1 + ", " + j1
                     + ", " + k1 + ", " + l1 + ", " + class44_sub3_sub4 + ", " + i2 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -575,7 +575,7 @@ public class Scene {
                     (byte) 0);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("35176, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + class44_sub3_sub4
+            SignLink.error("35176, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + class44_sub3_sub4
                     + ", " + j1 + ", " + flag + ", " + k1 + ", " + l1 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -595,7 +595,7 @@ public class Scene {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("59171, " + i + ", " + j + ", " + flag + ", " + k + ", " + l + ", " + i1 + ", " + j1
+            SignLink.error("59171, " + i + ", " + j + ", " + flag + ", " + k + ", " + l + ", " + i1 + ", " + j1
                     + ", " + class44_sub3_sub4 + ", " + k1 + ", " + l1 + ", " + i2 + ", " + j2 + ", " + k2 + ", "
                     + runtimeexception.toString());
         }
@@ -673,7 +673,7 @@ public class Scene {
                 anInt605 = -18;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("98891, " + flag + ", " + runtimeexception.toString());
+            SignLink.error("98891, " + flag + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -706,7 +706,7 @@ public class Scene {
             if (i != anInt601) {
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("97599, " + i + ", " + class30 + ", " + runtimeexception.toString());
+            SignLink.error("97599, " + i + ", " + class30 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -728,7 +728,7 @@ public class Scene {
             if (byte0 != aByte602) {
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("98774, " + i + ", " + j + ", " + byte0 + ", " + k + ", " + l + ", "
+            SignLink.error("98774, " + i + ", " + j + ", " + byte0 + ", " + k + ", " + l + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -749,7 +749,7 @@ public class Scene {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("92449, " + i + ", " + j + ", " + byte0 + ", " + k + ", "
+            SignLink.error("92449, " + i + ", " + j + ", " + byte0 + ", " + k + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -769,7 +769,7 @@ public class Scene {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("96930, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
+            SignLink.error("96930, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -792,7 +792,7 @@ public class Scene {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("37282, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
+            SignLink.error("37282, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -810,7 +810,7 @@ public class Scene {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("45213, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
+            SignLink.error("45213, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -836,7 +836,7 @@ public class Scene {
                 return class44_sub2.aClass33_1342;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("53461, " + i + ", " + flag + ", " + j + ", " + k + ", " + runtimeexception.toString());
+            SignLink.error("53461, " + i + ", " + flag + ", " + j + ", " + k + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -853,7 +853,7 @@ public class Scene {
                 return class44_sub2.aClass13_1343;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("75079, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
+            SignLink.error("75079, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -876,7 +876,7 @@ public class Scene {
                 return null;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("4664, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
+            SignLink.error("4664, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -894,7 +894,7 @@ public class Scene {
                 return class44_sub2.aClass17_1344;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("68888, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
+            SignLink.error("68888, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -920,7 +920,7 @@ public class Scene {
                 return class44_sub2.aClass13_1343.anInt314;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("89186, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
+            SignLink.error("89186, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -1014,7 +1014,7 @@ public class Scene {
             if (j != 7) {
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("99141, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", "
+            SignLink.error("99141, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -1058,7 +1058,7 @@ public class Scene {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("24584, " + i + ", " + flag + ", " + j + ", " + k + ", " + class44_sub3_sub4_sub4
+            SignLink.error("24584, " + i + ", " + flag + ", " + j + ", " + k + ", " + class44_sub3_sub4_sub4
                     + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -1126,7 +1126,7 @@ public class Scene {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("36060, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", "
+            SignLink.error("36060, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", "
                     + class44_sub3_sub4_sub4 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -1260,7 +1260,7 @@ public class Scene {
             Scene.anInt641 = -1;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("21782, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
+            SignLink.error("21782, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -1429,7 +1429,7 @@ public class Scene {
             Scene.aBoolean637 = false;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("81634, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + k1
+            SignLink.error("81634, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + k1
                     + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -2127,7 +2127,7 @@ public class Scene {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("98500, " + i + ", " + j + ", " + byte0 + ", " + k + ", " + l + ", " + class15 + ", "
+            SignLink.error("98500, " + i + ", " + j + ", " + byte0 + ", " + k + ", " + l + ", " + class15 + ", "
                     + i1 + ", " + j1 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -2148,7 +2148,7 @@ public class Scene {
             }
             return (j & 0xff80) + i;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("54179, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
+            SignLink.error("54179, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -2303,7 +2303,7 @@ public class Scene {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("90061, " + i + ", " + runtimeexception.toString());
+            SignLink.error("90061, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

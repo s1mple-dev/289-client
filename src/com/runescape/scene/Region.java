@@ -66,7 +66,7 @@ public class Region {
                 aBoolean62 = !aBoolean62;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("68666, " + ai + ", " + i + ", " + byte0 + ", " + abyte0 + ", " + j + ", "
+            SignLink.error("68666, " + ai + ", " + i + ", " + byte0 + ", " + abyte0 + ", " + j + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -118,7 +118,7 @@ public class Region {
             }
             return flag;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("52153, " + i + ", " + j + ", " + k + ", " + abyte0 + ", "
+            SignLink.error("52153, " + i + ", " + j + ", " + k + ", " + abyte0 + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -147,7 +147,7 @@ public class Region {
                 } while (true);
             } while (true);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("6914, " + class43_sub1 + ", " + class44_sub3_sub2 + ", " + i + ", "
+            SignLink.error("6914, " + class43_sub1 + ", " + class44_sub3_sub2 + ", " + i + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -228,7 +228,7 @@ public class Region {
             }
             return class8.method202(j, 658);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("35395, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
+            SignLink.error("35395, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -454,7 +454,7 @@ public class Region {
                 class36.method287(k, j, j3, ((Renderable) (obj10)), byte0, 768, i, k3, 0, Region.anInt61, j1, 0);
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("39236, " + i + ", " + j + ", " + k + ", " + l + ", " + ai + ", " + i1 + ", " + j1
+            SignLink.error("39236, " + i + ", " + j + ", " + k + ", " + l + ", " + ai + ", " + i1 + ", " + j1
                     + ", " + class18 + ", " + class36 + ", " + k1 + ", " + l1 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -484,7 +484,7 @@ public class Region {
             if (!flag) {
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("84774, " + i + ", " + j + ", " + k + ", " + flag + ", " + l + ", "
+            SignLink.error("84774, " + i + ", " + j + ", " + k + ", " + flag + ", " + l + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -559,7 +559,7 @@ public class Region {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("95853, " + i + ", " + j + ", " + byte0 + ", " + abyte0 + ", " + k + ", " + l + ", "
+            SignLink.error("95853, " + i + ", " + j + ", " + byte0 + ", " + abyte0 + ", " + k + ", " + l + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -608,7 +608,7 @@ public class Region {
                 } while (true);
             } while (true);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("3868, " + i + ", " + j + ", " + abyte0 + ", " + class36 + ", " + byte0 + ", "
+            SignLink.error("3868, " + i + ", " + j + ", " + abyte0 + ", " + class36 + ", " + byte0 + ", "
                     + aclass18 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -947,7 +947,7 @@ public class Region {
                 class36.method287(j1, i1, l2, ((Renderable) (obj10)), byte0, 768, l, i3, 0, Region.anInt61, j, 0);
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("66723, " + i + ", " + j + ", " + class36 + ", " + k + ", " + l + ", " + i1 + ", "
+            SignLink.error("66723, " + i + ", " + j + ", " + class36 + ", " + k + ", " + l + ", " + i1 + ", "
                     + j1 + ", " + class18 + ", " + k1 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -1292,7 +1292,7 @@ public class Region {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("24657, " + byte0 + ", " + aclass18 + ", " + class36 + ", "
+            SignLink.error("24657, " + byte0 + ", " + aclass18 + ", " + class36 + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -1312,7 +1312,7 @@ public class Region {
                 return l;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("30913, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
+            SignLink.error("30913, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

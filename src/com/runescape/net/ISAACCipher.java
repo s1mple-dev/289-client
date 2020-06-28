@@ -26,7 +26,7 @@ public class ISAACCipher {
             method547();
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("69249, " + ai + ", " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("69249, " + ai + ", " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

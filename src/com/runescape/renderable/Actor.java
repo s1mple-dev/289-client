@@ -128,7 +128,7 @@ public class Actor extends Renderable {
             anInt1616 = anIntArray1666[0] * 128 + anInt1619 * 64;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("61882, " + i + ", " + flag + ", " + j + ", " + byte0 + ", "
+            SignLink.error("61882, " + i + ", " + flag + ", " + j + ", " + byte0 + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -183,7 +183,7 @@ public class Actor extends Renderable {
             if (j != -6002) {
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("37957, " + flag + ", " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("37957, " + flag + ", " + i + ", " + j + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -197,7 +197,7 @@ public class Actor extends Renderable {
             anInt1669 = 0;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("39799, " + flag + ", " + runtimeexception.toString());
+            SignLink.error("39799, " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -210,7 +210,7 @@ public class Actor extends Renderable {
                 return false;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("30413, " + flag + ", " + runtimeexception.toString());
+            SignLink.error("30413, " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -230,7 +230,7 @@ public class Actor extends Renderable {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("15311, " + i + ", " + j + ", " + k + ", " + flag + ", " + runtimeexception.toString());
+            SignLink.error("15311, " + i + ", " + j + ", " + k + ", " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

@@ -23,7 +23,7 @@ public class Item extends Renderable {
             }
             return class14.method224(anInt1496);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("51746, " + i + ", " + runtimeexception.toString());
+            SignLink.error("51746, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

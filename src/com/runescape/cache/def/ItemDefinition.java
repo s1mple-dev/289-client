@@ -101,7 +101,7 @@ public class ItemDefinition {
                 ItemDefinition.anInt319 = 87;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("13898, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("13898, " + byte0 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -267,7 +267,7 @@ public class ItemDefinition {
             }
             return class44_sub3_sub1_sub2_1;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("85079, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
+            SignLink.error("85079, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -425,7 +425,7 @@ public class ItemDefinition {
                 }
             } while (true);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("33855, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
+            SignLink.error("33855, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -458,7 +458,7 @@ public class ItemDefinition {
             aBoolean342 = true;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("48619, " + i + ", " + runtimeexception.toString());
+            SignLink.error("48619, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -524,7 +524,7 @@ public class ItemDefinition {
             }
             return class44_sub3_sub4_sub4;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("56792, " + flag + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("56792, " + flag + ", " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -557,7 +557,7 @@ public class ItemDefinition {
             }
             return flag1;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("20483, " + flag + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("20483, " + flag + ", " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -605,7 +605,7 @@ public class ItemDefinition {
             }
             return class44_sub3_sub4_sub4;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("48423, " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("48423, " + i + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -633,7 +633,7 @@ public class ItemDefinition {
             }
             return flag1;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("33754, " + flag + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("33754, " + flag + ", " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -663,7 +663,7 @@ public class ItemDefinition {
             }
             return class44_sub3_sub4_sub4;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("35633, " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("35633, " + i + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

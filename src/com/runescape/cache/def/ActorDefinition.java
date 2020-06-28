@@ -94,7 +94,7 @@ public class ActorDefinition {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("45481, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("45481, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -194,7 +194,7 @@ public class ActorDefinition {
                 }
             } while (true);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("19436, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
+            SignLink.error("19436, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -253,7 +253,7 @@ public class ActorDefinition {
             }
             return class44_sub3_sub4_sub4_1;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("77537, " + i + ", " + j + ", " + k + ", " + ai + ", " + runtimeexception.toString());
+            SignLink.error("77537, " + i + ", " + j + ", " + k + ", " + ai + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -292,7 +292,7 @@ public class ActorDefinition {
             }
             return class44_sub3_sub4_sub4;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("20491, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("20491, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

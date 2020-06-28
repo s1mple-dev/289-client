@@ -60,7 +60,7 @@ public class Npc extends Actor {
             }
             return class44_sub3_sub4_sub4;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("15988, " + i + ", " + runtimeexception.toString());
+            SignLink.error("15988, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -84,7 +84,7 @@ public class Npc extends Actor {
             }
             return aClass12_1700.method216(0, -1, j, null);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("99332, " + flag + ", " + runtimeexception.toString());
+            SignLink.error("99332, " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -97,7 +97,7 @@ public class Npc extends Actor {
             }
             return aClass12_1700 != null;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("4937, " + flag + ", " + runtimeexception.toString());
+            SignLink.error("4937, " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

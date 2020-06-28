@@ -295,7 +295,7 @@ public class Widget {
             Widget.spriteCache = null;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("87101, " + aclass44_sub3_sub1_sub4 + ", " + mediaArchive + ", " + i + ", "
+            SignLink.error("87101, " + aclass44_sub3_sub1_sub4 + ", " + mediaArchive + ", " + i + ", "
                     + widgetArchive + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -312,7 +312,7 @@ public class Widget {
                 Widget.aClass39_162.put((i << 16) + k, class44_sub3_sub4_sub4);
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("27428, " + i + ", " + class44_sub3_sub4_sub4 + ", " + j + ", " + k + ", "
+            SignLink.error("27428, " + i + ", " + class44_sub3_sub4_sub4 + ", " + j + ", " + k + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -336,7 +336,7 @@ public class Widget {
             }
             return class44_sub3_sub1_sub2;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("90047, " + flag + ", " + i + ", " + class47 + ", " + s + ", "
+            SignLink.error("90047, " + flag + ", " + i + ", " + class47 + ", " + s + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -356,7 +356,7 @@ public class Widget {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("35687, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
+            SignLink.error("35687, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -393,7 +393,7 @@ public class Widget {
             class44_sub3_sub4_sub4_1.method523(64, 768, -50, -10, -50, true);
             return class44_sub3_sub4_sub4_1;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("4323, " + i + ", " + j + ", " + k + ", " + flag + ", " + runtimeexception.toString());
+            SignLink.error("4323, " + i + ", " + j + ", " + k + ", " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

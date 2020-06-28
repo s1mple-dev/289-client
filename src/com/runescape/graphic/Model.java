@@ -107,7 +107,7 @@ public class Model extends Renderable {
                 throw new NullPointerException();
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("97744, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("97744, " + byte0 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -266,7 +266,7 @@ public class Model extends Renderable {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("1962, " + byte0 + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("1962, " + byte0 + ", " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -393,7 +393,7 @@ public class Model extends Renderable {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("74534, " + aclass44_sub3_sub4_sub4 + ", " + i + ", " + j + ", "
+            SignLink.error("74534, " + aclass44_sub3_sub4_sub4 + ", " + i + ", " + j + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -526,7 +526,7 @@ public class Model extends Renderable {
             method510(-18258);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("44164, " + flag + ", " + i + ", " + aclass44_sub3_sub4_sub4 + ", " + j + ", "
+            SignLink.error("44164, " + flag + ", " + i + ", " + aclass44_sub3_sub4_sub4 + ", " + j + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -596,7 +596,7 @@ public class Model extends Renderable {
             anIntArray1554 = class44_sub3_sub4_sub4.anIntArray1554;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("54490, " + class44_sub3_sub4_sub4 + ", " + flag + ", " + flag1 + ", " + i + ", "
+            SignLink.error("54490, " + class44_sub3_sub4_sub4 + ", " + flag + ", " + flag1 + ", " + i + ", "
                     + flag2 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -683,7 +683,7 @@ public class Model extends Renderable {
             anInt1556 = class44_sub3_sub4_sub4.anInt1556;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("37258, " + flag + ", " + i + ", " + class44_sub3_sub4_sub4 + ", " + flag1 + ", "
+            SignLink.error("37258, " + flag + ", " + i + ", " + class44_sub3_sub4_sub4 + ", " + flag1 + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -717,7 +717,7 @@ public class Model extends Renderable {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("555, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("555, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -804,7 +804,7 @@ public class Model extends Renderable {
             k2 += i2;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("15458, " + abyte0 + ", " + i + ", " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("15458, " + abyte0 + ", " + i + ", " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -816,7 +816,7 @@ public class Model extends Renderable {
                 Model.anInt1524 = 201;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("7068, " + byte0 + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("7068, " + byte0 + ", " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -839,7 +839,7 @@ public class Model extends Renderable {
                 return new Model((byte) 5, i);
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("95716, " + i + ", " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("95716, " + i + ", " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -932,7 +932,7 @@ public class Model extends Renderable {
             anIntArray1554 = class44_sub3_sub4_sub4.anIntArray1554;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("85838, " + flag + ", " + class44_sub3_sub4_sub4 + ", " + i + ", "
+            SignLink.error("85838, " + flag + ", " + class44_sub3_sub4_sub4 + ", " + i + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -991,7 +991,7 @@ public class Model extends Renderable {
                     + (int) (Math.sqrt(anInt1559 * anInt1559 + anInt1560 * anInt1560) + 0.98999999999999999D);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("36717, " + i + ", " + runtimeexception.toString());
+            SignLink.error("36717, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -1016,7 +1016,7 @@ public class Model extends Renderable {
                     + (int) (Math.sqrt(anInt1559 * anInt1559 + anInt1560 * anInt1560) + 0.98999999999999999D);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("17256, " + i + ", " + runtimeexception.toString());
+            SignLink.error("17256, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -1066,7 +1066,7 @@ public class Model extends Renderable {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("10133, " + i + ", " + runtimeexception.toString());
+            SignLink.error("10133, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -1121,7 +1121,7 @@ public class Model extends Renderable {
                 anIntArray1565 = null;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("8794, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("8794, " + byte0 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -1150,7 +1150,7 @@ public class Model extends Renderable {
             j = 30 / j;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("89296, " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("89296, " + i + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -1207,7 +1207,7 @@ public class Model extends Renderable {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("48519, " + i + ", " + flag + ", " + j + ", " + ai + ", "
+            SignLink.error("48519, " + i + ", " + flag + ", " + j + ", " + ai + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -1355,7 +1355,7 @@ public class Model extends Renderable {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("55629, " + i + ", " + runtimeexception.toString());
+            SignLink.error("55629, " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -1374,7 +1374,7 @@ public class Model extends Renderable {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("12713, " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("12713, " + i + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -1393,7 +1393,7 @@ public class Model extends Renderable {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("27484, " + i + ", " + j + ", " + byte0 + ", " + k + ", "
+            SignLink.error("27484, " + i + ", " + j + ", " + byte0 + ", " + k + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -1422,7 +1422,7 @@ public class Model extends Renderable {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("2770, " + i + ", " + runtimeexception.toString());
+            SignLink.error("2770, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -1439,7 +1439,7 @@ public class Model extends Renderable {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("76171, " + i + ", " + j + ", " + k + ", " + byte0 + ", "
+            SignLink.error("76171, " + i + ", " + j + ", " + k + ", " + byte0 + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();

@@ -59,7 +59,7 @@ public class ChatEncoder {
             }
             return new String(ChatEncoder.aCharArray809, 0, j);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("44303, " + byte0 + ", " + class44_sub3_sub2 + ", " + i + ", "
+            SignLink.error("44303, " + byte0 + ", " + class44_sub3_sub2 + ", " + i + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -106,7 +106,7 @@ public class ChatEncoder {
                 class44_sub3_sub2.writeByte(j << 4);
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("17960, " + s + ", " + class44_sub3_sub2 + ", " + i + ", "
+            SignLink.error("17960, " + s + ", " + class44_sub3_sub2 + ", " + i + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -124,7 +124,7 @@ public class ChatEncoder {
             String s1 = ChatEncoder.method556((byte) -94, ChatEncoder.aClass44_Sub3_Sub2_810, j);
             return s1;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("99118, " + s + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("99118, " + s + ", " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

@@ -36,7 +36,7 @@ class SoundFilter {
             }
             return 1.0F - (float) Math.pow(10D, -f1 / 20F);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("9156, " + i + ", " + flag + ", " + f + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("9156, " + i + ", " + flag + ", " + f + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -50,7 +50,7 @@ class SoundFilter {
                 return (f1 * 3.141593F) / 11025F;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("10683, " + i + ", " + f + ", " + runtimeexception.toString());
+            SignLink.error("10683, " + i + ", " + f + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -66,7 +66,7 @@ class SoundFilter {
             }
             return method153(anInt51, f1);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("38617, " + i + ", " + j + ", " + k + ", " + f + ", " + runtimeexception.toString());
+            SignLink.error("38617, " + i + ", " + j + ", " + k + ", " + f + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -112,7 +112,7 @@ class SoundFilter {
             }
             return anIntArray52[i] * 2;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("1468, " + i + ", " + j + ", " + f + ", " + runtimeexception.toString());
+            SignLink.error("1468, " + i + ", " + j + ", " + f + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -156,7 +156,7 @@ class SoundFilter {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("9723, " + i + ", " + class1 + ", " + class44_sub3_sub2 + ", "
+            SignLink.error("9723, " + i + ", " + class1 + ", " + class44_sub3_sub2 + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();

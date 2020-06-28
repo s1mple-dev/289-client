@@ -44,7 +44,7 @@ public class FloorDefinition {
                 FloorDefinition.aBoolean428 = !FloorDefinition.aBoolean428;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("30324, " + flag + ", " + class47 + ", " + runtimeexception.toString());
+            SignLink.error("30324, " + flag + ", " + class47 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -76,7 +76,7 @@ public class FloorDefinition {
                 }
             } while (true);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("32967, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
+            SignLink.error("32967, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -165,7 +165,7 @@ public class FloorDefinition {
             anInt441 = method246(j, k, l);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("3110, " + i + ", " + flag + ", " + runtimeexception.toString());
+            SignLink.error("3110, " + i + ", " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

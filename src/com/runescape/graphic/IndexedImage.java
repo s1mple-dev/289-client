@@ -80,7 +80,7 @@ public class IndexedImage extends Rasterizer {
             anInt1463 = 0;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("96890, " + i + ", " + runtimeexception.toString());
+            SignLink.error("96890, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -107,7 +107,7 @@ public class IndexedImage extends Rasterizer {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("81667, " + i + ", " + runtimeexception.toString());
+            SignLink.error("81667, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -128,7 +128,7 @@ public class IndexedImage extends Rasterizer {
             anInt1462 = anInt1464 - anInt1460 - anInt1462;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("28636, " + i + ", " + runtimeexception.toString());
+            SignLink.error("28636, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -150,7 +150,7 @@ public class IndexedImage extends Rasterizer {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("83103, " + i + ", " + runtimeexception.toString());
+            SignLink.error("83103, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -187,7 +187,7 @@ public class IndexedImage extends Rasterizer {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("28455, " + i + ", " + byte0 + ", " + j + ", " + k + ", "
+            SignLink.error("28455, " + i + ", " + byte0 + ", " + j + ", " + k + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -238,7 +238,7 @@ public class IndexedImage extends Rasterizer {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("29131, " + i + ", " + byte0 + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("29131, " + i + ", " + byte0 + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -288,7 +288,7 @@ public class IndexedImage extends Rasterizer {
             if (byte0 != 34) {
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("42705, " + i + ", " + ai + ", " + j + ", " + ai1 + ", " + k + ", " + l + ", " + byte0
+            SignLink.error("42705, " + i + ", " + ai + ", " + j + ", " + ai1 + ", " + k + ", " + l + ", " + byte0
                     + ", " + abyte0 + ", " + i1 + ", " + j1 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }

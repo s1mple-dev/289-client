@@ -32,7 +32,7 @@ public class Renderable extends CacheableNode {
             }
             return null;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("59009, " + i + ", " + runtimeexception.toString());
+            SignLink.error("59009, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

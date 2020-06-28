@@ -37,7 +37,7 @@ public class BufferedConnection implements Runnable {
                 aBoolean192 = !aBoolean192;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("498, " + socket + ", " + i + ", " + applet_sub1 + ", " + runtimeexception.toString());
+            SignLink.error("498, " + socket + ", " + i + ", " + applet_sub1 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -125,7 +125,7 @@ public class BufferedConnection implements Runnable {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("22916, " + i + ", " + abyte0 + ", " + j + ", " + k + ", "
+            SignLink.error("22916, " + i + ", " + abyte0 + ", " + j + ", " + k + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -188,7 +188,7 @@ public class BufferedConnection implements Runnable {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("6333, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("6333, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

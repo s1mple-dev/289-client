@@ -722,7 +722,7 @@ public class Client extends GameShell {
             Region.aBoolean64 = false;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("78522, " + flag + ", " + runtimeexception.toString());
+            SignLink.error("78522, " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -743,7 +743,7 @@ public class Client extends GameShell {
             }
             return " " + s;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("6522, " + i + ", " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("6522, " + i + ", " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -762,7 +762,7 @@ public class Client extends GameShell {
                 return i / 0xf4240 + "M";
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("1290, " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("1290, " + i + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -779,7 +779,7 @@ public class Client extends GameShell {
             Region.aBoolean64 = true;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("41041, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("41041, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -817,7 +817,7 @@ public class Client extends GameShell {
                 return "@yel@";
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("90622, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
+            SignLink.error("90622, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -859,7 +859,7 @@ public class Client extends GameShell {
             method93(false);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("47231, " + i + ", " + runtimeexception.toString());
+            SignLink.error("47231, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -988,7 +988,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("43374, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("43374, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -1018,7 +1018,7 @@ public class Client extends GameShell {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("6403, " + i + ", " + class44_sub3_sub1_sub2 + ", " + j + ", " + k + ", "
+            SignLink.error("6403, " + i + ", " + class44_sub3_sub1_sub2 + ", " + j + ", " + k + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -1074,7 +1074,7 @@ public class Client extends GameShell {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("39313, " + i + ", " + runtimeexception.toString());
+            SignLink.error("39313, " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -1101,7 +1101,7 @@ public class Client extends GameShell {
             aStringArray1004[0] = s;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("60879, " + i + ", " + byte0 + ", " + s + ", " + s1 + ", "
+            SignLink.error("60879, " + i + ", " + byte0 + ", " + s + ", " + s1 + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -1114,7 +1114,7 @@ public class Client extends GameShell {
             SignLink.midi = "stop";
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("82229, " + i + ", " + runtimeexception.toString());
+            SignLink.error("82229, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -1227,7 +1227,7 @@ public class Client extends GameShell {
             }
             return false;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("38005, " + byte0 + ", " + class5 + ", " + runtimeexception.toString());
+            SignLink.error("38005, " + byte0 + ", " + class5 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -1263,7 +1263,7 @@ public class Client extends GameShell {
                 aClass44_Sub3_Sub2_850.writeByte(252);
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("41421, " + i + ", " + runtimeexception.toString());
+            SignLink.error("41421, " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -1291,7 +1291,7 @@ public class Client extends GameShell {
                 aClass28ArrayArrayArray1146 = null;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("34190, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", "
+            SignLink.error("34190, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -1325,7 +1325,7 @@ public class Client extends GameShell {
             anInt942 = 0;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("79964, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("79964, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -1376,7 +1376,7 @@ public class Client extends GameShell {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("56217, " + i + ", " + runtimeexception.toString());
+            SignLink.error("56217, " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -1399,7 +1399,7 @@ public class Client extends GameShell {
                 anInt1245 = 0;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("82905, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("82905, " + byte0 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -1463,7 +1463,7 @@ public class Client extends GameShell {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("53446, " + i + ", " + runtimeexception.toString());
+            SignLink.error("53446, " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -1482,7 +1482,7 @@ public class Client extends GameShell {
             }
             return k == 605;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("17125, " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("17125, " + i + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -1560,7 +1560,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("95813, " + byte0 + ", " +
+            SignLink.error("95813, " + byte0 + ", " +
                     runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -1586,7 +1586,7 @@ public class Client extends GameShell {
             anInt1199 = -1;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("99207, " + i + ", " + runtimeexception.toString());
+            SignLink.error("99207, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -1611,7 +1611,7 @@ public class Client extends GameShell {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("31857, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("31857, " + byte0 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -1631,7 +1631,7 @@ public class Client extends GameShell {
                 return this;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("75072, " + i + ", " + runtimeexception.toString());
+            SignLink.error("75072, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -1856,7 +1856,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("12590, " + i + ", " + j + ", " + k + ", " + class5 + ", " + l + ", " + i1 + ", " + j1
+            SignLink.error("12590, " + i + ", " + j + ", " + k + ", " + class5 + ", " + l + ", " + i1 + ", " + j1
                     + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -2268,7 +2268,7 @@ public class Client extends GameShell {
                                 method17(3, (byte) -115, s8, TextUtils.method554(TextUtils.method551(l3, true), true));
                             }
                         } catch (Exception exception1) {
-                            SignLink.reporterror("cde1");
+                            SignLink.error("cde1");
                         }
                     }
                     anInt1170 = -1;
@@ -2484,7 +2484,7 @@ public class Client extends GameShell {
                     anInt1023 = aClass44_Sub3_Sub2_1132.readUnsignedShort();
                     anInt917 = aClass44_Sub3_Sub2_1132.readUnsignedByte();
                     if (anInt1231 != 0 && anInt1199 == -1) {
-                        SignLink.dnslookup(TextUtils.method553(anInt1231, (byte) 1));
+                        SignLink.dnsLookup(TextUtils.method553(anInt1231, (byte) 1));
                         method28(3);
                         char c = '\u028A';
                         if (anInt869 != 201 || anInt917 == 1) {
@@ -2873,7 +2873,7 @@ public class Client extends GameShell {
                     anInt1170 = -1;
                     return true;
                 }
-                SignLink.reporterror("T1 - " + anInt1170 + "," + anInt1169 + " - " + anInt1068 + "," + anInt1069);
+                SignLink.error("T1 - " + anInt1170 + "," + anInt1169 + " - " + anInt1068 + "," + anInt1069);
                 method22((byte) 25);
             } catch (IOException _ex) {
                 method99((byte) 7);
@@ -2884,12 +2884,12 @@ public class Client extends GameShell {
                 for (int l14 = 0; l14 < anInt1169 && l14 < 50; l14++) {
                     s1 = s1 + aClass44_Sub3_Sub2_1132.payload[l14] + ",";
                 }
-                SignLink.reporterror(s1);
+                SignLink.error(s1);
                 method22((byte) 25);
             }
             return true;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("74182, " + flag + ", " + runtimeexception.toString());
+            SignLink.error("74182, " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -2915,17 +2915,17 @@ public class Client extends GameShell {
                 anInt1170 = -1;
             }
             SignLink.midifade = flag ? 1 : 0;
-            SignLink.midisave(abyte0, abyte0.length);
+            SignLink.saveMidi(abyte0, abyte0.length);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("89004, " + byte0 + ", " + abyte0 + ", " + flag + ", " + runtimeexception.toString());
+            SignLink.error("89004, " + byte0 + ", " + abyte0 + ", " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
 
     public Socket method34(int i) throws IOException {
         if (SignLink.mainapp != null) {
-            return SignLink.opensocket(i);
+            return SignLink.openSocket(i);
         } else {
             return new Socket(InetAddress.getByName(getCodeBase().getHost()), i);
         }
@@ -3336,7 +3336,7 @@ public class Client extends GameShell {
             GameObject.aClient1481 = this;
             return;
         } catch (Exception exception) {
-            SignLink.reporterror("loaderror " + aString926 + " " + anInt1176);
+            SignLink.error("loaderror " + aString926 + " " + anInt1176);
         }
         aBoolean1055 = true;
     }
@@ -3374,7 +3374,7 @@ public class Client extends GameShell {
             if (flag) {
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("21026, " + flag + ", " + runtimeexception.toString());
+            SignLink.error("21026, " + flag + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -3501,7 +3501,7 @@ public class Client extends GameShell {
             aClass34_1197.method272((byte) 5);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("47037, " + i + ", " + runtimeexception.toString());
+            SignLink.error("47037, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -3825,7 +3825,7 @@ public class Client extends GameShell {
             Rasterizer.method408(aByte977, l1, k1, j1, i1);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("32464, " + i + ", " + j + ", " + k + ", " + class5 + ", " + l + ", "
+            SignLink.error("32464, " + i + ", " + j + ", " + k + ", " + class5 + ", " + l + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -3847,7 +3847,7 @@ public class Client extends GameShell {
             if (anInt882 == 1) {
                 int i = method39(aByte1182);
                 if (i != 0 && System.currentTimeMillis() - aLong1070 > 0x57e40L) {
-                    SignLink.reporterror(aString1071 + " glcfb " + aLong813 + "," + i + "," + Client.aBoolean1235 + ","
+                    SignLink.error(aString1071 + " glcfb " + aLong813 + "," + i + "," + Client.aBoolean1235 + ","
                             + aClass45Array1208[0] + "," + aClass43_Sub1_814.method393() + "," + anInt1155 + ","
                             + anInt841 + "," + anInt842);
                     aLong1070 = System.currentTimeMillis();
@@ -3858,7 +3858,7 @@ public class Client extends GameShell {
                 method40((byte) -89, anInt1155);
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("64388, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("64388, " + byte0 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -3899,7 +3899,7 @@ public class Client extends GameShell {
             }
             return 0;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("76031, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("76031, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -3986,7 +3986,7 @@ public class Client extends GameShell {
                 aClass44_Sub3_Sub2_850.writeByte(50);
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("89876, " + byte0 + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("89876, " + byte0 + ", " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -4271,7 +4271,7 @@ public class Client extends GameShell {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("89305, " + i + ", " + class5 + ", " + runtimeexception.toString());
+            SignLink.error("89305, " + i + ", " + class5 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -4322,7 +4322,7 @@ public class Client extends GameShell {
             if (byte0 != -97) {
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("11026, " + byte0 + ", " + i + ", " + class44_sub3_sub2 + ", "
+            SignLink.error("11026, " + byte0 + ", " + i + ", " + class44_sub3_sub2 + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -4368,7 +4368,7 @@ public class Client extends GameShell {
                 aClass34_1271.method273(-781, 562, 171, super.aGraphics13);
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("10134, " + flag + ", " + i + ", " + s + ", " + runtimeexception.toString());
+            SignLink.error("10134, " + flag + ", " + i + ", " + s + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -4461,7 +4461,7 @@ public class Client extends GameShell {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("19860, " + i + ", " + runtimeexception.toString());
+            SignLink.error("19860, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -4490,7 +4490,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("67342, " + l + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("67342, " + l + ", " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -4549,7 +4549,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("41007, " + i + ", " + runtimeexception.toString());
+            SignLink.error("41007, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -4674,7 +4674,7 @@ public class Client extends GameShell {
                                 method17(2, (byte) -115, s, class44_sub3_sub4_sub6_sub1.aString1672);
                             }
                         } catch (Exception exception) {
-                            SignLink.reporterror("cde2");
+                            SignLink.error("cde2");
                         }
                     }
                 }
@@ -4713,7 +4713,7 @@ public class Client extends GameShell {
                 class44_sub3_sub4_sub6_sub1.anInt1636 = class44_sub3_sub2.readUnsignedByte();
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("71941, " + i + ", " + byte0 + ", " + class44_sub3_sub2 + ", " + j + ", "
+            SignLink.error("71941, " + i + ", " + byte0 + ", " + class44_sub3_sub2 + ", " + j + ", "
                     + class44_sub3_sub4_sub6_sub1 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -4857,7 +4857,7 @@ public class Client extends GameShell {
             Rasterizer3D.anIntArray1429 = anIntArray916;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("21760, " + i + ", " + runtimeexception.toString());
+            SignLink.error("21760, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -4944,7 +4944,7 @@ public class Client extends GameShell {
                 method12(this, 2);
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("92179, " + i + ", " + runtimeexception.toString());
+            SignLink.error("92179, " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -5022,13 +5022,13 @@ public class Client extends GameShell {
                     anInt1239 += (l1 - anInt1239) / 80;
                 }
             } catch (Exception _ex) {
-                SignLink.reporterror("glfc_ex " + Client.aClass44_Sub3_Sub4_Sub6_Sub1_1047.anInt1615 + ","
+                SignLink.error("glfc_ex " + Client.aClass44_Sub3_Sub4_Sub6_Sub1_1047.anInt1615 + ","
                         + Client.aClass44_Sub3_Sub4_Sub6_Sub1_1047.anInt1616 + "," + anInt1081 + ","
                         + anInt1082 + "," + anInt841 + "," + anInt842 + "," + anInt1184 + "," + anInt1185);
                 throw new RuntimeException("eek");
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("96812, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("96812, " + byte0 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -5068,7 +5068,7 @@ public class Client extends GameShell {
             if (flag) {
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("10709, " + flag + ", " + flag1 + ", " + runtimeexception.toString());
+            SignLink.error("10709, " + flag + ", " + flag1 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -5095,7 +5095,7 @@ public class Client extends GameShell {
                 return i2 * (128 - l1) + j2 * l1 >> 7;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("38676, " + flag + ", " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
+            SignLink.error("38676, " + flag + ", " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -5123,7 +5123,7 @@ public class Client extends GameShell {
             aClass44_Sub3_Sub1_Sub4_1257.method464(s, true, 0xffffff, 26617, 4, Client.anInt1240 / 1000, 15);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("20355, " + i + ", " + runtimeexception.toString());
+            SignLink.error("20355, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -5185,7 +5185,7 @@ public class Client extends GameShell {
                 l += 30;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("39122, " + i + ", " + runtimeexception.toString());
+            SignLink.error("39122, " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -5265,7 +5265,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("40244, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("40244, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -5301,7 +5301,7 @@ public class Client extends GameShell {
             aClass44_Sub3_Sub2_850.writeLong(l);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("6582, " + byte0 + ", " + l + ", " + runtimeexception.toString());
+            SignLink.error("6582, " + byte0 + ", " + l + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -5653,7 +5653,7 @@ public class Client extends GameShell {
                 method22((byte) 25);
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("87308, " + i + ", " + runtimeexception.toString());
+            SignLink.error("87308, " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -5676,19 +5676,19 @@ public class Client extends GameShell {
                 anInt1074 = 376;
             }
             if (class44_sub3_sub2.offset != i) {
-                SignLink.reporterror("Error packet size mismatch in getplayer pos:" + class44_sub3_sub2.offset
+                SignLink.error("Error packet size mismatch in getplayer pos:" + class44_sub3_sub2.offset
                         + " psize:" + i);
                 throw new RuntimeException("eek");
             }
             for (int l = 0; l < anInt1226; l++) {
                 if (aClass44_Sub3_Sub4_Sub6_Sub1Array1225[anIntArray1227[l]] == null) {
-                    SignLink.reporterror(aString1071 + " null entry in pl list - pos:" + l + " size:" + anInt1226);
+                    SignLink.error(aString1071 + " null entry in pl list - pos:" + l + " size:" + anInt1226);
                     throw new RuntimeException("eek");
                 }
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("73689, " + i + ", " + byte0 + ", " + class44_sub3_sub2 + ", "
+            SignLink.error("73689, " + i + ", " + byte0 + ", " + class44_sub3_sub2 + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -5792,7 +5792,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("53238, " + i + ", " + class12 + ", " + j + ", " + k + ", " + l + ", "
+            SignLink.error("53238, " + i + ", " + class12 + ", " + j + ", " + k + ", " + l + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -5806,7 +5806,7 @@ public class Client extends GameShell {
                 SignLink.midi = "voladjust";
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("20099, " + flag + ", " + i + ", " + flag1 + ", " + runtimeexception.toString());
+            SignLink.error("20099, " + flag + ", " + i + ", " + flag1 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -5842,7 +5842,7 @@ public class Client extends GameShell {
                 anInt962 = 175;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("97189, " + i + ", " + runtimeexception.toString());
+            SignLink.error("97189, " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -6077,7 +6077,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("28791, " + i + ", " + runtimeexception.toString());
+            SignLink.error("28791, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -6116,7 +6116,7 @@ public class Client extends GameShell {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("9303, " + i + ", " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("9303, " + i + ", " + byte0 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -6189,7 +6189,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("54582, " + i + ", " + runtimeexception.toString());
+            SignLink.error("54582, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -6200,7 +6200,7 @@ public class Client extends GameShell {
             i = 10;
         }
         if (SignLink.mainapp != null) {
-            SignLink.startthread(runnable, i);
+            SignLink.startThread(runnable, i);
         } else {
             super.method12(runnable, i);
         }
@@ -6247,7 +6247,7 @@ public class Client extends GameShell {
             }
             return flag;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("91123, " + i + ", " + j + ", " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("91123, " + i + ", " + j + ", " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -6336,7 +6336,7 @@ public class Client extends GameShell {
                 aClass34_1271.method273(-781, 562, 171, super.aGraphics13);
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("72643, " + byte0 + ", " + flag + ", " + runtimeexception.toString());
+            SignLink.error("72643, " + byte0 + ", " + flag + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -6632,7 +6632,7 @@ public class Client extends GameShell {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("80608, " + class44_sub3_sub2 + ", " + i + ", " + j + ", "
+            SignLink.error("80608, " + class44_sub3_sub2 + ", " + i + ", " + j + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -6699,7 +6699,7 @@ public class Client extends GameShell {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("12680, " + i + ", " + runtimeexception.toString());
+            SignLink.error("12680, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -6787,7 +6787,7 @@ public class Client extends GameShell {
                 aClass44_Sub3_Sub2_850.writeSizeByte(aClass44_Sub3_Sub2_850.offset - i);
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("60480, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("60480, " + byte0 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -6809,7 +6809,7 @@ public class Client extends GameShell {
                 anInt1170 = aClass44_Sub3_Sub2_1132.readUnsignedByte();
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("72183, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("72183, " + byte0 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -6830,7 +6830,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("27562, " + class44_sub3_sub2 + ", " + flag + ", " + i + ", "
+            SignLink.error("27562, " + class44_sub3_sub2 + ", " + flag + ", " + i + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -6847,7 +6847,7 @@ public class Client extends GameShell {
                 return "*";
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("94656, " + i + ", " + flag + ", " + runtimeexception.toString());
+            SignLink.error("94656, " + i + ", " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -6919,7 +6919,7 @@ public class Client extends GameShell {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("55555, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + k1
+            SignLink.error("55555, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + k1
                     + ", " + l1 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -6933,7 +6933,7 @@ public class Client extends GameShell {
             method75(class44_sub3_sub4_sub6.anInt1615, i, (byte) -79, class44_sub3_sub4_sub6.anInt1616);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("86761, " + i + ", " + class44_sub3_sub4_sub6 + ", " + j + ", "
+            SignLink.error("86761, " + i + ", " + class44_sub3_sub4_sub6 + ", " + j + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -6973,7 +6973,7 @@ public class Client extends GameShell {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("20782, " + i + ", " + j + ", " + byte0 + ", " + k + ", "
+            SignLink.error("20782, " + i + ", " + j + ", " + byte0 + ", " + k + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -6993,7 +6993,7 @@ public class Client extends GameShell {
             SpotAnimation.aClass39_571.clear();
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("83788, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("83788, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -7001,7 +7001,7 @@ public class Client extends GameShell {
     private DataInputStream method77(String s) throws IOException {
         if (!aBoolean922) {
             if (SignLink.mainapp != null) {
-                return SignLink.openurl(s);
+                return SignLink.openUrl(s);
             } else {
                 return new DataInputStream((new URL(getCodeBase(), s)).openStream());
             }
@@ -7086,7 +7086,7 @@ public class Client extends GameShell {
             aClass44_Sub3_Sub2_850.writeShort(i1);
             return true;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("86165, " + i + ", " + j + ", " + flag + ", " + k + ", " + l + ", "
+            SignLink.error("86165, " + i + ", " + j + ", " + flag + ", " + k + ", " + l + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -7097,9 +7097,9 @@ public class Client extends GameShell {
             if (byte0 != 9) {
                 anInt964 = -393;
             }
-            return SignLink.wavereplay();
+            return SignLink.requestWaveReplay();
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("96494, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("96494, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -7119,7 +7119,7 @@ public class Client extends GameShell {
             }
             return s.equalsIgnoreCase(Client.aClass44_Sub3_Sub4_Sub6_Sub1_1047.aString1672);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("59627, " + s + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("59627, " + s + ", " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -7163,7 +7163,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("35389, " + i + ", " + j + ", " + class5 + ", " + k + ", " + flag + ", " + l + ", "
+            SignLink.error("35389, " + i + ", " + j + ", " + class5 + ", " + k + ", " + flag + ", " + l + ", "
                     + byte0 + ", " + i1 + ", " + j1 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -7176,7 +7176,7 @@ public class Client extends GameShell {
             if (flag) {
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("20297, " + flag + ", " + runtimeexception.toString());
+            SignLink.error("20297, " + flag + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -7212,7 +7212,7 @@ public class Client extends GameShell {
             class44_sub1.anInt1334 = l1;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("49827, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + k1
+            SignLink.error("49827, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + k1
                     + ", " + l1 + ", " + i2 + ", " + j2 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -7240,7 +7240,7 @@ public class Client extends GameShell {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("82180, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("82180, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -7332,7 +7332,7 @@ public class Client extends GameShell {
             aClass34_1267.method273(-781, 637, 0, super.aGraphics13);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("27482, " + i + ", " + runtimeexception.toString());
+            SignLink.error("27482, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -7359,7 +7359,7 @@ public class Client extends GameShell {
             SignLink.wavevol = i;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("41016, " + flag + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("41016, " + flag + ", " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -7502,7 +7502,7 @@ public class Client extends GameShell {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("97581, " + i + ", " + j + ", " + k + ", " + byte0 + ", " + l + ", " + i1 + ", "
+            SignLink.error("97581, " + i + ", " + j + ", " + k + ", " + byte0 + ", " + l + ", " + i1 + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -7547,7 +7547,7 @@ public class Client extends GameShell {
             aBoolean908 = true;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("94767, " + i + ", " + runtimeexception.toString());
+            SignLink.error("94767, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -7581,7 +7581,7 @@ public class Client extends GameShell {
             }
             return true;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("20821, " + class5 + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("20821, " + class5 + ", " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -7663,7 +7663,7 @@ public class Client extends GameShell {
                 anInt1034 = 15 * anInt971 + 22;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("90690, " + i + ", " + runtimeexception.toString());
+            SignLink.error("90690, " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -7709,7 +7709,7 @@ public class Client extends GameShell {
                 Client.anInt958 = 328;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("29713, " + i + ", " + class44_sub3_sub2 + ", " + j + ", "
+            SignLink.error("29713, " + i + ", " + class44_sub3_sub2 + ", " + j + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -7722,7 +7722,7 @@ public class Client extends GameShell {
             return ((i & 0xff00ff) * i1 + (j & 0xff00ff) * k & 0xff00ff00)
                     + ((i & 0xff00) * i1 + (j & 0xff00) * k & 0xff0000) >> 8;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("66303, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
+            SignLink.error("66303, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -7817,7 +7817,7 @@ public class Client extends GameShell {
                 Region.method160(aClass43_Sub1_814, new Buffer(class44_sub3_sub3.aByteArray1407), anInt1247);
             } while (true);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("44515, " + flag + ", " + runtimeexception.toString());
+            SignLink.error("44515, " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -7956,7 +7956,7 @@ public class Client extends GameShell {
                 return -1;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("71115, " + i + ", " + byte0 + ", " + class5 + ", " + runtimeexception.toString());
+            SignLink.error("71115, " + i + ", " + byte0 + ", " + class5 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -8003,7 +8003,7 @@ public class Client extends GameShell {
             aClass44_Sub3_Sub2_850.writeLong(l);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("60470, " + i + ", " + l + ", " + runtimeexception.toString());
+            SignLink.error("60470, " + i + ", " + l + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -8402,7 +8402,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("36554, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("36554, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -8438,7 +8438,7 @@ public class Client extends GameShell {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("96492, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("96492, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -8459,7 +8459,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("43758, " + i + ", " + runtimeexception.toString());
+            SignLink.error("43758, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -8478,7 +8478,7 @@ public class Client extends GameShell {
                 return super.getDocumentBase().getHost().toLowerCase();
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("16537, " + i + ", " + runtimeexception.toString());
+            SignLink.error("16537, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -8495,7 +8495,7 @@ public class Client extends GameShell {
                 }
             }
             if (k > anInt1226) {
-                SignLink.reporterror(aString1071 + " Too many players");
+                SignLink.error(aString1071 + " Too many players");
                 throw new RuntimeException("eek");
             }
             anInt1226 = 0;
@@ -8539,7 +8539,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("48001, " + i + ", " + class44_sub3_sub2 + ", " + j + ", "
+            SignLink.error("48001, " + i + ", " + class44_sub3_sub2 + ", " + j + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -8564,7 +8564,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("3125, " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("3125, " + i + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -8587,19 +8587,19 @@ public class Client extends GameShell {
                 }
             }
             if (class44_sub3_sub2.offset != i) {
-                SignLink.reporterror(aString1071 + " size mismatch in getnpcpos - pos:" + class44_sub3_sub2.offset
+                SignLink.error(aString1071 + " size mismatch in getnpcpos - pos:" + class44_sub3_sub2.offset
                         + " psize:" + i);
                 throw new RuntimeException("eek");
             }
             for (int l = 0; l < anInt1009; l++) {
                 if (aClass44_Sub3_Sub4_Sub6_Sub2Array1008[anIntArray1010[l]] == null) {
-                    SignLink.reporterror(aString1071 + " null entry in npc list - pos:" + l + " size:" + anInt1009);
+                    SignLink.error(aString1071 + " null entry in npc list - pos:" + l + " size:" + anInt1009);
                     throw new RuntimeException("eek");
                 }
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("79159, " + flag + ", " + i + ", " + class44_sub3_sub2 + ", "
+            SignLink.error("79159, " + flag + ", " + i + ", " + class44_sub3_sub2 + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -8697,7 +8697,7 @@ public class Client extends GameShell {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("63058, " + i + ", " + runtimeexception.toString());
+            SignLink.error("63058, " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -8733,7 +8733,7 @@ public class Client extends GameShell {
                 return false;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("1354, " + class5 + ", " + flag + ", " + runtimeexception.toString());
+            SignLink.error("1354, " + class5 + ", " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -8791,7 +8791,7 @@ public class Client extends GameShell {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("64409, " + i + ", " + runtimeexception.toString());
+            SignLink.error("64409, " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -8835,7 +8835,7 @@ public class Client extends GameShell {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("10967, " + class44_sub3_sub1_sub3 + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("10967, " + class44_sub3_sub1_sub3 + ", " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -8916,7 +8916,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("61838, " + flag + ", " + flag1 + ", " + runtimeexception.toString());
+            SignLink.error("61838, " + flag + ", " + flag1 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -9000,7 +9000,7 @@ public class Client extends GameShell {
                 method6();
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("6327, " + i + ", " + byte0 + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("6327, " + i + ", " + byte0 + ", " + j + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -9091,7 +9091,7 @@ public class Client extends GameShell {
                 anInt857 = aClass46_927.value();
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("20699, " + i + ", " + j + ", " + class44_sub3_sub4_sub6_sub1 + ", " + k + ", " + l
+            SignLink.error("20699, " + i + ", " + j + ", " + class44_sub3_sub4_sub6_sub1 + ", " + k + ", " + l
                     + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -9118,7 +9118,7 @@ public class Client extends GameShell {
             Rasterizer3D.anIntArray1429 = anIntArray916;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("78878, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("78878, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -9146,7 +9146,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("1882, " + i + ", " + runtimeexception.toString());
+            SignLink.error("1882, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -9189,7 +9189,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("33105, " + i + ", " + runtimeexception.toString());
+            SignLink.error("33105, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -9207,7 +9207,7 @@ public class Client extends GameShell {
                 anInt1247 = -115;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("89148, " + i + ", " + runtimeexception.toString());
+            SignLink.error("89148, " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -9253,7 +9253,7 @@ public class Client extends GameShell {
             method122(class44_sub3_sub4_sub6, 0);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("3333, " + i + ", " + class44_sub3_sub4_sub6 + ", " + j + ", "
+            SignLink.error("3333, " + i + ", " + class44_sub3_sub4_sub6 + ", " + j + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -9283,7 +9283,7 @@ public class Client extends GameShell {
                 class44_sub3_sub4_sub6.anInt1662 = 512;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("29708, " + i + ", " + class44_sub3_sub4_sub6 + ", " + runtimeexception.toString());
+            SignLink.error("29708, " + i + ", " + class44_sub3_sub4_sub6 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -9322,7 +9322,7 @@ public class Client extends GameShell {
                 anInt1170 = aClass44_Sub3_Sub2_1132.readUnsignedByte();
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("74708, " + i + ", " + class44_sub3_sub4_sub6 + ", " + runtimeexception.toString());
+            SignLink.error("74708, " + i + ", " + class44_sub3_sub4_sub6 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -9445,7 +9445,7 @@ public class Client extends GameShell {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("29188, " + class44_sub3_sub4_sub6 + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("29188, " + class44_sub3_sub4_sub6 + ", " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -9516,7 +9516,7 @@ public class Client extends GameShell {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("53139, " + byte0 + ", " + class44_sub3_sub4_sub6 + ", " + runtimeexception.toString());
+            SignLink.error("53139, " + byte0 + ", " + class44_sub3_sub4_sub6 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -9586,7 +9586,7 @@ public class Client extends GameShell {
                 class44_sub3_sub4_sub6.anInt1646--;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("50955, " + class44_sub3_sub4_sub6 + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("50955, " + class44_sub3_sub4_sub6 + ", " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -9833,7 +9833,7 @@ public class Client extends GameShell {
             anInt824 = 0;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("27122, " + flag + ", " + runtimeexception.toString());
+            SignLink.error("27122, " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -10036,7 +10036,7 @@ public class Client extends GameShell {
             }
             return k1 != 1;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("96354, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + flag
+            SignLink.error("96354, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + flag
                     + ", " + k1 + ", " + l1 + ", " + i2 + ", " + j2 + ", " + k2 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -10167,7 +10167,7 @@ public class Client extends GameShell {
             Archive class47_1 = new Archive(abyte0, 0);
             return class47_1;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("12814, " + byte0 + ", " + s + ", " + i + ", " + s1 + ", " + j + ", " + k + ", "
+            SignLink.error("12814, " + byte0 + ", " + s + ", " + i + ", " + s1 + ", " + j + ", " + k + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -10256,7 +10256,7 @@ public class Client extends GameShell {
             }
             return i;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("26640, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("26640, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -10275,7 +10275,7 @@ public class Client extends GameShell {
                 return 3;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("19764, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("19764, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -10308,7 +10308,7 @@ public class Client extends GameShell {
             aClass44_Sub3_Sub1_Sub2_1278 = null;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("94958, " + flag + ", " + runtimeexception.toString());
+            SignLink.error("94958, " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -10430,7 +10430,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("93797, " + i + ", " + runtimeexception.toString());
+            SignLink.error("93797, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -10482,7 +10482,7 @@ public class Client extends GameShell {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("6378, " + i + ", " + class44_sub3_sub2 + ", " + flag + ", "
+            SignLink.error("6378, " + i + ", " + class44_sub3_sub2 + ", " + flag + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -10583,7 +10583,7 @@ public class Client extends GameShell {
                 anInt879 = j2;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("37827, " + i + ", " + runtimeexception.toString());
+            SignLink.error("37827, " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -10810,7 +10810,7 @@ public class Client extends GameShell {
             } while (true);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("93263, " + i + ", " + runtimeexception.toString());
+            SignLink.error("93263, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -10836,7 +10836,7 @@ public class Client extends GameShell {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("25980, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("25980, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -11464,7 +11464,7 @@ public class Client extends GameShell {
             aBoolean898 = true;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("27672, " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("27672, " + i + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -11675,7 +11675,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("60112, " + flag + ", " + runtimeexception.toString());
+            SignLink.error("60112, " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -11694,7 +11694,7 @@ public class Client extends GameShell {
                 aClass44_Sub3_Sub1_Sub2Array1183[2].method440(anInt1065 - 28, aByte1213, anInt1064 - 12);
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("57596, " + i + ", " + runtimeexception.toString());
+            SignLink.error("57596, " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -11730,7 +11730,7 @@ public class Client extends GameShell {
             anInt879 = j;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("24308, " + i + ", " + byte0 + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1
+            SignLink.error("24308, " + i + ", " + byte0 + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1
                     + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -11770,7 +11770,7 @@ public class Client extends GameShell {
             class44_sub1.anInt1328 = l;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("51962, " + class44_sub1 + ", " + flag + ", " + runtimeexception.toString());
+            SignLink.error("51962, " + class44_sub1 + ", " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -11871,7 +11871,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("44339, " + i + ", " + class44_sub3_sub2 + ", " + j + ", "
+            SignLink.error("44339, " + i + ", " + class44_sub3_sub2 + ", " + j + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -11904,7 +11904,7 @@ public class Client extends GameShell {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("87513, " + i + ", " + class44_sub3_sub1_sub2 + ", " + j + ", " + k + ", "
+            SignLink.error("87513, " + i + ", " + class44_sub3_sub1_sub2 + ", " + j + ", " + k + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -11932,7 +11932,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("81778, " + i + ", " + l + ", " + runtimeexception.toString());
+            SignLink.error("81778, " + i + ", " + l + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -11981,7 +11981,7 @@ public class Client extends GameShell {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("62107, " + i + ", " + runtimeexception.toString());
+            SignLink.error("62107, " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -11996,7 +11996,7 @@ public class Client extends GameShell {
                 }
             }
             if (k > anInt1009) {
-                SignLink.reporterror(aString1071 + " Too many npcs");
+                SignLink.error(aString1071 + " Too many npcs");
                 throw new RuntimeException("eek");
             }
             anInt1009 = 0;
@@ -12043,7 +12043,7 @@ public class Client extends GameShell {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("93413, " + i + ", " + class44_sub3_sub2 + ", " + j + ", "
+            SignLink.error("93413, " + i + ", " + class44_sub3_sub2 + ", " + j + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -12184,7 +12184,7 @@ public class Client extends GameShell {
             System.gc();
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("75879, " + i + ", " + runtimeexception.toString());
+            SignLink.error("75879, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -12242,7 +12242,7 @@ public class Client extends GameShell {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("77202, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("77202, " + byte0 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -12255,10 +12255,10 @@ public class Client extends GameShell {
             if (abyte0 == null) {
                 return true;
             } else {
-                return SignLink.wavesave(abyte0, j);
+                return SignLink.requestWaveSave(abyte0, j);
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("56223, " + abyte0 + ", " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("56223, " + abyte0 + ", " + i + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -12354,7 +12354,7 @@ public class Client extends GameShell {
                 anInt835 = k;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("33016, " + flag + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("33016, " + flag + ", " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }

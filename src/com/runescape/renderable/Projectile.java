@@ -56,7 +56,7 @@ public class Projectile extends Renderable {
             aBoolean1510 = false;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("7515, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + k1
+            SignLink.error("7515, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + k1
                     + ", " + l1 + ", " + i2 + ", " + j2 + ", " + flag + ", " + k2 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -86,7 +86,7 @@ public class Projectile extends Renderable {
             aDouble1518 = (2D * (i - aDouble1513 - aDouble1517 * d1)) / (d1 * d1);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("57005, " + i + ", " + flag + ", " + j + ", " + k + ", " + l + ", "
+            SignLink.error("57005, " + i + ", " + flag + ", " + j + ", " + k + ", " + l + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -114,7 +114,7 @@ public class Projectile extends Renderable {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("69669, " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("69669, " + i + ", " + j + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -151,7 +151,7 @@ public class Projectile extends Renderable {
                 return class44_sub3_sub4_sub4_1;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("13403, " + i + ", " + runtimeexception.toString());
+            SignLink.error("13403, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

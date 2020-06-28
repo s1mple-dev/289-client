@@ -51,7 +51,7 @@ public class TextUtils {
             }
             return new String(ac, 12 - i, i);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("40622, " + l + ", " + flag + ", " + runtimeexception.toString());
+            SignLink.error("40622, " + l + ", " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -69,7 +69,7 @@ public class TextUtils {
             }
             return l;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("8420, " + i + ", " + s + ", " + runtimeexception.toString());
+            SignLink.error("8420, " + i + ", " + s + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -82,7 +82,7 @@ public class TextUtils {
             }
             return (i >> 24 & 0xff) + "." + (i >> 16 & 0xff) + "." + (i >> 8 & 0xff) + "." + (i & 0xff);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("43699, " + i + ", " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("43699, " + i + ", " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -110,7 +110,7 @@ public class TextUtils {
                 return s;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("42296, " + s + ", " + flag + ", " + runtimeexception.toString());
+            SignLink.error("42296, " + s + ", " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -126,7 +126,7 @@ public class TextUtils {
             }
             return stringbuffer.toString();
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("15483, " + i + ", " + s + ", " + runtimeexception.toString());
+            SignLink.error("15483, " + i + ", " + s + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

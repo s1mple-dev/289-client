@@ -35,7 +35,7 @@ class SoundTrackEnvelope {
             method149(0, buffer);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("71989, " + flag + ", " + buffer + ", " + runtimeexception.toString());
+            SignLink.error("71989, " + flag + ", " + buffer + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -54,7 +54,7 @@ class SoundTrackEnvelope {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("90209, " + i + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
+            SignLink.error("90209, " + i + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -71,7 +71,7 @@ class SoundTrackEnvelope {
             anInt48 = 0;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("93961, " + i + ", " + runtimeexception.toString());
+            SignLink.error("93961, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -96,7 +96,7 @@ class SoundTrackEnvelope {
             }
             return anInt47 - anInt46 >> 15;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("76406, " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("76406, " + i + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

@@ -32,7 +32,7 @@ public class Index {
             anInt780 = i;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("43459, " + randomaccessfile + ", " + i + ", " + randomaccessfile1 + ", " + j + ", "
+            SignLink.error("43459, " + randomaccessfile + ", " + i + ", " + randomaccessfile1 + ", " + j + ", "
                     + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -102,7 +102,7 @@ public class Index {
                 return null;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("83435, " + flag + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("83435, " + flag + ", " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -118,7 +118,7 @@ public class Index {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("64351, " + abyte0 + ", " + byte0 + ", " + i + ", " + j + ", "
+            SignLink.error("64351, " + abyte0 + ", " + byte0 + ", " + i + ", " + j + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -222,7 +222,7 @@ public class Index {
                 return false;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("7982, " + flag + ", " + i + ", " + j + ", " + k + ", " + abyte0 + ", "
+            SignLink.error("7982, " + flag + ", " + i + ", " + j + ", " + k + ", " + abyte0 + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -244,7 +244,7 @@ public class Index {
             randomaccessfile.seek(i);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("78209, " + randomaccessfile + ", " + i + ", " + j + ", "
+            SignLink.error("78209, " + randomaccessfile + ", " + i + ", " + j + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();

@@ -24,7 +24,7 @@ public class Archive {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("71105, " + abyte0 + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("71105, " + abyte0 + ", " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -64,7 +64,7 @@ public class Archive {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("9624, " + byte0 + ", " + abyte0 + ", " + runtimeexception.toString());
+            SignLink.error("9624, " + byte0 + ", " + abyte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

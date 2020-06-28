@@ -53,7 +53,7 @@ public class SpotAnimation {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("58052, " + flag + ", " + class47 + ", " + runtimeexception.toString());
+            SignLink.error("58052, " + flag + ", " + class47 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -94,7 +94,7 @@ public class SpotAnimation {
                 }
             } while (true);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("87905, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
+            SignLink.error("87905, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

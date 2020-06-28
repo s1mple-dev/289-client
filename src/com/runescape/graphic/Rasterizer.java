@@ -36,7 +36,7 @@ public class Rasterizer extends CacheableNode {
             Rasterizer.method408(Rasterizer.aByte1366, k, j, 0, 0);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("83567, " + i + ", " + ai + ", " + j + ", " + k + ", " + runtimeexception.toString());
+            SignLink.error("83567, " + i + ", " + ai + ", " + j + ", " + k + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -54,7 +54,7 @@ public class Rasterizer extends CacheableNode {
             Rasterizer.anInt1377 = Rasterizer.anInt1375 / 2;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("75622, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("75622, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -87,7 +87,7 @@ public class Rasterizer extends CacheableNode {
             Rasterizer.anInt1378 = Rasterizer.anInt1373 / 2;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("52567, " + byte0 + ", " + i + ", " + j + ", " + k + ", " + l + ", "
+            SignLink.error("52567, " + byte0 + ", " + i + ", " + j + ", " + k + ", " + l + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -104,7 +104,7 @@ public class Rasterizer extends CacheableNode {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("10068, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("10068, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -146,7 +146,7 @@ public class Rasterizer extends CacheableNode {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("68601, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + flag
+            SignLink.error("68601, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + flag
                     + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -179,7 +179,7 @@ public class Rasterizer extends CacheableNode {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("43392, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", "
+            SignLink.error("43392, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -196,7 +196,7 @@ public class Rasterizer extends CacheableNode {
             Rasterizer.method416(i1, (j + k) - 1, l, j1, 0);
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("9711, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", "
+            SignLink.error("9711, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -214,7 +214,7 @@ public class Rasterizer extends CacheableNode {
                 Rasterizer.method417(i - 2, j, j1 + 1, i1, 454, (k + l) - 1);
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("90957, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + k1
+            SignLink.error("90957, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + k1
                     + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -241,7 +241,7 @@ public class Rasterizer extends CacheableNode {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("26422, " + i + ", " + j + ", " + k + ", " + flag + ", " + l + ", "
+            SignLink.error("26422, " + i + ", " + j + ", " + k + ", " + flag + ", " + l + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -277,7 +277,7 @@ public class Rasterizer extends CacheableNode {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("78053, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", "
+            SignLink.error("78053, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -304,7 +304,7 @@ public class Rasterizer extends CacheableNode {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("94910, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", "
+            SignLink.error("94910, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -338,7 +338,7 @@ public class Rasterizer extends CacheableNode {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("35599, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", "
+            SignLink.error("35599, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();

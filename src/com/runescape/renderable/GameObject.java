@@ -49,7 +49,7 @@ public class GameObject extends Renderable {
             anIntArray1493 = class8.anIntArray250;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("78557, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + flag + ", " + j1
+            SignLink.error("78557, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + flag + ", " + j1
                     + ", " + k1 + ", " + flag1 + ", " + l1 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -103,7 +103,7 @@ public class GameObject extends Renderable {
                     anInt1488, k);
             return class44_sub3_sub4_sub4;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("27197, " + i + ", " + runtimeexception.toString());
+            SignLink.error("27197, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

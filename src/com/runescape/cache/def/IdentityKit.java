@@ -45,7 +45,7 @@ public class IdentityKit {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("42475, " + flag + ", " + class47 + ", " + runtimeexception.toString());
+            SignLink.error("42475, " + flag + ", " + class47 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -81,7 +81,7 @@ public class IdentityKit {
                 }
             } while (true);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("93901, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
+            SignLink.error("93901, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -102,7 +102,7 @@ public class IdentityKit {
             }
             return flag;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("47258, " + i + ", " + runtimeexception.toString());
+            SignLink.error("47258, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -133,7 +133,7 @@ public class IdentityKit {
             }
             return class44_sub3_sub4_sub4;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("95134, " + i + ", " + runtimeexception.toString());
+            SignLink.error("95134, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -151,7 +151,7 @@ public class IdentityKit {
             }
             return flag;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("34430, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("34430, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -178,7 +178,7 @@ public class IdentityKit {
             }
             return class44_sub3_sub4_sub4;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("40216, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("40216, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

@@ -56,7 +56,7 @@ public class AnimationSequence {
                 AnimationSequence.aBoolean506 = !AnimationSequence.aBoolean506;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("90750, " + flag + ", " + class47 + ", " + runtimeexception.toString());
+            SignLink.error("90750, " + flag + ", " + class47 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -79,7 +79,7 @@ public class AnimationSequence {
             }
             return l;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("17518, " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("17518, " + i + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -162,7 +162,7 @@ public class AnimationSequence {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("13368, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
+            SignLink.error("13368, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }

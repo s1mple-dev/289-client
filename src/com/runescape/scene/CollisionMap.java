@@ -32,7 +32,7 @@ public class CollisionMap {
             i = 13 / i;
             method231(3);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("80242, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
+            SignLink.error("80242, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -51,7 +51,7 @@ public class CollisionMap {
             if (i != 3) {
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("70688, " + i + ", " + runtimeexception.toString());
+            SignLink.error("70688, " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -182,7 +182,7 @@ public class CollisionMap {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("37924, " + flag + ", " + i + ", " + flag1 + ", " + j + ", " + k + ", " + l + ", "
+            SignLink.error("37924, " + flag + ", " + i + ", " + flag1 + ", " + j + ", " + k + ", " + l + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -215,7 +215,7 @@ public class CollisionMap {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("81800, " + i + ", " + j + ", " + flag + ", " + k + ", " + l + ", " + i1 + ", " + j1
+            SignLink.error("81800, " + i + ", " + j + ", " + flag + ", " + k + ", " + l + ", " + i1 + ", " + j1
                     + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -232,7 +232,7 @@ public class CollisionMap {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("80528, " + i + ", " + byte0 + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("80528, " + i + ", " + byte0 + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -368,7 +368,7 @@ public class CollisionMap {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("35289, " + i + ", " + j + ", " + k + ", " + l + ", " + flag + ", " + byte0 + ", "
+            SignLink.error("35289, " + i + ", " + j + ", " + k + ", " + l + ", " + flag + ", " + byte0 + ", "
                     + runtimeexception.toString());
             throw new RuntimeException();
         }
@@ -401,7 +401,7 @@ public class CollisionMap {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("63255, " + i + ", " + j + ", " + k + ", " + flag + ", " + l + ", " + i1 + ", " + j1
+            SignLink.error("63255, " + i + ", " + j + ", " + k + ", " + flag + ", " + l + ", " + i1 + ", " + j1
                     + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -414,7 +414,7 @@ public class CollisionMap {
                 aBoolean406 = !aBoolean406;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("32560, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
+            SignLink.error("32560, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -430,7 +430,7 @@ public class CollisionMap {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("56700, " + i + ", " + flag + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("56700, " + i + ", " + flag + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -561,7 +561,7 @@ public class CollisionMap {
             }
             return false;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("58304, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + k1
+            SignLink.error("58304, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + k1
                     + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -629,7 +629,7 @@ public class CollisionMap {
             }
             return false;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("39211, " + byte0 + ", " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1
+            SignLink.error("39211, " + byte0 + ", " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1
                     + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -660,7 +660,7 @@ public class CollisionMap {
             return k == j2 + 1 && j1 >= l1 && j1 <= i2 && (anIntArrayArray418[j1 - anInt414][k - anInt415] & 0x20) == 0
                     && (k1 & 1) == 0;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("55272, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + k1
+            SignLink.error("55272, " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + j1 + ", " + k1
                     + ", " + l1 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();

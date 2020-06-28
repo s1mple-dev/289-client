@@ -117,7 +117,7 @@ public class ImageRGB extends Rasterizer {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("24805, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("24805, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -158,7 +158,7 @@ public class ImageRGB extends Rasterizer {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("40145, " + i + ", " + byte0 + ", " + j + ", " + k + ", "
+            SignLink.error("40145, " + i + ", " + byte0 + ", " + j + ", " + k + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -181,7 +181,7 @@ public class ImageRGB extends Rasterizer {
                 aBoolean1442 = !aBoolean1442;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("30731, " + i + ", " + runtimeexception.toString());
+            SignLink.error("30731, " + i + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -232,7 +232,7 @@ public class ImageRGB extends Rasterizer {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("29381, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
+            SignLink.error("29381, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -260,7 +260,7 @@ public class ImageRGB extends Rasterizer {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("72719, " + i + ", " + ai + ", " + ai1 + ", " + j + ", " + k + ", " + l + ", " + flag
+            SignLink.error("72719, " + i + ", " + ai + ", " + ai1 + ", " + j + ", " + k + ", " + l + ", " + flag
                     + ", " + i1 + ", " + j1 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -311,7 +311,7 @@ public class ImageRGB extends Rasterizer {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("37524, " + i + ", " + byte0 + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("37524, " + i + ", " + byte0 + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -403,7 +403,7 @@ public class ImageRGB extends Rasterizer {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("12746, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
+            SignLink.error("12746, " + i + ", " + j + ", " + k + ", " + l + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -430,7 +430,7 @@ public class ImageRGB extends Rasterizer {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("94839, " + i + ", " + j + ", " + k + ", " + l + ", " + ai + ", " + ai1 + ", " + i1
+            SignLink.error("94839, " + i + ", " + j + ", " + k + ", " + l + ", " + ai + ", " + ai1 + ", " + i1
                     + ", " + j1 + ", " + k1 + ", " + l1 + ", " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -470,7 +470,7 @@ public class ImageRGB extends Rasterizer {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("82769, " + ai + ", " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + ai1
+            SignLink.error("82769, " + ai + ", " + i + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + ai1
                     + ", " + j1 + ", " + k1 + ", " + l1 + ", " + i2 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -516,7 +516,7 @@ public class ImageRGB extends Rasterizer {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("35641, " + i + ", " + d + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + byte0
+            SignLink.error("35641, " + i + ", " + d + ", " + j + ", " + k + ", " + l + ", " + i1 + ", " + byte0
                     + ", " + j1 + ", " + k1 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -568,7 +568,7 @@ public class ImageRGB extends Rasterizer {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("46753, " + i + ", " + class44_sub3_sub1_sub3 + ", " + flag + ", " + j + ", "
+            SignLink.error("46753, " + i + ", " + class44_sub3_sub1_sub3 + ", " + flag + ", " + j + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
@@ -622,7 +622,7 @@ public class ImageRGB extends Rasterizer {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("52031, " + i + ", " + j + ", " + k + ", " + abyte0 + ", " + l + ", " + i1 + ", " + j1
+            SignLink.error("52031, " + i + ", " + j + ", " + k + ", " + abyte0 + ", " + l + ", " + i1 + ", " + j1
                     + ", " + k1 + ", " + ai + ", " + flag + ", " + ai1 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();

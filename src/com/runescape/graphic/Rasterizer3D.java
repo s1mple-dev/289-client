@@ -71,7 +71,7 @@ public class Rasterizer3D extends Rasterizer {
             Rasterizer3D.anIntArrayArray1440 = null;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("39311, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("39311, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -91,7 +91,7 @@ public class Rasterizer3D extends Rasterizer {
             Rasterizer3D.anInt1424 = Rasterizer.anInt1371 / 2;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("80083, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("80083, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -109,7 +109,7 @@ public class Rasterizer3D extends Rasterizer {
             Rasterizer3D.anInt1424 = i / 2;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("87374, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
+            SignLink.error("87374, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -125,7 +125,7 @@ public class Rasterizer3D extends Rasterizer {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("51784, " + flag + ", " + runtimeexception.toString());
+            SignLink.error("51784, " + flag + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -147,7 +147,7 @@ public class Rasterizer3D extends Rasterizer {
                 }
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("73856, " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("73856, " + i + ", " + j + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -171,7 +171,7 @@ public class Rasterizer3D extends Rasterizer {
                 Rasterizer3D.aBoolean1416 = !Rasterizer3D.aBoolean1416;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("81199, " + class47 + ", " + flag + ", " + runtimeexception.toString());
+            SignLink.error("81199, " + class47 + ", " + flag + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -201,7 +201,7 @@ public class Rasterizer3D extends Rasterizer {
             Rasterizer3D.anIntArray1433[j] = l1;
             return l1;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("39848, " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("39848, " + i + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -219,7 +219,7 @@ public class Rasterizer3D extends Rasterizer {
                 return;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("83909, " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("83909, " + i + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -372,7 +372,7 @@ public class Rasterizer3D extends Rasterizer {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("64743, " + d + ", " + i + ", " + runtimeexception.toString());
+            SignLink.error("64743, " + d + ", " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

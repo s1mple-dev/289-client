@@ -21,7 +21,7 @@ public class MouseCapturer implements Runnable {
             aClient256 = client1;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("34650, " + i + ", " + client1 + ", " + runtimeexception.toString());
+            SignLink.error("34650, " + i + ", " + client1 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

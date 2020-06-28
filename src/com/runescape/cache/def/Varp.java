@@ -53,7 +53,7 @@ public class Varp {
                 System.out.println("varptype load mismatch");
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("51793, " + flag + ", " + class47 + ", " + runtimeexception.toString());
+            SignLink.error("51793, " + flag + ", " + class47 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -100,7 +100,7 @@ public class Varp {
                 }
             } while (true);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("69668, " + i + ", " + j + ", " + class44_sub3_sub2 + ", "
+            SignLink.error("69668, " + i + ", " + j + ", " + class44_sub3_sub2 + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();

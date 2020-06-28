@@ -126,7 +126,7 @@ public class Animation {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("77261, " + i + ", " + abyte0 + ", " + runtimeexception.toString());
+            SignLink.error("77261, " + i + ", " + abyte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -139,7 +139,7 @@ public class Animation {
             Animation.aClass11Array264 = null;
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("94238, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("94238, " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -157,7 +157,7 @@ public class Animation {
                 return Animation.aClass11Array264[i];
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("52733, " + i + ", " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("52733, " + i + ", " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -169,7 +169,7 @@ public class Animation {
             }
             return i == -1;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("34856, " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("34856, " + i + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }

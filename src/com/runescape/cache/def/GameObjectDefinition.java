@@ -93,7 +93,7 @@ public class GameObjectDefinition {
             if (byte0 != 42) {
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("19919, " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("19919, " + byte0 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -296,7 +296,7 @@ public class GameObjectDefinition {
                 anInt248 = aBoolean224 ? 1 : 0;
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("43978, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
+            SignLink.error("43978, " + flag + ", " + class44_sub3_sub2 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -324,7 +324,7 @@ public class GameObjectDefinition {
             }
             return true;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("3902, " + i + ", " + j + ", " + runtimeexception.toString());
+            SignLink.error("3902, " + i + ", " + j + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -343,7 +343,7 @@ public class GameObjectDefinition {
             }
             return flag;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("61709, " + i + ", " + runtimeexception.toString());
+            SignLink.error("61709, " + i + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -364,7 +364,7 @@ public class GameObjectDefinition {
             }
             return;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("2074, " + class43_sub1 + ", " + byte0 + ", " + runtimeexception.toString());
+            SignLink.error("2074, " + class43_sub1 + ", " + byte0 + ", " + runtimeexception.toString());
         }
         throw new RuntimeException();
     }
@@ -511,7 +511,7 @@ public class GameObjectDefinition {
             GameObjectDefinition.aClass39_252.put(l, class44_sub3_sub4_sub4_3);
             return class44_sub3_sub4_sub4_3;
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("13988, " + byte0 + ", " + i + ", " + j + ", " + k + ", "
+            SignLink.error("13988, " + byte0 + ", " + i + ", " + j + ", " + k + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();

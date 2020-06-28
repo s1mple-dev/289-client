@@ -43,7 +43,7 @@ public class VarBit {
                 System.out.println("varbit load mismatch");
             }
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("10921, " + flag + ", " + class47 + ", " + runtimeexception.toString());
+            SignLink.error("10921, " + flag + ", " + class47 + ", " + runtimeexception.toString());
             throw new RuntimeException();
         }
     }
@@ -73,7 +73,7 @@ public class VarBit {
                 }
             } while (true);
         } catch (RuntimeException runtimeexception) {
-            SignLink.reporterror("19355, " + i + ", " + j + ", " + class44_sub3_sub2 + ", "
+            SignLink.error("19355, " + i + ", " + j + ", " + class44_sub3_sub2 + ", "
                     + runtimeexception.toString());
         }
         throw new RuntimeException();
