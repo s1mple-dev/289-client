@@ -68,8 +68,8 @@ public class GameObjectDefinition {
     }
 
     public static void method197(Archive class47) {
-        GameObjectDefinition.buffer = new Buffer(class47.method549("loc.dat", null));
-        Buffer class44_sub3_sub2 = new Buffer(class47.method549("loc.idx", null));
+        GameObjectDefinition.buffer = new Buffer(class47.decompressFile("loc.dat"));
+        Buffer class44_sub3_sub2 = new Buffer(class47.decompressFile("loc.idx"));
         GameObjectDefinition.anInt209 = class44_sub3_sub2.readUnsignedShort();
         GameObjectDefinition.anIntArray210 = new int[GameObjectDefinition.anInt209];
         int i = 2;

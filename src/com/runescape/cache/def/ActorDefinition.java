@@ -67,8 +67,8 @@ public class ActorDefinition {
     }
 
     public static void method212(Archive class47) {
-        ActorDefinition.buffer = new Buffer(class47.method549("npc.dat", null));
-        Buffer class44_sub3_sub2 = new Buffer(class47.method549("npc.idx", null));
+        ActorDefinition.buffer = new Buffer(class47.decompressFile("npc.dat"));
+        Buffer class44_sub3_sub2 = new Buffer(class47.decompressFile("npc.idx"));
         ActorDefinition.anInt276 = class44_sub3_sub2.readUnsignedShort();
         ActorDefinition.anIntArray277 = new int[ActorDefinition.anInt276];
         int i = 2;

@@ -2980,7 +2980,7 @@ public class Client extends GameShell {
         }
         if (SignLink.cache_dat != null) {
             for (int i = 0; i < 5; i++) {
-                aClass45Array1208[i] = new Index(SignLink.cache_dat, 0x7a120, SignLink.cache_idx[i], i + 1, (byte) 4);
+                aClass45Array1208[i] = new Index(SignLink.cache_dat, 0x7a120, SignLink.cache_idx[i], i + 1);
             }
         }
         try {
@@ -3268,7 +3268,7 @@ public class Client extends GameShell {
             ItemDefinition.aBoolean328 = Client.membersWorld;
             if (!Client.aBoolean1235) {
                 method13(false, 90, "Unpacking sounds");
-                byte[] abyte0 = class47_5.method549("sounds.dat", null);
+                byte[] abyte0 = class47_5.decompressFile("sounds.dat");
                 Buffer class44_sub3_sub2 = new Buffer(abyte0);
                 SoundTrack.method175(true, class44_sub3_sub2);
             }
@@ -6640,7 +6640,7 @@ public class Client extends GameShell {
 
     private void method68(int i) {
         try {
-            byte[] abyte0 = aClass47_1117.method549("title.dat", null);
+            byte[] abyte0 = aClass47_1117.decompressFile("title.dat");
             ImageRGB class44_sub3_sub1_sub2 = new ImageRGB(abyte0, this);
             aClass34_1266.method272((byte) 5);
             class44_sub3_sub1_sub2.method438(0, 0, 8);
@@ -10051,7 +10051,7 @@ public class Client extends GameShell {
             int l = 5;
             try {
                 if (aClass45Array1208[0] != null) {
-                    abyte0 = aClass45Array1208[0].method541(false, i);
+                    abyte0 = aClass45Array1208[0].decompress(i);
                 }
             } catch (Exception _ex) {
             }
@@ -10064,7 +10064,7 @@ public class Client extends GameShell {
                 }
             }
             if (abyte0 != null) {
-                Archive class47 = new Archive(abyte0, 0);
+                Archive class47 = new Archive(abyte0);
                 return class47;
             }
             int j1 = 0;
@@ -10104,7 +10104,7 @@ public class Client extends GameShell {
                     datainputstream.close();
                     try {
                         if (aClass45Array1208[0] != null) {
-                            aClass45Array1208[0].method542(abyte0, (byte) 4, abyte0.length, i);
+                            aClass45Array1208[0].put(abyte0, abyte0.length, i);
                         }
                     } catch (Exception _ex) {
                         aClass45Array1208[0] = null;
@@ -10164,7 +10164,7 @@ public class Client extends GameShell {
                     aBoolean922 = !aBoolean922;
                 }
             }
-            Archive class47_1 = new Archive(abyte0, 0);
+            Archive class47_1 = new Archive(abyte0);
             return class47_1;
         } catch (RuntimeException runtimeexception) {
             SignLink.error("12814, " + byte0 + ", " + s + ", " + i + ", " + s1 + ", " + j + ", " + k + ", "

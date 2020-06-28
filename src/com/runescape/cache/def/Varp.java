@@ -34,7 +34,7 @@ public class Varp {
             if (!flag) {
                 Varp.aBoolean671 = !Varp.aBoolean671;
             }
-            Buffer class44_sub3_sub2 = new Buffer(class47.method549("varp.dat", null));
+            Buffer class44_sub3_sub2 = new Buffer(class47.decompressFile("varp.dat"));
             Varp.anInt675 = 0;
             Varp.anInt673 = class44_sub3_sub2.readUnsignedShort();
             if (Varp.cache == null) {

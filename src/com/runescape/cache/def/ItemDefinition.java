@@ -75,8 +75,8 @@ public class ItemDefinition {
     }
 
     public static void method218(Archive class47) {
-        ItemDefinition.buffer = new Buffer(class47.method549("obj.dat", null));
-        Buffer class44_sub3_sub2 = new Buffer(class47.method549("obj.idx", null));
+        ItemDefinition.buffer = new Buffer(class47.decompressFile("obj.dat"));
+        Buffer class44_sub3_sub2 = new Buffer(class47.decompressFile("obj.idx"));
         ItemDefinition.anInt323 = class44_sub3_sub2.readUnsignedShort();
         ItemDefinition.anIntArray324 = new int[ItemDefinition.anInt323];
         int i = 2;

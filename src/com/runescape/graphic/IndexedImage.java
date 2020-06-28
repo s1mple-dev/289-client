@@ -22,8 +22,8 @@ public class IndexedImage extends Rasterizer {
         aBoolean1455 = false;
         aBoolean1456 = false;
         anInt1457 = 9;
-        Buffer class44_sub3_sub2 = new Buffer(class47.method549(s + ".dat", null));
-        Buffer class44_sub3_sub2_1 = new Buffer(class47.method549("index.dat", null));
+        Buffer class44_sub3_sub2 = new Buffer(class47.decompressFile(s + ".dat"));
+        Buffer class44_sub3_sub2_1 = new Buffer(class47.decompressFile("index.dat"));
         class44_sub3_sub2_1.offset = class44_sub3_sub2.readUnsignedShort();
         anInt1464 = class44_sub3_sub2_1.readUnsignedShort();
         anInt1465 = class44_sub3_sub2_1.readUnsignedShort();

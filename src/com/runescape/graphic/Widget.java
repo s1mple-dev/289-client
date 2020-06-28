@@ -86,7 +86,7 @@ public class Widget {
     public static void method181(TypeFace[] aclass44_sub3_sub1_sub4, Archive mediaArchive, int i, Archive widgetArchive) {
         try {
             Widget.spriteCache = new Cache(50000);
-            Buffer class44_sub3_sub2 = new Buffer(widgetArchive.method549("data", null));
+            Buffer class44_sub3_sub2 = new Buffer(widgetArchive.decompressFile("data"));
             int j = -1;
             int k = class44_sub3_sub2.readUnsignedShort();
             if (i != 0) {

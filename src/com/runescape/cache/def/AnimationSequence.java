@@ -41,7 +41,7 @@ public class AnimationSequence {
 
     public static void method253(boolean flag, Archive class47) {
         try {
-            Buffer class44_sub3_sub2 = new Buffer(class47.method549("seq.dat", null));
+            Buffer class44_sub3_sub2 = new Buffer(class47.decompressFile("seq.dat"));
             AnimationSequence.anInt507 = class44_sub3_sub2.readUnsignedShort();
             if (AnimationSequence.cache == null) {
                 AnimationSequence.cache = new AnimationSequence[AnimationSequence.anInt507];

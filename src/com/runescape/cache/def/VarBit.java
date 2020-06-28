@@ -25,7 +25,7 @@ public class VarBit {
             if (!flag) {
                 return;
             }
-            Buffer class44_sub3_sub2 = new Buffer(class47.method549("varbit.dat", null));
+            Buffer class44_sub3_sub2 = new Buffer(class47.decompressFile("varbit.dat"));
             VarBit.anInt589 = class44_sub3_sub2.readUnsignedShort();
             if (VarBit.aClass35Array590 == null) {
                 VarBit.aClass35Array590 = new VarBit[VarBit.anInt589];

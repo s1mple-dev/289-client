@@ -29,7 +29,7 @@ public class IdentityKit {
 
     public static void method247(boolean flag, Archive class47) {
         try {
-            Buffer class44_sub3_sub2 = new Buffer(class47.method549("idk.dat", null));
+            Buffer class44_sub3_sub2 = new Buffer(class47.decompressFile("idk.dat"));
             if (!flag) {
                 IdentityKit.aBoolean462 = !IdentityKit.aBoolean462;
             }

@@ -85,7 +85,7 @@ public class OnDemandRequester extends Requester implements Runnable {
     public void method383(Archive class47, Client client1) {
         String[] as = {"model_version", "anim_version", "midi_version", "map_version"};
         for (int i = 0; i < 4; i++) {
-            byte[] abyte0 = class47.method549(as[i], null);
+            byte[] abyte0 = class47.decompressFile(as[i]);
             int j = abyte0.length / 2;
             Buffer class44_sub3_sub2 = new Buffer(abyte0);
             anIntArrayArray1284[i] = new int[j];
@@ -96,7 +96,7 @@ public class OnDemandRequester extends Requester implements Runnable {
         }
         String[] as1 = {"model_crc", "anim_crc", "midi_crc", "map_crc"};
         for (int k = 0; k < 4; k++) {
-            byte[] abyte1 = class47.method549(as1[k], null);
+            byte[] abyte1 = class47.decompressFile(as1[k]);
             int i1 = abyte1.length / 4;
             Buffer class44_sub3_sub2_1 = new Buffer(abyte1);
             anIntArrayArray1285[k] = new int[i1];
@@ -104,7 +104,7 @@ public class OnDemandRequester extends Requester implements Runnable {
                 anIntArrayArray1285[k][l1] = class44_sub3_sub2_1.readUnsignedInt();
             }
         }
-        byte[] abyte2 = class47.method549("model_index", null);
+        byte[] abyte2 = class47.decompressFile("model_index");
         int j1 = anIntArrayArray1284[0].length;
         aByteArray1288 = new byte[j1];
         for (int k1 = 0; k1 < j1; k1++) {
@@ -114,7 +114,7 @@ public class OnDemandRequester extends Requester implements Runnable {
                 aByteArray1288[k1] = 0;
             }
         }
-        abyte2 = class47.method549("map_index", null);
+        abyte2 = class47.decompressFile("map_index");
         Buffer class44_sub3_sub2_2 = new Buffer(abyte2);
         j1 = abyte2.length / 7;
         anIntArray1289 = new int[j1];
@@ -127,14 +127,14 @@ public class OnDemandRequester extends Requester implements Runnable {
             anIntArray1291[i2] = class44_sub3_sub2_2.readUnsignedShort();
             anIntArray1292[i2] = class44_sub3_sub2_2.readUnsignedByte();
         }
-        abyte2 = class47.method549("anim_index", null);
+        abyte2 = class47.decompressFile("anim_index");
         class44_sub3_sub2_2 = new Buffer(abyte2);
         j1 = abyte2.length / 2;
         anIntArray1293 = new int[j1];
         for (int j2 = 0; j2 < j1; j2++) {
             anIntArray1293[j2] = class44_sub3_sub2_2.readUnsignedShort();
         }
-        abyte2 = class47.method549("midi_index", null);
+        abyte2 = class47.decompressFile("midi_index");
         class44_sub3_sub2_2 = new Buffer(abyte2);
         j1 = abyte2.length;
         anIntArray1294 = new int[j1];
@@ -341,7 +341,7 @@ public class OnDemandRequester extends Requester implements Runnable {
             if (anIntArrayArray1284[j][k] == 0) {
                 return;
             }
-            byte[] abyte0 = aClient1296.aClass45Array1208[j + 1].method541(false, k);
+            byte[] abyte0 = aClient1296.aClass45Array1208[j + 1].decompress(k);
             if (method402(abyte0, anIntArrayArray1284[j][k], (byte) 64, anIntArrayArray1285[j][k])) {
                 return;
             }
@@ -510,7 +510,7 @@ public class OnDemandRequester extends Requester implements Runnable {
                 aBoolean1298 = true;
                 byte[] abyte0 = null;
                 if (aClient1296.aClass45Array1208[0] != null) {
-                    abyte0 = aClient1296.aClass45Array1208[class44_sub3_sub3.anInt1405 + 1].method541(false,
+                    abyte0 = aClient1296.aClass45Array1208[class44_sub3_sub3.anInt1405 + 1].decompress(
                             class44_sub3_sub3.anInt1406);
                 }
                 if (!method402(abyte0, anIntArrayArray1284[class44_sub3_sub3.anInt1405][class44_sub3_sub3.anInt1406],
@@ -710,8 +710,8 @@ public class OnDemandRequester extends Requester implements Runnable {
                     }
                     if (anInt1316 + anInt1315 >= abyte0.length && aClass44_Sub3_Sub3_1314 != null) {
                         if (aClient1296.aClass45Array1208[0] != null) {
-                            aClient1296.aClass45Array1208[aClass44_Sub3_Sub3_1314.anInt1405 + 1].method542(abyte0,
-                                    (byte) 4, abyte0.length, aClass44_Sub3_Sub3_1314.anInt1406);
+                            aClient1296.aClass45Array1208[aClass44_Sub3_Sub3_1314.anInt1405 + 1].put(abyte0,
+                                    abyte0.length, aClass44_Sub3_Sub3_1314.anInt1406);
                         }
                         if (!aClass44_Sub3_Sub3_1314.aBoolean1409 && aClass44_Sub3_Sub3_1314.anInt1405 == 3) {
                             aClass44_Sub3_Sub3_1314.aBoolean1409 = true;

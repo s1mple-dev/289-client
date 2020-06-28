@@ -29,7 +29,7 @@ public class FloorDefinition {
 
     public static void method243(boolean flag, Archive class47) {
         try {
-            Buffer class44_sub3_sub2 = new Buffer(class47.method549("flo.dat", null));
+            Buffer class44_sub3_sub2 = new Buffer(class47.decompressFile("flo.dat"));
             FloorDefinition.anInt429 = class44_sub3_sub2.readUnsignedShort();
             if (FloorDefinition.aClass20Array430 == null) {
                 FloorDefinition.aClass20Array430 = new FloorDefinition[FloorDefinition.anInt429];

@@ -27,10 +27,10 @@ public class ChatCensor {
     public static int anInt763;
 
     public static void method342(Archive class47) {
-        Buffer class44_sub3_sub2 = new Buffer(class47.method549("fragmentsenc.txt", null));
-        Buffer class44_sub3_sub2_1 = new Buffer(class47.method549("badenc.txt", null));
-        Buffer class44_sub3_sub2_2 = new Buffer(class47.method549("domainenc.txt", null));
-        Buffer class44_sub3_sub2_3 = new Buffer(class47.method549("tldlist.txt", null));
+        Buffer class44_sub3_sub2 = new Buffer(class47.decompressFile("fragmentsenc.txt"));
+        Buffer class44_sub3_sub2_1 = new Buffer(class47.decompressFile("badenc.txt"));
+        Buffer class44_sub3_sub2_2 = new Buffer(class47.decompressFile("domainenc.txt"));
+        Buffer class44_sub3_sub2_3 = new Buffer(class47.decompressFile("tldlist.txt"));
         ChatCensor.method343(class44_sub3_sub2, class44_sub3_sub2_1, class44_sub3_sub2_2, class44_sub3_sub2_3);
     }
 

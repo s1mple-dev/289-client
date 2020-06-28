@@ -1,253 +1,191 @@
 package com.runescape.cache;
 
-import com.runescape.util.SignLink;
-
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
 public class Index {
 
-    private static final byte[] aByteArray776 = new byte[520];
-    private boolean aBoolean773;
-    private int anInt774;
-    private int anInt775;
-    private RandomAccessFile aRandomAccessFile777;
-    private RandomAccessFile aRandomAccessFile778;
-    private int anInt779;
-    private int anInt780;
+    private static final byte[] buffer = new byte[520];
+    private RandomAccessFile dataFile;
+    private RandomAccessFile indexFile;
+    private int storeId;
+    private int maxSize;
 
-    public Index(RandomAccessFile randomaccessfile, int i, RandomAccessFile randomaccessfile1, int j, byte byte0) {
-        aBoolean773 = false;
-        anInt775 = 887;
-        anInt780 = 65000;
-        try {
-            anInt779 = j;
-            if (byte0 == 4) {
-                byte0 = 0;
-            } else {
-                anInt775 = -21;
-            }
-            aRandomAccessFile777 = randomaccessfile;
-            aRandomAccessFile778 = randomaccessfile1;
-            anInt780 = i;
-            return;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("43459, " + randomaccessfile + ", " + i + ", " + randomaccessfile1 + ", " + j + ", "
-                    + byte0 + ", " + runtimeexception.toString());
-        }
-        throw new RuntimeException();
+    public Index(RandomAccessFile dataFile, int maxSize, RandomAccessFile indexFile, int storeId) {
+        this.storeId = storeId;
+        this.dataFile = dataFile;
+        this.indexFile = indexFile;
+        this.maxSize = maxSize;
     }
 
-    public synchronized byte[] method541(boolean flag, int i) {
+    public synchronized byte[] decompress(int index) {
         try {
-            if (flag) {
-                throw new NullPointerException();
+            seek(indexFile, index * 6);
+            int in;
+            for (int i = 0; i < 6; i += in) {
+                in = indexFile.read(Index.buffer, i, 6 - i);
+                if (in == -1) {
+                    return null;
+                }
             }
-            try {
-                method544(aRandomAccessFile778, i * 6, 0);
-                int l;
-                for (int j = 0; j < 6; j += l) {
-                    l = aRandomAccessFile778.read(Index.aByteArray776, j, 6 - j);
-                    if (l == -1) {
-                        return null;
-                    }
-                }
-                int i1 = ((Index.aByteArray776[0] & 0xff) << 16) + ((Index.aByteArray776[1] & 0xff) << 8)
-                        + (Index.aByteArray776[2] & 0xff);
-                int j1 = ((Index.aByteArray776[3] & 0xff) << 16) + ((Index.aByteArray776[4] & 0xff) << 8)
-                        + (Index.aByteArray776[5] & 0xff);
-                if (i1 < 0 || i1 > anInt780) {
-                    return null;
-                }
-                if (j1 <= 0 || j1 > aRandomAccessFile777.length() / 520L) {
-                    return null;
-                }
-                byte[] abyte0 = new byte[i1];
-                int k1 = 0;
-                for (int l1 = 0; k1 < i1; l1++) {
-                    if (j1 == 0) {
-                        return null;
-                    }
-                    method544(aRandomAccessFile777, j1 * 520, 0);
-                    int k = 0;
-                    int i2 = i1 - k1;
-                    if (i2 > 512) {
-                        i2 = 512;
-                    }
-                    int j2;
-                    for (; k < i2 + 8; k += j2) {
-                        j2 = aRandomAccessFile777.read(Index.aByteArray776, k, (i2 + 8) - k);
-                        if (j2 == -1) {
-                            return null;
-                        }
-                    }
-                    int k2 = ((Index.aByteArray776[0] & 0xff) << 8) + (Index.aByteArray776[1] & 0xff);
-                    int l2 = ((Index.aByteArray776[2] & 0xff) << 8) + (Index.aByteArray776[3] & 0xff);
-                    int i3 = ((Index.aByteArray776[4] & 0xff) << 16) + ((Index.aByteArray776[5] & 0xff) << 8)
-                            + (Index.aByteArray776[6] & 0xff);
-                    int j3 = Index.aByteArray776[7] & 0xff;
-                    if (k2 != i || l2 != l1 || j3 != anInt779) {
-                        return null;
-                    }
-                    if (i3 < 0 || i3 > aRandomAccessFile777.length() / 520L) {
-                        return null;
-                    }
-                    for (int k3 = 0; k3 < i2; k3++) {
-                        abyte0[k1++] = Index.aByteArray776[k3 + 8];
-                    }
-                    j1 = i3;
-                }
-                return abyte0;
-            } catch (IOException _ex) {
+            int size = ((Index.buffer[0] & 0xff) << 16) + ((Index.buffer[1] & 0xff) << 8) + (Index.buffer[2] & 0xff);
+            int sector = ((Index.buffer[3] & 0xff) << 16) + ((Index.buffer[4] & 0xff) << 8) + (Index.buffer[5] & 0xff);
+            if (size < 0 || size > maxSize) {
                 return null;
             }
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("83435, " + flag + ", " + i + ", " + runtimeexception.toString());
+            if (sector <= 0 || sector > dataFile.length() / 520L) {
+                return null;
+            }
+            byte[] decompressed = new byte[size];
+            int read = 0;
+            for (int part = 0; read < size; part++) {
+                if (sector == 0) {
+                    return null;
+                }
+                seek(dataFile, sector * 520);
+                int i = 0;
+                int unread = size - read;
+                if (unread > 512) {
+                    unread = 512;
+                }
+                int i2;
+                for (; i < unread + 8; i += i2) {
+                    i2 = dataFile.read(Index.buffer, i, (unread + 8) - i);
+                    if (i2 == -1) {
+                        return null;
+                    }
+                }
+                int decompressedIndex = ((Index.buffer[0] & 0xff) << 8) + (Index.buffer[1] & 0xff);
+                int decompressedPart = ((Index.buffer[2] & 0xff) << 8) + (Index.buffer[3] & 0xff);
+                int decompressedSector = ((Index.buffer[4] & 0xff) << 16) + ((Index.buffer[5] & 0xff) << 8) + (Index.buffer[6] & 0xff);
+                int decompressedStoreId = Index.buffer[7] & 0xff;
+                if (decompressedIndex != index || decompressedPart != part || decompressedStoreId != storeId) {
+                    return null;
+                }
+                if (decompressedSector < 0 || decompressedSector > dataFile.length() / 520L) {
+                    return null;
+                }
+                for (int r = 0; r < unread; r++) {
+                    decompressed[read++] = Index.buffer[r + 8];
+                }
+                sector = decompressedSector;
+            }
+            return decompressed;
+        } catch (IOException exception) {
+            return null;
         }
-        throw new RuntimeException();
     }
 
-    public synchronized void method542(byte[] abyte0, byte byte0, int i, int j) {
-        try {
-            if (byte0 != 4) {
-                anInt775 = 436;
-            }
-            boolean flag = method543(true, i, anInt774, j, abyte0);
-            if (!flag) {
-                flag = method543(false, i, anInt774, j, abyte0);
-            }
-            return;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("64351, " + abyte0 + ", " + byte0 + ", " + i + ", " + j + ", "
-                    + runtimeexception.toString());
+    public synchronized void put(byte[] data, int size, int index) {
+        boolean flag = put(true, size, index, data);
+        if (!flag) {
+            put(false, size, index, data);
         }
-        throw new RuntimeException();
     }
 
-    private synchronized boolean method543(boolean flag, int i, int j, int k, byte[] abyte0) {
+    private synchronized boolean put(boolean exists, int size, int index, byte[] data) {
         try {
-            if (j != 0) {
-                aBoolean773 = !aBoolean773;
+            int sector;
+            if (exists) {
+                seek(indexFile, index * 6);
+                int in;
+                for (int i = 0; i < 6; i += in) {
+                    in = indexFile.read(Index.buffer, i, 6 - i);
+                    if (in == -1) {
+                        return false;
+                    }
+                }
+                sector = ((Index.buffer[3] & 0xff) << 16) + ((Index.buffer[4] & 0xff) << 8) + (Index.buffer[5] & 0xff);
+                if (sector <= 0 || sector > dataFile.length() / 520L) {
+                    return false;
+                }
+            } else {
+                sector = (int) ((dataFile.length() + 519L) / 520L);
+                if (sector == 0) {
+                    sector = 1;
+                }
             }
-            try {
-                int l;
-                if (flag) {
-                    method544(aRandomAccessFile778, k * 6, 0);
-                    int k1;
-                    for (int i1 = 0; i1 < 6; i1 += k1) {
-                        k1 = aRandomAccessFile778.read(Index.aByteArray776, i1, 6 - i1);
-                        if (k1 == -1) {
+            Index.buffer[0] = (byte) (size >> 16);
+            Index.buffer[1] = (byte) (size >> 8);
+            Index.buffer[2] = (byte) size;
+            Index.buffer[3] = (byte) (sector >> 16);
+            Index.buffer[4] = (byte) (sector >> 8);
+            Index.buffer[5] = (byte) sector;
+            seek(indexFile, index * 6);
+            indexFile.write(Index.buffer, 0, 6);
+            int written = 0;
+            for (int part = 0; written < size; part++) {
+                int decompressedSector = 0;
+                if (exists) {
+                    seek(dataFile, sector * 520);
+                    int read;
+                    int in;
+                    for (read = 0; read < 8; read += in) {
+                        in = dataFile.read(Index.buffer, read, 8 - read);
+                        if (in == -1) {
+                            break;
+                        }
+                    }
+                    if (read == 8) {
+                        int decompressedIndex = ((Index.buffer[0] & 0xff) << 8) + (Index.buffer[1] & 0xff);
+                        int decompressedPart = ((Index.buffer[2] & 0xff) << 8) + (Index.buffer[3] & 0xff);
+                        decompressedSector = ((Index.buffer[4] & 0xff) << 16) + ((Index.buffer[5] & 0xff) << 8) + (Index.buffer[6] & 0xff);
+                        int decompressedStoreId = Index.buffer[7] & 0xff;
+                        if (decompressedIndex != index || decompressedPart != part || decompressedStoreId != storeId) {
+                            return false;
+                        }
+                        if (decompressedSector < 0 || decompressedSector > dataFile.length() / 520L) {
                             return false;
                         }
                     }
-                    l = ((Index.aByteArray776[3] & 0xff) << 16) + ((Index.aByteArray776[4] & 0xff) << 8)
-                            + (Index.aByteArray776[5] & 0xff);
-                    if (l <= 0 || l > aRandomAccessFile777.length() / 520L) {
-                        return false;
+                }
+                if (decompressedSector == 0) {
+                    exists = false;
+                    decompressedSector = (int) ((dataFile.length() + 519L) / 520L);
+                    if (decompressedSector == 0) {
+                        decompressedSector++;
                     }
-                } else {
-                    l = (int) ((aRandomAccessFile777.length() + 519L) / 520L);
-                    if (l == 0) {
-                        l = 1;
+                    if (decompressedSector == sector) {
+                        decompressedSector++;
                     }
                 }
-                Index.aByteArray776[0] = (byte) (i >> 16);
-                Index.aByteArray776[1] = (byte) (i >> 8);
-                Index.aByteArray776[2] = (byte) i;
-                Index.aByteArray776[3] = (byte) (l >> 16);
-                Index.aByteArray776[4] = (byte) (l >> 8);
-                Index.aByteArray776[5] = (byte) l;
-                method544(aRandomAccessFile778, k * 6, 0);
-                aRandomAccessFile778.write(Index.aByteArray776, 0, 6);
-                int j1 = 0;
-                for (int l1 = 0; j1 < i; l1++) {
-                    int i2 = 0;
-                    if (flag) {
-                        method544(aRandomAccessFile777, l * 520, 0);
-                        int j2;
-                        int l2;
-                        for (j2 = 0; j2 < 8; j2 += l2) {
-                            l2 = aRandomAccessFile777.read(Index.aByteArray776, j2, 8 - j2);
-                            if (l2 == -1) {
-                                break;
-                            }
-                        }
-                        if (j2 == 8) {
-                            int i3 = ((Index.aByteArray776[0] & 0xff) << 8) + (Index.aByteArray776[1] & 0xff);
-                            int j3 = ((Index.aByteArray776[2] & 0xff) << 8) + (Index.aByteArray776[3] & 0xff);
-                            i2 = ((Index.aByteArray776[4] & 0xff) << 16) + ((Index.aByteArray776[5] & 0xff) << 8)
-                                    + (Index.aByteArray776[6] & 0xff);
-                            int k3 = Index.aByteArray776[7] & 0xff;
-                            if (i3 != k || j3 != l1 || k3 != anInt779) {
-                                return false;
-                            }
-                            if (i2 < 0 || i2 > aRandomAccessFile777.length() / 520L) {
-                                return false;
-                            }
-                        }
-                    }
-                    if (i2 == 0) {
-                        flag = false;
-                        i2 = (int) ((aRandomAccessFile777.length() + 519L) / 520L);
-                        if (i2 == 0) {
-                            i2++;
-                        }
-                        if (i2 == l) {
-                            i2++;
-                        }
-                    }
-                    if (i - j1 <= 512) {
-                        i2 = 0;
-                    }
-                    Index.aByteArray776[0] = (byte) (k >> 8);
-                    Index.aByteArray776[1] = (byte) k;
-                    Index.aByteArray776[2] = (byte) (l1 >> 8);
-                    Index.aByteArray776[3] = (byte) l1;
-                    Index.aByteArray776[4] = (byte) (i2 >> 16);
-                    Index.aByteArray776[5] = (byte) (i2 >> 8);
-                    Index.aByteArray776[6] = (byte) i2;
-                    Index.aByteArray776[7] = (byte) anInt779;
-                    method544(aRandomAccessFile777, l * 520, 0);
-                    aRandomAccessFile777.write(Index.aByteArray776, 0, 8);
-                    int k2 = i - j1;
-                    if (k2 > 512) {
-                        k2 = 512;
-                    }
-                    aRandomAccessFile777.write(abyte0, j1, k2);
-                    j1 += k2;
-                    l = i2;
+                if (size - written <= 512) {
+                    decompressedSector = 0;
                 }
-                return true;
-            } catch (IOException _ex) {
-                return false;
+                Index.buffer[0] = (byte) (index >> 8);
+                Index.buffer[1] = (byte) index;
+                Index.buffer[2] = (byte) (part >> 8);
+                Index.buffer[3] = (byte) part;
+                Index.buffer[4] = (byte) (decompressedSector >> 16);
+                Index.buffer[5] = (byte) (decompressedSector >> 8);
+                Index.buffer[6] = (byte) decompressedSector;
+                Index.buffer[7] = (byte) storeId;
+                seek(dataFile, sector * 520);
+                dataFile.write(Index.buffer, 0, 8);
+                int unwritten = size - written;
+                if (unwritten > 512) {
+                    unwritten = 512;
+                }
+                dataFile.write(data, written, unwritten);
+                written += unwritten;
+                sector = decompressedSector;
             }
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("7982, " + flag + ", " + i + ", " + j + ", " + k + ", " + abyte0 + ", "
-                    + runtimeexception.toString());
+            return true;
+        } catch (IOException exception) {
+            return false;
         }
-        throw new RuntimeException();
     }
 
-    private synchronized void method544(RandomAccessFile randomaccessfile, int i, int j) throws IOException {
-        try {
-            if (j != 0) {
-                aBoolean773 = !aBoolean773;
+    private synchronized void seek(RandomAccessFile file, int position) throws IOException {
+        if (position < 0 || position > 0x3c00000) {
+            System.out.println("Badseek - pos:" + position + " len:" + file.length());
+            position = 0x3c00000;
+            try {
+                Thread.sleep(1000L);
+            } catch (Exception exception) {
             }
-            if (i < 0 || i > 0x3c00000) {
-                System.out.println("Badseek - pos:" + i + " len:" + randomaccessfile.length());
-                i = 0x3c00000;
-                try {
-                    Thread.sleep(1000L);
-                } catch (Exception _ex) {
-                }
-            }
-            randomaccessfile.seek(i);
-            return;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("78209, " + randomaccessfile + ", " + i + ", " + j + ", "
-                    + runtimeexception.toString());
         }
-        throw new RuntimeException();
+        file.seek(position);
     }
 
 }

@@ -4,7 +4,7 @@ public class BZip2Decompressor {
 
     private static final BZip2Context aClass40_669 = new BZip2Context();
 
-    public static void method329(byte[] abyte0, int i, byte[] abyte1, int j, int k) {
+    public static void decompress(byte[] abyte0, int i, byte[] abyte1, int j, int k) {
         synchronized (BZip2Decompressor.aClass40_669) {
             BZip2Decompressor.aClass40_669.aByteArray706 = abyte1;
             BZip2Decompressor.aClass40_669.anInt707 = k;
