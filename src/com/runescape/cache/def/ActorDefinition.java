@@ -99,7 +99,7 @@ public class ActorDefinition {
         throw new RuntimeException();
     }
 
-    public static ActorDefinition method214(int i) {
+    public static ActorDefinition getDefinition(int i) {
         for (int j = 0; j < 20; j++) {
             if (ActorDefinition.cache[j].aLong281 == i) {
                 return ActorDefinition.cache[j];

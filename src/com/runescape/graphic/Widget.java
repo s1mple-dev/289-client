@@ -407,10 +407,10 @@ public class Widget {
             class44_sub3_sub4_sub4 = Model.method506(j, aByte98);
         }
         if (i == 2) {
-            class44_sub3_sub4_sub4 = ActorDefinition.method214(j).method217((byte) 105);
+            class44_sub3_sub4_sub4 = ActorDefinition.getDefinition(j).method217((byte) 105);
         }
         if (i == 3) {
-            class44_sub3_sub4_sub4 = Client.aClass44_Sub3_Sub4_Sub6_Sub1_1047.method539(false);
+            class44_sub3_sub4_sub4 = Client.localPlayer.method539(false);
         }
         if (i == 4) {
             class44_sub3_sub4_sub4 = ItemDefinition.method220(j).method225(true, 50);

@@ -38,7 +38,7 @@ public class GameObject extends Renderable {
             if (k1 != -1) {
                 aClass26_1489 = AnimationSequence.cache[k1];
                 anInt1490 = 0;
-                anInt1491 = Client.anInt1240;
+                anInt1491 = Client.tick;
                 if (flag1 && aClass26_1489.anInt513 != -1) {
                     anInt1490 = (int) (Math.random() * aClass26_1489.anInt509);
                     anInt1491 -= (int) (Math.random() * aClass26_1489.method254(anInt1490, 24425));
@@ -64,7 +64,7 @@ public class GameObject extends Renderable {
             }
             int k = -1;
             if (aClass26_1489 != null) {
-                int l = Client.anInt1240 - anInt1491;
+                int l = Client.tick - anInt1491;
                 if (l > 100 && aClass26_1489.anInt513 > 0) {
                     l = 100;
                 }
@@ -81,7 +81,7 @@ public class GameObject extends Renderable {
                     aClass26_1489 = null;
                     break;
                 }
-                anInt1491 = Client.anInt1240 - l;
+                anInt1491 = Client.tick - l;
                 k = aClass26_1489.anIntArray510[anInt1490];
             }
             GameObjectDefinition class8;

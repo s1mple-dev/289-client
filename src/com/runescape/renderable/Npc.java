@@ -12,7 +12,7 @@ public class Npc extends Actor {
     private int anInt1697;
     private int anInt1698;
     private boolean aBoolean1699;
-    public ActorDefinition aClass12_1700;
+    public ActorDefinition definition;
 
     public Npc() {
         anInt1698 = 8;
@@ -22,7 +22,7 @@ public class Npc extends Actor {
     @Override
     public Model getRotatedModel(int i) {
         try {
-            if (aClass12_1700 == null) {
+            if (definition == null) {
                 return null;
             }
             Model class44_sub3_sub4_sub4 = method540(false);
@@ -33,14 +33,14 @@ public class Npc extends Actor {
                 return null;
             }
             super.anInt1661 = class44_sub3_sub4_sub4.anInt1412;
-            if (super.anInt1648 != -1 && super.anInt1649 != -1) {
-                SpotAnimation class32 = SpotAnimation.cache[super.anInt1648];
+            if (super.graphicId != -1 && super.currentAnimationId != -1) {
+                SpotAnimation class32 = SpotAnimation.cache[super.graphicId];
                 Model class44_sub3_sub4_sub4_1 = class32.method271();
                 if (class44_sub3_sub4_sub4_1 != null) {
-                    int j = class32.aClass26_563.anIntArray510[super.anInt1649];
+                    int j = class32.aClass26_563.anIntArray510[super.currentAnimationId];
                     Model class44_sub3_sub4_sub4_2 = new Model(class44_sub3_sub4_sub4_1, Animation.method211(j, 0),
                             false, anInt1697, true);
-                    class44_sub3_sub4_sub4_2.method519(-super.anInt1652, 0, (byte) 2, 0);
+                    class44_sub3_sub4_sub4_2.method519(-super.graphicHeight, 0, (byte) 2, 0);
                     class44_sub3_sub4_sub4_2.method513((byte) 3);
                     class44_sub3_sub4_sub4_2.method514(j, 188);
                     class44_sub3_sub4_sub4_2.anIntArrayArray1567 = null;
@@ -55,7 +55,7 @@ public class Npc extends Actor {
                     class44_sub3_sub4_sub4 = new Model(true, 0, aclass44_sub3_sub4_sub4, 2);
                 }
             }
-            if (aClass12_1700.aByte284 == 1) {
+            if (definition.aByte284 == 1) {
                 class44_sub3_sub4_sub4.aBoolean1568 = true;
             }
             return class44_sub3_sub4_sub4;
@@ -70,19 +70,19 @@ public class Npc extends Actor {
             if (flag) {
                 aBoolean1699 = !aBoolean1699;
             }
-            if (super.anInt1643 >= 0 && super.anInt1646 == 0) {
-                int i = AnimationSequence.cache[super.anInt1643].anIntArray510[super.anInt1644];
+            if (super.animation >= 0 && super.animationDelay == 0) {
+                int i = AnimationSequence.cache[super.animation].anIntArray510[super.currentAnimationFrame];
                 int k = -1;
                 if (super.anInt1640 >= 0 && super.anInt1640 != super.anInt1620) {
                     k = AnimationSequence.cache[super.anInt1640].anIntArray510[super.anInt1641];
                 }
-                return aClass12_1700.method216(0, k, i, AnimationSequence.cache[super.anInt1643].anIntArray514);
+                return definition.method216(0, k, i, AnimationSequence.cache[super.animation].anIntArray514);
             }
             int j = -1;
             if (super.anInt1640 >= 0) {
                 j = AnimationSequence.cache[super.anInt1640].anIntArray510[super.anInt1641];
             }
-            return aClass12_1700.method216(0, -1, j, null);
+            return definition.method216(0, -1, j, null);
         } catch (RuntimeException runtimeexception) {
             SignLink.error("99332, " + flag + ", " + runtimeexception.toString());
         }
@@ -95,7 +95,7 @@ public class Npc extends Actor {
             if (!flag) {
                 anInt1698 = -80;
             }
-            return aClass12_1700 != null;
+            return definition != null;
         } catch (RuntimeException runtimeexception) {
             SignLink.error("4937, " + flag + ", " + runtimeexception.toString());
         }

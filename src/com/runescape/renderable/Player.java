@@ -66,7 +66,7 @@ public class Player extends Actor {
                 int l = class44_sub3_sub2.readUnsignedByte();
                 anIntArray1676[i] = (j << 8) + l;
                 if (i == 0 && anIntArray1676[0] == 65535) {
-                    aClass12_1694 = ActorDefinition.method214(class44_sub3_sub2.readUnsignedShort());
+                    aClass12_1694 = ActorDefinition.getDefinition(class44_sub3_sub2.readUnsignedShort());
                     break;
                 }
                 if (anIntArray1676[i] >= 512 && anIntArray1676[i] - 512 < ItemDefinition.anInt323) {
@@ -159,15 +159,15 @@ public class Player extends Actor {
             if (aBoolean1692) {
                 return class44_sub3_sub4_sub4;
             }
-            if (super.anInt1648 != -1 && super.anInt1649 != -1) {
-                SpotAnimation class32 = SpotAnimation.cache[super.anInt1648];
+            if (super.graphicId != -1 && super.currentAnimationId != -1) {
+                SpotAnimation class32 = SpotAnimation.cache[super.graphicId];
                 Model class44_sub3_sub4_sub4_2 = class32.method271();
                 if (class44_sub3_sub4_sub4_2 != null) {
                     Model class44_sub3_sub4_sub4_3 = new Model(class44_sub3_sub4_sub4_2, Animation.method211(
-                            super.anInt1649, 0), false, anInt1670, true);
-                    class44_sub3_sub4_sub4_3.method519(-super.anInt1652, 0, (byte) 2, 0);
+                            super.currentAnimationId, 0), false, anInt1670, true);
+                    class44_sub3_sub4_sub4_3.method519(-super.graphicHeight, 0, (byte) 2, 0);
                     class44_sub3_sub4_sub4_3.method513((byte) 3);
-                    class44_sub3_sub4_sub4_3.method514(class32.aClass26_563.anIntArray510[super.anInt1649], 188);
+                    class44_sub3_sub4_sub4_3.method514(class32.aClass26_563.anIntArray510[super.currentAnimationId], 188);
                     class44_sub3_sub4_sub4_3.anIntArrayArray1567 = null;
                     class44_sub3_sub4_sub4_3.anIntArrayArray1566 = null;
                     if (class32.anInt566 != 128 || class32.anInt567 != 128) {
@@ -181,10 +181,10 @@ public class Player extends Actor {
                 }
             }
             if (aClass44_Sub3_Sub4_Sub4_1687 != null) {
-                if (Client.anInt1240 >= anInt1683) {
+                if (Client.tick >= anInt1683) {
                     aClass44_Sub3_Sub4_Sub4_1687 = null;
                 }
-                if (Client.anInt1240 >= anInt1682 && Client.anInt1240 < anInt1683) {
+                if (Client.tick >= anInt1682 && Client.tick < anInt1683) {
                     Model class44_sub3_sub4_sub4_1 = aClass44_Sub3_Sub4_Sub4_1687;
                     class44_sub3_sub4_sub4_1.method519(anInt1685 - anInt1681, anInt1684 - super.anInt1615, (byte) 2,
                             anInt1686 - super.anInt1616);
@@ -226,8 +226,8 @@ public class Player extends Actor {
         try {
             if (aClass12_1694 != null) {
                 int i = -1;
-                if (super.anInt1643 >= 0 && super.anInt1646 == 0) {
-                    i = AnimationSequence.cache[super.anInt1643].anIntArray510[super.anInt1644];
+                if (super.animation >= 0 && super.animationDelay == 0) {
+                    i = AnimationSequence.cache[super.animation].anIntArray510[super.currentAnimationFrame];
                 } else if (super.anInt1640 >= 0) {
                     i = AnimationSequence.cache[super.anInt1640].anIntArray510[super.anInt1641];
                 }
@@ -239,9 +239,9 @@ public class Player extends Actor {
             int k = -1;
             int i1 = -1;
             int j1 = -1;
-            if (super.anInt1643 >= 0 && super.anInt1646 == 0) {
-                AnimationSequence class26 = AnimationSequence.cache[super.anInt1643];
-                j = class26.anIntArray510[super.anInt1644];
+            if (super.animation >= 0 && super.animationDelay == 0) {
+                AnimationSequence class26 = AnimationSequence.cache[super.animation];
+                j = class26.anIntArray510[super.currentAnimationFrame];
                 if (super.anInt1640 >= 0 && super.anInt1640 != super.anInt1620) {
                     k = AnimationSequence.cache[super.anInt1640].anIntArray510[super.anInt1641];
                 }
@@ -333,7 +333,7 @@ public class Player extends Actor {
             class44_sub3_sub4_sub4_2.method508(Animation.method211(j, 0) & Animation.method211(k, 0),
                     class44_sub3_sub4_sub4_1, 0);
             if (j != -1 && k != -1) {
-                class44_sub3_sub4_sub4_2.method515(j, true, k, AnimationSequence.cache[super.anInt1643].anIntArray514);
+                class44_sub3_sub4_sub4_2.method515(j, true, k, AnimationSequence.cache[super.animation].anIntArray514);
             } else if (j != -1) {
                 class44_sub3_sub4_sub4_2.method514(j, 188);
             }

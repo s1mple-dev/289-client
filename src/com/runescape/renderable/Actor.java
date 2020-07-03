@@ -19,32 +19,32 @@ public class Actor extends Renderable {
     public int anInt1624;
     public int anInt1625;
     public int anInt1626;
-    public String aString1627;
-    public int anInt1628;
+    public String overheadTextMessage;
+    public int textCycle;
     public int anInt1629;
     public int anInt1630;
     public final int[] anIntArray1631;
     public final int[] anIntArray1632;
     public final int[] anIntArray1633;
-    public int anInt1634;
-    public int anInt1635;
-    public int anInt1636;
-    public int anInt1637;
-    public int anInt1638;
-    public int anInt1639;
+    public int loopCycleStatus;
+    public int currentHealth;
+    public int maxHealth;
+    public int interactingEntity;
+    public int faceTowardX;
+    public int faceTowardY;
     public int anInt1640;
     public int anInt1641;
     public int anInt1642;
-    public int anInt1643;
-    public int anInt1644;
-    public int anInt1645;
-    public int anInt1646;
-    public int anInt1647;
-    public int anInt1648;
-    public int anInt1649;
-    public int anInt1650;
-    public int anInt1651;
-    public int anInt1652;
+    public int animation;
+    public int currentAnimationFrame;
+    public int currentAnimationDuration;
+    public int animationDelay;
+    public int currentAnimationLoopCount;
+    public int graphicId;
+    public int currentAnimationId;
+    public int currentAnimationTimeRemaining;
+    public int graphicEndCycle;
+    public int graphicHeight;
     public int anInt1653;
     public int anInt1654;
     public int anInt1655;
@@ -52,16 +52,16 @@ public class Actor extends Renderable {
     public int anInt1657;
     public int anInt1658;
     public int anInt1659;
-    public int anInt1660;
+    public int lastUpdateTick;
     public int anInt1661;
     public int anInt1662;
     public int anInt1663;
-    public int anInt1664;
-    public final int[] anIntArray1665;
-    public final int[] anIntArray1666;
+    public int waypointCount;
+    public final int[] waypointX;
+    public final int[] waypointY;
     public final boolean[] aBooleanArray1667;
     public int anInt1668;
-    public int anInt1669;
+    public int stepsRemaining;
 
     Actor() {
         aBoolean1613 = false;
@@ -75,57 +75,57 @@ public class Actor extends Renderable {
         anInt1624 = -1;
         anInt1625 = -1;
         anInt1626 = -1;
-        anInt1628 = 100;
+        textCycle = 100;
         anIntArray1631 = new int[4];
         anIntArray1632 = new int[4];
         anIntArray1633 = new int[4];
-        anInt1634 = -1000;
-        anInt1637 = -1;
+        loopCycleStatus = -1000;
+        interactingEntity = -1;
         anInt1640 = -1;
-        anInt1643 = -1;
-        anInt1648 = -1;
+        animation = -1;
+        graphicId = -1;
         anInt1661 = 200;
         anInt1663 = 32;
-        anIntArray1665 = new int[10];
-        anIntArray1666 = new int[10];
+        waypointX = new int[10];
+        waypointY = new int[10];
         aBooleanArray1667 = new boolean[10];
     }
 
-    public void method532(int i, boolean flag, int j, byte byte0) {
+    public void setPos(int i, boolean flag, int j, byte byte0) {
         try {
-            if (anInt1643 != -1 && AnimationSequence.cache[anInt1643].anInt521 == 1) {
-                anInt1643 = -1;
+            if (animation != -1 && AnimationSequence.cache[animation].anInt521 == 1) {
+                animation = -1;
             }
             if (!flag) {
-                int k = i - anIntArray1665[0];
-                int l = j - anIntArray1666[0];
+                int k = i - waypointX[0];
+                int l = j - waypointY[0];
                 if (k >= -8 && k <= 8 && l >= -8 && l <= 8) {
-                    if (anInt1664 < 9) {
-                        anInt1664++;
+                    if (waypointCount < 9) {
+                        waypointCount++;
                     }
-                    for (int i1 = anInt1664; i1 > 0; i1--) {
-                        anIntArray1665[i1] = anIntArray1665[i1 - 1];
-                        anIntArray1666[i1] = anIntArray1666[i1 - 1];
+                    for (int i1 = waypointCount; i1 > 0; i1--) {
+                        waypointX[i1] = waypointX[i1 - 1];
+                        waypointY[i1] = waypointY[i1 - 1];
                         aBooleanArray1667[i1] = aBooleanArray1667[i1 - 1];
                     }
-                    anIntArray1665[0] = i;
-                    anIntArray1666[0] = j;
+                    waypointX[0] = i;
+                    waypointY[0] = j;
                     aBooleanArray1667[0] = false;
                     return;
                 }
             }
-            anInt1664 = 0;
-            anInt1669 = 0;
+            waypointCount = 0;
+            stepsRemaining = 0;
             anInt1668 = 0;
-            anIntArray1665[0] = i;
-            anIntArray1666[0] = j;
-            anInt1615 = anIntArray1665[0] * 128 + anInt1619 * 64;
+            waypointX[0] = i;
+            waypointY[0] = j;
+            anInt1615 = waypointX[0] * 128 + anInt1619 * 64;
             if (byte0 == 1) {
                 byte0 = 0;
             } else {
                 aBoolean1613 = !aBoolean1613;
             }
-            anInt1616 = anIntArray1666[0] * 128 + anInt1619 * 64;
+            anInt1616 = waypointY[0] * 128 + anInt1619 * 64;
             return;
         } catch (RuntimeException runtimeexception) {
             SignLink.error("61882, " + i + ", " + flag + ", " + j + ", " + byte0 + ", "
@@ -134,10 +134,10 @@ public class Actor extends Renderable {
         throw new RuntimeException();
     }
 
-    public void method533(boolean flag, int i, int j) {
+    public void move(boolean flag, int i, int j) {
         try {
-            int k = anIntArray1665[0];
-            int l = anIntArray1666[0];
+            int k = waypointX[0];
+            int l = waypointY[0];
             if (i == 0) {
                 k--;
                 l++;
@@ -166,19 +166,19 @@ public class Actor extends Renderable {
                 k++;
                 l--;
             }
-            if (anInt1643 != -1 && AnimationSequence.cache[anInt1643].anInt521 == 1) {
-                anInt1643 = -1;
+            if (animation != -1 && AnimationSequence.cache[animation].anInt521 == 1) {
+                animation = -1;
             }
-            if (anInt1664 < 9) {
-                anInt1664++;
+            if (waypointCount < 9) {
+                waypointCount++;
             }
-            for (int i1 = anInt1664; i1 > 0; i1--) {
-                anIntArray1665[i1] = anIntArray1665[i1 - 1];
-                anIntArray1666[i1] = anIntArray1666[i1 - 1];
+            for (int i1 = waypointCount; i1 > 0; i1--) {
+                waypointX[i1] = waypointX[i1 - 1];
+                waypointY[i1] = waypointY[i1 - 1];
                 aBooleanArray1667[i1] = aBooleanArray1667[i1 - 1];
             }
-            anIntArray1665[0] = k;
-            anIntArray1666[0] = l;
+            waypointX[0] = k;
+            waypointY[0] = l;
             aBooleanArray1667[0] = flag;
             if (j != -6002) {
             }
@@ -193,8 +193,8 @@ public class Actor extends Renderable {
             if (flag) {
                 aBoolean1614 = !aBoolean1614;
             }
-            anInt1664 = 0;
-            anInt1669 = 0;
+            waypointCount = 0;
+            stepsRemaining = 0;
             return;
         } catch (RuntimeException runtimeexception) {
             SignLink.error("39799, " + flag + ", " + runtimeexception.toString());
@@ -215,7 +215,7 @@ public class Actor extends Renderable {
         throw new RuntimeException();
     }
 
-    public void method536(int i, int j, int k, boolean flag) {
+    public void updateHitData(int i, int j, int k, boolean flag) {
         try {
             if (flag) {
                 return;
