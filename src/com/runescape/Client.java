@@ -73,6 +73,8 @@ public class Client extends GameShell {
     private static int anInt1246 = 604;
     private static int anInt1274;
     public static boolean aBoolean1279;
+    public static int anInt931;
+    public static int anInt932;
 
     static {
         Client.anIntArray984 = new int[99];
@@ -203,8 +205,6 @@ public class Client extends GameShell {
     private int anInt928;
     private int anInt929;
     private int anInt930;
-    private int anInt931;
-    private int anInt932;
     private int anInt933;
     private boolean aBoolean934;
     private boolean aBoolean935;

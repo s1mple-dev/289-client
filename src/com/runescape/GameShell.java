@@ -45,6 +45,9 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
     private final int[] anIntArray32;
     private int anInt33;
     private int anInt34;
+    private boolean draggingCamera;
+    private int cameraDragX;
+    private int cameraDragY;
 
     public GameShell() {
         aBoolean1 = false;
@@ -288,7 +291,11 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
         anInt24 = i;
         anInt25 = j;
         aLong26 = System.currentTimeMillis();
-        if (mouseevent.isMetaDown()) {
+        if (Settings.MOUSE_CAMERA_DRAGGING && mouseevent.getButton() == 2) {
+            draggingCamera = true;
+            cameraDragX = mouseevent.getX();
+            cameraDragY = mouseevent.getY();
+        } else if (mouseevent.isMetaDown()) {
             anInt23 = 2;
             anInt20 = 2;
         } else {
@@ -301,6 +308,7 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
     public void mouseReleased(MouseEvent mouseevent) {
         anInt19 = 0;
         anInt20 = 0;
+        draggingCamera = false;
     }
 
     @Override
@@ -326,9 +334,20 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
             i -= 4;
             j -= 22;
         }
-        anInt19 = 0;
-        anInt21 = i;
-        anInt22 = j;
+        if (draggingCamera) {
+            dragCamera(cameraDragX - mouseevent.getX(), -(cameraDragY - mouseevent.getY()));
+            cameraDragX = mouseevent.getX();
+            cameraDragY = mouseevent.getY();
+        } else {
+            anInt19 = 0;
+            anInt21 = i;
+            anInt22 = j;
+        }
+    }
+
+    private void dragCamera(int i, int j) {
+        Client.anInt931 += i * 3;
+        Client.anInt932 += (j << 1);
     }
 
     @Override
