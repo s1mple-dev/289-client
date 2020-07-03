@@ -335,7 +335,7 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
             j -= 22;
         }
         if (draggingCamera) {
-            dragCamera(cameraDragX - mouseevent.getX(), -(cameraDragY - mouseevent.getY()));
+            setCamPos(cameraDragX - mouseevent.getX(), -(cameraDragY - mouseevent.getY()));
             cameraDragX = mouseevent.getX();
             cameraDragY = mouseevent.getY();
         } else {
@@ -345,7 +345,7 @@ public class GameShell extends Applet implements Runnable, MouseListener, MouseM
         }
     }
 
-    private void dragCamera(int i, int j) {
+    private void setCamPos(int i, int j) {
         Client.anInt931 += i * 3;
         Client.anInt932 += (j << 1);
     }
