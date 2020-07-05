@@ -379,18 +379,18 @@ public class Widget {
             if (k == -1 && j == -1 && class44_sub3_sub4_sub4.anIntArray1549 == null) {
                 return class44_sub3_sub4_sub4;
             }
-            Model class44_sub3_sub4_sub4_1 = new Model(class44_sub3_sub4_sub4, Animation.method211(k, 0)
-                    & Animation.method211(j, 0), false, anInt99, true);
+            Model class44_sub3_sub4_sub4_1 = new Model(class44_sub3_sub4_sub4, Animation.isNullFrame(k, 0)
+                    & Animation.isNullFrame(j, 0), false, anInt99, true);
             if (k != -1 || j != -1) {
-                class44_sub3_sub4_sub4_1.method513((byte) 3);
+                class44_sub3_sub4_sub4_1.createBones((byte) 3);
             }
             if (k != -1) {
-                class44_sub3_sub4_sub4_1.method514(k, 188);
+                class44_sub3_sub4_sub4_1.applyTransformation(k, 188);
             }
             if (j != -1) {
-                class44_sub3_sub4_sub4_1.method514(j, 188);
+                class44_sub3_sub4_sub4_1.applyTransformation(j, 188);
             }
-            class44_sub3_sub4_sub4_1.method523(64, 768, -50, -10, -50, true);
+            class44_sub3_sub4_sub4_1.applyLighting(64, 768, -50, -10, -50, true);
             return class44_sub3_sub4_sub4_1;
         } catch (RuntimeException runtimeexception) {
             SignLink.error("4323, " + i + ", " + j + ", " + k + ", " + flag + ", " + runtimeexception.toString());
@@ -404,10 +404,10 @@ public class Widget {
             return class44_sub3_sub4_sub4;
         }
         if (i == 1) {
-            class44_sub3_sub4_sub4 = Model.method506(j, aByte98);
+            class44_sub3_sub4_sub4 = Model.getModel(j);
         }
         if (i == 2) {
-            class44_sub3_sub4_sub4 = ActorDefinition.getDefinition(j).method217((byte) 105);
+            class44_sub3_sub4_sub4 = ActorDefinition.getDefinition(j).getHeadModel();
         }
         if (i == 3) {
             class44_sub3_sub4_sub4 = Client.localPlayer.method539(false);

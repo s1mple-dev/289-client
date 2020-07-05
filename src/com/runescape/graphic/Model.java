@@ -91,9 +91,9 @@ public class Model extends Renderable {
     public int anInt1563;
     private int[] anIntArray1564;
     private int[] anIntArray1565;
-    public int[][] anIntArrayArray1566;
-    public int[][] anIntArrayArray1567;
-    public boolean aBoolean1568;
+    public int[][] vertexSkin;
+    public int[][] triangleSkin;
+    public boolean singleTile;
     public VertexNormal[] aClass25Array1569;
 
     private Model(byte byte0) {
@@ -101,7 +101,7 @@ public class Model extends Renderable {
         aByte1525 = 4;
         aByte1526 = 91;
         anInt1527 = 188;
-        aBoolean1568 = false;
+        singleTile = false;
         try {
             if (byte0 != aByte1526) {
                 throw new NullPointerException();
@@ -117,7 +117,7 @@ public class Model extends Renderable {
         aByte1525 = 4;
         aByte1526 = 91;
         anInt1527 = 188;
-        aBoolean1568 = false;
+        singleTile = false;
         try {
             Model.anInt1529++;
             ModelHeader class21 = Model.aClass21Array1570[i];
@@ -276,7 +276,7 @@ public class Model extends Renderable {
         aByte1525 = 4;
         aByte1526 = 91;
         anInt1527 = 188;
-        aBoolean1568 = false;
+        singleTile = false;
         try {
             Model.anInt1529++;
             boolean flag = false;
@@ -404,7 +404,7 @@ public class Model extends Renderable {
         aByte1525 = 4;
         aByte1526 = 91;
         anInt1527 = 188;
-        aBoolean1568 = false;
+        singleTile = false;
         try {
             Model.anInt1529++;
             boolean flag1 = false;
@@ -523,7 +523,7 @@ public class Model extends Renderable {
                     l += class44_sub3_sub4_sub4_1.anInt1551;
                 }
             }
-            method510(-18258);
+            calculateDiagonals(-18258);
             return;
         } catch (RuntimeException runtimeexception) {
             SignLink.error("44164, " + flag + ", " + i + ", " + aclass44_sub3_sub4_sub4 + ", " + j + ", "
@@ -537,7 +537,7 @@ public class Model extends Renderable {
         aByte1525 = 4;
         aByte1526 = 91;
         anInt1527 = 188;
-        aBoolean1568 = false;
+        singleTile = false;
         try {
             Model.anInt1529++;
             anInt1535 = class44_sub3_sub4_sub4.anInt1535;
@@ -607,7 +607,7 @@ public class Model extends Renderable {
         aByte1525 = 4;
         aByte1526 = 91;
         anInt1527 = 188;
-        aBoolean1568 = false;
+        singleTile = false;
         try {
             Model.anInt1529++;
             anInt1535 = class44_sub3_sub4_sub4.anInt1535;
@@ -821,30 +821,21 @@ public class Model extends Renderable {
         }
     }
 
-    public static Model method506(int i, byte byte0) {
-        try {
-            if (byte0 == 4) {
-                byte0 = 0;
-            } else {
-                Model.anInt1524 = -279;
-            }
-            if (Model.aClass21Array1570 == null) {
-                return null;
-            }
-            ModelHeader class21 = Model.aClass21Array1570[i];
-            if (class21 == null) {
-                Model.aClass43_1571.request(i);
-                return null;
-            } else {
-                return new Model((byte) 5, i);
-            }
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("95716, " + i + ", " + byte0 + ", " + runtimeexception.toString());
+    public static Model getModel(int i) {
+        Model.anInt1524 = -279;
+        if (Model.aClass21Array1570 == null) {
+            return null;
         }
-        throw new RuntimeException();
+        ModelHeader class21 = Model.aClass21Array1570[i];
+        if (class21 == null) {
+            Model.aClass43_1571.request(i);
+            return null;
+        } else {
+            return new Model((byte) 5, i);
+        }
     }
 
-    public static boolean method507(int i) {
+    public static boolean isCached(int i) {
         if (Model.aClass21Array1570 == null) {
             return false;
         }
@@ -876,7 +867,7 @@ public class Model extends Renderable {
         return (i & 0xff80) + j;
     }
 
-    public void method508(boolean flag, Model class44_sub3_sub4_sub4, int i) {
+    public void replaceWithModel(boolean flag, Model class44_sub3_sub4_sub4, int i) {
         try {
             anInt1535 = class44_sub3_sub4_sub4.anInt1535;
             anInt1539 = class44_sub3_sub4_sub4.anInt1539;
@@ -915,8 +906,8 @@ public class Model extends Renderable {
             anIntArray1549 = class44_sub3_sub4_sub4.anIntArray1549;
             anIntArray1547 = class44_sub3_sub4_sub4.anIntArray1547;
             anInt1550 = class44_sub3_sub4_sub4.anInt1550;
-            anIntArrayArray1567 = class44_sub3_sub4_sub4.anIntArrayArray1567;
-            anIntArrayArray1566 = class44_sub3_sub4_sub4.anIntArrayArray1566;
+            triangleSkin = class44_sub3_sub4_sub4.triangleSkin;
+            vertexSkin = class44_sub3_sub4_sub4.vertexSkin;
             anIntArray1540 = class44_sub3_sub4_sub4.anIntArray1540;
             anIntArray1541 = class44_sub3_sub4_sub4.anIntArray1541;
             anIntArray1542 = class44_sub3_sub4_sub4.anIntArray1542;
@@ -962,7 +953,7 @@ public class Model extends Renderable {
         return j;
     }
 
-    public void method510(int i) {
+    public void calculateDiagonals(int i) {
         try {
             super.anInt1412 = 0;
             anInt1559 = 0;
@@ -1071,7 +1062,7 @@ public class Model extends Renderable {
         throw new RuntimeException();
     }
 
-    public void method513(byte byte0) {
+    public void createBones(byte byte0) {
         try {
             if (byte0 == 3) {
                 byte0 = 0;
@@ -1088,14 +1079,14 @@ public class Model extends Renderable {
                         i = i1;
                     }
                 }
-                anIntArrayArray1566 = new int[i + 1][];
+                vertexSkin = new int[i + 1][];
                 for (int j1 = 0; j1 <= i; j1++) {
-                    anIntArrayArray1566[j1] = new int[ai[j1]];
+                    vertexSkin[j1] = new int[ai[j1]];
                     ai[j1] = 0;
                 }
                 for (int i2 = 0; i2 < anInt1535; i2++) {
                     int k2 = anIntArray1564[i2];
-                    anIntArrayArray1566[k2][ai[k2]++] = i2;
+                    vertexSkin[k2][ai[k2]++] = i2;
                 }
                 anIntArray1564 = null;
             }
@@ -1109,14 +1100,14 @@ public class Model extends Renderable {
                         j = k1;
                     }
                 }
-                anIntArrayArray1567 = new int[j + 1][];
+                triangleSkin = new int[j + 1][];
                 for (int l1 = 0; l1 <= j; l1++) {
-                    anIntArrayArray1567[l1] = new int[ai1[l1]];
+                    triangleSkin[l1] = new int[ai1[l1]];
                     ai1[l1] = 0;
                 }
                 for (int j2 = 0; j2 < anInt1539; j2++) {
                     int l2 = anIntArray1565[j2];
-                    anIntArrayArray1567[l2][ai1[l2]++] = j2;
+                    triangleSkin[l2][ai1[l2]++] = j2;
                 }
                 anIntArray1565 = null;
             }
@@ -1126,9 +1117,9 @@ public class Model extends Renderable {
         }
     }
 
-    public void method514(int i, int j) {
+    public void applyTransformation(int i, int j) {
         try {
-            if (anIntArrayArray1566 == null) {
+            if (vertexSkin == null) {
                 return;
             }
             if (i == -1) {
@@ -1155,13 +1146,13 @@ public class Model extends Renderable {
         throw new RuntimeException();
     }
 
-    public void method515(int i, boolean flag, int j, int[] ai) {
+    public void mixAnimationFrames(int i, boolean flag, int j, int[] ai) {
         try {
             if (i == -1) {
                 return;
             }
             if (ai == null || j == -1) {
-                method514(i, 188);
+                applyTransformation(i, 188);
                 return;
             }
             Animation class11 = Animation.method210(i, aByte1525);
@@ -1173,7 +1164,7 @@ public class Model extends Renderable {
                 return;
             }
             if (class11_1 == null) {
-                method514(i, 188);
+                applyTransformation(i, 188);
                 return;
             }
             Skins class9 = class11.aClass9_266;
@@ -1222,8 +1213,8 @@ public class Model extends Renderable {
             Model.anInt1592 = 0;
             for (int k2 = 0; k2 < i1; k2++) {
                 int l3 = ai[k2];
-                if (l3 < anIntArrayArray1566.length) {
-                    int[] ai5 = anIntArrayArray1566[l3];
+                if (l3 < vertexSkin.length) {
+                    int[] ai5 = vertexSkin[l3];
                     for (int i5 = 0; i5 < ai5.length; i5++) {
                         int j6 = ai5[i5];
                         Model.anInt1590 += anIntArray1536[j6];
@@ -1248,8 +1239,8 @@ public class Model extends Renderable {
         if (i == 1) {
             for (int k1 = 0; k1 < i1; k1++) {
                 int l2 = ai[k1];
-                if (l2 < anIntArrayArray1566.length) {
-                    int[] ai1 = anIntArrayArray1566[l2];
+                if (l2 < vertexSkin.length) {
+                    int[] ai1 = vertexSkin[l2];
                     for (int i4 = 0; i4 < ai1.length; i4++) {
                         int j5 = ai1[i4];
                         anIntArray1536[j5] += j;
@@ -1263,8 +1254,8 @@ public class Model extends Renderable {
         if (i == 2) {
             for (int l1 = 0; l1 < i1; l1++) {
                 int i3 = ai[l1];
-                if (i3 < anIntArrayArray1566.length) {
-                    int[] ai2 = anIntArrayArray1566[i3];
+                if (i3 < vertexSkin.length) {
+                    int[] ai2 = vertexSkin[i3];
                     for (int j4 = 0; j4 < ai2.length; j4++) {
                         int k5 = ai2[j4];
                         anIntArray1536[k5] -= Model.anInt1590;
@@ -1305,8 +1296,8 @@ public class Model extends Renderable {
         if (i == 3) {
             for (int i2 = 0; i2 < i1; i2++) {
                 int j3 = ai[i2];
-                if (j3 < anIntArrayArray1566.length) {
-                    int[] ai3 = anIntArrayArray1566[j3];
+                if (j3 < vertexSkin.length) {
+                    int[] ai3 = vertexSkin[j3];
                     for (int k4 = 0; k4 < ai3.length; k4++) {
                         int l5 = ai3[k4];
                         anIntArray1536[l5] -= Model.anInt1590;
@@ -1323,11 +1314,11 @@ public class Model extends Renderable {
             }
             return;
         }
-        if (i == 5 && anIntArrayArray1567 != null && anIntArray1548 != null) {
+        if (i == 5 && triangleSkin != null && anIntArray1548 != null) {
             for (int j2 = 0; j2 < i1; j2++) {
                 int k3 = ai[j2];
-                if (k3 < anIntArrayArray1567.length) {
-                    int[] ai4 = anIntArrayArray1567[k3];
+                if (k3 < triangleSkin.length) {
+                    int[] ai4 = triangleSkin[k3];
                     for (int l4 = 0; l4 < ai4.length; l4++) {
                         int i6 = ai4[l4];
                         anIntArray1548[i6] += j * 8;
@@ -1399,7 +1390,7 @@ public class Model extends Renderable {
         throw new RuntimeException();
     }
 
-    public void method520(int i, int j) {
+    public void recolor(int i, int j) {
         for (int k = 0; k < anInt1539; k++) {
             if (anIntArray1549[k] == i) {
                 anIntArray1549[k] = j;
@@ -1427,7 +1418,7 @@ public class Model extends Renderable {
         throw new RuntimeException();
     }
 
-    public void method522(int i, int j, int k, byte byte0) {
+    public void scaleT(int i, int j, int k, byte byte0) {
         try {
             if (byte0 != 31) {
                 anInt1523 = 170;
@@ -1445,7 +1436,7 @@ public class Model extends Renderable {
         throw new RuntimeException();
     }
 
-    public void method523(int i, int j, int k, int l, int i1, boolean flag) {
+    public void applyLighting(int i, int j, int k, int l, int i1, boolean flag) {
         int j1 = (int) Math.sqrt(k * k + l * l + i1 * i1);
         int k1 = j * j1 >> 8;
         if (anIntArray1543 == null) {
@@ -1518,7 +1509,7 @@ public class Model extends Renderable {
             }
         }
         if (flag) {
-            method510(-18258);
+            calculateDiagonals(-18258);
         } else {
             method512(7);
         }
@@ -1681,7 +1672,7 @@ public class Model extends Renderable {
             int i6 = Model.anInt1594 - Rasterizer3D.anInt1423;
             int k6 = Model.anInt1595 - Rasterizer3D.anInt1424;
             if (i6 > k3 && i6 < l3 && k6 > i5 && k6 < k4) {
-                if (aBoolean1568) {
+                if (singleTile) {
                     Model.anIntArray1597[Model.anInt1596++] = i2;
                 } else {
                     flag1 = true;

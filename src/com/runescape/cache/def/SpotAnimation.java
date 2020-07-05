@@ -104,13 +104,13 @@ public class SpotAnimation {
         if (class44_sub3_sub4_sub4 != null) {
             return class44_sub3_sub4_sub4;
         }
-        class44_sub3_sub4_sub4 = Model.method506(anInt561, aByte557);
+        class44_sub3_sub4_sub4 = Model.getModel(anInt561);
         if (class44_sub3_sub4_sub4 == null) {
             return null;
         }
         for (int i = 0; i < 6; i++) {
             if (anIntArray564[0] != 0) {
-                class44_sub3_sub4_sub4.method520(anIntArray564[i], anIntArray565[i]);
+                class44_sub3_sub4_sub4.recolor(anIntArray564[i], anIntArray565[i]);
             }
         }
         SpotAnimation.aClass39_571.put(anInt560, class44_sub3_sub4_sub4);

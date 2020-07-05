@@ -2513,7 +2513,7 @@ public class Client extends GameShell {
                                 + (Client.localPlayer.anIntArray1676[8] << 6)
                                 + Client.localPlayer.anIntArray1676[11];
                     } else {
-                        Widget.aClass5Array100[l4].anInt150 = (int) (0x12345678L + Client.localPlayer.aClass12_1694.aLong281);
+                        Widget.aClass5Array100[l4].anInt150 = (int) (0x12345678L + Client.localPlayer.aClass12_1694.id);
                     }
                     anInt1170 = -1;
                     return true;
@@ -3260,7 +3260,7 @@ public class Client extends GameShell {
             GameObjectDefinition.method197(class47);
             FloorDefinition.method243(true, class47);
             ItemDefinition.method218(class47);
-            ActorDefinition.method212(class47);
+            ActorDefinition.load(class47);
             IdentityKit.method247(true, class47);
             SpotAnimation.method269(true, class47);
             Varp.method337(true, class47);
@@ -3424,7 +3424,7 @@ public class Client extends GameShell {
             for (int j6 = 0; j6 < npcCount; j6++) {
                 Npc class44_sub3_sub4_sub6_sub2 = npcs[npcIds[j6]];
                 if (class44_sub3_sub4_sub6_sub2 != null && class44_sub3_sub4_sub6_sub2.method535(true)
-                        && class44_sub3_sub4_sub6_sub2.definition.aBoolean298) {
+                        && class44_sub3_sub4_sub6_sub2.definition.visibleMinimap) {
                     int j1 = class44_sub3_sub4_sub6_sub2.anInt1615 / 32
                             - Client.localPlayer.anInt1615 / 32;
                     int l3 = class44_sub3_sub4_sub6_sub2.anInt1616 / 32
@@ -4122,20 +4122,20 @@ public class Client extends GameShell {
                     Model class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4, i2, -33019);
                     for (int l2 = 0; l2 < 5; l2++) {
                         if (anIntArray938[l2] != 0) {
-                            class44_sub3_sub4_sub4.method520(Client.anIntArrayArray1073[l2][0],
+                            class44_sub3_sub4_sub4.recolor(Client.anIntArrayArray1073[l2][0],
                                     Client.anIntArrayArray1073[l2][anIntArray938[l2]]);
                             if (l2 == 1) {
-                                class44_sub3_sub4_sub4.method520(Client.anIntArray1043[0],
+                                class44_sub3_sub4_sub4.recolor(Client.anIntArray1043[0],
                                         Client.anIntArray1043[anIntArray938[l2]]);
                             }
                         }
                     }
-                    class44_sub3_sub4_sub4.method513((byte) 3);
+                    class44_sub3_sub4_sub4.createBones((byte) 3);
                     class44_sub3_sub4_sub4
-                            .method514(
+                            .applyTransformation(
                                     AnimationSequence.cache[Client.localPlayer.anInt1620].anIntArray510[0],
                                     188);
-                    class44_sub3_sub4_sub4.method523(64, 850, -30, -50, -30, true);
+                    class44_sub3_sub4_sub4.applyLighting(64, 850, -30, -50, -30, true);
                     class5.anInt149 = 5;
                     class5.anInt150 = 0;
                     Widget.method185(5, class44_sub3_sub4_sub4, 9, 0);
@@ -4292,13 +4292,13 @@ public class Client extends GameShell {
             npcIds[npcCount++] = index;
             npc.lastUpdateTick = Client.tick;
             npc.definition = ActorDefinition.getDefinition(buffer.readBits(11));
-            npc.anInt1619 = npc.definition.aByte284;
-            npc.anInt1663 = npc.definition.anInt306;
-            npc.anInt1622 = npc.definition.anInt288;
-            npc.anInt1623 = npc.definition.anInt289;
-            npc.anInt1624 = npc.definition.anInt290;
-            npc.anInt1625 = npc.definition.anInt291;
-            npc.anInt1620 = npc.definition.anInt287;
+            npc.anInt1619 = npc.definition.boundaryDimension;
+            npc.anInt1663 = npc.definition.degreesToTurn;
+            npc.anInt1622 = npc.definition.walkAnimationId;
+            npc.anInt1623 = npc.definition.turnAboutAnimationId;
+            npc.anInt1624 = npc.definition.turnRightAnimationId;
+            npc.anInt1625 = npc.definition.turnLeftAnimationId;
+            npc.anInt1620 = npc.definition.standAnimationId;
             int x = buffer.readBits(5);
             if (x > 15) {
                 x -= 32;
@@ -5028,7 +5028,7 @@ public class Client extends GameShell {
                 Npc class44_sub3_sub4_sub6_sub2 = npcs[npcIds[i]];
                 int j = 0x20000000 + (npcIds[i] << 14);
                 if (class44_sub3_sub4_sub6_sub2 == null || !class44_sub3_sub4_sub6_sub2.method535(true)
-                        || class44_sub3_sub4_sub6_sub2.definition.aBoolean302 != flag1) {
+                        || class44_sub3_sub4_sub6_sub2.definition.visible != flag1) {
                     continue;
                 }
                 int k = class44_sub3_sub4_sub6_sub2.anInt1615 >> 7;
@@ -5689,10 +5689,10 @@ public class Client extends GameShell {
             if (anInt971 >= 400) {
                 return;
             }
-            String s = class12.aString282;
-            if (class12.anInt299 != 0) {
-                s = s + Client.method137(class12.anInt299, Client.localPlayer.anInt1678, -41081)
-                        + " (level-" + class12.anInt299 + ")";
+            String s = class12.name;
+            if (class12.combatLevel != 0) {
+                s = s + Client.method137(class12.combatLevel, Client.localPlayer.anInt1678, -41081)
+                        + " (level-" + class12.combatLevel + ")";
             }
             if (anInt952 == 1) {
                 aStringArray897[anInt971] = "Use " + aString956 + " with @yel@" + s;
@@ -5714,11 +5714,11 @@ public class Client extends GameShell {
                     return;
                 }
             } else {
-                if (class12.aStringArray294 != null) {
+                if (class12.options != null) {
                     for (int i1 = 4; i1 >= 0; i1--) {
-                        if (class12.aStringArray294[i1] != null
-                                && !class12.aStringArray294[i1].equalsIgnoreCase("attack")) {
-                            aStringArray897[anInt971] = class12.aStringArray294[i1] + " @yel@" + s;
+                        if (class12.options[i1] != null
+                                && !class12.options[i1].equalsIgnoreCase("attack")) {
+                            aStringArray897[anInt971] = class12.options[i1] + " @yel@" + s;
                             if (i1 == 0) {
                                 anIntArray839[anInt971] = 242;
                             }
@@ -5741,15 +5741,15 @@ public class Client extends GameShell {
                         }
                     }
                 }
-                if (class12.aStringArray294 != null) {
+                if (class12.options != null) {
                     for (int j1 = 4; j1 >= 0; j1--) {
-                        if (class12.aStringArray294[j1] != null
-                                && class12.aStringArray294[j1].equalsIgnoreCase("attack")) {
+                        if (class12.options[j1] != null
+                                && class12.options[j1].equalsIgnoreCase("attack")) {
                             char c = '\0';
-                            if (class12.anInt299 > Client.localPlayer.anInt1678) {
+                            if (class12.combatLevel > Client.localPlayer.anInt1678) {
                                 c = '\u07D0';
                             }
-                            aStringArray897[anInt971] = class12.aStringArray294[j1] + " @yel@" + s;
+                            aStringArray897[anInt971] = class12.options[j1] + " @yel@" + s;
                             if (j1 == 0) {
                                 anIntArray839[anInt971] = 242 + c;
                             }
@@ -5875,10 +5875,10 @@ public class Client extends GameShell {
                         }
                     } else {
                         ActorDefinition class12 = ((Npc) obj).definition;
-                        if (class12.anInt305 >= 0 && class12.anInt305 < aClass44_Sub3_Sub1_Sub2Array1183.length) {
+                        if (class12.headIcon >= 0 && class12.headIcon < aClass44_Sub3_Sub1_Sub2Array1183.length) {
                             method74(((Actor) (obj)).anInt1661 + 15, ((Actor) (obj)), 0);
                             if (anInt1064 > -1) {
-                                aClass44_Sub3_Sub1_Sub2Array1183[class12.anInt305].method440(anInt1065 - 30, aByte1213,
+                                aClass44_Sub3_Sub1_Sub2Array1183[class12.headIcon].method440(anInt1065 - 30, aByte1213,
                                         anInt1064 - 12);
                             }
                         }
@@ -6975,7 +6975,7 @@ public class Client extends GameShell {
             if (byte0 != -71) {
                 anInt1056 = aClass46_927.value();
             }
-            ActorDefinition.aClass39_307.clear();
+            ActorDefinition.modelCache.clear();
             ItemDefinition.aClass39_369.clear();
             ItemDefinition.aClass39_370.clear();
             Player.aClass39_1696.clear();
@@ -9181,7 +9181,7 @@ public class Client extends GameShell {
                 int k = npcIds[j];
                 Npc class44_sub3_sub4_sub6_sub2 = npcs[k];
                 if (class44_sub3_sub4_sub6_sub2 != null) {
-                    method117(-34028, class44_sub3_sub4_sub6_sub2, class44_sub3_sub4_sub6_sub2.definition.aByte284);
+                    method117(-34028, class44_sub3_sub4_sub6_sub2, class44_sub3_sub4_sub6_sub2.definition.boundaryDimension);
                 }
             }
             if (i <= 0) {
@@ -11088,10 +11088,10 @@ public class Client extends GameShell {
                 Npc class44_sub3_sub4_sub6_sub2_1 = npcs[j1];
                 if (class44_sub3_sub4_sub6_sub2_1 != null) {
                     String s6;
-                    if (class44_sub3_sub4_sub6_sub2_1.definition.aByteArray283 != null) {
-                        s6 = new String(class44_sub3_sub4_sub6_sub2_1.definition.aByteArray283);
+                    if (class44_sub3_sub4_sub6_sub2_1.definition.description != null) {
+                        s6 = new String(class44_sub3_sub4_sub6_sub2_1.definition.description);
                     } else {
-                        s6 = "It's a " + class44_sub3_sub4_sub6_sub2_1.definition.aString282 + ".";
+                        s6 = "It's a " + class44_sub3_sub4_sub6_sub2_1.definition.name + ".";
                     }
                     method17(0, (byte) -115, s6, "");
                 }
@@ -11539,14 +11539,14 @@ public class Client extends GameShell {
                 }
                 if (j1 == 1) {
                     Npc class44_sub3_sub4_sub6_sub2 = npcs[k1];
-                    if (class44_sub3_sub4_sub6_sub2.definition.aByte284 == 1
+                    if (class44_sub3_sub4_sub6_sub2.definition.boundaryDimension == 1
                             && (class44_sub3_sub4_sub6_sub2.anInt1615 & 0x7f) == 64
                             && (class44_sub3_sub4_sub6_sub2.anInt1616 & 0x7f) == 64) {
                         for (int i2 = 0; i2 < npcCount; i2++) {
                             Npc class44_sub3_sub4_sub6_sub2_1 = npcs[npcIds[i2]];
                             if (class44_sub3_sub4_sub6_sub2_1 != null
                                     && class44_sub3_sub4_sub6_sub2_1 != class44_sub3_sub4_sub6_sub2
-                                    && class44_sub3_sub4_sub6_sub2_1.definition.aByte284 == 1
+                                    && class44_sub3_sub4_sub6_sub2_1.definition.boundaryDimension == 1
                                     && class44_sub3_sub4_sub6_sub2_1.anInt1615 == class44_sub3_sub4_sub6_sub2.anInt1615
                                     && class44_sub3_sub4_sub6_sub2_1.anInt1616 == class44_sub3_sub4_sub6_sub2.anInt1616) {
                                 method58(npcIds[i2], class44_sub3_sub4_sub6_sub2_1.definition, l, 559, i1);
@@ -11570,7 +11570,7 @@ public class Client extends GameShell {
                         for (int j2 = 0; j2 < npcCount; j2++) {
                             Npc class44_sub3_sub4_sub6_sub2_2 = npcs[npcIds[j2]];
                             if (class44_sub3_sub4_sub6_sub2_2 != null
-                                    && class44_sub3_sub4_sub6_sub2_2.definition.aByte284 == 1
+                                    && class44_sub3_sub4_sub6_sub2_2.definition.boundaryDimension == 1
                                     && class44_sub3_sub4_sub6_sub2_2.anInt1615 == class44_sub3_sub4_sub6_sub1.anInt1615
                                     && class44_sub3_sub4_sub6_sub2_2.anInt1616 == class44_sub3_sub4_sub6_sub1.anInt1616) {
                                 method58(npcIds[j2], class44_sub3_sub4_sub6_sub2_2.definition, l, 559, i1);
@@ -11818,13 +11818,13 @@ public class Client extends GameShell {
             }
             if ((mask & 0x20) == 32) {
                 npc.definition = ActorDefinition.getDefinition(buffer.readUnsignedShort());
-                npc.anInt1619 = npc.definition.aByte284;
-                npc.anInt1663 = npc.definition.anInt306;
-                npc.anInt1622 = npc.definition.anInt288;
-                npc.anInt1623 = npc.definition.anInt289;
-                npc.anInt1624 = npc.definition.anInt290;
-                npc.anInt1625 = npc.definition.anInt291;
-                npc.anInt1620 = npc.definition.anInt287;
+                npc.anInt1619 = npc.definition.boundaryDimension;
+                npc.anInt1663 = npc.definition.degreesToTurn;
+                npc.anInt1622 = npc.definition.walkAnimationId;
+                npc.anInt1623 = npc.definition.turnAboutAnimationId;
+                npc.anInt1624 = npc.definition.turnRightAnimationId;
+                npc.anInt1625 = npc.definition.turnLeftAnimationId;
+                npc.anInt1620 = npc.definition.standAnimationId;
             }
             if ((mask & 0x40) == 64) {
                 npc.graphicId = buffer.readUnsignedShort();
@@ -12129,7 +12129,7 @@ public class Client extends GameShell {
             aClass34_1271 = null;
             method128(false);
             GameObjectDefinition.method198((byte) 42);
-            ActorDefinition.method213((byte) 42);
+            ActorDefinition.nullLoader();
             ItemDefinition.method219((byte) 42);
             FloorDefinition.aClass20Array430 = null;
             IdentityKit.cache = null;

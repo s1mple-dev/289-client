@@ -162,7 +162,7 @@ public class Animation {
         throw new RuntimeException();
     }
 
-    public static boolean method211(int i, int j) {
+    public static boolean isNullFrame(int i, int j) {
         try {
             if (j != 0) {
                 Animation.anInt263 = 271;

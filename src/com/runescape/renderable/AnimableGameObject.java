@@ -73,15 +73,15 @@ public class AnimableGameObject extends Renderable {
                 return null;
             }
             int k = aClass32_1604.aClass26_563.anIntArray510[anInt1610];
-            Model model = new Model(class44_sub3_sub4_sub4, Animation.method211(k, 0), false, anInt1602, true);
+            Model model = new Model(class44_sub3_sub4_sub4, Animation.isNullFrame(k, 0), false, anInt1602, true);
             if (!aBoolean1612) {
-                model.method513((byte) 3);
-                model.method514(k, 188);
-                model.anIntArrayArray1567 = null;
-                model.anIntArrayArray1566 = null;
+                model.createBones((byte) 3);
+                model.applyTransformation(k, 188);
+                model.triangleSkin = null;
+                model.vertexSkin = null;
             }
             if (aClass32_1604.anInt566 != 128 || aClass32_1604.anInt567 != 128) {
-                model.method522(aClass32_1604.anInt566, aClass32_1604.anInt566, aClass32_1604.anInt567, (byte) 31);
+                model.scaleT(aClass32_1604.anInt566, aClass32_1604.anInt566, aClass32_1604.anInt567, (byte) 31);
             }
             if (aClass32_1604.anInt568 != 0) {
                 if (aClass32_1604.anInt568 == 90) {
@@ -97,7 +97,7 @@ public class AnimableGameObject extends Renderable {
                     model.method517(0);
                 }
             }
-            model.method523(64 + aClass32_1604.anInt569, 850 + aClass32_1604.anInt570, -30, -50, -30, true);
+            model.applyLighting(64 + aClass32_1604.anInt569, 850 + aClass32_1604.anInt570, -30, -50, -30, true);
             return model;
         } catch (RuntimeException runtimeexception) {
             SignLink.error("834, " + i + ", " + runtimeexception.toString());

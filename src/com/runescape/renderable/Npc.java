@@ -38,25 +38,25 @@ public class Npc extends Actor {
                 Model class44_sub3_sub4_sub4_1 = class32.method271();
                 if (class44_sub3_sub4_sub4_1 != null) {
                     int j = class32.aClass26_563.anIntArray510[super.currentAnimationId];
-                    Model class44_sub3_sub4_sub4_2 = new Model(class44_sub3_sub4_sub4_1, Animation.method211(j, 0),
+                    Model class44_sub3_sub4_sub4_2 = new Model(class44_sub3_sub4_sub4_1, Animation.isNullFrame(j, 0),
                             false, anInt1697, true);
                     class44_sub3_sub4_sub4_2.method519(-super.graphicHeight, 0, (byte) 2, 0);
-                    class44_sub3_sub4_sub4_2.method513((byte) 3);
-                    class44_sub3_sub4_sub4_2.method514(j, 188);
-                    class44_sub3_sub4_sub4_2.anIntArrayArray1567 = null;
-                    class44_sub3_sub4_sub4_2.anIntArrayArray1566 = null;
+                    class44_sub3_sub4_sub4_2.createBones((byte) 3);
+                    class44_sub3_sub4_sub4_2.applyTransformation(j, 188);
+                    class44_sub3_sub4_sub4_2.triangleSkin = null;
+                    class44_sub3_sub4_sub4_2.vertexSkin = null;
                     if (class32.anInt566 != 128 || class32.anInt567 != 128) {
-                        class44_sub3_sub4_sub4_2.method522(class32.anInt566, class32.anInt566, class32.anInt567,
+                        class44_sub3_sub4_sub4_2.scaleT(class32.anInt566, class32.anInt566, class32.anInt567,
                                 (byte) 31);
                     }
-                    class44_sub3_sub4_sub4_2.method523(64 + class32.anInt569, 850 + class32.anInt570, -30, -50, -30,
+                    class44_sub3_sub4_sub4_2.applyLighting(64 + class32.anInt569, 850 + class32.anInt570, -30, -50, -30,
                             true);
                     Model[] aclass44_sub3_sub4_sub4 = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_2};
                     class44_sub3_sub4_sub4 = new Model(true, 0, aclass44_sub3_sub4_sub4, 2);
                 }
             }
-            if (definition.aByte284 == 1) {
-                class44_sub3_sub4_sub4.aBoolean1568 = true;
+            if (definition.boundaryDimension == 1) {
+                class44_sub3_sub4_sub4.singleTile = true;
             }
             return class44_sub3_sub4_sub4;
         } catch (RuntimeException runtimeexception) {
@@ -76,13 +76,13 @@ public class Npc extends Actor {
                 if (super.anInt1640 >= 0 && super.anInt1640 != super.anInt1620) {
                     k = AnimationSequence.cache[super.anInt1640].anIntArray510[super.anInt1641];
                 }
-                return definition.method216(0, k, i, AnimationSequence.cache[super.animation].anIntArray514);
+                return definition.getChildModel(k, i, AnimationSequence.cache[super.animation].anIntArray514);
             }
             int j = -1;
             if (super.anInt1640 >= 0) {
                 j = AnimationSequence.cache[super.anInt1640].anIntArray510[super.anInt1641];
             }
-            return definition.method216(0, -1, j, null);
+            return definition.getChildModel(-1, j, null);
         } catch (RuntimeException runtimeexception) {
             SignLink.error("99332, " + flag + ", " + runtimeexception.toString());
         }

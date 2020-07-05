@@ -479,20 +479,20 @@ public class ItemDefinition {
         if (class44_sub3_sub4_sub4 != null) {
             return class44_sub3_sub4_sub4;
         }
-        class44_sub3_sub4_sub4 = Model.method506(anInt330, aByte318);
+        class44_sub3_sub4_sub4 = Model.getModel(anInt330);
         if (class44_sub3_sub4_sub4 == null) {
             return null;
         }
         if (anInt363 != 128 || anInt364 != 128 || anInt365 != 128) {
-            class44_sub3_sub4_sub4.method522(anInt363, anInt365, anInt364, (byte) 31);
+            class44_sub3_sub4_sub4.scaleT(anInt363, anInt365, anInt364, (byte) 31);
         }
         if (anIntArray333 != null) {
             for (int l = 0; l < anIntArray333.length; l++) {
-                class44_sub3_sub4_sub4.method520(anIntArray333[l], anIntArray334[l]);
+                class44_sub3_sub4_sub4.recolor(anIntArray333[l], anIntArray334[l]);
             }
         }
-        class44_sub3_sub4_sub4.method523(64 + anInt366, 768 + anInt367, -50, -10, -50, true);
-        class44_sub3_sub4_sub4.aBoolean1568 = true;
+        class44_sub3_sub4_sub4.applyLighting(64 + anInt366, 768 + anInt367, -50, -10, -50, true);
+        class44_sub3_sub4_sub4.singleTile = true;
         ItemDefinition.aClass39_369.put(anInt329, class44_sub3_sub4_sub4);
         return class44_sub3_sub4_sub4;
     }
@@ -510,7 +510,7 @@ public class ItemDefinition {
                     return ItemDefinition.method220(j).method225(true, 1);
                 }
             }
-            Model class44_sub3_sub4_sub4 = Model.method506(anInt330, aByte318);
+            Model class44_sub3_sub4_sub4 = Model.getModel(anInt330);
             if (!flag) {
                 anInt322 = 243;
             }
@@ -519,7 +519,7 @@ public class ItemDefinition {
             }
             if (anIntArray333 != null) {
                 for (int l = 0; l < anIntArray333.length; l++) {
-                    class44_sub3_sub4_sub4.method520(anIntArray333[l], anIntArray334[l]);
+                    class44_sub3_sub4_sub4.recolor(anIntArray333[l], anIntArray334[l]);
                 }
             }
             return class44_sub3_sub4_sub4;
@@ -546,13 +546,13 @@ public class ItemDefinition {
                 return true;
             }
             boolean flag1 = true;
-            if (!Model.method507(j)) {
+            if (!Model.isCached(j)) {
                 flag1 = false;
             }
-            if (k != -1 && !Model.method507(k)) {
+            if (k != -1 && !Model.isCached(k)) {
                 flag1 = false;
             }
-            if (l != -1 && !Model.method507(l)) {
+            if (l != -1 && !Model.isCached(l)) {
                 flag1 = false;
             }
             return flag1;
@@ -578,16 +578,16 @@ public class ItemDefinition {
             if (k == -1) {
                 return null;
             }
-            Model class44_sub3_sub4_sub4 = Model.method506(k, aByte318);
+            Model class44_sub3_sub4_sub4 = Model.getModel(k);
             if (l != -1) {
                 if (i1 != -1) {
-                    Model class44_sub3_sub4_sub4_1 = Model.method506(l, aByte318);
-                    Model class44_sub3_sub4_sub4_3 = Model.method506(i1, aByte318);
+                    Model class44_sub3_sub4_sub4_1 = Model.getModel(l);
+                    Model class44_sub3_sub4_sub4_3 = Model.getModel(i1);
                     Model[] aclass44_sub3_sub4_sub4_1 = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_1,
                             class44_sub3_sub4_sub4_3};
                     class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4_1, 3, -33019);
                 } else {
-                    Model class44_sub3_sub4_sub4_2 = Model.method506(l, aByte318);
+                    Model class44_sub3_sub4_sub4_2 = Model.getModel(l);
                     Model[] aclass44_sub3_sub4_sub4 = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_2};
                     class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4, 2, -33019);
                 }
@@ -600,7 +600,7 @@ public class ItemDefinition {
             }
             if (anIntArray333 != null) {
                 for (int j1 = 0; j1 < anIntArray333.length; j1++) {
-                    class44_sub3_sub4_sub4.method520(anIntArray333[j1], anIntArray334[j1]);
+                    class44_sub3_sub4_sub4.recolor(anIntArray333[j1], anIntArray334[j1]);
                 }
             }
             return class44_sub3_sub4_sub4;
@@ -625,10 +625,10 @@ public class ItemDefinition {
                 return true;
             }
             boolean flag1 = true;
-            if (!Model.method507(j)) {
+            if (!Model.isCached(j)) {
                 flag1 = false;
             }
-            if (k != -1 && !Model.method507(k)) {
+            if (k != -1 && !Model.isCached(k)) {
                 flag1 = false;
             }
             return flag1;
@@ -650,15 +650,15 @@ public class ItemDefinition {
             if (k == -1) {
                 return null;
             }
-            Model class44_sub3_sub4_sub4 = Model.method506(k, aByte318);
+            Model class44_sub3_sub4_sub4 = Model.getModel(k);
             if (l != -1) {
-                Model class44_sub3_sub4_sub4_1 = Model.method506(l, aByte318);
+                Model class44_sub3_sub4_sub4_1 = Model.getModel(l);
                 Model[] aclass44_sub3_sub4_sub4 = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_1};
                 class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4, 2, -33019);
             }
             if (anIntArray333 != null) {
                 for (int i1 = 0; i1 < anIntArray333.length; i1++) {
-                    class44_sub3_sub4_sub4.method520(anIntArray333[i1], anIntArray334[i1]);
+                    class44_sub3_sub4_sub4.recolor(anIntArray333[i1], anIntArray334[i1]);
                 }
             }
             return class44_sub3_sub4_sub4;

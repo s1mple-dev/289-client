@@ -96,7 +96,7 @@ public class IdentityKit {
                 throw new NullPointerException();
             }
             for (int j = 0; j < anIntArray466.length; j++) {
-                if (!Model.method507(anIntArray466[j])) {
+                if (!Model.isCached(anIntArray466[j])) {
                     flag = false;
                 }
             }
@@ -117,7 +117,7 @@ public class IdentityKit {
                 int anInt461 = 428;
             }
             for (int j = 0; j < anIntArray466.length; j++) {
-                aclass44_sub3_sub4_sub4[j] = Model.method506(anIntArray466[j], aByte460);
+                aclass44_sub3_sub4_sub4[j] = Model.getModel(anIntArray466[j]);
             }
             Model class44_sub3_sub4_sub4;
             if (aclass44_sub3_sub4_sub4.length == 1) {
@@ -129,7 +129,7 @@ public class IdentityKit {
                 if (anIntArray467[k] == 0) {
                     break;
                 }
-                class44_sub3_sub4_sub4.method520(anIntArray467[k], anIntArray468[k]);
+                class44_sub3_sub4_sub4.recolor(anIntArray467[k], anIntArray468[k]);
             }
             return class44_sub3_sub4_sub4;
         } catch (RuntimeException runtimeexception) {
@@ -145,7 +145,7 @@ public class IdentityKit {
             }
             boolean flag = true;
             for (int i = 0; i < 5; i++) {
-                if (anIntArray469[i] != -1 && !Model.method507(anIntArray469[i])) {
+                if (anIntArray469[i] != -1 && !Model.isCached(anIntArray469[i])) {
                     flag = false;
                 }
             }
@@ -162,7 +162,7 @@ public class IdentityKit {
             int i = 0;
             for (int j = 0; j < 5; j++) {
                 if (anIntArray469[j] != -1) {
-                    aclass44_sub3_sub4_sub4[i++] = Model.method506(anIntArray469[j], aByte460);
+                    aclass44_sub3_sub4_sub4[i++] = Model.getModel(anIntArray469[j]);
                 }
             }
             if (byte0 != -45) {
@@ -174,7 +174,7 @@ public class IdentityKit {
                 if (anIntArray467[l] == 0) {
                     break;
                 }
-                class44_sub3_sub4_sub4.method520(anIntArray467[l], anIntArray468[l]);
+                class44_sub3_sub4_sub4.recolor(anIntArray467[l], anIntArray468[l]);
             }
             return class44_sub3_sub4_sub4;
         } catch (RuntimeException runtimeexception) {
