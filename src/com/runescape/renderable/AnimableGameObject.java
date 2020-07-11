@@ -73,28 +73,28 @@ public class AnimableGameObject extends Renderable {
                 return null;
             }
             int k = aClass32_1604.aClass26_563.anIntArray510[anInt1610];
-            Model model = new Model(class44_sub3_sub4_sub4, Animation.isNullFrame(k, 0), false, anInt1602, true);
+            Model model = new Model(class44_sub3_sub4_sub4, Animation.isNullFrame(k, 0), false, true);
             if (!aBoolean1612) {
-                model.createBones((byte) 3);
-                model.applyTransformation(k, 188);
+                model.createBones();
+                model.applyTransformation(k);
                 model.triangleSkin = null;
                 model.vertexSkin = null;
             }
             if (aClass32_1604.anInt566 != 128 || aClass32_1604.anInt567 != 128) {
-                model.scaleT(aClass32_1604.anInt566, aClass32_1604.anInt566, aClass32_1604.anInt567, (byte) 31);
+                model.scaleT(aClass32_1604.anInt566, aClass32_1604.anInt566, aClass32_1604.anInt567);
             }
             if (aClass32_1604.anInt568 != 0) {
                 if (aClass32_1604.anInt568 == 90) {
-                    model.method517(0);
+                    model.rotate90Degrees();
                 }
                 if (aClass32_1604.anInt568 == 180) {
-                    model.method517(0);
-                    model.method517(0);
+                    model.rotate90Degrees();
+                    model.rotate90Degrees();
                 }
                 if (aClass32_1604.anInt568 == 270) {
-                    model.method517(0);
-                    model.method517(0);
-                    model.method517(0);
+                    model.rotate90Degrees();
+                    model.rotate90Degrees();
+                    model.rotate90Degrees();
                 }
             }
             model.applyLighting(64 + aClass32_1604.anInt569, 850 + aClass32_1604.anInt570, -30, -50, -30, true);

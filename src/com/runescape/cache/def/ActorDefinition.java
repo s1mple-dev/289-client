@@ -187,7 +187,7 @@ public class ActorDefinition {
             if (childModels.length == 1) {
                 model = childModels[0];
             } else {
-                model = new Model(childModels, childModels.length, -33019);
+                model = new Model(childModels, childModels.length);
             }
             if (model != null) {
                 if (modifiedModelColors != null) {
@@ -195,22 +195,22 @@ public class ActorDefinition {
                         model.recolor(modifiedModelColors[color], originalModelColors[color]);
                     }
                 }
-                model.createBones((byte) 3);
+                model.createBones();
                 model.applyLighting(64 + brightness, 850 + contrast, -30, -50, -30, true);
                 ActorDefinition.modelCache.put(id, model);
             }
         }
         Model childModel = Model.aClass44_Sub3_Sub4_Sub4_1530;
-        childModel.replaceWithModel(Animation.isNullFrame(frameId1, 0) & Animation.isNullFrame(frameId2, 0), model, 0);
+        childModel.replaceWithModel(Animation.isNullFrame(frameId1, 0) & Animation.isNullFrame(frameId2, 0), model);
         if (frameId1 != -1 && frameId2 != -1) {
-            childModel.mixAnimationFrames(frameId1, true, frameId2, frameId3);
+            childModel.mixAnimationFrames(frameId1, frameId2, frameId3);
         } else if (frameId1 != -1) {
-            childModel.applyTransformation(frameId1, 188);
+            childModel.applyTransformation(frameId1);
         }
         if (scaleXY != 128 || scaleZ != 128) {
-            childModel.scaleT(scaleXY, scaleXY, scaleZ, (byte) 31);
+            childModel.scaleT(scaleXY, scaleXY, scaleZ);
         }
-        childModel.calculateDiagonals(-18258);
+        childModel.calculateDiagonals();
         childModel.triangleSkin = null;
         childModel.vertexSkin = null;
         if (boundaryDimension == 1) {
@@ -240,7 +240,7 @@ public class ActorDefinition {
         if (headModels.length == 1) {
             model = headModels[0];
         } else {
-            model = new Model(headModels, headModels.length, -33019);
+            model = new Model(headModels, headModels.length);
         }
         if (model != null) {
             if (modifiedModelColors != null) {

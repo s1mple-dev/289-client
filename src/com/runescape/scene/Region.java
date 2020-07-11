@@ -686,7 +686,7 @@ public class Region {
                         if (class44_sub3_sub4_sub4 != null) {
                             for (int k5 = 0; k5 <= k4; k5++) {
                                 for (int l5 = 0; l5 <= i5; l5++) {
-                                    int i6 = class44_sub3_sub4_sub4.anInt1559 / 4;
+                                    int i6 = class44_sub3_sub4_sub4.diagonal2DAboveOrigin / 4;
                                     if (i6 > 30) {
                                         i6 = 30;
                                     }

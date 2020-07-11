@@ -1001,8 +1001,8 @@ public class Client extends GameShell {
             }
             if (l > 4225 && l < 0x15f90) {
                 int i1 = anInt930 + anInt959 & 0x7ff;
-                int j1 = Model.anIntArray1598[i1];
-                int k1 = Model.anIntArray1599[i1];
+                int j1 = Model.SINE[i1];
+                int k1 = Model.COSINE[i1];
                 j1 = (j1 * 256) / (anInt1075 + 256);
                 k1 = (k1 * 256) / (anInt1075 + 256);
                 int l1 = j * j1 + i * k1 >> 16;
@@ -3010,7 +3010,7 @@ public class Client extends GameShell {
             aClass43_Sub1_814 = new OnDemandRequester();
             aClass43_Sub1_814.start(class47_6, this);
             Animation.method207(aClass43_Sub1_814.getAnimationCount());
-            Model.method503(aClass43_Sub1_814.getFileCount(0), aClass43_Sub1_814);
+            Model.init(aClass43_Sub1_814.getFileCount(0), aClass43_Sub1_814);
             if (!Client.aBoolean1235) {
                 anInt1190 = 0;
                 try {
@@ -3765,10 +3765,10 @@ public class Client extends GameShell {
                             class44_sub3_sub1_sub2.method440(l2, aByte1213, k2);
                         }
                     } else if (class5_1.anInt107 == 6) {
-                        int k3 = Rasterizer3D.anInt1423;
-                        int j4 = Rasterizer3D.anInt1424;
-                        Rasterizer3D.anInt1423 = k2 + class5_1.anInt110 / 2;
-                        Rasterizer3D.anInt1424 = l2 + class5_1.anInt111 / 2;
+                        int k3 = Rasterizer3D.centerX;
+                        int j4 = Rasterizer3D.centerY;
+                        Rasterizer3D.centerX = k2 + class5_1.anInt110 / 2;
+                        Rasterizer3D.centerY = l2 + class5_1.anInt111 / 2;
                         int i5 = Rasterizer3D.anIntArray1427[class5_1.anInt156] * class5_1.anInt155 >> 16;
                         int l5 = Rasterizer3D.anIntArray1428[class5_1.anInt156] * class5_1.anInt155 >> 16;
                         boolean flag2 = method88(class5_1, 0);
@@ -3787,10 +3787,10 @@ public class Client extends GameShell {
                                     class26.anIntArray510[class5_1.anInt103], flag2);
                         }
                         if (class44_sub3_sub4_sub4 != null) {
-                            class44_sub3_sub4_sub4.method526(0, class5_1.anInt157, 0, class5_1.anInt156, 0, i5, l5);
+                            class44_sub3_sub4_sub4.renderSingle(0, class5_1.anInt157, 0, class5_1.anInt156, 0, i5, l5);
                         }
-                        Rasterizer3D.anInt1423 = k3;
-                        Rasterizer3D.anInt1424 = j4;
+                        Rasterizer3D.centerX = k3;
+                        Rasterizer3D.centerY = j4;
                     } else if (class5_1.anInt107 == 7) {
                         TypeFace class44_sub3_sub1_sub4_1 = class5_1.aClass44_Sub3_Sub1_Sub4_140;
                         int k4 = 0;
@@ -4119,7 +4119,7 @@ public class Client extends GameShell {
                             aclass44_sub3_sub4_sub4[i2++] = IdentityKit.cache[k2].method250(0);
                         }
                     }
-                    Model class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4, i2, -33019);
+                    Model class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4, i2);
                     for (int l2 = 0; l2 < 5; l2++) {
                         if (anIntArray938[l2] != 0) {
                             class44_sub3_sub4_sub4.recolor(Client.anIntArrayArray1073[l2][0],
@@ -4130,11 +4130,11 @@ public class Client extends GameShell {
                             }
                         }
                     }
-                    class44_sub3_sub4_sub4.createBones((byte) 3);
+                    class44_sub3_sub4_sub4.createBones();
                     class44_sub3_sub4_sub4
                             .applyTransformation(
-                                    AnimationSequence.cache[Client.localPlayer.anInt1620].anIntArray510[0],
-                                    188);
+                                    AnimationSequence.cache[Client.localPlayer.anInt1620].anIntArray510[0]
+                            );
                     class44_sub3_sub4_sub4.applyLighting(64, 850, -30, -50, -30, true);
                     class5.anInt149 = 5;
                     class5.anInt150 = 0;
@@ -4428,12 +4428,12 @@ public class Client extends GameShell {
             }
             int l2 = Rasterizer3D.anInt1438;
             Model.aBoolean1593 = true;
-            Model.anInt1596 = 0;
+            Model.resourceCount = 0;
             if (i != 0) {
                 return;
             } else {
-                Model.anInt1594 = super.anInt21 - 4;
-                Model.anInt1595 = super.anInt22 - 4;
+                Model.cursorX = super.anInt21 - 4;
+                Model.cursorY = super.anInt22 - 4;
                 Rasterizer.method409((byte) 127);
                 aClass36_1192.method317(anInt875, 7, anInt878, anInt877, k, anInt876, anInt879);
                 aClass36_1192.method292(true);
@@ -6942,10 +6942,10 @@ public class Client extends GameShell {
             }
             l -= anInt876;
             k -= anInt877;
-            int i1 = Model.anIntArray1598[anInt878];
-            int j1 = Model.anIntArray1599[anInt878];
-            int k1 = Model.anIntArray1598[anInt879];
-            int l1 = Model.anIntArray1599[anInt879];
+            int i1 = Model.SINE[anInt878];
+            int j1 = Model.COSINE[anInt878];
+            int k1 = Model.SINE[anInt879];
+            int l1 = Model.COSINE[anInt879];
             int i2 = k * k1 + i * l1 >> 16;
             k = k * l1 - i * k1 >> 16;
             i = i2;
@@ -6953,8 +6953,8 @@ public class Client extends GameShell {
             k = l * i1 + k * j1 >> 16;
             l = i2;
             if (k >= 50) {
-                anInt1064 = Rasterizer3D.anInt1423 + (i << 9) / k;
-                anInt1065 = Rasterizer3D.anInt1424 + (l << 9) / k;
+                anInt1064 = Rasterizer3D.centerX + (i << 9) / k;
+                anInt1065 = Rasterizer3D.centerY + (l << 9) / k;
                 return;
             } else {
                 anInt1064 = -1;
@@ -7767,7 +7767,7 @@ public class Client extends GameShell {
                         return;
                     }
                     if (class44_sub3_sub3.dataType == 0) {
-                        Model.method504(class44_sub3_sub3.buffer, class44_sub3_sub3.index, (byte) 23);
+                        Model.load(class44_sub3_sub3.buffer, class44_sub3_sub3.index);
                         if ((aClass43_Sub1_814.getModelId(class44_sub3_sub3.index) & 0x62) != 0) {
                             aBoolean898 = true;
                             if (anInt1253 != -1) {
@@ -10375,7 +10375,7 @@ public class Client extends GameShell {
                 for (int i1 = 0; i1 < k; i1++) {
                     int l1 = aClass43_Sub1_814.getModelId(i1);
                     if ((l1 & 0x79) == 0) {
-                        Model.method505((byte) 63, i1);
+                        Model.resetModel(i1);
                     }
                 }
             }
@@ -11461,8 +11461,8 @@ public class Client extends GameShell {
             }
             int i = -1;
             loggedIn &= flag;
-            for (int j = 0; j < Model.anInt1596; j++) {
-                int k = Model.anIntArray1597[j];
+            for (int j = 0; j < Model.resourceCount; j++) {
+                int k = Model.resourceIds[j];
                 int l = k & 0x7f;
                 int i1 = k >> 7 & 0x7f;
                 int j1 = k >> 29 & 3;
@@ -11691,15 +11691,15 @@ public class Client extends GameShell {
             int j2 = 0;
             int k2 = i;
             if (k1 != 0) {
-                int l2 = Model.anIntArray1598[k1];
-                int j3 = Model.anIntArray1599[k1];
+                int l2 = Model.SINE[k1];
+                int j3 = Model.COSINE[k1];
                 int l3 = j2 * j3 - k2 * l2 >> 16;
                 k2 = j2 * l2 + k2 * j3 >> 16;
                 j2 = l3;
             }
             if (l1 != 0) {
-                int i3 = Model.anIntArray1598[l1];
-                int k3 = Model.anIntArray1599[l1];
+                int i3 = Model.SINE[l1];
+                int k3 = Model.COSINE[l1];
                 int i4 = k2 * i3 + i2 * k3 >> 16;
                 k2 = k2 * k3 - i2 * i3 >> 16;
                 i2 = i4;
@@ -11854,8 +11854,8 @@ public class Client extends GameShell {
             if (i1 > 6400) {
                 return;
             }
-            int j1 = Model.anIntArray1598[l];
-            int k1 = Model.anIntArray1599[l];
+            int j1 = Model.SINE[l];
+            int k1 = Model.COSINE[l];
             j1 = (j1 * 256) / (anInt1075 + 256);
             k1 = (k1 * 256) / (anInt1075 + 256);
             if (j <= 0) {
@@ -12142,7 +12142,7 @@ public class Client extends GameShell {
             Player.aClass39_1696 = null;
             Rasterizer3D.method418((byte) 42);
             Scene.method277((byte) 42);
-            Model.method502((byte) 42);
+            Model.nullLoader();
             Animation.method209((byte) 42);
             System.gc();
             return;

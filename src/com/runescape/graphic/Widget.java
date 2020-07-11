@@ -376,19 +376,19 @@ public class Widget {
             if (class44_sub3_sub4_sub4 == null) {
                 return null;
             }
-            if (k == -1 && j == -1 && class44_sub3_sub4_sub4.anIntArray1549 == null) {
+            if (k == -1 && j == -1 && class44_sub3_sub4_sub4.triangleColors == null) {
                 return class44_sub3_sub4_sub4;
             }
             Model class44_sub3_sub4_sub4_1 = new Model(class44_sub3_sub4_sub4, Animation.isNullFrame(k, 0)
-                    & Animation.isNullFrame(j, 0), false, anInt99, true);
+                    & Animation.isNullFrame(j, 0), false, true);
             if (k != -1 || j != -1) {
-                class44_sub3_sub4_sub4_1.createBones((byte) 3);
+                class44_sub3_sub4_sub4_1.createBones();
             }
             if (k != -1) {
-                class44_sub3_sub4_sub4_1.applyTransformation(k, 188);
+                class44_sub3_sub4_sub4_1.applyTransformation(k);
             }
             if (j != -1) {
-                class44_sub3_sub4_sub4_1.applyTransformation(j, 188);
+                class44_sub3_sub4_sub4_1.applyTransformation(j);
             }
             class44_sub3_sub4_sub4_1.applyLighting(64, 768, -50, -10, -50, true);
             return class44_sub3_sub4_sub4_1;

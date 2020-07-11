@@ -69,7 +69,7 @@ public class AnimationSequence {
             }
             int l = anIntArray512[i];
             if (l == 0) {
-                Animation class11 = Animation.method210(anIntArray510[i], aByte505);
+                Animation class11 = Animation.forFrameId(anIntArray510[i]);
                 if (class11 != null) {
                     l = anIntArray512[i] = class11.anInt265;
                 }

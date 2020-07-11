@@ -170,8 +170,8 @@ public class ItemDefinition {
                 }
             }
             ImageRGB class44_sub3_sub1_sub2_1 = new ImageRGB(32, 32);
-            int k1 = Rasterizer3D.anInt1423;
-            int l1 = Rasterizer3D.anInt1424;
+            int k1 = Rasterizer3D.centerX;
+            int l1 = Rasterizer3D.centerY;
             int[] ai = Rasterizer3D.anIntArray1429;
             int[] ai1 = Rasterizer.anIntArray1369;
             int i2 = Rasterizer.anInt1370;
@@ -193,8 +193,8 @@ public class ItemDefinition {
             }
             int l3 = Rasterizer3D.anIntArray1427[class14.anInt336] * k3 >> 16;
             int i4 = Rasterizer3D.anIntArray1428[class14.anInt336] * k3 >> 16;
-            class44_sub3_sub4_sub4.method526(0, class14.anInt337, class14.anInt338, class14.anInt336, class14.anInt339,
-                    l3 + class44_sub3_sub4_sub4.anInt1412 / 2 + class14.anInt340, i4
+            class44_sub3_sub4_sub4.renderSingle(0, class14.anInt337, class14.anInt338, class14.anInt336, class14.anInt339,
+                    l3 + class44_sub3_sub4_sub4.modelHeight / 2 + class14.anInt340, i4
                             + class14.anInt340);
             for (int i5 = 31; i5 >= 0; i5--) {
                 for (int j4 = 31; j4 >= 0; j4--) {
@@ -251,8 +251,8 @@ public class ItemDefinition {
             }
             Rasterizer.method406(-78, ai1, i2, j2);
             Rasterizer.method408(ItemDefinition.aByte321, j3, l2, i3, k2);
-            Rasterizer3D.anInt1423 = k1;
-            Rasterizer3D.anInt1424 = l1;
+            Rasterizer3D.centerX = k1;
+            Rasterizer3D.centerY = l1;
             Rasterizer3D.anIntArray1429 = ai;
             Rasterizer3D.aBoolean1421 = true;
             if (class14.aBoolean342) {
@@ -484,7 +484,7 @@ public class ItemDefinition {
             return null;
         }
         if (anInt363 != 128 || anInt364 != 128 || anInt365 != 128) {
-            class44_sub3_sub4_sub4.scaleT(anInt363, anInt365, anInt364, (byte) 31);
+            class44_sub3_sub4_sub4.scaleT(anInt363, anInt365, anInt364);
         }
         if (anIntArray333 != null) {
             for (int l = 0; l < anIntArray333.length; l++) {
@@ -585,18 +585,18 @@ public class ItemDefinition {
                     Model class44_sub3_sub4_sub4_3 = Model.getModel(i1);
                     Model[] aclass44_sub3_sub4_sub4_1 = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_1,
                             class44_sub3_sub4_sub4_3};
-                    class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4_1, 3, -33019);
+                    class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4_1, 3);
                 } else {
                     Model class44_sub3_sub4_sub4_2 = Model.getModel(l);
                     Model[] aclass44_sub3_sub4_sub4 = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_2};
-                    class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4, 2, -33019);
+                    class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4, 2);
                 }
             }
             if (i == 0 && aByte349 != 0) {
-                class44_sub3_sub4_sub4.method519(aByte349, 0, (byte) 2, 0);
+                class44_sub3_sub4_sub4.translate(aByte349, 0, 0);
             }
             if (i == 1 && aByte352 != 0) {
-                class44_sub3_sub4_sub4.method519(aByte352, 0, (byte) 2, 0);
+                class44_sub3_sub4_sub4.translate(aByte352, 0, 0);
             }
             if (anIntArray333 != null) {
                 for (int j1 = 0; j1 < anIntArray333.length; j1++) {
@@ -654,7 +654,7 @@ public class ItemDefinition {
             if (l != -1) {
                 Model class44_sub3_sub4_sub4_1 = Model.getModel(l);
                 Model[] aclass44_sub3_sub4_sub4 = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_1};
-                class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4, 2, -33019);
+                class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4, 2);
             }
             if (anIntArray333 != null) {
                 for (int i1 = 0; i1 < anIntArray333.length; i1++) {

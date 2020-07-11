@@ -7,16 +7,15 @@ import com.runescape.util.SignLink;
 public class Animation {
 
     private static int anInt262;
-    private static int anInt263 = 2;
     private static Animation[] aClass11Array264;
     private static boolean[] aBooleanArray272;
     public int anInt265;
-    public Skins aClass9_266;
-    public int anInt267;
-    public int[] anIntArray268;
-    public int[] anIntArray269;
-    public int[] anIntArray270;
-    public int[] anIntArray271;
+    public Skins animationSkins;
+    public int frameCount;
+    public int[] opcodeTable;
+    public int[] transformationX;
+    public int[] transformationY;
+    public int[] transformationZ;
 
     private Animation() {
     }
@@ -65,16 +64,16 @@ public class Animation {
                 int i2 = class44_sub3_sub2_1.readUnsignedShort();
                 Animation class11 = Animation.aClass11Array264[i2] = new Animation();
                 class11.anInt265 = class44_sub3_sub2_4.readUnsignedByte();
-                class11.aClass9_266 = class9;
+                class11.animationSkins = class9;
                 int j2 = class44_sub3_sub2_1.readUnsignedByte();
                 int k2 = -1;
                 int l2 = 0;
                 for (int i3 = 0; i3 < j2; i3++) {
                     int j3 = class44_sub3_sub2_2.readUnsignedByte();
                     if (j3 > 0) {
-                        if (class9.anIntArray254[i3] != 0) {
+                        if (class9.opcodes[i3] != 0) {
                             for (int l3 = i3 - 1; l3 > k2; l3--) {
-                                if (class9.anIntArray254[l3] != 0) {
+                                if (class9.opcodes[l3] != 0) {
                                     continue;
                                 }
                                 ai[l2] = l3;
@@ -87,7 +86,7 @@ public class Animation {
                         }
                         ai[l2] = i3;
                         char c = '\0';
-                        if (class9.anIntArray254[i3] == 3) {
+                        if (class9.opcodes[i3] == 3) {
                             c = '\200';
                         }
                         if ((j3 & 1) != 0) {
@@ -107,21 +106,21 @@ public class Animation {
                         }
                         k2 = i3;
                         l2++;
-                        if (class9.anIntArray254[i3] == 5) {
+                        if (class9.opcodes[i3] == 5) {
                             Animation.aBooleanArray272[i2] = false;
                         }
                     }
                 }
-                class11.anInt267 = l2;
-                class11.anIntArray268 = new int[l2];
-                class11.anIntArray269 = new int[l2];
-                class11.anIntArray270 = new int[l2];
-                class11.anIntArray271 = new int[l2];
+                class11.frameCount = l2;
+                class11.opcodeTable = new int[l2];
+                class11.transformationX = new int[l2];
+                class11.transformationY = new int[l2];
+                class11.transformationZ = new int[l2];
                 for (int k3 = 0; k3 < l2; k3++) {
-                    class11.anIntArray268[k3] = ai[k3];
-                    class11.anIntArray269[k3] = ai1[k3];
-                    class11.anIntArray270[k3] = ai2[k3];
-                    class11.anIntArray271[k3] = ai3[k3];
+                    class11.opcodeTable[k3] = ai[k3];
+                    class11.transformationX[k3] = ai1[k3];
+                    class11.transformationY[k3] = ai2[k3];
+                    class11.transformationZ[k3] = ai3[k3];
                 }
             }
             return;
@@ -144,34 +143,16 @@ public class Animation {
         throw new RuntimeException();
     }
 
-    public static Animation method210(int i, byte byte0) {
-        try {
-            if (byte0 == 4) {
-                byte0 = 0;
-            } else {
-                Animation.anInt263 = -60;
-            }
-            if (Animation.aClass11Array264 == null) {
-                return null;
-            } else {
-                return Animation.aClass11Array264[i];
-            }
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("52733, " + i + ", " + byte0 + ", " + runtimeexception.toString());
+    public static Animation forFrameId(int i) {
+        if (Animation.aClass11Array264 == null) {
+            return null;
+        } else {
+            return Animation.aClass11Array264[i];
         }
-        throw new RuntimeException();
     }
 
     public static boolean isNullFrame(int i, int j) {
-        try {
-            if (j != 0) {
-                Animation.anInt263 = 271;
-            }
-            return i == -1;
-        } catch (RuntimeException runtimeexception) {
-            SignLink.error("34856, " + i + ", " + j + ", " + runtimeexception.toString());
-        }
-        throw new RuntimeException();
+        return i == -1;
     }
 
 }

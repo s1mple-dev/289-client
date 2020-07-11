@@ -32,27 +32,27 @@ public class Npc extends Actor {
             if (class44_sub3_sub4_sub4 == null) {
                 return null;
             }
-            super.anInt1661 = class44_sub3_sub4_sub4.anInt1412;
+            super.anInt1661 = class44_sub3_sub4_sub4.modelHeight;
             if (super.graphicId != -1 && super.currentAnimationId != -1) {
                 SpotAnimation class32 = SpotAnimation.cache[super.graphicId];
                 Model class44_sub3_sub4_sub4_1 = class32.method271();
                 if (class44_sub3_sub4_sub4_1 != null) {
                     int j = class32.aClass26_563.anIntArray510[super.currentAnimationId];
                     Model class44_sub3_sub4_sub4_2 = new Model(class44_sub3_sub4_sub4_1, Animation.isNullFrame(j, 0),
-                            false, anInt1697, true);
-                    class44_sub3_sub4_sub4_2.method519(-super.graphicHeight, 0, (byte) 2, 0);
-                    class44_sub3_sub4_sub4_2.createBones((byte) 3);
-                    class44_sub3_sub4_sub4_2.applyTransformation(j, 188);
+                            false, true);
+                    class44_sub3_sub4_sub4_2.translate(-super.graphicHeight, 0, 0);
+                    class44_sub3_sub4_sub4_2.createBones();
+                    class44_sub3_sub4_sub4_2.applyTransformation(j);
                     class44_sub3_sub4_sub4_2.triangleSkin = null;
                     class44_sub3_sub4_sub4_2.vertexSkin = null;
                     if (class32.anInt566 != 128 || class32.anInt567 != 128) {
-                        class44_sub3_sub4_sub4_2.scaleT(class32.anInt566, class32.anInt566, class32.anInt567,
-                                (byte) 31);
+                        class44_sub3_sub4_sub4_2.scaleT(class32.anInt566, class32.anInt566, class32.anInt567
+                        );
                     }
                     class44_sub3_sub4_sub4_2.applyLighting(64 + class32.anInt569, 850 + class32.anInt570, -30, -50, -30,
                             true);
                     Model[] aclass44_sub3_sub4_sub4 = {class44_sub3_sub4_sub4, class44_sub3_sub4_sub4_2};
-                    class44_sub3_sub4_sub4 = new Model(true, 0, aclass44_sub3_sub4_sub4, 2);
+                    class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4, 2);
                 }
             }
             if (definition.boundaryDimension == 1) {

@@ -123,7 +123,7 @@ public class IdentityKit {
             if (aclass44_sub3_sub4_sub4.length == 1) {
                 class44_sub3_sub4_sub4 = aclass44_sub3_sub4_sub4[0];
             } else {
-                class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4, aclass44_sub3_sub4_sub4.length, -33019);
+                class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4, aclass44_sub3_sub4_sub4.length);
             }
             for (int k = 0; k < 6; k++) {
                 if (anIntArray467[k] == 0) {
@@ -169,7 +169,7 @@ public class IdentityKit {
                 for (int k = 1; k > 0; k++) {
                 }
             }
-            Model class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4, i, -33019);
+            Model class44_sub3_sub4_sub4 = new Model(aclass44_sub3_sub4_sub4, i);
             for (int l = 0; l < 6; l++) {
                 if (anIntArray467[l] == 0) {
                     break;

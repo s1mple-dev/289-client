@@ -375,19 +375,19 @@ public class GameObjectDefinition {
             return null;
         }
         if (aBoolean227 || aBoolean228) {
-            class44_sub3_sub4_sub4 = new Model(aBoolean228, 0, class44_sub3_sub4_sub4, aBoolean227);
+            class44_sub3_sub4_sub4 = new Model(aBoolean228, class44_sub3_sub4_sub4, aBoolean227);
         }
         if (aBoolean227) {
             int l1 = (k + l + i1 + j1) / 4;
-            for (int i2 = 0; i2 < class44_sub3_sub4_sub4.anInt1535; i2++) {
-                int j2 = class44_sub3_sub4_sub4.anIntArray1536[i2];
-                int k2 = class44_sub3_sub4_sub4.anIntArray1538[i2];
+            for (int i2 = 0; i2 < class44_sub3_sub4_sub4.vertexCount; i2++) {
+                int j2 = class44_sub3_sub4_sub4.verticesX[i2];
+                int k2 = class44_sub3_sub4_sub4.verticesZ[i2];
                 int l2 = k + ((l - k) * (j2 + 64)) / 128;
                 int i3 = j1 + ((i1 - j1) * (j2 + 64)) / 128;
                 int j3 = l2 + ((i3 - l2) * (k2 + 64)) / 128;
-                class44_sub3_sub4_sub4.anIntArray1537[i2] += j3 - l1;
+                class44_sub3_sub4_sub4.verticesY[i2] += j3 - l1;
             }
-            class44_sub3_sub4_sub4.method511(anInt207);
+            class44_sub3_sub4_sub4.normalise();
         }
         return class44_sub3_sub4_sub4;
     }
@@ -422,7 +422,7 @@ public class GameObjectDefinition {
                             return null;
                         }
                         if (flag1) {
-                            class44_sub3_sub4_sub4.method521(6);
+                            class44_sub3_sub4_sub4.mirror();
                         }
                         GameObjectDefinition.aClass39_251.put(k2, class44_sub3_sub4_sub4);
                     }
@@ -431,7 +431,7 @@ public class GameObjectDefinition {
                     }
                 }
                 if (k1 > 1) {
-                    class44_sub3_sub4_sub4 = new Model(GameObjectDefinition.aClass44_Sub3_Sub4_Sub4Array214, k1, -33019);
+                    class44_sub3_sub4_sub4 = new Model(GameObjectDefinition.aClass44_Sub3_Sub4_Sub4Array214, k1);
                 }
             } else {
                 int i1 = -1;
@@ -462,7 +462,7 @@ public class GameObjectDefinition {
                         return null;
                     }
                     if (flag3) {
-                        class44_sub3_sub4_sub4.method521(6);
+                        class44_sub3_sub4_sub4.mirror();
                     }
                     GameObjectDefinition.aClass39_251.put(i2, class44_sub3_sub4_sub4);
                 }
@@ -483,15 +483,15 @@ public class GameObjectDefinition {
                 flag2 = false;
             }
             Model class44_sub3_sub4_sub4_3 = new Model(class44_sub3_sub4_sub4, Animation.isNullFrame(i, 0), j == 0
-                    && i == -1 && !flag && !flag2, anInt206, anIntArray220 == null);
+                    && i == -1 && !flag && !flag2, anIntArray220 == null);
             if (i != -1) {
-                class44_sub3_sub4_sub4_3.createBones((byte) 3);
-                class44_sub3_sub4_sub4_3.applyTransformation(i, 188);
+                class44_sub3_sub4_sub4_3.createBones();
+                class44_sub3_sub4_sub4_3.applyTransformation(i);
                 class44_sub3_sub4_sub4_3.triangleSkin = null;
                 class44_sub3_sub4_sub4_3.vertexSkin = null;
             }
             while (j-- > 0) {
-                class44_sub3_sub4_sub4_3.method517(0);
+                class44_sub3_sub4_sub4_3.rotate90Degrees();
             }
             if (anIntArray220 != null) {
                 for (int j2 = 0; j2 < anIntArray220.length; j2++) {
@@ -499,14 +499,14 @@ public class GameObjectDefinition {
                 }
             }
             if (flag) {
-                class44_sub3_sub4_sub4_3.scaleT(anInt239, anInt241, anInt240, (byte) 31);
+                class44_sub3_sub4_sub4_3.scaleT(anInt239, anInt241, anInt240);
             }
             if (flag2) {
-                class44_sub3_sub4_sub4_3.method519(anInt243, anInt242, (byte) 2, anInt244);
+                class44_sub3_sub4_sub4_3.translate(anInt243, anInt242, anInt244);
             }
             class44_sub3_sub4_sub4_3.applyLighting(64 + aByte232, 768 + aByte233 * 5, -50, -10, -50, !aBoolean228);
             if (anInt248 == 1) {
-                class44_sub3_sub4_sub4_3.anInt1563 = class44_sub3_sub4_sub4_3.anInt1412;
+                class44_sub3_sub4_sub4_3.anInt1563 = class44_sub3_sub4_sub4_3.modelHeight;
             }
             GameObjectDefinition.aClass39_252.put(l, class44_sub3_sub4_sub4_3);
             return class44_sub3_sub4_sub4_3;

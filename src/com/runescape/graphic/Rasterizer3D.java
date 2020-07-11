@@ -10,12 +10,12 @@ public class Rasterizer3D extends Rasterizer {
     private static boolean aBoolean1416 = true;
     private static boolean aBoolean1417 = true;
     public static boolean aBoolean1418 = true;
-    public static boolean aBoolean1419;
+    public static boolean restrictEdges;
     private static boolean aBoolean1420;
     public static boolean aBoolean1421 = true;
-    public static int anInt1422;
-    public static int anInt1423;
-    public static int anInt1424;
+    public static int alpha;
+    public static int centerX;
+    public static int centerY;
     private static int[] anIntArray1425;
     public static int[] anIntArray1426;
     public static int[] anIntArray1427;
@@ -87,8 +87,8 @@ public class Rasterizer3D extends Rasterizer {
             for (int i = 0; i < Rasterizer.anInt1371; i++) {
                 Rasterizer3D.anIntArray1429[i] = Rasterizer.anInt1370 * i;
             }
-            Rasterizer3D.anInt1423 = Rasterizer.anInt1370 / 2;
-            Rasterizer3D.anInt1424 = Rasterizer.anInt1371 / 2;
+            Rasterizer3D.centerX = Rasterizer.anInt1370 / 2;
+            Rasterizer3D.centerY = Rasterizer.anInt1371 / 2;
             return;
         } catch (RuntimeException runtimeexception) {
             SignLink.error("80083, " + byte0 + ", " + runtimeexception.toString());
@@ -105,8 +105,8 @@ public class Rasterizer3D extends Rasterizer {
             for (int l = 0; l < i; l++) {
                 Rasterizer3D.anIntArray1429[l] = j * l;
             }
-            Rasterizer3D.anInt1423 = j / 2;
-            Rasterizer3D.anInt1424 = i / 2;
+            Rasterizer3D.centerX = j / 2;
+            Rasterizer3D.centerY = i / 2;
             return;
         } catch (RuntimeException runtimeexception) {
             SignLink.error("87374, " + i + ", " + j + ", " + k + ", " + runtimeexception.toString());
@@ -390,7 +390,7 @@ public class Rasterizer3D extends Rasterizer {
         return (j << 16) + (k << 8) + l;
     }
 
-    public static void method429(int i, int j, int k, int l, int i1, int j1, int k1, int l1, int i2) {
+    public static void drawShadedTriangle(int i, int j, int k, int l, int i1, int j1, int k1, int l1, int i2) {
         int j2 = 0;
         int k2 = 0;
         if (j != i) {
@@ -777,7 +777,7 @@ public class Rasterizer3D extends Rasterizer {
         int j;
         if (Rasterizer3D.aBoolean1421) {
             int l1;
-            if (Rasterizer3D.aBoolean1419) {
+            if (Rasterizer3D.restrictEdges) {
                 if (i1 - l > 3) {
                     l1 = (k1 - j1) / (i1 - l);
                 } else {
@@ -808,7 +808,7 @@ public class Rasterizer3D extends Rasterizer {
                     l1 = 0;
                 }
             }
-            if (Rasterizer3D.anInt1422 == 0) {
+            if (Rasterizer3D.alpha == 0) {
                 while (--k >= 0) {
                     j = Rasterizer3D.anIntArray1439[j1 >> 8];
                     j1 += l1;
@@ -826,8 +826,8 @@ public class Rasterizer3D extends Rasterizer {
                     return;
                 }
             } else {
-                int j2 = Rasterizer3D.anInt1422;
-                int l2 = 256 - Rasterizer3D.anInt1422;
+                int j2 = Rasterizer3D.alpha;
+                int l2 = 256 - Rasterizer3D.alpha;
                 while (--k >= 0) {
                     j = Rasterizer3D.anIntArray1439[j1 >> 8];
                     j1 += l1;
@@ -852,7 +852,7 @@ public class Rasterizer3D extends Rasterizer {
             return;
         }
         int i2 = (k1 - j1) / (i1 - l);
-        if (Rasterizer3D.aBoolean1419) {
+        if (Rasterizer3D.restrictEdges) {
             if (i1 > Rasterizer.anInt1376) {
                 i1 = Rasterizer.anInt1376;
             }
@@ -866,15 +866,15 @@ public class Rasterizer3D extends Rasterizer {
         }
         i += l;
         k = i1 - l;
-        if (Rasterizer3D.anInt1422 == 0) {
+        if (Rasterizer3D.alpha == 0) {
             do {
                 ai[i++] = Rasterizer3D.anIntArray1439[j1 >> 8];
                 j1 += i2;
             } while (--k > 0);
             return;
         }
-        int k2 = Rasterizer3D.anInt1422;
-        int i3 = 256 - Rasterizer3D.anInt1422;
+        int k2 = Rasterizer3D.alpha;
+        int i3 = 256 - Rasterizer3D.alpha;
         do {
             j = Rasterizer3D.anIntArray1439[j1 >> 8];
             j1 += i2;
@@ -883,7 +883,7 @@ public class Rasterizer3D extends Rasterizer {
         } while (--k > 0);
     }
 
-    public static void method431(int i, int j, int k, int l, int i1, int j1, int k1) {
+    public static void drawFlatTriangle(int i, int j, int k, int l, int i1, int j1, int k1) {
         int l1 = 0;
         if (j != i) {
             l1 = (i1 - l << 16) / (j - i);
@@ -1181,7 +1181,7 @@ public class Rasterizer3D extends Rasterizer {
     }
 
     private static void method432(int[] ai, int i, int j, int l, int i1) {
-        if (Rasterizer3D.aBoolean1419) {
+        if (Rasterizer3D.restrictEdges) {
             if (i1 > Rasterizer.anInt1376) {
                 i1 = Rasterizer.anInt1376;
             }
@@ -1194,7 +1194,7 @@ public class Rasterizer3D extends Rasterizer {
         }
         i += l;
         int k = i1 - l >> 2;
-        if (Rasterizer3D.anInt1422 == 0) {
+        if (Rasterizer3D.alpha == 0) {
             while (--k >= 0) {
                 ai[i++] = j;
                 ai[i++] = j;
@@ -1206,8 +1206,8 @@ public class Rasterizer3D extends Rasterizer {
             }
             return;
         }
-        int j1 = Rasterizer3D.anInt1422;
-        int k1 = 256 - Rasterizer3D.anInt1422;
+        int j1 = Rasterizer3D.alpha;
+        int k1 = 256 - Rasterizer3D.alpha;
         j = ((j & 0xff00ff) * k1 >> 8 & 0xff00ff) + ((j & 0xff00) * k1 >> 8 & 0xff00);
         while (--k >= 0) {
             ai[i++] = j + ((ai[i] & 0xff00ff) * j1 >> 8 & 0xff00ff) + ((ai[i] & 0xff00) * j1 >> 8 & 0xff00);
@@ -1220,8 +1220,8 @@ public class Rasterizer3D extends Rasterizer {
         }
     }
 
-    public static void method433(int i, int j, int k, int l, int i1, int j1, int k1, int l1, int i2, int j2, int k2,
-                                 int l2, int i3, int j3, int k3, int l3, int i4, int j4, int k4) {
+    public static void drawTexturedTriangle(int i, int j, int k, int l, int i1, int j1, int k1, int l1, int i2, int j2, int k2,
+                                            int l2, int i3, int j3, int k3, int l3, int i4, int j4, int k4) {
         int[] ai = Rasterizer3D.method426(k4);
         Rasterizer3D.aBoolean1420 = !Rasterizer3D.aBooleanArray1432[k4];
         k2 = j2 - k2;
@@ -1284,7 +1284,7 @@ public class Rasterizer3D extends Rasterizer {
                     l1 -= l7 * j;
                     j = 0;
                 }
-                int k8 = i - Rasterizer3D.anInt1424;
+                int k8 = i - Rasterizer3D.centerY;
                 l4 += j5 * k8;
                 k5 += i6 * k8;
                 j6 += l6 * k8;
@@ -1363,7 +1363,7 @@ public class Rasterizer3D extends Rasterizer {
                 i2 -= l7 * k;
                 k = 0;
             }
-            int l8 = i - Rasterizer3D.anInt1424;
+            int l8 = i - Rasterizer3D.centerY;
             l4 += j5 * l8;
             k5 += i6 * l8;
             j6 += l6 * l8;
@@ -1453,7 +1453,7 @@ public class Rasterizer3D extends Rasterizer {
                     i2 -= j8 * k;
                     k = 0;
                 }
-                int i9 = j - Rasterizer3D.anInt1424;
+                int i9 = j - Rasterizer3D.centerY;
                 l4 += j5 * i9;
                 k5 += i6 * i9;
                 j6 += l6 * i9;
@@ -1532,7 +1532,7 @@ public class Rasterizer3D extends Rasterizer {
                 k1 -= j8 * i;
                 i = 0;
             }
-            int j9 = j - Rasterizer3D.anInt1424;
+            int j9 = j - Rasterizer3D.centerY;
             l4 += j5 * j9;
             k5 += i6 * j9;
             j6 += l6 * j9;
@@ -1621,7 +1621,7 @@ public class Rasterizer3D extends Rasterizer {
                 k1 -= j7 * i;
                 i = 0;
             }
-            int k9 = k - Rasterizer3D.anInt1424;
+            int k9 = k - Rasterizer3D.centerY;
             l4 += j5 * k9;
             k5 += i6 * k9;
             j6 += l6 * k9;
@@ -1700,7 +1700,7 @@ public class Rasterizer3D extends Rasterizer {
             l1 -= j7 * j;
             j = 0;
         }
-        int l9 = k - Rasterizer3D.anInt1424;
+        int l9 = k - Rasterizer3D.centerY;
         l4 += j5 * l9;
         k5 += i6 * l9;
         j6 += l6 * l9;
@@ -1770,7 +1770,7 @@ public class Rasterizer3D extends Rasterizer {
         }
         int j3;
         int k3;
-        if (Rasterizer3D.aBoolean1419) {
+        if (Rasterizer3D.restrictEdges) {
             j3 = (k1 - j1) / (i1 - l);
             if (i1 > Rasterizer.anInt1376) {
                 i1 = Rasterizer.anInt1376;
@@ -1799,7 +1799,7 @@ public class Rasterizer3D extends Rasterizer {
         if (Rasterizer3D.aBoolean1418) {
             int i4 = 0;
             int k4 = 0;
-            int k6 = l - Rasterizer3D.anInt1423;
+            int k6 = l - Rasterizer3D.centerX;
             l1 += (k2 >> 3) * k6;
             i2 += (l2 >> 3) * k6;
             j2 += (i3 >> 3) * k6;
@@ -1964,7 +1964,7 @@ public class Rasterizer3D extends Rasterizer {
         }
         int j4 = 0;
         int l4 = 0;
-        int l6 = l - Rasterizer3D.anInt1423;
+        int l6 = l - Rasterizer3D.centerX;
         l1 += (k2 >> 3) * l6;
         i2 += (l2 >> 3) * l6;
         j2 += (i3 >> 3) * l6;

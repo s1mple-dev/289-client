@@ -131,18 +131,18 @@ public class Projectile extends Renderable {
                 j = aClass32_1499.aClass26_563.anIntArray510[anInt1521];
             }
             Model class44_sub3_sub4_sub4_1 = new Model(class44_sub3_sub4_sub4, Animation.isNullFrame(j, 0), false,
-                    anInt1497, true);
+                    true);
             if (j != -1) {
-                class44_sub3_sub4_sub4_1.createBones((byte) 3);
-                class44_sub3_sub4_sub4_1.applyTransformation(j, 188);
+                class44_sub3_sub4_sub4_1.createBones();
+                class44_sub3_sub4_sub4_1.applyTransformation(j);
                 class44_sub3_sub4_sub4_1.triangleSkin = null;
                 class44_sub3_sub4_sub4_1.vertexSkin = null;
             }
             if (aClass32_1499.anInt566 != 128 || aClass32_1499.anInt567 != 128) {
                 class44_sub3_sub4_sub4_1.scaleT(aClass32_1499.anInt566, aClass32_1499.anInt566,
-                        aClass32_1499.anInt567, (byte) 31);
+                        aClass32_1499.anInt567);
             }
-            class44_sub3_sub4_sub4_1.method518(46881, anInt1520);
+            class44_sub3_sub4_sub4_1.rotateX(anInt1520);
             if (i != -37770) {
                 throw new NullPointerException();
             } else {

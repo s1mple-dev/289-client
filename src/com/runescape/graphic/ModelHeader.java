@@ -2,22 +2,22 @@ package com.runescape.graphic;
 
 class ModelHeader {
 
-    public byte[] aByteArray442;
-    public int anInt443;
-    public int anInt444;
-    public int anInt445;
-    public int anInt446;
-    public int anInt447;
-    public int anInt448;
-    public int anInt449;
-    public int anInt450;
-    public int anInt451;
-    public int anInt452;
-    public int anInt453;
-    public int anInt454;
-    public int anInt455;
-    public int anInt456;
-    public int anInt457;
+    public byte[] modelData;
+    public int vertexCount;
+    public int triangleCount;
+    public int texturedTriangleCount;
+    public int vertexDirectionOffset;
+    public int dataOffsetX;
+    public int dataOffsetY;
+    public int dataOffsetZ;
+    public int vertexSkinOffset;
+    public int triangleDataOffset;
+    public int triangleTypeOffset;
+    public int colorDataOffset;
+    public int texturePointerOffset;
+    public int trianglePriorityOffset;
+    public int triangleAlphaOffset;
+    public int triangleSkinOffset;
     public int anInt458;
 
     public ModelHeader() {

@@ -9,19 +9,19 @@ public class Renderable extends CacheableNode {
 
     public static boolean aBoolean1413;
     private int anInt1410;
-    public VertexNormal[] aClass25Array1411;
-    public int anInt1412;
+    public VertexNormal[] vertexNormals;
+    public int modelHeight;
 
     protected Renderable() {
         anInt1410 = 772;
-        anInt1412 = 1000;
+        modelHeight = 1000;
     }
 
-    public void method498(int i, int j, int k, int l, int i1, int j1, int k1, int l1, int i2) {
+    public void renderAtPoint(int i, int j, int k, int l, int i1, int j1, int k1, int l1, int i2) {
         Model class44_sub3_sub4_sub4 = getRotatedModel(-37770);
         if (class44_sub3_sub4_sub4 != null) {
-            anInt1412 = class44_sub3_sub4_sub4.anInt1412;
-            class44_sub3_sub4_sub4.method498(i, j, k, l, i1, j1, k1, l1, i2);
+            modelHeight = class44_sub3_sub4_sub4.modelHeight;
+            class44_sub3_sub4_sub4.renderAtPoint(i, j, k, l, i1, j1, k1, l1, i2);
         }
     }
 
